@@ -6,7 +6,9 @@
 //  Copyright 2011 Cisco. All rights reserved.
 //
 
-#define GAMESPEED 3
+
+//the game refreshes at (60/GAMESPEED) Hz
+#define GAMESPEED 10
 
 #define kMainMenuTagValue 10 
 #define kGameSceneTagValue 20

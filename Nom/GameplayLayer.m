@@ -8,8 +8,6 @@
 
 #import "GameplayLayer.h"
 
-//the game refreshes at (60/GAMESPEED) Hz
-
 @implementation GameplayLayer
 -(id) init
 {
