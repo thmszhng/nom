@@ -10,13 +10,6 @@
 
 
 @implementation SnakeSegment
--(void) render
-{
-    sprite = [CCSprite spriteWithFile:@"Snake.png"];
-    [sprite setPosition: CGPointMake(x, y)];
-    [self addChild:sprite];
-}
-
 -(void) move
 {
     //updates the snake segment coordinates
@@ -68,9 +61,6 @@
         default:
             break;
     }
-    
-    //moves the snake segment sprite
-    [sprite setPosition: CGPointMake(x, y)];
 }
 
 -(void) setX: (int) n
@@ -83,7 +73,7 @@
     y = n;
 }
 
--(void) setDirection: (enum direction) n
+-(void) setDirection: (enum Direction) n
 {
     direction = n;
 }
@@ -98,7 +88,7 @@
     return y;
 }
  
--(enum direction) reportDirection
+-(enum Direction) reportDirection
 {
     return direction;
 }

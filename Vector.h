@@ -7,24 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
 
-@interface Food : CCSprite {
-    //sprite
-    CCSprite *sprite;
-    
+@interface Vector : NSObject {
     //info
-    int x;
-    int y;
+    int _x;
+    int _y;
 }
-
--(void) render;
--(void) moveSprite;
 
 -(void) setX: (int) n;
 -(void) setY: (int) n;
 
--(int) reportX;
--(int) reportY;
+-(int) x;
+-(int) y;
 
 @end

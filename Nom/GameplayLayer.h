@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "SnakeSegment.h"
-#import "Food.h"
+#import "Vector.h"
 #import "GameManager.h"
 #import "Constants.h"
 
@@ -20,7 +20,7 @@
     int snakeLength;
     
     //food
-    id food;
+    Vector* food;
     
     //game variables
     CGPoint touchCoord;
@@ -35,7 +35,7 @@
 
 -(id) init;
 -(void) update:(ccTime)deltaTime;
--(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum direction) direction;
+-(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum Direction) direction;
 -(void) moveFood;
 
 //handles touches
@@ -50,5 +50,7 @@
 
 //related to winning and losing
 -(void) headChecks;
+
+-(void) draw;
 
 @end

@@ -10,25 +10,21 @@
 #import "cocos2d.h"
 
 
-@interface SnakeSegment : CCSprite
+@interface SnakeSegment : NSObject
 {
-    //sprite
-    CCSprite *sprite;
-    
     //info
-    enum direction {up, down, left, right} direction;
+    enum Direction {up, down, left, right} direction;
     int x;
     int y;
 }
 
--(void) render;
 -(void) move;
 
 -(void) setX: (int) n;
 -(void) setY: (int) n;
--(void) setDirection: (enum direction) n;
+-(void) setDirection: (enum Direction) n;
 
 -(int) reportX;
 -(int) reportY;
--(enum direction) reportDirection;
+-(enum Direction) reportDirection;
 @end

@@ -8,6 +8,34 @@
 
 #import "GameplayLayer.h"
 
+void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
+{
+    GLfloat vertices[8] = {
+        x, y,
+        x + width, y,
+        x + width, y + height,
+        x, y + height
+    };
+    glVertexPointer(2, GL_FLOAT, 0, vertices);	
+	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+}
+
+#define CLAMP(x, a, b) (((x)<(a))?(a):((x)>(b))?(b):(x))
+//#define DARKEN(c) CLAMP(5*((int)(c))/4-128, 0, 255)
+#define DARKEN(c) (((c)<=15)?0:((c)-15))
+
+void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
+{
+    glColor4ub(255, 255, 255, a);
+    glDrawRect(x + width - 1, y, 1, height);
+    glDrawRect(x, y, width - 1, 1);
+    glColor4ub(DARKEN(r), DARKEN(g), DARKEN(b), a);
+    glDrawRect(x, y + height - 1, width-1, 1);
+    glDrawRect(x, y+1, 1, height-2);
+    glColor4ub(r, g, b, a);
+    glDrawRect(x+1, y+1, width-2, height-2);
+}
+
 @implementation GameplayLayer
 -(id) init
 {
@@ -28,10 +56,8 @@
         [self initNewSnakeSection: 3: 15: 465: right];
         
         //initialize food
-        food = [[Food alloc] init];
+        food = [[Vector alloc] init];
         [self moveFood];
-        [food render];
-        [self addChild: food z:5 tag:kGameSceneTagValue];
     }
     
     [self scheduleUpdate];
@@ -78,42 +104,24 @@
 }
 
 //adds a new section to the snake
--(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum direction) direction;
+-(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum Direction) direction;
 {
     snakePiece[n] = [[SnakeSegment alloc] init];
     [snakePiece[n] setX: x];
     [snakePiece[n] setY: y];
     [snakePiece[n] setDirection: direction];
-    [snakePiece[n] render];
-    [self addChild: snakePiece[n] z:10 tag: kGameSceneTagValue];
 }
 
 -(void) moveFood
 {
-    srandom(time(NULL));
-    
-    int x = random() %30;
-    int y = random() %30;
-    int n;
-    
-    //ensures the food is not spawned in the same position as a snake piece
-    for(n = 0; n <= snakeLength; n++)
-    {
-        while(x == (([snakePiece[n] reportX] - 15)/10))
-        {
-            x = random() %30;
-        }
-        
-        while(y == (([snakePiece[n] reportY] - 175)/10))
-        {
-            y = random() %30;
-        }
-    }
+    int x, y;
+    do {
+        x = random() % 30;
+        y = random() % 30;
+    } while (gridInfo[x][y]);
     
     [food setX: (x*10 + 15)];
     [food setY: (y*10 + 175)];
-    
-    [food moveSprite];
 }
 
 //handles touches
@@ -142,7 +150,7 @@
 //determines direction in which snake head should move based on touch input
 -(void) changeHeadDirection
 {
-    enum direction currentDirection = [snakePiece[0] reportDirection];
+    enum Direction currentDirection = [snakePiece[0] reportDirection];
     
     if (touchCoord.x > 130 && touchCoord.x < 190)
     {
@@ -228,9 +236,9 @@
     }
     
     //check if the snake head found some food
-    if([snakePiece[0] reportX] == [food reportX])
+    if([snakePiece[0] reportX] == [food x])
     {
-        if([snakePiece[0] reportY] == [food reportY])
+        if([snakePiece[0] reportY] == [food y])
         {
             //adds a new snake piece to the end of the snake
             switch ([snakePiece[snakeLength - 1] reportDirection]) 
@@ -256,8 +264,33 @@
             
             //spawns a new food
             [self moveFood];
-            [food moveSprite];
         }
     }
+}
+
+-(void) draw
+{
+    glDisable(GL_TEXTURE_2D);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDisableClientState(GL_COLOR_ARRAY);
+    
+/*    glColor4ub(255, 0, 0, 255);
+    glDrawRect([food x], [food y], 10.f, 10.f);*/
+    for (int x = 0; x < 30; ++x) {
+        for (int y = 0; y < 30; ++y) {
+            int xx = 15 + x*10, yy = 175 + y*10;
+            if ([food x] == xx && [food y] == yy) {
+                drawBox(xx, yy, 10, 10, 255, 0, 0, 255);
+            } else if (gridInfo[x][y]) {
+                drawBox(xx, yy, 10, 10, 60, 60, 60, 255);
+            } else {
+                drawBox(xx, yy, 10, 10, 240, 240, 240, 255);
+            }
+        }
+    }
+    
+    glEnableClientState(GL_COLOR_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glEnable(GL_TEXTURE_2D);
 }
 @end
