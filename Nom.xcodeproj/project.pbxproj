@@ -124,19 +124,11 @@
 		66424F9E13DE3ED100CCCCCB /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424F9D13DE3ED100CCCCCB /* BackgroundLayer.m */; };
 		66424FA313DE3EDA00CCCCCB /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */; };
 		66424FA413DE3EDA00CCCCCB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FA213DE3EDA00CCCCCB /* GameScene.m */; };
-		66424FAD13DE3F2500CCCCCB /* backgroundiPhone-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 66424FA613DE3F2500CCCCCB /* backgroundiPhone-hd.png */; };
 		66424FAE13DE3F2500CCCCCB /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 66424FA713DE3F2500CCCCCB /* Control-hd.png */; };
-		66424FB113DE3F2500CCCCCB /* Grid-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 66424FAA13DE3F2500CCCCCB /* Grid-hd.png */; };
-		66424FB213DE3F2500CCCCCB /* Snake-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 66424FAB13DE3F2500CCCCCB /* Snake-hd.png */; };
 		66424FC713DE424B00CCCCCB /* SnakeSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FC613DE424A00CCCCCB /* SnakeSegment.m */; };
-		665CD49013DFB50C0097024F /* Food.png in Resources */ = {isa = PBXBuildFile; fileRef = 665CD48E13DFB50C0097024F /* Food.png */; };
-		665CD49113DFB50C0097024F /* Food-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 665CD48F13DFB50C0097024F /* Food-hd.png */; };
 		665CD49313DFB5390097024F /* Control.png in Resources */ = {isa = PBXBuildFile; fileRef = 665CD49213DFB5390097024F /* Control.png */; };
 		6667A39E13DFB02E00CB94B7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6667A39D13DFB02E00CB94B7 /* Icon@2x.png */; };
 		6667A3A013DFB15900CB94B7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6667A39F13DFB15800CB94B7 /* Icon.png */; };
-		66AC85C713DFB42300FFC701 /* backgroundiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 66AC85C613DFB42300FFC701 /* backgroundiPhone.png */; };
-		66AC85CB13DFB49900FFC701 /* Grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 66AC85CA13DFB49900FFC701 /* Grid.png */; };
-		66AC85CD13DFB49E00FFC701 /* Snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 66AC85CC13DFB49E00FFC701 /* Snake.png */; };
 		66EE3B7913E05EE90040ED20 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE3B7813E05EE90040ED20 /* MainMenuScene.m */; };
 		66EE3B7D13E05F0B0040ED20 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE3B7C13E05F0B0040ED20 /* MainMenuLayer.m */; };
 		66EE3B8913E3553A0040ED20 /* MainMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 66EE3B8613E3553A0040ED20 /* MainMenuBackground.png */; };
@@ -147,7 +139,7 @@
 
 /* Begin PBXFileReference section */
 		5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenuBackground-hd.png"; sourceTree = "<group>"; };
-		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Vector.h; sourceTree = "<group>"; };
+		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		66347C6613DF93D6000B80CF /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 		66424E1E13DE3EA800CCCCCB /* Nom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66424E2213DE3EA800CCCCCB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -386,20 +378,12 @@
 		66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayLayer.m; path = Nom/GameplayLayer.m; sourceTree = "<group>"; };
 		66424FA113DE3EDA00CCCCCB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Nom/GameScene.h; sourceTree = "<group>"; };
 		66424FA213DE3EDA00CCCCCB /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Nom/GameScene.m; sourceTree = "<group>"; };
-		66424FA613DE3F2500CCCCCB /* backgroundiPhone-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundiPhone-hd.png"; sourceTree = "<group>"; };
 		66424FA713DE3F2500CCCCCB /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
-		66424FAA13DE3F2500CCCCCB /* Grid-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid-hd.png"; sourceTree = "<group>"; };
-		66424FAB13DE3F2500CCCCCB /* Snake-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snake-hd.png"; sourceTree = "<group>"; };
 		66424FC513DE424A00CCCCCB /* SnakeSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeSegment.h; sourceTree = "<group>"; };
 		66424FC613DE424A00CCCCCB /* SnakeSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeSegment.m; sourceTree = "<group>"; };
-		665CD48E13DFB50C0097024F /* Food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Food.png; sourceTree = "<group>"; };
-		665CD48F13DFB50C0097024F /* Food-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food-hd.png"; sourceTree = "<group>"; };
 		665CD49213DFB5390097024F /* Control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Control.png; sourceTree = "<group>"; };
 		6667A39D13DFB02E00CB94B7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		6667A39F13DFB15800CB94B7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		66AC85C613DFB42300FFC701 /* backgroundiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundiPhone.png; sourceTree = "<group>"; };
-		66AC85CA13DFB49900FFC701 /* Grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grid.png; sourceTree = "<group>"; };
-		66AC85CC13DFB49E00FFC701 /* Snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snake.png; sourceTree = "<group>"; };
 		66EE3B7713E05EE90040ED20 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		66EE3B7813E05EE90040ED20 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		66EE3B7B13E05F0B0040ED20 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
@@ -491,16 +475,8 @@
 				66EE3B8813E3553A0040ED20 /* PlayGameButtonSelected.png */,
 				6667A39F13DFB15800CB94B7 /* Icon.png */,
 				6667A39D13DFB02E00CB94B7 /* Icon@2x.png */,
-				66AC85C613DFB42300FFC701 /* backgroundiPhone.png */,
-				66424FA613DE3F2500CCCCCB /* backgroundiPhone-hd.png */,
 				665CD49213DFB5390097024F /* Control.png */,
 				66424FA713DE3F2500CCCCCB /* Control-hd.png */,
-				66AC85CA13DFB49900FFC701 /* Grid.png */,
-				66424FAA13DE3F2500CCCCCB /* Grid-hd.png */,
-				66AC85CC13DFB49E00FFC701 /* Snake.png */,
-				66424FAB13DE3F2500CCCCCB /* Snake-hd.png */,
-				665CD48E13DFB50C0097024F /* Food.png */,
-				665CD48F13DFB50C0097024F /* Food-hd.png */,
 				66424E3413DE3EA800CCCCCB /* Default.png */,
 				66424E3613DE3EA800CCCCCB /* fps_images.png */,
 				66424E3813DE3EA800CCCCCB /* Icon-72.png */,
@@ -966,17 +942,9 @@
 				66424E3D13DE3EA800CCCCCB /* Icon-Small.png in Resources */,
 				66424E3F13DE3EA800CCCCCB /* Icon-Small@2x.png in Resources */,
 				66424E4613DE3EA800CCCCCB /* iTunesArtwork in Resources */,
-				66424FAD13DE3F2500CCCCCB /* backgroundiPhone-hd.png in Resources */,
 				66424FAE13DE3F2500CCCCCB /* Control-hd.png in Resources */,
-				66424FB113DE3F2500CCCCCB /* Grid-hd.png in Resources */,
-				66424FB213DE3F2500CCCCCB /* Snake-hd.png in Resources */,
 				6667A39E13DFB02E00CB94B7 /* Icon@2x.png in Resources */,
 				6667A3A013DFB15900CB94B7 /* Icon.png in Resources */,
-				66AC85C713DFB42300FFC701 /* backgroundiPhone.png in Resources */,
-				66AC85CB13DFB49900FFC701 /* Grid.png in Resources */,
-				66AC85CD13DFB49E00FFC701 /* Snake.png in Resources */,
-				665CD49013DFB50C0097024F /* Food.png in Resources */,
-				665CD49113DFB50C0097024F /* Food-hd.png in Resources */,
 				665CD49313DFB5390097024F /* Control.png in Resources */,
 				66EE3B8913E3553A0040ED20 /* MainMenuBackground.png in Resources */,
 				66EE3B8A13E3553A0040ED20 /* PlayGameButtonNormal.png in Resources */,
