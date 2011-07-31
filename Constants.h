@@ -24,3 +24,5 @@ typedef enum
 { 
     kLinkTypeDeveloperSite,
 } LinkTypes;
+
+extern int haveRetina;

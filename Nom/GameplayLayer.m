@@ -7,6 +7,7 @@
 //
 
 #import "GameplayLayer.h"
+#import "Constants.h"
 
 void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 {
@@ -26,6 +27,9 @@ void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 
 void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
 {
+    if (haveRetina) {
+        x *= 2; y *= 2; width *= 2; height *= 2;
+    }
     glColor4ub(255, 255, 255, a);
     glDrawRect(x + width - 1, y, 1, height);
     glDrawRect(x, y, width - 1, 1);

@@ -8,10 +8,13 @@
 
 #import "cocos2d.h"
 #import "AppDelegate.h"
+#import "Constants.h"
 #import "GameConfig.h"
 #import "RootViewController.h"
 #import "GameScene.h"
 #import "GameManager.h"
+
+int haveRetina;
 
 @implementation AppDelegate
 
@@ -71,8 +74,12 @@
 	[director setOpenGLView:glView];
 	
     //	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
-    if( ! [director enableRetinaDisplay:YES] )
+    if( ! [director enableRetinaDisplay:YES] ) {
         CCLOG(@"Retina Display Not supported");
+        haveRetina = 0;
+    } else {
+        haveRetina = 1;
+    }
 	
 	//
 	// VERY IMPORTANT:
