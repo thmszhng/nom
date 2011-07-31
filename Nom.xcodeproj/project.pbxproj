@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F918B1A13E52A720098AD42 /* MainMenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */; };
 		66347C6713DF93D6000B80CF /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 66347C6613DF93D6000B80CF /* Food.m */; };
 		66424E2313DE3EA800CCCCCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2213DE3EA800CCCCCB /* QuartzCore.framework */; };
 		66424E2513DE3EA800CCCCCB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2413DE3EA800CCCCCB /* OpenGLES.framework */; };
@@ -145,6 +146,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenuBackground-hd.png"; sourceTree = "<group>"; };
 		66347C6513DF93D5000B80CF /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		66347C6613DF93D6000B80CF /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
 		66424E1E13DE3EA800CCCCCB /* Nom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,6 +485,7 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */,
 				66EE3B8613E3553A0040ED20 /* MainMenuBackground.png */,
 				66EE3B8713E3553A0040ED20 /* PlayGameButtonNormal.png */,
 				66EE3B8813E3553A0040ED20 /* PlayGameButtonSelected.png */,
@@ -978,6 +981,7 @@
 				66EE3B8913E3553A0040ED20 /* MainMenuBackground.png in Resources */,
 				66EE3B8A13E3553A0040ED20 /* PlayGameButtonNormal.png in Resources */,
 				66EE3B8B13E3553A0040ED20 /* PlayGameButtonSelected.png in Resources */,
+				5F918B1A13E52A720098AD42 /* MainMenuBackground-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
