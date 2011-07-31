@@ -26,9 +26,9 @@ static GameManager* _sharedGameManager = nil;
     {
         if(!_sharedGameManager)
         {
-            [[self alloc] init];
-            return _sharedGameManager;
+            _sharedGameManager = [[self alloc] init];
         }
+        return _sharedGameManager;
     }
     
     return nil;
@@ -36,14 +36,7 @@ static GameManager* _sharedGameManager = nil;
 
 +(id) alloc
 {
-    @synchronized ([GameManager class])
-    {
-        NSAssert (_sharedGameManager == nil, @"Attempted to allocate a second instance of the Game Manager singleton");
-        _sharedGameManager = [super alloc];
-        return _sharedGameManager;
-    }
-    
-    return nil;
+    return [super alloc];
 }
 
 -(id) init
