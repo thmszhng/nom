@@ -23,8 +23,9 @@
     Vector* food;
     
     //game variables
+    ccTime accumulatedTime;
+    ccTime speed;
     CGPoint touchCoord;
-    int actionFrame;
     
     BOOL gameOver;
     int gridInfo[30][30];

@@ -51,6 +51,8 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         self.isTouchEnabled = YES;
         
         //initialize game
+        accumulatedTime = 0;
+        speed = INITIAL_SPEED;
         gameOver = NO;
         snakeLength = 4;
         
@@ -73,17 +75,19 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 //updates the game, 60Hz
 -(void) update: (ccTime) deltaTime
 {
-    if(gameOver == NO)
+    if (gameOver == NO)
     {
-        if(actionFrame == GAMESPEED)
+        accumulatedTime += deltaTime;
+        while (accumulatedTime > speed)
         {
-            for(i = 0; i < snakeLength; i++)
+            accumulatedTime -= speed;
+            for (i = 0; i < snakeLength; i++)
             {
                 [self freeCurrentSpot: i];
                 [snakePiece[i] move];
                 
                 //only applies to the head segment
-                if(i == 0)
+                if (i == 0)
                 {
                     [self headChecks];
                 }
@@ -93,12 +97,6 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
             
             //turns the snake
             [self turnSnake];
-            
-            actionFrame = 1;
-        }
-        else
-        {
-            actionFrame++;
         }
     }
     else
@@ -257,6 +255,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         }
         
         snakeLength++;
+        speed = SPEED_BOOST(speed);
         
         //spawns a new food
         [self moveFood];

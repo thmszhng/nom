@@ -8,7 +8,11 @@
 
 
 //the game refreshes at (60/GAMESPEED) Hz
-#define GAMESPEED 10
+//#define GAMESPEED 10
+
+#define INITIAL_SPEED (0.25)
+// #define SPEED_BOOST(x) (1./(1./(x)+1.))
+#define SPEED_BOOST(x) ((x) * 0.95)
 
 #define kMainMenuTagValue 10 
 #define kGameSceneTagValue 20
