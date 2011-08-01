@@ -1,9 +1,7 @@
 #import "cocos2d.h"
 
-// pixels
+// takes points
 void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height);
-
-// points
 void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a);
 
 // grid coordinates

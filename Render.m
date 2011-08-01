@@ -3,6 +3,10 @@
 
 void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 {
+    if (haveRetina)
+    {
+        x *= 2; y *= 2; width *= 2; height *= 2;
+    }
     GLfloat vertices[8] = {
         x, y,
         x + width, y,
@@ -19,10 +23,6 @@ void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 
 void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
 {
-    if (haveRetina)
-    {
-        x *= 2; y *= 2; width *= 2; height *= 2;
-    }
     if (a == 255)
     {
         glColor4ub(255, 255, 255, 255);
@@ -48,12 +48,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
     static CCRenderTexture* cache[16] = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil };
 
-    int xx = x * 10 + 10, yy = y * 10 + 170;
-    int width = 10, height = 10;
-    if (haveRetina)
-    {
-        xx *= 2; yy *= 2; width *= 2; height *= 2;
-    }
+    const int width = 10, height = 10;
+    int xx = x * width + 10, yy = y * height + 170;
+
     int entry = (ctop ? 1 : 0) | (cleft ? 2 : 0) | (cbottom ? 4 : 0) | (cright ? 8 : 0);
     if (cache[entry] == nil)
     {
@@ -62,7 +59,7 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
         glDisable(GL_TEXTURE_2D);
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);
         glDisableClientState(GL_COLOR_ARRAY);
-                
+
         glColor4ub(255, 255, 255, 255);
         glDrawRect(0, 0, width, height);
         glColor4ub(DARKEN(60), DARKEN(60), DARKEN(60), 255);
@@ -110,13 +107,13 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
                 glDrawRect(0, 1, 1, height-2);
             }
         }
-        
+
         glEnableClientState(GL_COLOR_ARRAY);
         glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         glEnable(GL_TEXTURE_2D);
         [cache[entry] end];
     }
     CCSprite* sprite = [cache[entry] sprite];
-    sprite.positionInPixels = CGPointMake(xx + width/2, yy + height/2);
+    sprite.position = CGPointMake(xx + width/2, yy + height/2);
     [sprite visit];
 }
