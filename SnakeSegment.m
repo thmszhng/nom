@@ -16,48 +16,21 @@
     switch (direction) 
     {
         case up:
-            if(y == 465)
-            {
-                y = 175;
-            }
-            else
-            {
-                y += 10;
-            }
+            if (++y >= 30) y = 0;
             break;
             
         case down:
-            if(y == 175)
-            {
-                y = 465;
-            }
-            else
-            {
-                y -= 10;
-            }
+            if (--y < 0) y = 29;
             break;
             
         case left:
-            if(x == 15)
-            {
-                x = 305;
-            }
-            else
-            {
-                x -= 10;
-            }
+            if (--x < 0) x = 29;
             break;
             
         case right:
-            if(x == 305)
-            {
-                x = 15;
-            }
-            else
-            {
-                x += 10;
-            }
+            if (++x >= 30) x = 0;
             break;
+
         default:
             break;
     }

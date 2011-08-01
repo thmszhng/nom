@@ -54,10 +54,10 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         snakeLength = 4;
         
         //initialize snake
-        [self initNewSnakeSection: 0: 45: 465: right];
-        [self initNewSnakeSection: 1: 35: 465: right];
-        [self initNewSnakeSection: 2: 25: 465: right];
-        [self initNewSnakeSection: 3: 15: 465: right];
+        [self initNewSnakeSection: 0: 3: 29: right];
+        [self initNewSnakeSection: 1: 2: 29: right];
+        [self initNewSnakeSection: 2: 1: 29: right];
+        [self initNewSnakeSection: 3: 0: 29: right];
         
         //initialize food
         food = [[Vector alloc] init];
@@ -124,8 +124,8 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         y = random() % 30;
     } while (gridInfo[x][y]);
     
-    [food setX: (x*10 + 15)];
-    [food setY: (y*10 + 175)];
+    [food setX: x];
+    [food setY: y];
 }
 
 //handles touches
@@ -198,19 +198,13 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 //sets the last space the snake segment was in to "unoccupied"
 -(void) freeCurrentSpot: (int) n
 {
-    int currentX = ([snakePiece[n] reportX] - 15)/10;
-    int currentY = ([snakePiece[n] reportY] - 175)/10;
-    
-    gridInfo[currentX][currentY] = 0;
+    gridInfo[[snakePiece[n] reportX]][[snakePiece[n] reportY]] = 0;
 }
 
 //sets the space the snake segment is going to move into to "occupied"
 -(void) occupyNewSpot: (int) n
 {
-    int currentX = ([snakePiece[n] reportX] - 15)/10;
-    int currentY = ([snakePiece[n] reportY] - 175)/10;
-    
-    gridInfo[currentX][currentY] = 1;
+    gridInfo[[snakePiece[n] reportX]][[snakePiece[n] reportY]] = 1;
 }
 
 //makes sure the snake turns
@@ -231,8 +225,8 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 -(void) headChecks
 {    
     //check if the snake head hit itself
-    int currentX = ([snakePiece[0] reportX] - 15)/10;
-    int currentY = ([snakePiece[0] reportY] - 175)/10;
+    int currentX = [snakePiece[0] reportX];
+    int currentY = [snakePiece[0] reportY];
 
     if(gridInfo[currentX][currentY] == 1)
     {
@@ -240,35 +234,32 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     }
     
     //check if the snake head found some food
-    if([snakePiece[0] reportX] == [food x])
+    if(currentX == [food x] && currentY == [food y])
     {
-        if([snakePiece[0] reportY] == [food y])
+        //adds a new snake piece to the end of the snake
+        switch ([snakePiece[snakeLength - 1] reportDirection]) 
         {
-            //adds a new snake piece to the end of the snake
-            switch ([snakePiece[snakeLength - 1] reportDirection]) 
-            {
-                case up:
-                    [self initNewSnakeSection: (snakeLength): [snakePiece[snakeLength - 1] reportX] :([snakePiece[snakeLength - 1] reportY] - 10): up];
-                    break;
-                    
-                case down:
-                    [self initNewSnakeSection: (snakeLength): [snakePiece[snakeLength - 1] reportX] :([snakePiece[snakeLength - 1] reportY] + 10): down];
-                    break;
+            case up:
+                [self initNewSnakeSection: (snakeLength): [snakePiece[snakeLength - 1] reportX] :([snakePiece[snakeLength - 1] reportY] - 1): up];
+                break;
                 
-                case left:
-                    [self initNewSnakeSection: (snakeLength): ([snakePiece[snakeLength - 1] reportX] + 10) :[snakePiece[snakeLength - 1] reportY]: left];
-                    break;
+            case down:
+                [self initNewSnakeSection: (snakeLength): [snakePiece[snakeLength - 1] reportX] :([snakePiece[snakeLength - 1] reportY] + 1): down];
+                break;
                 
-                case right:
-                    [self initNewSnakeSection: (snakeLength): ([snakePiece[snakeLength - 1] reportX] - 10) :[snakePiece[snakeLength - 1] reportY]: right];
-                    break;
-            }
-            
-            snakeLength++;
-            
-            //spawns a new food
-            [self moveFood];
+            case left:
+                [self initNewSnakeSection: (snakeLength): ([snakePiece[snakeLength - 1] reportX] + 1) :[snakePiece[snakeLength - 1] reportY]: left];
+                break;
+                
+            case right:
+                [self initNewSnakeSection: (snakeLength): ([snakePiece[snakeLength - 1] reportX] - 1) :[snakePiece[snakeLength - 1] reportY]: right];
+                break;
         }
+        
+        snakeLength++;
+        
+        //spawns a new food
+        [self moveFood];
     }
 }
 
@@ -282,8 +273,8 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     glDrawRect([food x], [food y], 10.f, 10.f);*/
     for (int x = 0; x < 30; ++x) {
         for (int y = 0; y < 30; ++y) {
-            int xx = 15 + x*10, yy = 175 + y*10;
-            if ([food x] == xx && [food y] == yy) {
+            int xx = 10 + x*10, yy = 170 + y*10;
+            if ([food x] == x && [food y] == y) {
                 drawBox(xx, yy, 10, 10, 255, 0, 0, 255);
             } else if (gridInfo[x][y]) {
                 drawBox(xx, yy, 10, 10, 60, 60, 60, 255);
