@@ -138,6 +138,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     {
 		touchCoord = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
     }
+    int x = touchCoord.x - 160;
+    int y = touchCoord.y - 85;
+    trackTouch = (x*x + y*y < 4000);
     
     [self changeHeadDirection: touchCoord];
 }
@@ -156,28 +159,25 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 //determines direction in which snake head should move based on touch input
 -(void) changeHeadDirection: (CGPoint) touchCoord
 {
+    if (!trackTouch) return;
+    
     enum Direction currentDirection = [snakePiece[0] reportDirection];
     
-    if (touchCoord.x > 130 && touchCoord.x < 190)
+    int x = touchCoord.x - 160;
+    int y = touchCoord.y - 85;
+    
+    if (x*x + y*y < 100) return;
+    
+    if (y > x)
     {
-        if (touchCoord.y > 110 && touchCoord.y < 130)
+        if (y > -x)
         {
             if (currentDirection != down)
             {
                 newDirection = up;
             }
         }
-        if (touchCoord.y > 20 && touchCoord.y < 50)
-        {
-            if (currentDirection != up)
-            {
-                newDirection = down;
-            }
-        }
-    }
-    if (touchCoord.x < 130)
-    {
-        if (touchCoord.y > 50 && touchCoord.y < 110)
+        else
         {
             if (currentDirection != right)
             {
@@ -185,9 +185,16 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
             }
         }
     }
-    if (touchCoord.x > 190)
+    else
     {
-        if (touchCoord.y > 50 && touchCoord.y < 110)
+        if (y < -x)
+        {
+            if (currentDirection != up)
+            {
+                newDirection = down;
+            }
+        }
+        else
         {
             if (currentDirection != left)
             {

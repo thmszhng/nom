@@ -15,14 +15,14 @@
 
 @interface GameplayLayer : CCLayer
 {
-    //snake
+    // snake
     id snakePiece[900];
     int snakeLength;
     
-    //food
+    // food
     Vector* food;
     
-    //game variables
+    // game variables
     ccTime accumulatedTime;
     ccTime speed;
     
@@ -30,6 +30,9 @@
     
     BOOL gameOver;
     int gridInfo[30][30];
+    
+    // controls
+    BOOL trackTouch;
 }
 
 -(id) init;
