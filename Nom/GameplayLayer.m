@@ -9,6 +9,11 @@
 #import "GameplayLayer.h"
 #import "Constants.h"
 
+#define INITIAL_SPEED (0.25)
+#define SPEED_BOOST(x) (1./(1./(x)+0.25))
+// #define SPEED_BOOST(x) ((x) * 0.95)
+// #define SPEED_BOOST(x) powf(powf(x, -1./1.5)+0.1, -1.5)
+
 void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 {
     GLfloat vertices[8] = {
@@ -140,7 +145,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     }
     int x = touchCoord.x - 160;
     int y = touchCoord.y - 85;
-    trackTouch = (x*x + y*y < 4000);
+    trackTouch = (x*x + y*y < 16000);
     
     [self changeHeadDirection: touchCoord];
 }
