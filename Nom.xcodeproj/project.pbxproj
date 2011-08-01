@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F918B1A13E52A720098AD42 /* MainMenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */; };
 		66347C6713DF93D6000B80CF /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = 66347C6613DF93D6000B80CF /* Vector.m */; };
 		66424E2313DE3EA800CCCCCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2213DE3EA800CCCCCB /* QuartzCore.framework */; };
@@ -138,6 +139,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Render.h; sourceTree = "<group>"; };
+		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
 		5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenuBackground-hd.png"; sourceTree = "<group>"; };
 		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		66347C6613DF93D6000B80CF /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
@@ -807,6 +810,8 @@
 				66424FC613DE424A00CCCCCB /* SnakeSegment.m */,
 				66347C6513DF93D5000B80CF /* Vector.h */,
 				66347C6613DF93D6000B80CF /* Vector.m */,
+				5F2C339013E6534300D4B5F7 /* Render.h */,
+				5F2C339113E6537900D4B5F7 /* Render.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1065,6 +1070,7 @@
 				66FE35A813E04FEB00CD333E /* GameManager.m in Sources */,
 				66EE3B7913E05EE90040ED20 /* MainMenuScene.m in Sources */,
 				66EE3B7D13E05F0B0040ED20 /* MainMenuLayer.m in Sources */,
+				5F2C339213E6537900D4B5F7 /* Render.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

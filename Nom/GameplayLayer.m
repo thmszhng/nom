@@ -8,43 +8,12 @@
 
 #import "GameplayLayer.h"
 #import "Constants.h"
+#import "Render.h"
 
 #define INITIAL_SPEED (0.25)
 #define SPEED_BOOST(x) (1./(1./(x)+0.25))
 // #define SPEED_BOOST(x) ((x) * 0.95)
 // #define SPEED_BOOST(x) powf(powf(x, -1./1.5)+0.1, -1.5)
-
-void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
-{
-    GLfloat vertices[8] = {
-        x, y,
-        x + width, y,
-        x + width, y + height,
-        x, y + height
-    };
-    glVertexPointer(2, GL_FLOAT, 0, vertices);	
-	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-}
-
-#define CLAMP(x, a, b) (((x)<(a))?(a):((x)>(b))?(b):(x))
-//#define DARKEN(c) CLAMP(5*((int)(c))/4-128, 0, 255)
-#define DARKEN(c) (((c)<=15)?0:((c)-15))
-
-void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
-{
-    if (haveRetina)
-    {
-        x *= 2; y *= 2; width *= 2; height *= 2;
-    }
-    glColor4ub(255, 255, 255, a);
-    glDrawRect(x + width - 1, y, 1, height);
-    glDrawRect(x, y, width - 1, 1);
-    glColor4ub(DARKEN(r), DARKEN(g), DARKEN(b), a);
-    glDrawRect(x, y + height - 1, width-1, 1);
-    glDrawRect(x, y+1, 1, height-2);
-    glColor4ub(r, g, b, a);
-    glDrawRect(x+1, y+1, width-2, height-2);
-}
 
 @implementation GameplayLayer
 -(id) init
@@ -283,24 +252,20 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    
-/*    glColor4ub(255, 0, 0, 255);
-    glDrawRect([food x], [food y], 10.f, 10.f);*/
-    for (int x = 0; x < 30; ++x) {
-        for (int y = 0; y < 30; ++y) {
-            int xx = 10 + x*10, yy = 170 + y*10;
-            if ([food x] == x && [food y] == y) {
-                drawBox(xx, yy, 10, 10, 255, 0, 0, 255);
-            } else if (gridInfo[x][y]) {
-                drawBox(xx, yy, 10, 10, 60, 60, 60, 255);
-            } else {
-                drawBox(xx, yy, 10, 10, 240, 240, 240, 255);
-            }
-        }
-    }
-    
+    drawBox([food x] * 10 + 10, [food y] * 10 + 170, 10, 10, 255, 0, 0, 255);
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
+    
+    enum Direction lastdir = -1;
+    for (int i = snakeLength; i--; )
+    {
+        int x = [snakePiece[i] reportX];
+        int y = [snakePiece[i] reportY];
+        int dir = [snakePiece[i] reportDirection];
+        if (i == 0) dir = -1;
+        drawSnake(x, y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
+        lastdir = dir;
+    }
 }
 @end

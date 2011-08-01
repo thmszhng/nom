@@ -12,11 +12,8 @@
 
 @interface BackgroundLayer : CCLayer
 {
-
 }
 
 -(id) init;
-
--(void) draw;
 
 @end
