@@ -27,7 +27,8 @@ void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 
 void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
 {
-    if (haveRetina) {
+    if (haveRetina)
+    {
         x *= 2; y *= 2; width *= 2; height *= 2;
     }
     glColor4ub(255, 255, 255, a);
@@ -70,14 +71,13 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 }
 
 //updates the game, 60Hz
--(void) update:(ccTime)deltaTime
+-(void) update: (ccTime) deltaTime
 {
     if(gameOver == NO)
     {
-        
         if(actionFrame == GAMESPEED)
         {
-            for(i = 0; i <= (snakeLength - 1); i++)
+            for(i = 0; i < snakeLength; i++)
             {
                 [self freeCurrentSpot: i];
                 [snakePiece[i] move];
@@ -129,9 +129,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 }
 
 //handles touches
--(void) ccTouchesBegan: (NSSet *)touches withEvent:(UIEvent *)event;
+-(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event;
 {
-	for(UITouch *touch in touches)
+	for (UITouch *touch in touches)
     {
         touchCoord = [touch locationInView: [touch view]];
 		touchCoord = [[CCDirector sharedDirector] convertToGL: touchCoord];
@@ -142,7 +142,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
  
 -(void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	for(UITouch *touch in touches)
+	for (UITouch *touch in touches)
     {
         touchCoord = [touch locationInView: [touch view]];
 		touchCoord = [[CCDirector sharedDirector] convertToGL: touchCoord];
@@ -158,16 +158,16 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     
     if (touchCoord.x > 130 && touchCoord.x < 190)
     {
-        if(touchCoord.y > 110 && touchCoord.y < 130)
+        if (touchCoord.y > 110 && touchCoord.y < 130)
         {
-            if(currentDirection != down)
+            if (currentDirection != down)
             {
                 [snakePiece[0] setDirection: up];
             }
         }
-        if(touchCoord.y > 20 && touchCoord.y < 50)
+        if (touchCoord.y > 20 && touchCoord.y < 50)
         {
-            if(currentDirection != up)
+            if (currentDirection != up)
             {
                 [snakePiece[0] setDirection: down];
             }
@@ -175,9 +175,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     }
     if (touchCoord.x < 130)
     {
-        if(touchCoord.y > 50 && touchCoord.y < 110)
+        if (touchCoord.y > 50 && touchCoord.y < 110)
         {
-            if(currentDirection != right)
+            if (currentDirection != right)
             {
                 [snakePiece[0] setDirection: left];
             }
@@ -185,9 +185,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     }
     if (touchCoord.x > 190)
     {
-        if(touchCoord.y > 50 && touchCoord.y < 110)
+        if (touchCoord.y > 50 && touchCoord.y < 110)
         {
-            if(currentDirection != left)
+            if (currentDirection != left)
             {
                 [snakePiece[0] setDirection: right];
             }
@@ -212,9 +212,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 {
     int n;
     
-    for(n = (snakeLength - 1); n >= 1; n--)
+    for (n = (snakeLength - 1); n >= 1; n--)
     {
-        if([snakePiece[n] reportDirection] != [snakePiece[n - 1] reportDirection])
+        if ([snakePiece[n] reportDirection] != [snakePiece[n - 1] reportDirection])
         {
             [snakePiece[n] setDirection: [snakePiece[n - 1] reportDirection]];
         }
@@ -228,13 +228,13 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
     int currentX = [snakePiece[0] reportX];
     int currentY = [snakePiece[0] reportY];
 
-    if(gridInfo[currentX][currentY] == 1)
+    if (gridInfo[currentX][currentY] == 1)
     {
         gameOver = YES;
     }
     
     //check if the snake head found some food
-    if(currentX == [food x] && currentY == [food y])
+    if (currentX == [food x] && currentY == [food y])
     {
         //adds a new snake piece to the end of the snake
         switch ([snakePiece[snakeLength - 1] reportDirection]) 

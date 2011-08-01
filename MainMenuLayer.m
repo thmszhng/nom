@@ -19,7 +19,7 @@
 {
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     
-    if(sceneSelectMenu != nil)
+    if (sceneSelectMenu != nil)
     {
         [sceneSelectMenu removeFromParentAndCleanup:YES];
     }
@@ -80,7 +80,7 @@
 {
     self = [super init];
     
-    if(self != nil)
+    if (self != nil)
     {
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         

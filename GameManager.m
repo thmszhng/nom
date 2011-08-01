@@ -54,7 +54,7 @@ static GameManager* _sharedGameManager = nil;
     return self;
 }
 
--(void) runSceneWithID:(SceneTypes)sceneID
+-(void) runSceneWithID: (SceneTypes) sceneID
 {
     SceneTypes oldScene = currentScene;
     currentScene = sceneID;
@@ -75,13 +75,13 @@ static GameManager* _sharedGameManager = nil;
             break;
     }
     
-    if(sceneToRun == nil)
+    if (sceneToRun == nil)
     {
         currentScene = oldScene;
         return;
     }
     
-    if([[CCDirector sharedDirector] runningScene] == nil)
+    if ([[CCDirector sharedDirector] runningScene] == nil)
     {
         [[CCDirector sharedDirector] runWithScene: sceneToRun];
     }
@@ -95,12 +95,12 @@ static GameManager* _sharedGameManager = nil;
 -(void) openSiteWithLinkType: (LinkTypes) linkTypeToOpen
 {
     NSURL *urlToOpen = nil;
-    if(linkTypeToOpen == kLinkTypeDeveloperSite)
+    if (linkTypeToOpen == kLinkTypeDeveloperSite)
     {
         urlToOpen = [NSURL URLWithString: @"http://www.facebook.com/welcome.to.the.conversation"];
     }
     
-    if(![[UIApplication sharedApplication] openURL: urlToOpen])
+    if (![[UIApplication sharedApplication] openURL: urlToOpen])
     {
         [self runSceneWithID: kMainMenuScene];
     }

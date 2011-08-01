@@ -9,7 +9,7 @@
 #import "BackgroundLayer.h"
 
 @implementation BackgroundLayer
--(id)init
+-(id) init
 {
     self = [super init];
     if (self != nil)

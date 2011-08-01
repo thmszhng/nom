@@ -34,13 +34,13 @@
 }
 
 -(id) init;
--(void) update:(ccTime)deltaTime;
+-(void) update: (ccTime) deltaTime;
 -(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum Direction) direction;
 -(void) moveFood;
 
 //handles touches
--(void) ccTouchesBegan: (NSSet *)touches withEvent:(UIEvent *)event;
--(void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event;
+-(void) ccTouchesMoved: (NSSet *) touches withEvent: (UIEvent *) event;
 
 //related to moving the snake
 -(void) changeHeadDirection;
