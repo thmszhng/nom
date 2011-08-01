@@ -81,7 +81,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         while (accumulatedTime > speed)
         {
             accumulatedTime -= speed;
-            for (i = 0; i < snakeLength; i++)
+            for (int i = 0; i < snakeLength; i++)
             {
                 [self freeCurrentSpot: i];
                 [snakePiece[i] move];
@@ -129,28 +129,28 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
 //handles touches
 -(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event;
 {
+    CGPoint touchCoord;
 	for (UITouch *touch in touches)
     {
-        touchCoord = [touch locationInView: [touch view]];
-		touchCoord = [[CCDirector sharedDirector] convertToGL: touchCoord];
+		touchCoord = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
     }
     
-    [self changeHeadDirection];
+    [self changeHeadDirection: touchCoord];
 }
  
 -(void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    CGPoint touchCoord;
 	for (UITouch *touch in touches)
     {
-        touchCoord = [touch locationInView: [touch view]];
-		touchCoord = [[CCDirector sharedDirector] convertToGL: touchCoord];
+		touchCoord = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
     }
     
-    [self changeHeadDirection];
+    [self changeHeadDirection: touchCoord];
 }
 
 //determines direction in which snake head should move based on touch input
--(void) changeHeadDirection
+-(void) changeHeadDirection: (CGPoint) touchCoord
 {
     enum Direction currentDirection = [snakePiece[0] reportDirection];
     

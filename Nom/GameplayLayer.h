@@ -25,13 +25,9 @@
     //game variables
     ccTime accumulatedTime;
     ccTime speed;
-    CGPoint touchCoord;
     
     BOOL gameOver;
     int gridInfo[30][30];
-    
-    //misc variables
-    int i;
 }
 
 -(id) init;
@@ -44,7 +40,7 @@
 -(void) ccTouchesMoved: (NSSet *) touches withEvent: (UIEvent *) event;
 
 //related to moving the snake
--(void) changeHeadDirection;
+-(void) changeHeadDirection: (CGPoint) point;
 -(void) freeCurrentSpot: (int) n;
 -(void) occupyNewSpot: (int) n;
 -(void) turnSnake;
