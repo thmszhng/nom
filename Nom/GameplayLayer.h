@@ -26,6 +26,8 @@
     ccTime accumulatedTime;
     ccTime speed;
     
+    enum Direction newDirection;
+    
     BOOL gameOver;
     int gridInfo[30][30];
 }

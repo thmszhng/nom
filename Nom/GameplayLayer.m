@@ -61,6 +61,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         [self initNewSnakeSection: 1: 2: 29: right];
         [self initNewSnakeSection: 2: 1: 29: right];
         [self initNewSnakeSection: 3: 0: 29: right];
+        newDirection = right;
         
         //initialize food
         food = [[Vector alloc] init];
@@ -81,6 +82,9 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         while (accumulatedTime > speed)
         {
             accumulatedTime -= speed;
+            
+            [snakePiece[0] setDirection: newDirection];
+
             for (int i = 0; i < snakeLength; i++)
             {
                 [self freeCurrentSpot: i];
@@ -160,14 +164,14 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         {
             if (currentDirection != down)
             {
-                [snakePiece[0] setDirection: up];
+                newDirection = up;
             }
         }
         if (touchCoord.y > 20 && touchCoord.y < 50)
         {
             if (currentDirection != up)
             {
-                [snakePiece[0] setDirection: down];
+                newDirection = down;
             }
         }
     }
@@ -177,7 +181,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         {
             if (currentDirection != right)
             {
-                [snakePiece[0] setDirection: left];
+                newDirection = left;
             }
         }
     }
@@ -187,7 +191,7 @@ void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte 
         {
             if (currentDirection != left)
             {
-                [snakePiece[0] setDirection: right];
+                newDirection = right;
             }
         }
     }
