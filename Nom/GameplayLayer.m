@@ -47,6 +47,12 @@
     return self;
 }
 
+-(void) dealloc
+{
+    [food release];
+    [super dealloc];
+}
+
 //updates the game, 60Hz
 -(void) update: (ccTime) deltaTime
 {
@@ -100,8 +106,8 @@
         y = random() % 30;
     } while (gridInfo[x][y]);
     
-    [food setX: x];
-    [food setY: y];
+    food.x = x;
+    food.y = y;
 }
 
 //handles touches
@@ -217,7 +223,7 @@
     }
     
     //check if the snake head found some food
-    if (currentX == [food x] && currentY == [food y])
+    if (currentX == food.x && currentY == food.y)
     {
         //adds a new snake piece to the end of the snake
         switch ([snakePiece[snakeLength - 1] reportDirection]) 
@@ -252,7 +258,7 @@
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    drawBox([food x] * 10 + 10, [food y] * 10 + 170, 10, 10, 255, 0, 0, 255);
+    drawBox(food.x * 10 + 10, food.y * 10 + 170, 10, 10, 255, 0, 0, 255);
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);

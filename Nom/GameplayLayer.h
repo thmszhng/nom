@@ -36,6 +36,8 @@
 }
 
 -(id) init;
+-(void) dealloc;
+
 -(void) update: (ccTime) deltaTime;
 -(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum Direction) direction;
 -(void) moveFood;

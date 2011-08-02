@@ -9,15 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Vector : NSObject {
-    //info
-    int _x;
-    int _y;
+    @private int x;
+    @private int y;
 }
 
--(void) setX: (int) n;
--(void) setY: (int) n;
-
--(int) x;
--(int) y;
+@property (readwrite, assign) int x;
+@property (readwrite, assign) int y;
 
 @end

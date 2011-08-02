@@ -9,24 +9,8 @@
 #import "Vector.h"
 
 @implementation Vector
--(void) setX: (int) n
-{
-    _x = n;
-}
 
--(void) setY: (int) n
-{
-    _y = n;
-}
-
--(int) x
-{
-    return _x;
-}
-
--(int) y
-{
-    return _y;
-}
+@synthesize x;
+@synthesize y;
 
 @end
