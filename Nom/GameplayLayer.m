@@ -50,6 +50,10 @@
 -(void) dealloc
 {
     [food release];
+    while (snakeLength--)
+    {
+        [snakePiece[snakeLength] release];
+    }
     [super dealloc];
 }
 
