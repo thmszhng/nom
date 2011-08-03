@@ -817,28 +817,20 @@
 		66424FBE13DE40A700CCCCCB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				66EE3B7213E05E540040ED20 /* MainMenu */,
+				66EE3B7213E05E540040ED20 /* MainMenuScene */,
 				66EE3B7513E05E710040ED20 /* GameScene */,
-				66EE3B7413E05E6B0040ED20 /* Credits */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
 		};
-		66EE3B7213E05E540040ED20 /* MainMenu */ = {
+		66EE3B7213E05E540040ED20 /* MainMenuScene */ = {
 			isa = PBXGroup;
 			children = (
 				66EE3B7713E05EE90040ED20 /* MainMenuScene.h */,
 				66EE3B7813E05EE90040ED20 /* MainMenuScene.m */,
 				66EE3B7A13E05EF90040ED20 /* Layers */,
 			);
-			name = MainMenu;
-			sourceTree = "<group>";
-		};
-		66EE3B7413E05E6B0040ED20 /* Credits */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Credits;
+			name = MainMenuScene;
 			sourceTree = "<group>";
 		};
 		66EE3B7513E05E710040ED20 /* GameScene */ = {

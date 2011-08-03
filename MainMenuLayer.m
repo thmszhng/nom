@@ -2,8 +2,8 @@
 //  MainMenuLayer.m
 //  Nom
 //
-//  Created by Qian Zhang on 11-07-27.
-//  Copyright 2011 Cisco. All rights reserved.
+//  Created on 11-07-27.
+//  Copyright Thomas Zhang, Geoffry Song, Eddy Gao. All rights reserved.
 //
 
 #import "MainMenuLayer.h"

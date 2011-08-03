@@ -2,8 +2,8 @@
 //  GameConfig.h
 //  Nom
 //
-//  Created by Qian Zhang on 11-07-25.
-//  Copyright Cisco 2011. All rights reserved.
+//  Created on 11-07-25.
+//  Copyright Thomas Zhang, Geoffry Song, Eddy Gao. All rights reserved.
 //
 
 #ifndef __GAME_CONFIG_H
