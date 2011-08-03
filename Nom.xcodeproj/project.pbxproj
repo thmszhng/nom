@@ -126,7 +126,6 @@
 		66424FA313DE3EDA00CCCCCB /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */; };
 		66424FA413DE3EDA00CCCCCB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FA213DE3EDA00CCCCCB /* GameScene.m */; };
 		66424FAE13DE3F2500CCCCCB /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 66424FA713DE3F2500CCCCCB /* Control-hd.png */; };
-		66424FC713DE424B00CCCCCB /* SnakeSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FC613DE424A00CCCCCB /* SnakeSegment.m */; };
 		665CD49313DFB5390097024F /* Control.png in Resources */ = {isa = PBXBuildFile; fileRef = 665CD49213DFB5390097024F /* Control.png */; };
 		6667A39E13DFB02E00CB94B7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6667A39D13DFB02E00CB94B7 /* Icon@2x.png */; };
 		6667A3A013DFB15900CB94B7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6667A39F13DFB15800CB94B7 /* Icon.png */; };
@@ -382,8 +381,6 @@
 		66424FA113DE3EDA00CCCCCB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Nom/GameScene.h; sourceTree = "<group>"; };
 		66424FA213DE3EDA00CCCCCB /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Nom/GameScene.m; sourceTree = "<group>"; };
 		66424FA713DE3F2500CCCCCB /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
-		66424FC513DE424A00CCCCCB /* SnakeSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeSegment.h; sourceTree = "<group>"; };
-		66424FC613DE424A00CCCCCB /* SnakeSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeSegment.m; sourceTree = "<group>"; };
 		665CD49213DFB5390097024F /* Control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Control.png; sourceTree = "<group>"; };
 		6667A39D13DFB02E00CB94B7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		6667A39F13DFB15800CB94B7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
@@ -806,8 +803,6 @@
 		66424FBB13DE409A00CCCCCB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				66424FC513DE424A00CCCCCB /* SnakeSegment.h */,
-				66424FC613DE424A00CCCCCB /* SnakeSegment.m */,
 				66347C6513DF93D5000B80CF /* Vector.h */,
 				66347C6613DF93D6000B80CF /* Vector.m */,
 				5F2C339013E6534300D4B5F7 /* Render.h */,
@@ -1065,7 +1060,6 @@
 				66424F9E13DE3ED100CCCCCB /* BackgroundLayer.m in Sources */,
 				66424FA313DE3EDA00CCCCCB /* GameplayLayer.m in Sources */,
 				66424FA413DE3EDA00CCCCCB /* GameScene.m in Sources */,
-				66424FC713DE424B00CCCCCB /* SnakeSegment.m in Sources */,
 				66347C6713DF93D6000B80CF /* Vector.m in Sources */,
 				66FE35A813E04FEB00CD333E /* GameManager.m in Sources */,
 				66EE3B7913E05EE90040ED20 /* MainMenuScene.m in Sources */,

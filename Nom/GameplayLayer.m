@@ -15,6 +15,18 @@
 // #define SPEED_BOOST(x) ((x) * 0.95)
 // #define SPEED_BOOST(x) powf(powf(x, -1./1.5)+0.1, -1.5)
 
+
+static const int dirX[4] = {0, 0, -1, 1};
+static const int dirY[4] = {1, -1, 0, 0};
+
+void wrap(Vector *pos)
+{
+    while (pos.x < 0) pos.x += 30;
+    while (pos.x >= 30) pos.x -= 30;
+    while (pos.y < 0) pos.y += 30;
+    while (pos.y >= 30) pos.y -= 30;
+}
+
 @implementation GameplayLayer
 -(id) init
 {
@@ -23,19 +35,17 @@
     {
         //enable touches
         self.isTouchEnabled = YES;
+        trackTouch = NO;
         
         //initialize game
-        accumulatedTime = 0;
-        speed = INITIAL_SPEED;
+        speed = accumulatedTime = INITIAL_SPEED;
         gameOver = NO;
-        snakeLength = 4;
         
         //initialize snake
-        [self initNewSnakeSection: 0: 3: 29: right];
-        [self initNewSnakeSection: 1: 2: 29: right];
-        [self initNewSnakeSection: 2: 1: 29: right];
-        [self initNewSnakeSection: 3: 0: 29: right];
-        newDirection = right;
+        snakePiece[0] = [[Vector alloc] initWithX: 0 withY: 29];
+        snakeLength = 1;
+        deltaLength = 3;
+        currentDirection = newDirection = NoDirection;
         
         //initialize food
         food = [[Vector alloc] init];
@@ -60,47 +70,51 @@
 //updates the game, 60Hz
 -(void) update: (ccTime) deltaTime
 {
-    if (gameOver == NO)
-    {
-        accumulatedTime += deltaTime;
-        while (accumulatedTime > speed)
-        {
-            accumulatedTime -= speed;
-            
-            [snakePiece[0] setDirection: newDirection];
-
-            for (int i = 0; i < snakeLength; i++)
-            {
-                [self freeCurrentSpot: i];
-                [snakePiece[i] move];
-                
-                //only applies to the head segment
-                if (i == 0)
-                {
-                    [self headChecks];
-                }
-                
-                [self occupyNewSpot: i];
-            }
-            
-            //turns the snake
-            [self turnSnake];
-        }
-    }
-    else
+    if (gameOver)
     {
         [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
+        return;
+    }
+    if (newDirection == NoDirection) return;
+    
+    accumulatedTime += deltaTime;
+    while (accumulatedTime > speed)
+    {
+        accumulatedTime -= speed;
+        
+        currentDirection = newDirection;
+        
+        // keep last element, which will be removed from snakePiece
+        Vector *tail = snakePiece[snakeLength - 1];
+        // advance snake except head
+        for (int i = snakeLength; --i; )
+        {
+            snakePiece[i] = snakePiece[i-1];
+        }
+        // don't allow hitting the tail
+        [self setSpot: tail withValue: 0];
+        // advance head
+        Vector *head = [[Vector alloc] init];
+        head.x = snakePiece[0].x + dirX[currentDirection];
+        head.y = snakePiece[0].y + dirY[currentDirection];
+        wrap(head);
+        [self headChecks: head];
+        [self setSpot: head withValue: 1];
+        snakePiece[0] = head;
+        // lengthen snake as needed
+        if (deltaLength > 0)
+        {
+            --deltaLength;
+            snakePiece[snakeLength++] = tail;
+            [self setSpot: tail withValue: 1];
+        }
+        else
+        {
+            [tail release];
+        }
     }
 }
 
-//adds a new section to the snake
--(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum Direction) direction;
-{
-    snakePiece[n] = [[SnakeSegment alloc] init];
-    [snakePiece[n] setX: x];
-    [snakePiece[n] setY: y];
-    [snakePiece[n] setDirection: direction];
-}
 
 -(void) moveFood
 {
@@ -112,6 +126,7 @@
     
     food.x = x;
     food.y = y;
+    [self setSpot: food withValue: 2];
 }
 
 //handles touches
@@ -144,8 +159,6 @@
 -(void) changeHeadDirection: (CGPoint) touchCoord
 {
     if (!trackTouch) return;
-    
-    enum Direction currentDirection = [snakePiece[0] reportDirection];
     
     int x = touchCoord.x - 160;
     int y = touchCoord.y - 85;
@@ -188,72 +201,34 @@
     }
 }
 
-//sets the last space the snake segment was in to "unoccupied"
--(void) freeCurrentSpot: (int) n
+// sets the given space in gridInfo
+-(void) setSpot: (Vector *) pos withValue: (int) n
 {
-    gridInfo[[snakePiece[n] reportX]][[snakePiece[n] reportY]] = 0;
-}
-
-//sets the space the snake segment is going to move into to "occupied"
--(void) occupyNewSpot: (int) n
-{
-    gridInfo[[snakePiece[n] reportX]][[snakePiece[n] reportY]] = 1;
-}
-
-//makes sure the snake turns
--(void) turnSnake
-{
-    int n;
-    
-    for (n = (snakeLength - 1); n >= 1; n--)
-    {
-        if ([snakePiece[n] reportDirection] != [snakePiece[n - 1] reportDirection])
-        {
-            [snakePiece[n] setDirection: [snakePiece[n - 1] reportDirection]];
-        }
-    }
+    gridInfo[pos.x][pos.y] = n;
 }
 
 //checks lose condition and if snake head has hit food
--(void) headChecks
-{    
-    //check if the snake head hit itself
-    int currentX = [snakePiece[0] reportX];
-    int currentY = [snakePiece[0] reportY];
-
-    if (gridInfo[currentX][currentY] == 1)
+-(void) headChecks: (Vector *) head
+{
+    switch (gridInfo[head.x][head.y])
     {
-        gameOver = YES;
-    }
-    
-    //check if the snake head found some food
-    if (currentX == food.x && currentY == food.y)
-    {
-        //adds a new snake piece to the end of the snake
-        switch ([snakePiece[snakeLength - 1] reportDirection]) 
-        {
-            case up:
-                [self initNewSnakeSection: (snakeLength): [snakePiece[snakeLength - 1] reportX] :([snakePiece[snakeLength - 1] reportY] - 1): up];
-                break;
-                
-            case down:
-                [self initNewSnakeSection: (snakeLength): [snakePiece[snakeLength - 1] reportX] :([snakePiece[snakeLength - 1] reportY] + 1): down];
-                break;
-                
-            case left:
-                [self initNewSnakeSection: (snakeLength): ([snakePiece[snakeLength - 1] reportX] + 1) :[snakePiece[snakeLength - 1] reportY]: left];
-                break;
-                
-            case right:
-                [self initNewSnakeSection: (snakeLength): ([snakePiece[snakeLength - 1] reportX] - 1) :[snakePiece[snakeLength - 1] reportY]: right];
-                break;
-        }
-        
-        snakeLength++;
-        speed = SPEED_BOOST(speed);
-        
-        //spawns a new food
-        [self moveFood];
+        case 1:
+            gameOver = YES;
+            break;
+            
+        //check if the snake head found some food
+        case 2:
+            // adds a new snake piece to the end of the snake
+            ++deltaLength;
+            
+            // advancement
+            ++score;
+            // speed ramp
+            speed = SPEED_BOOST(speed);
+            
+            // spawns a new food
+            [self moveFood];
+            break;
     }
 }
 
@@ -267,14 +242,23 @@
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
     
-    enum Direction lastdir = -1;
+    enum Direction lastdir = NoDirection;
     for (int i = snakeLength; i--; )
     {
-        int x = [snakePiece[i] reportX];
-        int y = [snakePiece[i] reportY];
-        int dir = [snakePiece[i] reportDirection];
-        if (i == 0) dir = -1;
-        drawSnake(x, y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
+        Vector *piece = snakePiece[i];
+        enum Direction dir = NoDirection;
+        if (i != 0)
+        {
+            Vector *after = snakePiece[i - 1];
+            if (abs(piece.x - after.x) + abs(piece.y - after.y) == 1)
+            {
+                if (after.x - piece.x == 1) dir = right;
+                if (after.x - piece.x == -1) dir = left;
+                if (after.y - piece.y == 1) dir = up;
+                if (after.y - piece.y == -1) dir = down;
+            }
+        }
+        drawSnake(piece.x, piece.y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
         lastdir = dir;
     }
 }

@@ -13,6 +13,7 @@
     @private int y;
 }
 
+-(id) initWithX: (int) newX withY: (int) newY;
 @property (readwrite, assign) int x;
 @property (readwrite, assign) int y;
 

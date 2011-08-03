@@ -10,6 +10,13 @@
 
 @implementation Vector
 
+-(id) initWithX: (int) newX withY: (int) newY
+{
+    x = newX;
+    y = newY;
+    return self;
+}
+
 @synthesize x;
 @synthesize y;
 

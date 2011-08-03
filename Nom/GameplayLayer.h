@@ -8,21 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "SnakeSegment.h"
 #import "Vector.h"
 #import "GameManager.h"
 #import "Constants.h"
 
+enum Direction {NoDirection = -1, up = 0, down, left, right};
+
 @interface GameplayLayer : CCLayer
 {
     // snake
-    id snakePiece[900];
+    Vector* snakePiece[900];
     int snakeLength;
+    int deltaLength;
+    enum Direction currentDirection;
     
     // food
     Vector* food;
     
     // game variables
+    int score;
     ccTime accumulatedTime;
     ccTime speed;
     
@@ -39,7 +43,6 @@
 -(void) dealloc;
 
 -(void) update: (ccTime) deltaTime;
--(void) initNewSnakeSection: (int) n: (int) x: (int) y: (enum Direction) direction;
 -(void) moveFood;
 
 //handles touches
@@ -48,12 +51,10 @@
 
 //related to moving the snake
 -(void) changeHeadDirection: (CGPoint) point;
--(void) freeCurrentSpot: (int) n;
--(void) occupyNewSpot: (int) n;
--(void) turnSnake;
+-(void) setSpot: (Vector *) pos withValue: (int) n;
 
 //related to winning and losing
--(void) headChecks;
+-(void) headChecks: (Vector *) head;
 
 -(void) draw;
 
