@@ -42,7 +42,7 @@ void wrap(Vector *pos)
         gameOver = NO;
         
         //initialize snake
-        snakePiece[0] = [[Vector alloc] initWithX: 0 withY: 29];
+        snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
         snakeLength = 1;
         deltaLength = 3;
         currentDirection = newDirection = NoDirection;
