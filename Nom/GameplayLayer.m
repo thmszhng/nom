@@ -86,6 +86,8 @@ void wrap(Vector *pos)
         
         // keep last element, which will be removed from snakePiece
         Vector *tail = snakePiece[snakeLength - 1];
+        // temporarily set a value to stop collisions
+        [self setSpot: tail withValue: 3];
         // advance snake except head
         for (int i = snakeLength; --i; )
         {
@@ -110,7 +112,9 @@ void wrap(Vector *pos)
         }
         else
         {
+            [self setSpot: tail withValue: 0];
             [tail release];
+
         }
     }
 }
