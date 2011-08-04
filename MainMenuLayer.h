@@ -13,8 +13,10 @@
 
 @interface MainMenuLayer : CCLayer 
 {
-    CCMenu *mainMenu;
-    CCMenu *sceneSelectMenu;
+
 }
+
+-(id) init;
+-(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event;
 
 @end

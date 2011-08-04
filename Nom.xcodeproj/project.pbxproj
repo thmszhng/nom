@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E708DF313EA50EE00E0515A /* Nom-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E708DF113EA50EE00E0515A /* Nom-hd.png */; };
+		2E708DF413EA50EE00E0515A /* Nom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E708DF213EA50EE00E0515A /* Nom.png */; };
 		2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */; };
 		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
@@ -140,6 +142,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E708DF113EA50EE00E0515A /* Nom-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nom-hd.png"; sourceTree = "<group>"; };
+		2E708DF213EA50EE00E0515A /* Nom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nom.png; sourceTree = "<group>"; };
 		2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
 		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Render.h; sourceTree = "<group>"; };
 		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E708DF113EA50EE00E0515A /* Nom-hd.png */,
+				2E708DF213EA50EE00E0515A /* Nom.png */,
 				5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */,
 				66EE3B8613E3553A0040ED20 /* MainMenuBackground.png */,
 				66EE3B8713E3553A0040ED20 /* PlayGameButtonNormal.png */,
@@ -860,10 +866,10 @@
 		66EE3B7A13E05EF90040ED20 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				66EE3B7B13E05F0B0040ED20 /* MainMenuLayer.h */,
-				66EE3B7C13E05F0B0040ED20 /* MainMenuLayer.m */,
 				5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */,
 				5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */,
+				66EE3B7B13E05F0B0040ED20 /* MainMenuLayer.h */,
+				66EE3B7C13E05F0B0040ED20 /* MainMenuLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -951,6 +957,8 @@
 				66EE3B8B13E3553A0040ED20 /* PlayGameButtonSelected.png in Resources */,
 				5F918B1A13E52A720098AD42 /* MainMenuBackground-hd.png in Resources */,
 				2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */,
+				2E708DF313EA50EE00E0515A /* Nom-hd.png in Resources */,
+				2E708DF413EA50EE00E0515A /* Nom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

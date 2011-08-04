@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "MainMenuLayer.h"
+#import "AnimationLayer.h"
 
 @interface MainMenuScene : CCScene 
 {
     MainMenuLayer *mainMenuLayer;
+    AnimationLayer *animationLayer;
 }
 
 @end

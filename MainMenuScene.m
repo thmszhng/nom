@@ -16,8 +16,13 @@
     
     if (self != nil)
     {
+        // animation layer
+        animationLayer = [AnimationLayer node];
+        [self addChild: animationLayer z:0];
+ 
+        //main menu layer
         mainMenuLayer = [MainMenuLayer node];
-        [self addChild: mainMenuLayer];
+        [self addChild: mainMenuLayer z:5];
     }
     
     return self;

@@ -7,7 +7,6 @@
 //
 
 #import "GameplayLayer.h"
-#import "Constants.h"
 #import "Render.h"
 
 #define INITIAL_SPEED (0.25)
