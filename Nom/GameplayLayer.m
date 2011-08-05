@@ -42,6 +42,7 @@ void wrap(Vector *pos)
         
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
+        [self setSpot: snakePiece[0] withValue: 1];
         snakeLength = 1;
         deltaLength = 3;
         currentDirection = newDirection = NoDirection;
