@@ -38,7 +38,7 @@ void wrap(Vector *pos)
         
         //initialize game
         speed = accumulatedTime = INITIAL_SPEED;
-        gameOver = NO;
+        [GameManager sharedGameManager].isGameOver = NO;
         
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
@@ -69,11 +69,12 @@ void wrap(Vector *pos)
 //updates the game, 60Hz
 -(void) update: (ccTime) deltaTime
 {
-    if (gameOver)
+    if ([GameManager sharedGameManager].isGameOver)
     {
         [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
         return;
     }
+    
     if (newDirection == NoDirection) return;
     
     accumulatedTime += deltaTime;
@@ -85,15 +86,19 @@ void wrap(Vector *pos)
         
         // keep last element, which will be removed from snakePiece
         Vector *tail = snakePiece[snakeLength - 1];
+        
         // temporarily set a value to stop collisions
         [self setSpot: tail withValue: 3];
+        
         // advance snake except head
         for (int i = snakeLength; --i; )
         {
             snakePiece[i] = snakePiece[i-1];
         }
+        
         // don't allow hitting the tail
         [self setSpot: tail withValue: 0];
+        
         // advance head
         Vector *head = [[Vector alloc] init];
         head.x = snakePiece[0].x + dirX[currentDirection];
@@ -102,6 +107,7 @@ void wrap(Vector *pos)
         [self headChecks: head];
         [self setSpot: head withValue: 1];
         snakePiece[0] = head;
+        
         // lengthen snake as needed
         if (deltaLength > 0)
         {
@@ -216,7 +222,8 @@ void wrap(Vector *pos)
     switch (gridInfo[head.x][head.y])
     {
         case 1:
-            gameOver = YES;
+            
+            [GameManager sharedGameManager].isGameOver = YES;
             break;
             
         //check if the snake head found some food
@@ -226,6 +233,7 @@ void wrap(Vector *pos)
             
             // advancement
             ++score;
+            
             // speed ramp
             speed = SPEED_BOOST(speed);
             

@@ -31,8 +31,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     ccTime speed;
     
     enum Direction newDirection;
-    
-    BOOL gameOver;
+
     int gridInfo[30][30];
     
     // controls

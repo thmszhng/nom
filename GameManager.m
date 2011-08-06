@@ -16,9 +16,11 @@
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;
+
 @synthesize isMusicON;
 @synthesize isSoundEffectsON;
 @synthesize isGameOver;
+@synthesize isGameRunning;
 
 +(GameManager*) sharedGameManager
 {

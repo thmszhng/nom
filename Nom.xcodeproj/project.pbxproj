@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E708DF313EA50EE00E0515A /* Nom-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E708DF113EA50EE00E0515A /* Nom-hd.png */; };
 		2E708DF413EA50EE00E0515A /* Nom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E708DF213EA50EE00E0515A /* Nom.png */; };
+		2EA0040313EDAE4B001ED2E0 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA0040213EDAE4A001ED2E0 /* PauseLayer.m */; };
 		2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */; };
 		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
@@ -144,6 +145,8 @@
 /* Begin PBXFileReference section */
 		2E708DF113EA50EE00E0515A /* Nom-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nom-hd.png"; sourceTree = "<group>"; };
 		2E708DF213EA50EE00E0515A /* Nom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nom.png; sourceTree = "<group>"; };
+		2EA0040113EDAE49001ED2E0 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
+		2EA0040213EDAE4A001ED2E0 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
 		2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
 		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Render.h; sourceTree = "<group>"; };
 		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
@@ -859,6 +862,8 @@
 				66424F9D13DE3ED100CCCCCB /* BackgroundLayer.m */,
 				66424F9F13DE3EDA00CCCCCB /* GameplayLayer.h */,
 				66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */,
+				2EA0040113EDAE49001ED2E0 /* PauseLayer.h */,
+				2EA0040213EDAE4A001ED2E0 /* PauseLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -1075,6 +1080,7 @@
 				66EE3B7D13E05F0B0040ED20 /* MainMenuLayer.m in Sources */,
 				5F2C339213E6537900D4B5F7 /* Render.m in Sources */,
 				5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */,
+				2EA0040313EDAE4B001ED2E0 /* PauseLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

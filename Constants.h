@@ -12,7 +12,7 @@
 typedef enum 
 { 
     kNoSceneUninitialized = 0, 
-    kMainMenuScene = 1, 
+    kMainMenuScene = 1,
     kGameScene = 101,
 } SceneTypes;
 
