@@ -30,7 +30,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     int score;
     ccTime accumulatedTime;
     ccTime speed;
-    
+    CCLabelTTF *scoreText;
     enum Direction newDirection;
 
     int gridInfo[30][30];

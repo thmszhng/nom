@@ -50,6 +50,10 @@ void wrap(Vector *pos)
         //initialize food
         food = [[Vector alloc] init];
         [self moveFood];
+        scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat:@"Score: %d", score] fontName: @"HelveticaNeue" fontSize: 20];
+        scoreText.color = ccc3(0, 0, 0);
+        [scoreText setPosition: ccp(50,150)];
+        [self addChild: scoreText];
     }
     
     [self schedule: @selector(update:)];
@@ -267,6 +271,7 @@ void wrap(Vector *pos)
     gridInfo[pos.x][pos.y] = n;
 }
 
+
 //checks lose condition and if snake head has hit food
 -(void) headChecks: (Vector *) head
 {
@@ -284,7 +289,7 @@ void wrap(Vector *pos)
             
             // advancement
             ++score;
-            
+            [scoreText setString:[NSString stringWithFormat:@"Score: %d", score]];
             // speed ramp
             speed = SPEED_BOOST(speed);
             
@@ -323,5 +328,7 @@ void wrap(Vector *pos)
         drawSnake(piece.x, piece.y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
         lastdir = dir;
     }
+
+
 }
 @end
