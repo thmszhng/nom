@@ -51,7 +51,7 @@ void wrap(Vector *pos)
         [self moveFood];
     }
     
-    [self scheduleUpdate];
+    [self schedule: @selector(update:)];
     
     return self;
 }
@@ -64,6 +64,49 @@ void wrap(Vector *pos)
         [snakePiece[snakeLength] release];
     }
     [super dealloc];
+}
+
+//pauses the game
+-(void) pauseGame
+{
+    //stops GameplayLayer from updating
+    //[self unschedule: @selector(update:)];
+    
+    //creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
+    ccColor4B c = {100, 100, 0, 100};
+    PauseLayer * p = [[[PauseLayer alloc] initWithColor: c]autorelease];
+    [self.parent addChild: p z: 10];
+    [self onExit];
+    
+}
+
+//resumes the game when user dismisses PauseLayer
+-(void) resumeSchedulerAndActions
+{
+    if(![GameManager sharedGameManager].isGamePaused)
+    {
+        return;
+    }
+    
+    [GameManager sharedGameManager].isGamePaused = NO;
+    [self onEnter];
+}
+
+-(void) onExit
+{
+    if(![GameManager sharedGameManager].isGamePaused)
+    {
+        [GameManager sharedGameManager].isGamePaused = YES;
+        [super onExit];
+    }
+}
+
+-(void) onEnter
+{
+    if(![GameManager sharedGameManager].isGamePaused)
+    {
+        [super onEnter];
+    }
 }
 
 //updates the game, 60Hz
@@ -149,6 +192,13 @@ void wrap(Vector *pos)
     int x = touchCoord.x - 160;
     int y = touchCoord.y - 85;
     trackTouch = (x*x + y*y < 16000);
+    
+    //determine whether or not to pause the game
+    CGRect pauseGameArea = (CGRectMake (175, 5, 300, 300));
+    if(CGRectContainsPoint(pauseGameArea, touchCoord))
+    {
+        [self pauseGame];
+    }
     
     [self changeHeadDirection: touchCoord];
 }

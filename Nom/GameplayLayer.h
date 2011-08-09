@@ -11,6 +11,7 @@
 #import "Vector.h"
 #import "GameManager.h"
 #import "Constants.h"
+#import "PauseLayer.h"
 
 enum Direction {NoDirection = -1, up = 0, down, left, right};
 

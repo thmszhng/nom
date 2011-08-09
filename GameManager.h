@@ -20,7 +20,7 @@
 @property (readwrite) BOOL isMusicON;
 @property (readwrite) BOOL isSoundEffectsON; 
 @property (readwrite) BOOL isGameOver;
-@property (readwrite) BOOL isGameRunning;
+@property (readwrite) BOOL isGamePaused;
 
 +(GameManager*) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID; 
