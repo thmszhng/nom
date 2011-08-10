@@ -7,6 +7,7 @@
 //
 
 #import "PauseLayer.h"
+#import "GameplayLayer.h"
 
 @implementation PauseLayer
 

@@ -12,9 +12,9 @@
 		2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */; };
 		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
+		5F2C33B613F33D5200D4B5F7 /* PauseOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F2C33B513F33D5200D4B5F7 /* PauseOverlay.png */; };
 		5F918B1A13E52A720098AD42 /* MainMenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */; };
 		5FC41C2613EE144E00EBDC13 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC41C2513EE144D00EBDC13 /* PauseLayer.m */; };
-		5FF18D0713EF7DC7000BFB2E /* PauseOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FF18D0613EF7DC7000BFB2E /* PauseOverlay.png */; };
 		66347C6713DF93D6000B80CF /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = 66347C6613DF93D6000B80CF /* Vector.m */; };
 		66424E2313DE3EA800CCCCCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2213DE3EA800CCCCCB /* QuartzCore.framework */; };
 		66424E2513DE3EA800CCCCCB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2413DE3EA800CCCCCB /* OpenGLES.framework */; };
@@ -151,10 +151,10 @@
 		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
 		5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationLayer.h; sourceTree = "<group>"; };
 		5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationLayer.m; sourceTree = "<group>"; };
+		5F2C33B513F33D5200D4B5F7 /* PauseOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseOverlay.png; sourceTree = "<group>"; };
 		5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenuBackground-hd.png"; sourceTree = "<group>"; };
 		5FC41C2413EE144D00EBDC13 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		5FC41C2513EE144D00EBDC13 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
-		5FF18D0613EF7DC7000BFB2E /* PauseOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PauseOverlay.png; path = "../../../Dropbox/Shared Folders/Shared with Eddy, Geoffry/PauseOverlay.png"; sourceTree = "<group>"; };
 		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		66347C6613DF93D6000B80CF /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 		66424E1E13DE3EA800CCCCCB /* Nom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,7 +483,7 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5FF18D0613EF7DC7000BFB2E /* PauseOverlay.png */,
+				5F2C33B513F33D5200D4B5F7 /* PauseOverlay.png */,
 				2E708DF113EA50EE00E0515A /* Nom-hd.png */,
 				2E708DF213EA50EE00E0515A /* Nom.png */,
 				5F918B1913E52A720098AD42 /* MainMenuBackground-hd.png */,
@@ -967,7 +967,7 @@
 				2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */,
 				2E708DF313EA50EE00E0515A /* Nom-hd.png in Resources */,
 				2E708DF413EA50EE00E0515A /* Nom.png in Resources */,
-				5FF18D0713EF7DC7000BFB2E /* PauseOverlay.png in Resources */,
+				5F2C33B613F33D5200D4B5F7 /* PauseOverlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
