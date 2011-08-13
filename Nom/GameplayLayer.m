@@ -39,6 +39,7 @@ void wrap(Vector *pos)
         //initialize game
         speed = accumulatedTime = INITIAL_SPEED;
         [GameManager sharedGameManager].isGameOver = NO;
+        [GameManager sharedGameManager].isGamePaused = NO;
         
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
@@ -54,9 +55,9 @@ void wrap(Vector *pos)
         scoreText.color = ccc3(0, 0, 0);
         [scoreText setPosition: ccp(50,150)];
         [self addChild: scoreText];
+        
+        [self schedule: @selector(update:)];
     }
-    
-    [self schedule: @selector(update:)];
     
     return self;
 }
@@ -79,7 +80,7 @@ void wrap(Vector *pos)
     
     //creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     ccColor4B c = {100, 100, 0, 100};
-    PauseLayer * p = [[[PauseLayer alloc] initWithColor: c]autorelease];
+    PauseLayer * p = [[[PauseLayer alloc] initWithColor: c] autorelease];
     [self.parent addChild: p z: 10];
     [self onExit];
     
@@ -88,7 +89,7 @@ void wrap(Vector *pos)
 //resumes the game when user dismisses PauseLayer
 -(void) resumeSchedulerAndActions
 {
-    if(![GameManager sharedGameManager].isGamePaused)
+    if (![GameManager sharedGameManager].isGamePaused)
     {
         return;
     }
@@ -99,7 +100,7 @@ void wrap(Vector *pos)
 
 -(void) onExit
 {
-    if(![GameManager sharedGameManager].isGamePaused)
+    if (![GameManager sharedGameManager].isGamePaused)
     {
         [GameManager sharedGameManager].isGamePaused = YES;
         [super onExit];
@@ -108,7 +109,7 @@ void wrap(Vector *pos)
 
 -(void) onEnter
 {
-    if(![GameManager sharedGameManager].isGamePaused)
+    if (![GameManager sharedGameManager].isGamePaused)
     {
         [super onEnter];
     }
@@ -194,21 +195,23 @@ void wrap(Vector *pos)
     {
 		touchCoord = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
     }
-    int x = touchCoord.x - 160;
-    int y = touchCoord.y - 85;
-    trackTouch = (x*x + y*y < 16000);
-    
-    //determine whether or not to pause the game
-    CGRect pauseGameArea = (CGRectMake (175, 5, 300, 300));
-    if(CGRectContainsPoint(pauseGameArea, touchCoord))
+    CGRect pauseGameArea = CGRectMake (0, 200, 320, 280);
+    // determine whether or not to pause the game
+    if (CGRectContainsPoint(pauseGameArea, touchCoord))
     {
         [self pauseGame];
     }
-    
-    [self changeHeadDirection: touchCoord];
+    else
+    {
+        int x = touchCoord.x - 160;
+        int y = touchCoord.y - 85;
+        trackTouch = (x*x + y*y < 16000);
+        
+        [self changeHeadDirection: touchCoord];
+    }
 }
  
--(void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+-(void) ccTouchesMoved: (NSSet *) touches withEvent: (UIEvent *) event
 {
     CGPoint touchCoord;
 	for (UITouch *touch in touches)

@@ -50,6 +50,7 @@ static GameManager* _sharedGameManager = nil;
         isMusicON = YES;
         isSoundEffectsON = YES;
         isGameOver = NO;
+        isGamePaused = NO;
         currentScene = kNoSceneUninitialized;
     }
     
