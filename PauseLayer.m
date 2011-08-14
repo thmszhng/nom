@@ -36,7 +36,7 @@
         location = [[CCDirector sharedDirector] convertToGL: location];
         
         GameplayLayer * gl = (GameplayLayer *)[self.parent getChildByTag:kGameScene];
-        [gl resume];
+        [gl resumeSchedulerAndActions];
         
         [self.parent removeChild:self cleanup:YES];
     }

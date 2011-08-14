@@ -55,8 +55,6 @@ void wrap(Vector *pos)
         scoreText.color = ccc3(0, 0, 0);
         [scoreText setPosition: ccp(50,150)];
         [self addChild: scoreText];
-        
-        [self schedule: @selector(update:)];
     }
     
     return self;
@@ -74,10 +72,7 @@ void wrap(Vector *pos)
 
 //pauses the game
 -(void) pauseGame
-{
-    //stops GameplayLayer from updating
-    //[self unschedule: @selector(update:)];
-    
+{    
     //creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     ccColor4B c = {100, 100, 0, 100};
     PauseLayer * p = [[[PauseLayer alloc] initWithColor: c] autorelease];
@@ -112,6 +107,7 @@ void wrap(Vector *pos)
     if (![GameManager sharedGameManager].isGamePaused)
     {
         [super onEnter];
+        [self scheduleUpdate];
     }
 }
 
