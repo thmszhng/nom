@@ -42,6 +42,10 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 -(id) init;
 -(void) dealloc;
 
+-(void) pauseGame;
+-(void) onExit;
+-(void) onEnter;
+
 -(void) update: (ccTime) deltaTime;
 -(void) moveFood;
 

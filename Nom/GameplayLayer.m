@@ -51,7 +51,7 @@ void wrap(Vector *pos)
         //initialize food
         food = [[Vector alloc] init];
         [self moveFood];
-        scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat:@"Score: %d", score] fontName: @"HelveticaNeue" fontSize: 20];
+        scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat: @"Score: %d", score] fontName: @"HelveticaNeue" fontSize: 20];
         scoreText.color = ccc3(0, 0, 0);
         [scoreText setPosition: ccp(50,150)];
         [self addChild: scoreText];
@@ -272,7 +272,7 @@ void wrap(Vector *pos)
             
             // advancement
             ++score;
-            [scoreText setString:[NSString stringWithFormat:@"Score: %d", score]];
+            [scoreText setString:[NSString stringWithFormat: @"Score: %d", score]];
             // speed ramp
             speed = SPEED_BOOST(speed);
             
@@ -311,7 +311,5 @@ void wrap(Vector *pos)
         drawSnake(piece.x, piece.y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
         lastdir = dir;
     }
-
-
 }
 @end
