@@ -21,4 +21,11 @@ typedef enum
     kLinkTypeDeveloperSite,
 } LinkTypes;
 
+typedef enum
+{
+    kBackgroundLayer = 200,
+    kGameplayLayer,
+    kPauseLayer
+} GameSceneLayers;
+
 extern int haveRetina;

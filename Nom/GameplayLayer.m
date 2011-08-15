@@ -55,6 +55,8 @@ void wrap(Vector *pos)
         scoreText.color = ccc3(0, 0, 0);
         [scoreText setPosition: ccp(50,150)];
         [self addChild: scoreText];
+        
+        [self scheduleUpdate];
     }
     
     return self;
@@ -76,39 +78,21 @@ void wrap(Vector *pos)
     //creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     ccColor4B c = {100, 100, 0, 100};
     PauseLayer * p = [[[PauseLayer alloc] initWithColor: c] autorelease];
-    [self.parent addChild: p z: 10];
+    [self.parent addChild: p z: 10 tag: kPauseLayer];
+    
     [self onExit];
-    
-}
-
-//resumes the game when user dismisses PauseLayer
--(void) resumeSchedulerAndActions
-{
-    if (![GameManager sharedGameManager].isGamePaused)
-    {
-        return;
-    }
-    
-    [GameManager sharedGameManager].isGamePaused = NO;
-    [self onEnter];
 }
 
 -(void) onExit
 {
-    if (![GameManager sharedGameManager].isGamePaused)
-    {
-        [GameManager sharedGameManager].isGamePaused = YES;
-        [super onExit];
-    }
+    [GameManager sharedGameManager].isGamePaused = YES;
+    [super onExit];
 }
 
 -(void) onEnter
 {
-    if (![GameManager sharedGameManager].isGamePaused)
-    {
-        [super onEnter];
-        [self scheduleUpdate];
-    }
+    [GameManager sharedGameManager].isGamePaused = NO;
+    [super onEnter];
 }
 
 //updates the game, 60Hz
