@@ -8,35 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Vector.h"
+#import "Game.h"
 #import "GameManager.h"
 #import "Constants.h"
 #import "PauseLayer.h"
 
-enum Direction {NoDirection = -1, up = 0, down, left, right};
-
 @interface GameplayLayer : CCLayer
-{
-    // snake
-    Vector* snakePiece[900];
-    int snakeLength;
-    int deltaLength;
-    enum Direction currentDirection;
-    
-    // food
-    Vector* food;
-    
+{    
     // game variables
-    int score;
+    Game *game;
     ccTime accumulatedTime;
-    ccTime speed;
-    CCLabelTTF *scoreText;
     enum Direction newDirection;
-
-    int gridInfo[30][30];
     
     // controls
     BOOL trackTouch;
+    CCLabelTTF *scoreText;
 }
 
 -(id) init;
@@ -47,7 +33,6 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 -(void) onEnter;
 
 -(void) update: (ccTime) deltaTime;
--(void) moveFood;
 
 //handles touches
 -(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event;
@@ -55,10 +40,6 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 
 //related to moving the snake
 -(void) changeHeadDirection: (CGPoint) point;
--(void) setSpot: (Vector *) pos withValue: (int) n;
-
-//related to winning and losing
--(void) headChecks: (Vector *) head;
 
 -(void) draw;
 

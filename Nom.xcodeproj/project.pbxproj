@@ -10,6 +10,7 @@
 		2E708DF313EA50EE00E0515A /* Nom-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E708DF113EA50EE00E0515A /* Nom-hd.png */; };
 		2E708DF413EA50EE00E0515A /* Nom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E708DF213EA50EE00E0515A /* Nom.png */; };
 		2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */; };
+		5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F0E813FA0E1A00A3EA80 /* Game.m */; };
 		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
 		5F2C33B613F33D5200D4B5F7 /* PauseOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F2C33B513F33D5200D4B5F7 /* PauseOverlay.png */; };
@@ -148,6 +149,9 @@
 		2E708DF113EA50EE00E0515A /* Nom-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nom-hd.png"; sourceTree = "<group>"; };
 		2E708DF213EA50EE00E0515A /* Nom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nom.png; sourceTree = "<group>"; };
 		2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
+		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		5F16F0EA13FA103000A3EA80 /* GameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Render.h; sourceTree = "<group>"; };
 		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
 		5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationLayer.h; sourceTree = "<group>"; };
@@ -828,6 +832,8 @@
 				66347C6613DF93D6000B80CF /* Vector.m */,
 				5F2C339013E6534300D4B5F7 /* Render.h */,
 				5F2C339113E6537900D4B5F7 /* Render.m */,
+				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
+				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 			isa = PBXGroup;
 			children = (
 				66FE35A413E04F2E00CD333E /* Constants.h */,
+				5F16F0EA13FA103000A3EA80 /* GameConstants.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -1089,6 +1096,7 @@
 				5F2C339213E6537900D4B5F7 /* Render.m in Sources */,
 				5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */,
 				5FC41C2613EE144E00EBDC13 /* PauseLayer.m in Sources */,
+				5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
