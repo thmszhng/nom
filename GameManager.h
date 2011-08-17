@@ -24,5 +24,4 @@
 
 +(GameManager*) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID; 
--(void) openSiteWithLinkType: (LinkTypes) linkTypeToOpen;
 @end

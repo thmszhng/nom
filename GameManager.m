@@ -93,19 +93,4 @@ static GameManager* _sharedGameManager = nil;
         [[CCDirector sharedDirector] replaceScene: sceneToRun];
     }
 }
-
-
--(void) openSiteWithLinkType: (LinkTypes) linkTypeToOpen
-{
-    NSURL *urlToOpen = nil;
-    if (linkTypeToOpen == kLinkTypeDeveloperSite)
-    {
-        urlToOpen = [NSURL URLWithString: @"http://www.facebook.com/welcome.to.the.conversation"];
-    }
-    
-    if (![[UIApplication sharedApplication] openURL: urlToOpen])
-    {
-        [self runSceneWithID: kMainMenuScene];
-    }
-}
 @end

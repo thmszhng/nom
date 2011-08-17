@@ -17,11 +17,11 @@
     {
         //Background Layer
         backgroundLayer = [BackgroundLayer node];
-        [self addChild: backgroundLayer z: 0 tag: kBackgroundLayer];
+        [self addChild: backgroundLayer z: 0 tag: kGameSceneBackgroundLayer];
         
         //Gameplay Layer
         gameplayLayer = [GameplayLayer node];
-        [self addChild: gameplayLayer z: 5 tag: kGameplayLayer];
+        [self addChild: gameplayLayer z: 5 tag: kGameSceneGameplayLayer];
     }
     
     return self;

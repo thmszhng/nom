@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameManager.h"
+#import "GameplayLayer.h"
+#import "PauseLayer.h"
+#import "GameManager.h"
 
 @class RootViewController;
 

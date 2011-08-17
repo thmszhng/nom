@@ -13,19 +13,38 @@ typedef enum
 { 
     kNoSceneUninitialized = 0, 
     kMainMenuScene = 1,
+    kGameOptionsScene = 2,
+    kLevelEditorScene = 3,
+    kHelpScene = 4,
     kGameScene = 101,
 } SceneTypes;
 
-typedef enum 
-{ 
-    kLinkTypeDeveloperSite,
-} LinkTypes;
 
 typedef enum
 {
     kBackgroundLayer = 200,
-    kGameplayLayer,
-    kPauseLayer
+} MainMenuSceneLayers;
+
+typedef enum
+{
+    kGameOptionsSceneBackgroundLayer = 300,
+} GameOptionsSceneLayers;
+
+typedef enum
+{
+    kLevelEditorsSceneBackgroundLayer = 400,
+} LevelEditorsSceneLayers;
+
+typedef enum 
+{
+    kHelpSceneBackgroundLayer = 500,
+} HelpSceneLayers;
+
+typedef enum
+{
+    kGameSceneBackgroundLayer = 600,
+    kGameSceneGameplayLayer,
+    kGameScenePauseLayer,
 } GameSceneLayers;
 
 extern int haveRetina;
