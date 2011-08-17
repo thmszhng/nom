@@ -43,7 +43,7 @@ void wrap(Vector *pos)
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
         [self setSpot: snakePiece[0] withValue: 1];
         snakeLength = 1;
-        deltaLength = 3;
+        deltaLength = 4;
         currentDirection = NoDirection;
         
         //initialize food
