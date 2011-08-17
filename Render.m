@@ -1,3 +1,11 @@
+//
+//  Render.m
+//  Nom
+//
+//  Created on 11-08-01.
+//  Copyright Thomas Zhang, Geoffry Song, Eddy Gao. All rights reserved.
+//
+
 #import "Render.h"
 #import "Constants.h"
 

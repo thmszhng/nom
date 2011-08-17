@@ -1,3 +1,11 @@
+//
+//  Render.h
+//  Nom
+//
+//  Created on 11-08-01.
+//  Copyright Thomas Zhang, Geoffry Song, Eddy Gao. All rights reserved.
+//
+
 #import "cocos2d.h"
 
 // takes points
