@@ -10,6 +10,9 @@
 
 @implementation Vector
 
+@synthesize x;
+@synthesize y;
+
 -(id) initWithX: (int) newX withY: (int) newY
 {
     x = newX;
@@ -17,7 +20,14 @@
     return self;
 }
 
-@synthesize x;
-@synthesize y;
+-(id) copyWithZone: (NSZone *) zone
+{
+    return [[Vector allocWithZone: zone] initWithX: x withY: y];
+}
+
+-(BOOL) isEqualTo: (Vector *) other
+{
+    return x == other.x && y == other.y;
+}
 
 @end

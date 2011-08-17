@@ -13,8 +13,12 @@
     @private int y;
 }
 
--(id) initWithX: (int) newX withY: (int) newY;
 @property (readwrite, assign) int x;
 @property (readwrite, assign) int y;
+
+-(id) initWithX: (int) newX withY: (int) newY;
+-(id) copyWithZone: (NSZone *) zone;
+
+-(BOOL) isEqualTo: (Vector *) other;
 
 @end

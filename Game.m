@@ -8,6 +8,8 @@
 
 #import "Game.h"
 #import "GameConstants.h"
+#import "RegularFood.h"
+// TODO: create a class to randomly generate food
 
 static const int dirX[4] = {0, 0, -1, 1};
 static const int dirY[4] = {1, -1, 0, 0};
@@ -25,8 +27,7 @@ void wrap(Vector *pos)
 @synthesize score;
 @synthesize currentDirection;
 @synthesize speed;
-@synthesize snakeLength;
-@synthesize food;
+@synthesize deltaLength;
 
 -(id) init
 {
@@ -39,23 +40,26 @@ void wrap(Vector *pos)
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
         [self setSpot: snakePiece[0] withValue: 1];
-        self.snakeLength = 1;
-        deltaLength = 3;
+        snakeLength = 1;
+        self.deltaLength = 3;
         self.currentDirection = NoDirection;
         
         //initialize food
-        self.food = [[Vector alloc] init];
-        [self moveFood];
+        foodAmount = 0;
+        [self createFood];
     }
     return self;
 }
 
 -(void) dealloc
 {
-    [self.food release];
-    while (self.snakeLength--)
+    while (foodAmount--)
     {
-        [snakePiece[self.snakeLength] release];
+        [food[foodAmount] release];
+    }
+    while (snakeLength--)
+    {
+        [snakePiece[snakeLength] release];
     }
     [super dealloc];
 }
@@ -63,13 +67,13 @@ void wrap(Vector *pos)
 -(BOOL) moveSnake
 {
     // keep last element, which will be removed from snakePiece
-    Vector *tail = snakePiece[self.snakeLength - 1];
+    Vector *tail = snakePiece[snakeLength - 1];
     
     // temporarily set a value to stop collisions
     [self setSpot: tail withValue: 3];
     
     // advance snake except head
-    for (int i = self.snakeLength; --i; )
+    for (int i = snakeLength; --i; )
     {
         snakePiece[i] = snakePiece[i-1];
     }
@@ -87,10 +91,10 @@ void wrap(Vector *pos)
     snakePiece[0] = head;
     
     // lengthen snake as needed
-    if (deltaLength > 0)
+    if (self.deltaLength > 0)
     {
-        --deltaLength;
-        snakePiece[self.snakeLength++] = tail;
+        --self.deltaLength;
+        snakePiece[snakeLength++] = tail;
         [self setSpot: tail withValue: 1];
     }
     else
@@ -113,16 +117,16 @@ void wrap(Vector *pos)
             
             //check if the snake head found some food
         case 2:
-            // adds a new snake piece to the end of the snake
-            ++deltaLength;
-            
-            // advancement
-            ++self.score;
-            // speed ramp
-            self.speed = SPEED_BOOST(self.speed);
-            
-            // spawns a new food
-            [self moveFood];
+            for (int i = foodAmount; i--; )
+            {
+                if ([head isEqualTo: food[i].pos])
+                {
+                    [food[i] eat: self];
+                    [self deleteFood: i];
+                    [self createFood];
+                    break;
+                }
+            }
             break;
     }
     return YES;
@@ -134,7 +138,15 @@ void wrap(Vector *pos)
     gridInfo[pos.x][pos.y] = n;
 }
 
--(void) moveFood
+-(void) deleteFood: (int) index
+{
+//    [self setSpot: foodPos[index] withValue: 0];
+    --foodAmount;
+    food[index] = food[foodAmount];
+    [food[foodAmount] release];
+}
+
+-(void) createFood
 {
     int x, y;
     do {
@@ -142,9 +154,25 @@ void wrap(Vector *pos)
         y = random() % 30;
     } while (gridInfo[x][y]);
     
-    self.food.x = x;
-    self.food.y = y;
-    [self setSpot: self.food withValue: 2];
+    food[foodAmount] = [[RegularFood alloc] init];
+    food[foodAmount].pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
+    [self setSpot: food[foodAmount].pos withValue: 2];
+    ++foodAmount;
+}
+
+-(int) getFoodAmount
+{
+    return foodAmount;
+}
+
+-(Food *) getFood: (int) index
+{
+    return food[index];
+}
+
+-(int) getSnakeLength
+{
+    return snakeLength;
 }
 
 -(Vector *) getSnakePiece: (int) index

@@ -183,13 +183,18 @@
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    drawBox(game.food.x * 10 + 10, game.food.y * 10 + 170, 10, 10, 255, 0, 0, 255);
+    for (int i = [game getFoodAmount]; i--; )
+    {
+        // TODO: delegate drawing to the food itself
+        Vector *food = [game getFood: i].pos;
+        drawBox(food.x * 10 + 10, food.y * 10 + 170, 10, 10, 255, 0, 0, 255);
+    }
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
     
     enum Direction lastdir = NoDirection;
-    for (int i = game.snakeLength; i--; )
+    for (int i = [game getSnakeLength]; i--; )
     {
         Vector *piece = [game getSnakePiece: i];
         enum Direction dir = NoDirection;

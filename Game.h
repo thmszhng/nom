@@ -7,6 +7,7 @@
 //
 
 #import "Vector.h"
+#import "Food.h"
 #import "cocos2d.h"
 
 enum Direction {NoDirection = -1, up = 0, down, left, right};
@@ -14,8 +15,12 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 @interface Game: NSObject
 {
     // snake
-    int deltaLength;
-    Vector* snakePiece[900];
+    int snakeLength;
+    Vector *snakePiece[900];
+    
+    // food
+    int foodAmount;
+    Food *food[900];
 
     int gridInfo[30][30];
 }
@@ -23,8 +28,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 @property (readwrite, assign) int score;
 @property (readwrite, assign) enum Direction currentDirection;
 @property (readwrite, assign) ccTime speed;
-@property (readwrite, assign) int snakeLength;
-@property (readwrite, assign) Vector* food;
+@property (readwrite, assign) int deltaLength;
 
 -(id) init;
 -(void) dealloc;
@@ -36,9 +40,13 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 // grid
 -(void) setSpot: (Vector *) pos withValue: (int) n;
 
--(void) moveFood;
+-(void) deleteFood: (int) index;
+-(void) createFood;
 
 // information
+-(int) getSnakeLength;
 -(Vector *) getSnakePiece: (int) index;
+-(int) getFoodAmount;
+-(Food *) getFood: (int) index;
 
 @end
