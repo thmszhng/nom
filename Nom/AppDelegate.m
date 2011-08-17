@@ -122,26 +122,18 @@ int haveRetina;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    if ([[[CCDirector sharedDirector] runningScene] isKindOfClass:[GameScene class]])
+    id gameScene = [[CCDirector sharedDirector] runningScene];
+    if ([gameScene isKindOfClass: [GameScene class]])
     {
-        if (![GameManager sharedGameManager].isGamePaused)
-        {
-            [[[[CCDirector sharedDirector] runningScene] getChildByTag:kGameSceneGameplayLayer] pauseGame];
-        }
+        id layer = [gameScene getChildByTag:kGameSceneGameplayLayer];
+        assert([layer isKindOfClass: [GameplayLayer class]]);
+        [((GameplayLayer *) layer) pauseGame];
     }
     
 	[[CCDirector sharedDirector] pause];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    if (![GameManager sharedGameManager].isGameOver)
-    {
-        if ([GameManager sharedGameManager].isGamePaused)
-        {
-            [GameManager sharedGameManager].isGamePaused = NO;
-            NSLog(@"Game is not paused.");
-        }
-    }
 	[[CCDirector sharedDirector] resume];
 }
 

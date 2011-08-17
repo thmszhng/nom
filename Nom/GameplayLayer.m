@@ -47,8 +47,11 @@
 
 //pauses the game
 -(void) pauseGame
-{    
-    //creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
+{
+    // don't pause if already paused
+    if ([GameManager sharedGameManager].isGamePaused) return;
+    
+    // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     ccColor4B c = {100, 100, 0, 100};
     PauseLayer * p = [[[PauseLayer alloc] initWithColor: c] autorelease];
     [self.parent addChild: p z: 10 tag: kGameScenePauseLayer];
