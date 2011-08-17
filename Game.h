@@ -14,8 +14,14 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 
 @interface Game: NSObject
 {
+    // game status
+    int score;
+    ccTime speed;
+    
     // snake
+    enum Direction currentDirection;
     int snakeLength;
+    int deltaLength;
     Vector *snakePiece[900];
     
     // food
@@ -29,6 +35,9 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 @property (readwrite, assign) enum Direction currentDirection;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;
+
+@property (readonly) int snakeLength;
+@property (readonly) int foodAmount;
 
 -(id) init;
 -(void) dealloc;
@@ -44,9 +53,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 -(void) createFood;
 
 // information
--(int) getSnakeLength;
 -(Vector *) getSnakePiece: (int) index;
--(int) getFoodAmount;
 -(Food *) getFood: (int) index;
 
 @end

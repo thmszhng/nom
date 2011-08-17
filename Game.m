@@ -28,6 +28,8 @@ void wrap(Vector *pos)
 @synthesize currentDirection;
 @synthesize speed;
 @synthesize deltaLength;
+@synthesize snakeLength;
+@synthesize foodAmount;
 
 -(id) init
 {
@@ -35,14 +37,14 @@ void wrap(Vector *pos)
     if (self)
     {
         //initialize game
-        self.speed = INITIAL_SPEED;
+        speed = INITIAL_SPEED;
         
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
         [self setSpot: snakePiece[0] withValue: 1];
         snakeLength = 1;
-        self.deltaLength = 3;
-        self.currentDirection = NoDirection;
+        deltaLength = 3;
+        currentDirection = NoDirection;
         
         //initialize food
         foodAmount = 0;
@@ -83,17 +85,17 @@ void wrap(Vector *pos)
     
     // advance head
     Vector *head = [[Vector alloc] init];
-    head.x = snakePiece[0].x + dirX[self.currentDirection];
-    head.y = snakePiece[0].y + dirY[self.currentDirection];
+    head.x = snakePiece[0].x + dirX[currentDirection];
+    head.y = snakePiece[0].y + dirY[currentDirection];
     wrap(head);
     BOOL survived = [self headChecks: head];
     [self setSpot: head withValue: 1];
     snakePiece[0] = head;
     
     // lengthen snake as needed
-    if (self.deltaLength > 0)
+    if (deltaLength > 0)
     {
-        --self.deltaLength;
+        --deltaLength;
         snakePiece[snakeLength++] = tail;
         [self setSpot: tail withValue: 1];
     }
@@ -160,19 +162,9 @@ void wrap(Vector *pos)
     ++foodAmount;
 }
 
--(int) getFoodAmount
-{
-    return foodAmount;
-}
-
 -(Food *) getFood: (int) index
 {
     return food[index];
-}
-
--(int) getSnakeLength
-{
-    return snakeLength;
 }
 
 -(Vector *) getSnakePiece: (int) index

@@ -186,7 +186,7 @@
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    for (int i = [game getFoodAmount]; i--; )
+    for (int i = game.foodAmount; i--; )
     {
         // TODO: delegate drawing to the food itself
         Vector *food = [game getFood: i].pos;
@@ -197,7 +197,7 @@
     glEnable(GL_TEXTURE_2D);
     
     enum Direction lastdir = NoDirection;
-    for (int i = [game getSnakeLength]; i--; )
+    for (int i = game.snakeLength; i--; )
     {
         Vector *piece = [game getSnakePiece: i];
         enum Direction dir = NoDirection;
