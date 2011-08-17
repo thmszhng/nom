@@ -12,15 +12,6 @@
 
 @synthesize pos;
 
--(id) init
-{
-    if (self = [super init])
-    {
-        pos = nil;
-    }
-    return self;
-}
-
 -(void) dealloc
 {
     [pos release];
