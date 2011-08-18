@@ -22,7 +22,7 @@ typedef enum
 
 typedef enum
 {
-    kBackgroundLayer = 200,
+    kMainMenuSceneBackgroundLayer = 200,
 } MainMenuSceneLayers;
 
 typedef enum
@@ -43,8 +43,8 @@ typedef enum
 typedef enum
 {
     kGameSceneBackgroundLayer = 600,
-    kGameSceneGameplayLayer,
-    kGameScenePauseLayer,
+    kGameSceneGameplayLayer = 601,
+    kGameScenePauseLayer = 602,
 } GameSceneLayers;
 
 extern int haveRetina;

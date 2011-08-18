@@ -13,10 +13,13 @@
 
 @interface MainMenuLayer : CCLayer 
 {
-
+    CCMenu *mainMenu;
 }
 
 -(id) init;
--(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event;
-
+-(void) playGame;
+-(void) openLevelEditor;
+-(void) openGameCenter;
+-(void) showHelp;
+-(void) toggleMusic;
 @end
