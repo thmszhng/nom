@@ -13,6 +13,6 @@
 
 -(id) init;
 
--(void) onEat;
+-(void) onEat: (Food *) food;
 
 @end

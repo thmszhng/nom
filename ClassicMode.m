@@ -21,7 +21,7 @@
     return self;
 }
 
--(void) onEat
+-(void) onEat: (Food *) food;
 {
     [self createFood: [RegularFood class]];
 }

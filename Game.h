@@ -55,7 +55,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 -(void) setSpot: (Vector *) pos withValue: (int) n;
 
 // food
--(void) onEat; // to be overriden
+-(void) onEat: (Food *) food; // to be overriden
 -(void) deleteFood: (int) index;
 -(void) createFood: (Class) foodType;
 

@@ -129,8 +129,8 @@ void wrap(Vector *pos)
                 if ([head isEqualTo: food[i].pos])
                 {
                     [food[i] eat: self];
+                    [self onEat: food[i]];
                     [self deleteFood: i];
-                    [self onEat];
                     break;
                 }
             }
@@ -145,7 +145,7 @@ void wrap(Vector *pos)
     gridInfo[pos.x][pos.y] = n;
 }
 
--(void) onEat
+-(void) onEat: (Food *) food;
 {
     [self doesNotRecognizeSelector: _cmd];
 }
