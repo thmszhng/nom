@@ -125,7 +125,7 @@ int haveRetina;
     id gameScene = [[CCDirector sharedDirector] runningScene];
     if ([gameScene isKindOfClass: [GameScene class]])
     {
-        id layer = [gameScene getChildByTag:kGameSceneGameplayLayer];
+        id layer = [gameScene getChildByTag:kGameplayLayer];
         assert([layer isKindOfClass: [GameplayLayer class]]);
         [((GameplayLayer *) layer) pauseGame];
     }

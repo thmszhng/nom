@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface HelpScene : CCScene {
-    
+@interface HelpScene : CCScene 
+{
+
 }
 
 @end

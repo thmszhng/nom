@@ -6,10 +6,10 @@
 //  Copyright Thomas Zhang, Geoffry Song, Eddy Gao. All rights reserved.
 //
 
-#import "BackgroundLayer.h"
+#import "GameBackgroundLayer.h"
 #import "Render.h"
 
-@implementation BackgroundLayer
+@implementation GameBackgroundLayer
 -(id) init
 {
     self = [super init];
@@ -19,7 +19,6 @@
         CCRenderTexture *texture = [CCRenderTexture renderTextureWithWidth: screenSize.width height: screenSize.height];
         [texture setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: texture z: 0];
-        
         [texture beginWithClear: 1.f g: 1.f b: 1.f a: 1.f];
         glDisable(GL_TEXTURE_2D);
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);

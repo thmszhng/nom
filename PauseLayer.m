@@ -29,7 +29,7 @@
 // unpauses game when screen is tapped
 -(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event
 {
-    GameplayLayer *gl = (GameplayLayer *) [self.parent getChildByTag: kGameSceneGameplayLayer];
+    GameplayLayer *gl = (GameplayLayer *) [self.parent getChildByTag: kGameplayLayer];
     [self.parent removeChild: self cleanup: YES];
     [gl onEnter];
 }

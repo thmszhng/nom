@@ -10,5 +10,15 @@
 
 
 @implementation HelpScene
+-(id) init
+{
+    self = [super init];
+    if (self != nil)
+    {
+        
+    }
+    
+    return self;
+}
 
 @end

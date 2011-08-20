@@ -54,7 +54,7 @@
     // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     ccColor4B c = {100, 100, 0, 100};
     PauseLayer * p = [[[PauseLayer alloc] initWithColor: c] autorelease];
-    [self.parent addChild: p z: 10 tag: kGameScenePauseLayer];
+    [self.parent addChild: p z: 10 tag: kPauseLayer];
     
     [self onExit];
 }

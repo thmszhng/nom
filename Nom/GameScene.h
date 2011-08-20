@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "BackgroundLayer.h"
+#import "GameBackgroundLayer.h"
 #import "GameplayLayer.h"
 #import "PauseLayer.h"
 
 @interface GameScene : CCScene 
 {
-    BackgroundLayer *backgroundLayer;
+    GameBackgroundLayer *gameBackgroundLayer;
     GameplayLayer *gameplayLayer;
 }
 

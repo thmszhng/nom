@@ -145,7 +145,7 @@
 		66424F8313DE3EAA00CCCCCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424F8213DE3EAA00CCCCCB /* main.m */; };
 		66424F8613DE3EAA00CCCCCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424F8513DE3EAA00CCCCCB /* AppDelegate.m */; };
 		66424F8913DE3EAA00CCCCCB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424F8813DE3EAA00CCCCCB /* RootViewController.m */; };
-		66424F9E13DE3ED100CCCCCB /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424F9D13DE3ED100CCCCCB /* BackgroundLayer.m */; };
+		66424F9E13DE3ED100CCCCCB /* GameBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424F9D13DE3ED100CCCCCB /* GameBackgroundLayer.m */; };
 		66424FA313DE3EDA00CCCCCB /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */; };
 		66424FA413DE3EDA00CCCCCB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 66424FA213DE3EDA00CCCCCB /* GameScene.m */; };
 		66424FAE13DE3F2500CCCCCB /* Control-hd_old.png in Resources */ = {isa = PBXBuildFile; fileRef = 66424FA713DE3F2500CCCCCB /* Control-hd_old.png */; };
@@ -429,8 +429,8 @@
 		66424F8713DE3EAA00CCCCCB /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		66424F8813DE3EAA00CCCCCB /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		66424F8D13DE3EAA00CCCCCB /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		66424F9C13DE3ED100CCCCCB /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Nom/BackgroundLayer.h; sourceTree = "<group>"; };
-		66424F9D13DE3ED100CCCCCB /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundLayer.m; path = Nom/BackgroundLayer.m; sourceTree = "<group>"; };
+		66424F9C13DE3ED100CCCCCB /* GameBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; name = GameBackgroundLayer.h; path = Nom/GameBackgroundLayer.h; sourceTree = "<group>"; };
+		66424F9D13DE3ED100CCCCCB /* GameBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBackgroundLayer.m; path = Nom/GameBackgroundLayer.m; sourceTree = "<group>"; };
 		66424F9F13DE3EDA00CCCCCB /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayLayer.h; path = Nom/GameplayLayer.h; sourceTree = "<group>"; };
 		66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayLayer.m; path = Nom/GameplayLayer.m; sourceTree = "<group>"; };
 		66424FA113DE3EDA00CCCCCB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Nom/GameScene.h; sourceTree = "<group>"; };
@@ -981,8 +981,8 @@
 		66EE3B7613E05EA00040ED20 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				66424F9C13DE3ED100CCCCCB /* BackgroundLayer.h */,
-				66424F9D13DE3ED100CCCCCB /* BackgroundLayer.m */,
+				66424F9C13DE3ED100CCCCCB /* GameBackgroundLayer.h */,
+				66424F9D13DE3ED100CCCCCB /* GameBackgroundLayer.m */,
 				66424F9F13DE3EDA00CCCCCB /* GameplayLayer.h */,
 				66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */,
 				5FC41C2413EE144D00EBDC13 /* PauseLayer.h */,
@@ -1207,7 +1207,7 @@
 				66424F8313DE3EAA00CCCCCB /* main.m in Sources */,
 				66424F8613DE3EAA00CCCCCB /* AppDelegate.m in Sources */,
 				66424F8913DE3EAA00CCCCCB /* RootViewController.m in Sources */,
-				66424F9E13DE3ED100CCCCCB /* BackgroundLayer.m in Sources */,
+				66424F9E13DE3ED100CCCCCB /* GameBackgroundLayer.m in Sources */,
 				66424FA313DE3EDA00CCCCCB /* GameplayLayer.m in Sources */,
 				66424FA413DE3EDA00CCCCCB /* GameScene.m in Sources */,
 				66347C6713DF93D6000B80CF /* Vector.m in Sources */,

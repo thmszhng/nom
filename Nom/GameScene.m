@@ -16,12 +16,12 @@
     if (self != nil)
     {
         //Background Layer
-        backgroundLayer = [BackgroundLayer node];
-        [self addChild: backgroundLayer z: 0 tag: kGameSceneBackgroundLayer];
+        gameBackgroundLayer = [GameBackgroundLayer node];
+        [self addChild: gameBackgroundLayer z: 0 tag: kGameBackgroundLayer];
         
         //Gameplay Layer
         gameplayLayer = [GameplayLayer node];
-        [self addChild: gameplayLayer z: 5 tag: kGameSceneGameplayLayer];
+        [self addChild: gameplayLayer z: 5 tag: kGameplayLayer];
     }
     
     return self;

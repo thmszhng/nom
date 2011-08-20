@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "Constants.h"
 
-@interface BackgroundLayer : CCLayer
+@interface GameBackgroundLayer : CCLayer
 {
 }
 
