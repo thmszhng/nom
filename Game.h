@@ -12,6 +12,14 @@
 
 enum Direction {NoDirection = -1, up = 0, down, left, right};
 
+enum GridSpot {
+    GridNothing = 0,
+    GridWall,
+    GridShadow,
+    GridFood = 1000,
+    GridFoodMax = 1900
+};
+
 @interface Game: NSObject
 {
     // game status
@@ -30,7 +38,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     int foodAmount;
     Food *food[900];
 
-    int gridInfo[30][30];
+    enum GridSpot gridInfo[30][30];
 }
 
 @property (readonly, assign) int steps;
@@ -52,7 +60,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 -(BOOL) headChecks: (Vector *) head; // returns NO if lost game
 
 // grid
--(void) setSpot: (Vector *) pos withValue: (int) n;
+-(void) setSpot: (Vector *) pos withValue: (enum GridSpot) n;
 
 // food
 -(void) onEat: (Food *) food; // to be overriden

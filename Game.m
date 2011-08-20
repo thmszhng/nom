@@ -43,7 +43,7 @@ void wrap(Vector *pos)
         
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
-        [self setSpot: snakePiece[0] withValue: 1];
+        [self setSpot: snakePiece[0] withValue: GridWall];
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
@@ -76,9 +76,6 @@ void wrap(Vector *pos)
     // keep last element, which will be removed from snakePiece
     Vector *tail = snakePiece[snakeLength - 1];
     
-    // temporarily set a value to stop collisions
-    [self setSpot: tail withValue: 3];
-    
     // advance snake except head
     for (int i = snakeLength; --i; )
     {
@@ -86,7 +83,7 @@ void wrap(Vector *pos)
     }
     
     // don't allow hitting the tail
-    [self setSpot: tail withValue: 0];
+    [self setSpot: tail withValue: GridShadow];
     
     // advance head
     Vector *head = [[Vector alloc] init];
@@ -94,7 +91,7 @@ void wrap(Vector *pos)
     head.y = snakePiece[0].y + dirY[currentDirection];
     wrap(head);
     BOOL survived = [self headChecks: head];
-    [self setSpot: head withValue: 1];
+    [self setSpot: head withValue: GridWall];
     snakePiece[0] = head;
     
     // lengthen snake as needed
@@ -102,11 +99,11 @@ void wrap(Vector *pos)
     {
         --deltaLength;
         snakePiece[snakeLength++] = tail;
-        [self setSpot: tail withValue: 1];
+        [self setSpot: tail withValue: GridWall];
     }
     else
     {
-        [self setSpot: tail withValue: 0];
+        [self setSpot: tail withValue: GridNothing];
         [tail release];
     }
     return survived;
@@ -118,29 +115,29 @@ void wrap(Vector *pos)
 {
     switch (gridInfo[head.x][head.y])
     {
-        case 1:
+        case GridWall:
             return NO; // player lost
             break;
             
             //check if the snake head found some food
-        case 2:
-            for (int i = foodAmount; i--; )
-            {
-                if ([head isEqualTo: food[i].pos])
-                {
-                    [food[i] eat: self];
-                    [self onEat: food[i]];
-                    [self deleteFood: i];
-                    break;
-                }
-            }
+        case GridFood ... GridFoodMax:
+        {
+            int i = gridInfo[head.x][head.y] - GridFood;
+            assert([head isEqualTo: food[i].pos]);
+            [food[i] eat: self];
+            [self onEat: food[i]];
+            [self deleteFood: i];
+            break;
+        }
+            
+        default:
             break;
     }
     return YES;
 }
 
 // sets the given space in gridInfo
--(void) setSpot: (Vector *) pos withValue: (int) n
+-(void) setSpot: (Vector *) pos withValue: (enum GridSpot) n
 {
     gridInfo[pos.x][pos.y] = n;
 }
@@ -152,10 +149,12 @@ void wrap(Vector *pos)
 
 -(void) deleteFood: (int) index
 {
-//    [self setSpot: foodPos[index] withValue: 0];
+//    [self setSpot: foodPos[index] withValue: GridNothing];
     [food[index] release];
     --foodAmount;
     food[index] = food[foodAmount];
+    [self setSpot: food[index].pos withValue: GridFood + index];
+    food[foodAmount] = nil;
 }
 
 -(void) createFood: (Class) foodType;
@@ -164,11 +163,11 @@ void wrap(Vector *pos)
     do {
         x = random() % 30;
         y = random() % 30;
-    } while (gridInfo[x][y]);
+    } while (gridInfo[x][y] != GridNothing);
     
     food[foodAmount] = [[foodType alloc] initWithGame: self];
     food[foodAmount].pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
-    [self setSpot: food[foodAmount].pos withValue: 2];
+    [self setSpot: food[foodAmount].pos withValue: GridFood + foodAmount];
     ++foodAmount;
 }
 
