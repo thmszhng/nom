@@ -17,6 +17,8 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     // game status
     int score;
     ccTime speed;
+    int steps;
+    ccTime timestamp;
     
     // snake
     enum Direction currentDirection;
@@ -31,7 +33,10 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     int gridInfo[30][30];
 }
 
+@property (readonly, assign) int steps;
+@property (readonly, assign) ccTime timestamp;
 @property (readwrite, assign) int score;
+
 @property (readwrite, assign) enum Direction currentDirection;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;

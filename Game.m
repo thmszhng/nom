@@ -22,6 +22,8 @@ void wrap(Vector *pos)
 
 @implementation Game
 
+@synthesize steps;
+@synthesize timestamp;
 @synthesize score;
 @synthesize currentDirection;
 @synthesize speed;
@@ -36,6 +38,8 @@ void wrap(Vector *pos)
     {
         //initialize game
         speed = INITIAL_SPEED;
+        timestamp = 0;
+        steps = 0;
         
         //initialize snake
         snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
@@ -65,6 +69,10 @@ void wrap(Vector *pos)
 
 -(BOOL) moveSnake
 {
+    // time passed
+    ++steps;
+    timestamp += speed;
+    
     // keep last element, which will be removed from snakePiece
     Vector *tail = snakePiece[snakeLength - 1];
     
