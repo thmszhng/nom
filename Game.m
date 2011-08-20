@@ -143,9 +143,9 @@ void wrap(Vector *pos)
 -(void) deleteFood: (int) index
 {
 //    [self setSpot: foodPos[index] withValue: 0];
+    [food[index] release];
     --foodAmount;
     food[index] = food[foodAmount];
-    [food[foodAmount] release];
 }
 
 -(void) createFood
