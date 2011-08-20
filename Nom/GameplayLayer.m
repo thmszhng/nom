@@ -9,6 +9,9 @@
 #import "GameplayLayer.h"
 #import "Render.h"
 #import "GameConstants.h"
+#import "GameManager.h"
+#import "PauseLayer.h"
+#import "ClassicMode.h"
 
 @implementation GameplayLayer
 -(id) init
@@ -25,7 +28,7 @@
         newDirection = NoDirection;
         [GameManager sharedGameManager].isGameOver = NO;
         [GameManager sharedGameManager].isGamePaused = NO;
-        game = [[Game alloc] init];
+        game = [[ClassicMode alloc] init];
         
         //set up score display
         scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat: @"Score: %d", game.score] fontName: @"HelveticaNeue" fontSize: 20];

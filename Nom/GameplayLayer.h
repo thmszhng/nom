@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Game.h"
-#import "GameManager.h"
 #import "Constants.h"
-#import "PauseLayer.h"
+#import "Game.h"
 
 @interface GameplayLayer : CCLayer
 {    

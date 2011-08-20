@@ -8,8 +8,6 @@
 
 #import "Game.h"
 #import "GameConstants.h"
-#import "RegularFood.h"
-// TODO: create a class to randomly generate food
 
 static const int dirX[4] = {0, 0, -1, 1};
 static const int dirY[4] = {1, -1, 0, 0};
@@ -48,7 +46,6 @@ void wrap(Vector *pos)
         
         //initialize food
         foodAmount = 0;
-        [self createFood];
     }
     return self;
 }
@@ -125,7 +122,7 @@ void wrap(Vector *pos)
                 {
                     [food[i] eat: self];
                     [self deleteFood: i];
-                    [self createFood];
+                    [self onEat];
                     break;
                 }
             }
@@ -140,6 +137,11 @@ void wrap(Vector *pos)
     gridInfo[pos.x][pos.y] = n;
 }
 
+-(void) onEat
+{
+    [self doesNotRecognizeSelector: _cmd];
+}
+
 -(void) deleteFood: (int) index
 {
 //    [self setSpot: foodPos[index] withValue: 0];
@@ -148,7 +150,7 @@ void wrap(Vector *pos)
     food[index] = food[foodAmount];
 }
 
--(void) createFood
+-(void) createFood: (Class) foodType;
 {
     int x, y;
     do {
@@ -156,7 +158,7 @@ void wrap(Vector *pos)
         y = random() % 30;
     } while (gridInfo[x][y]);
     
-    food[foodAmount] = [[RegularFood alloc] init];
+    food[foodAmount] = [[foodType alloc] init];
     food[foodAmount].pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
     [self setSpot: food[foodAmount].pos withValue: 2];
     ++foodAmount;
