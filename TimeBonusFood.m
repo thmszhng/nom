@@ -24,7 +24,7 @@
 -(void) eat: (Game *) game
 {
     // variable advancement
-    game.score += 30 * powf(1.1f, stepsOnCreation - game.steps);
+    game.score += 30 * powf(1.02f, stepsOnCreation - game.steps);
     // speed ramp
     game.speed = 1./(1./(game.speed)+0.4);
 }
