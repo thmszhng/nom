@@ -27,4 +27,9 @@
     game.speed = SPEED_BOOST(game.speed);
 }
 
+-(ccColor3B) color
+{
+    return ccRED;
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/NSObject.h>
+#import "cocos2d.h"
 
 @class Game;
 @class Vector;
@@ -20,5 +21,6 @@
 
 -(void) dealloc;
 -(void) eat: (Game *) game;
+-(ccColor3B) color;
 
 @end

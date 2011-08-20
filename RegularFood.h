@@ -14,5 +14,6 @@
 }
 
 -(void) eat: (Game *) game;
+-(ccColor3B) color;
 
 @end

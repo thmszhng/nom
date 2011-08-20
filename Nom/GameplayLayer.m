@@ -191,9 +191,10 @@
     glDisableClientState(GL_COLOR_ARRAY);
     for (int i = game.foodAmount; i--; )
     {
-        // TODO: delegate drawing to the food itself
-        Vector *food = [game getFood: i].pos;
-        drawBox(food.x * 10 + 10, food.y * 10 + 170, 10, 10, 255, 0, 0, 255);
+        Food *food = [game getFood: i];
+        Vector *pos = food.pos;
+        ccColor3B color = [food color];
+        drawBox(pos.x * 10 + 10, pos.y * 10 + 170, 10, 10, color.r, color.g, color.b, 255);
     }
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);

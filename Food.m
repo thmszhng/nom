@@ -20,6 +20,13 @@
 
 -(void) eat: (Game *) game
 {
+    [self doesNotRecognizeSelector: _cmd];
+}
+
+-(ccColor3B) color
+{
+    [self doesNotRecognizeSelector: _cmd];
+    return ccc3(0, 0, 0);
 }
 
 @end
