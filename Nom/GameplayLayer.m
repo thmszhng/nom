@@ -96,9 +96,9 @@
         {
             [GameManager sharedGameManager].isGameOver = YES;
         };
+        
+        [scoreText setString: [NSString stringWithFormat: @"Score: %d", game.score]];
     }
-
-    [scoreText setString: [NSString stringWithFormat: @"Score: %d", game.score]];
 }
 
 //handles touches
