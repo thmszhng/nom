@@ -12,6 +12,11 @@
 
 @synthesize pos;
 
+-(id) initWithGame: (Game *) game
+{
+    return [self init];
+}
+
 -(void) dealloc
 {
     [pos release];

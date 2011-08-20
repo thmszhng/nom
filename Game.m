@@ -166,7 +166,7 @@ void wrap(Vector *pos)
         y = random() % 30;
     } while (gridInfo[x][y]);
     
-    food[foodAmount] = [[foodType alloc] init];
+    food[foodAmount] = [[foodType alloc] initWithGame: self];
     food[foodAmount].pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
     [self setSpot: food[foodAmount].pos withValue: 2];
     ++foodAmount;

@@ -19,6 +19,7 @@
 
 @property (readwrite,retain) Vector *pos;
 
+-(id) initWithGame: (Game *) game;
 -(void) dealloc;
 -(void) eat: (Game *) game;
 -(ccColor3B) color;
