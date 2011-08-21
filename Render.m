@@ -57,7 +57,7 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
     static CCRenderTexture* cache[16] = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil };
 
     const int width = 10, height = 10;
-    int xx = x * width + 10, yy = y * height + 170;
+    int xx = x * width + 10, yy = y * height + 148;
 
     int entry = (ctop ? 1 : 0) | (cleft ? 2 : 0) | (cbottom ? 4 : 0) | (cright ? 8 : 0);
     if (cache[entry] == nil)

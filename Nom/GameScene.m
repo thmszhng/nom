@@ -7,7 +7,7 @@
 //
 
 #import "GameScene.h"
-
+#import "AnimationLayer.h"
 
 @implementation GameScene
 -(id) init

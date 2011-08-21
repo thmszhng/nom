@@ -26,6 +26,8 @@
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
 		5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05010113FF7A7D00C7385B /* RegularMode.m */; };
+		5F05010D1400753C00C7385B /* GameBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F05010B1400753C00C7385B /* GameBackground-hd.png */; };
+		5F05010E1400753C00C7385B /* GameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F05010C1400753C00C7385B /* GameBackground.png */; };
 		5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F0E813FA0E1A00A3EA80 /* Game.m */; };
 		5F26B5AC13FB7705008B0024 /* RegularFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AB13FB7705008B0024 /* RegularFood.m */; };
 		5F26B5B013FB88E2008B0024 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AF13FB88E1008B0024 /* Food.m */; };
@@ -189,6 +191,8 @@
 		5F0500F313FF776100C7385B /* TimeBonusFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeBonusFood.m; sourceTree = "<group>"; };
 		5F0500FF13FF7A7300C7385B /* RegularMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularMode.h; sourceTree = "<group>"; };
 		5F05010113FF7A7D00C7385B /* RegularMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularMode.m; sourceTree = "<group>"; };
+		5F05010B1400753C00C7385B /* GameBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBackground-hd.png"; sourceTree = "<group>"; };
+		5F05010C1400753C00C7385B /* GameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameBackground.png; sourceTree = "<group>"; };
 		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		5F16F0EA13FA103000A3EA80 /* GameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
@@ -608,6 +612,8 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F05010B1400753C00C7385B /* GameBackground-hd.png */,
+				5F05010C1400753C00C7385B /* GameBackground.png */,
 				2E455E2B13FB560F00A7CD27 /* Gamecenter-hd.png */,
 				2E455E2C13FB560F00A7CD27 /* Gamecenter.png */,
 				2E455E2D13FB560F00A7CD27 /* Help-hd.png */,
@@ -1123,6 +1129,8 @@
 				2E455E3C13FB560F00A7CD27 /* PlayGame.png in Resources */,
 				2E455E3D13FB560F00A7CD27 /* ToggleMusic-hd.png in Resources */,
 				2E455E3E13FB560F00A7CD27 /* ToggleMusic.png in Resources */,
+				5F05010D1400753C00C7385B /* GameBackground-hd.png in Resources */,
+				5F05010E1400753C00C7385B /* GameBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

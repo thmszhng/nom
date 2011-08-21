@@ -31,9 +31,9 @@
         game = [[RegularMode alloc] init];
         
         //set up score display
-        scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat: @"Score: %d", game.score] fontName: @"HelveticaNeue" fontSize: 20];
-        scoreText.color = ccc3(0, 0, 0);
-        [scoreText setPosition: ccp(50,150)];
+        scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat: @"%d", game.score] fontName: @"HelveticaNeue" fontSize: 18];
+        scoreText.color = ccc3(90, 220, 216);
+        [scoreText setPosition: ccp(50,464)];
         [self addChild: scoreText];
         
         [self scheduleUpdate];
@@ -97,7 +97,7 @@
             [GameManager sharedGameManager].isGameOver = YES;
         };
         
-        [scoreText setString: [NSString stringWithFormat: @"Score: %d", game.score]];
+        [scoreText setString: [NSString stringWithFormat: @"%d", game.score]];
     }
 }
 
@@ -118,7 +118,7 @@
     else
     {
         int x = touchCoord.x - 160;
-        int y = touchCoord.y - 85;
+        int y = touchCoord.y - 74;
         trackTouch = (x*x + y*y < 16000);
         
         [self changeHeadDirection: touchCoord];
@@ -142,7 +142,7 @@
     if (!trackTouch) return;
     
     int x = touchCoord.x - 160;
-    int y = touchCoord.y - 85;
+    int y = touchCoord.y - 74;
     
     if (x*x + y*y < 100) return;
     
@@ -194,7 +194,7 @@
         Food *food = [game getFood: i];
         Vector *pos = food.pos;
         ccColor3B color = [food color];
-        drawBox(pos.x * 10 + 10, pos.y * 10 + 170, 10, 10, color.r, color.g, color.b, 255);
+        drawBox(pos.x * 10 + 10, pos.y * 10 + 148, 10, 10, color.r, color.g, color.b, 255);
     }
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
