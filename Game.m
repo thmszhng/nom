@@ -152,8 +152,12 @@ void wrap(Vector *pos)
 //    [self setSpot: foodPos[index] withValue: GridNothing];
     [food[index] release];
     --foodAmount;
-    food[index] = food[foodAmount];
-    [self setSpot: food[index].pos withValue: GridFood + index];
+    if (index != foodAmount)
+    {
+        // move the deleted element to the back of the array
+        food[index] = food[foodAmount];
+        [self setSpot: food[index].pos withValue: GridFood + index];
+    }
     food[foodAmount] = nil;
 }
 
