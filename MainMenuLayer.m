@@ -44,8 +44,8 @@
         [levelEditorButton setPosition: ccp(screenSize.width/2, screenSize.height/2 - 75)];
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
-                                             itemFromNormalImage: @"GameCenter.png"
-                                             selectedImage: @"GameCenter.png"
+                                             itemFromNormalImage: @"Gamecenter.png"
+                                             selectedImage: @"Gamecenter.png"
                                              disabledImage: nil
                                              target: self
                                              selector: @selector(openGameCenter)];
