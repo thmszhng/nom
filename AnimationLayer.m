@@ -32,7 +32,7 @@ const static int trailLength = sizeof(trail)/sizeof(trail[0]);*/
         
         for (int x = 0; x < WIDTH; ++x) {
             for (int y = 0; y < HEIGHT; ++y) {
-                drawBox(x * 10, y * 10, 10, 10, 240, 240, 240, 255);
+                drawBox(x * 10, y * 10, 10, 10, ccc3(252, 252, 252), ccc3(249, 249, 249));
                 grid[x][y] = 0;
             }
         }

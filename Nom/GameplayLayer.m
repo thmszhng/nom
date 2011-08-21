@@ -194,7 +194,8 @@
         Food *food = [game getFood: i];
         Vector *pos = food.pos;
         ccColor3B color = [food color];
-        drawBox(pos.x * 10 + 10, pos.y * 10 + 148, 10, 10, color.r, color.g, color.b, 255);
+        ccColor3B darkened = {DARKEN(color.r), DARKEN(color.g), DARKEN(color.b)};
+        drawBox(pos.x * 10 + 10, pos.y * 10 + 148, 10, 10, color, darkened);
     }
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);

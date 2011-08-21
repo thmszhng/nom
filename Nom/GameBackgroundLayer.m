@@ -27,7 +27,7 @@
         for (int x = 0; x < 30; ++x) {
             for (int y = 0; y < 30; ++y) {
                 int xx = x*10, yy = y*10;
-                drawBox(xx, yy, 10, 10, 240, 240, 240, 255);
+                drawBox(xx, yy, 10, 10, ccc3(252, 252, 252), ccc3(249, 249, 249));
             }
         }
         

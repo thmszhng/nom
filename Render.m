@@ -25,32 +25,14 @@ void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
 	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 }
 
-#define CLAMP(x, a, b) (((x)<(a))?(a):((x)>(b))?(b):(x))
-//#define DARKEN(c) CLAMP(5*((int)(c))/4-128, 0, 255)
-#define DARKEN(c) (((c)<=15)?0:((c)-15))
-
-void drawBox(int x, int y, int width, int height, GLubyte r, GLubyte g, GLubyte b, GLubyte a)
+void drawBox(int x, int y, int width, int height, ccColor3B main, ccColor3B shadow)
 {
-    if (a == 255)
-    {
-        glColor4ub(255, 255, 255, 255);
-        glDrawRect(x, y, width, height);
-        glColor4ub(DARKEN(r), DARKEN(g), DARKEN(b), 255);
-        glDrawRect(x, y+1, width-1, height-1);
-        glColor4ub(r, g, b, 255);
-        glDrawRect(x+1, y+1, width-2, height-2);
-    }
-    else
-    {
-        glColor4ub(255, 255, 255, a);
-        glDrawRect(x + width - 1, y, 1, height);
-        glDrawRect(x, y, width - 1, 1);
-        glColor4ub(DARKEN(r), DARKEN(g), DARKEN(b), a);
-        glDrawRect(x, y + height - 1, width-1, 1);
-        glDrawRect(x, y+1, 1, height-2);
-        glColor4ub(r, g, b, a);
-        glDrawRect(x+1, y+1, width-2, height-2);
-    }
+    glColor4ub(255, 255, 255, 255);
+    glDrawRect(x, y, width, height);
+    glColor4ub(shadow.r, shadow.g, shadow.b, 255);
+    glDrawRect(x, y+1, width-1, height-1);
+    glColor4ub(main.r, main.g, main.b, 255);
+    glDrawRect(x+1, y+1, width-2, height-2);
 }
 
 void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
