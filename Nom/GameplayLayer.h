@@ -20,7 +20,7 @@
     
     // controls
     BOOL trackTouch;
-    CCLabelTTF *scoreText;
+    CCLabelAtlas *scoreText;
 }
 
 -(id) init;

@@ -31,9 +31,9 @@
         game = [[RegularMode alloc] init];
         
         //set up score display
-        scoreText = [CCLabelTTF labelWithString: [NSString stringWithFormat: @"%d", game.score] fontName: @"HelveticaNeue" fontSize: 18];
+        scoreText = [CCLabelAtlas labelWithString: [NSString stringWithFormat: @"%d", game.score] charMapFile: @"numbers.png" itemWidth: 12 itemHeight: 14 startCharMap: '0'];
         scoreText.color = ccc3(90, 220, 216);
-        [scoreText setPosition: ccp(50,464)];
+        [scoreText setPosition: CGPointMake(16, 457)];
         [self addChild: scoreText];
         
         [self scheduleUpdate];
