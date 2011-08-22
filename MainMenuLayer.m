@@ -21,10 +21,10 @@
         
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         
-        //nom title
-        CCSprite *nom = [CCSprite spriteWithFile: @"Nom.png"];
-        [nom setPosition: ccp(screenSize.width/2, screenSize.height/2 + 5)];
-        [self addChild: nom];
+        //background
+        CCSprite *bg = [CCSprite spriteWithFile: @"MainMenuBackground.png"];
+        [bg setPosition: ccp(screenSize.width/2, screenSize.height/2)];
+        [self addChild: bg];
         
         //Menu items
         CCMenuItemImage *playButton = [CCMenuItemImage 
