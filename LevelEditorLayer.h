@@ -16,7 +16,7 @@
 
 
 @interface LevelEditorLayer: CCLayer {
-
+    CCRenderTexture *texture;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch; 

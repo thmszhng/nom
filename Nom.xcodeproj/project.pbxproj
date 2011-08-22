@@ -31,7 +31,6 @@
 		2EC38FB813FB5AB6003D3AF3 /* HelpScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB713FB5AB6003D3AF3 /* HelpScene.m */; };
 		2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */; };
 		54545C3814000E8E005A71C1 /* LevelEditorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54545C3714000E8E005A71C1 /* LevelEditorLayer.m */; };
-		54545C4214004A4C005A71C1 /* ViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 54545C4114004A4C005A71C1 /* ViewController.h */; };
 		54545C4414004A6C005A71C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54545C4314004A6C005A71C1 /* ViewController.m */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
@@ -1159,7 +1158,6 @@
 				2E455E3E13FB560F00A7CD27 /* ToggleMusic.png in Resources */,
 				5F05010D1400753C00C7385B /* GameBackground-hd.png in Resources */,
 				5F05010E1400753C00C7385B /* GameBackground.png in Resources */,
-				54545C4214004A4C005A71C1 /* ViewController.h in Resources */,
 				2E84F49414014C190001CD05 /* Icon-72.png in Resources */,
 				2E84F49514014C190001CD05 /* Icon-Small-50.png in Resources */,
 				2E84F49614014C190001CD05 /* Icon-Small.png in Resources */,
