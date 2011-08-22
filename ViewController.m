@@ -1,35 +1,33 @@
 #import "ViewController.h"
 
-@implementation ViewController
 
+
+@implementation ViewController
+@synthesize delegate;
 - (void)loadView 
 {
     CGRect  viewRect = CGRectMake(10, 10, 310, 310);
     [self setView:[[[UIView alloc] initWithFrame:viewRect] autorelease]];
-    
-    
+    lastScale=1.0;
+    currentScale=1.0;
 	// -----------------------------
-    // One finger, swipe up
+    // One finger pan
 	// -----------------------------
-    UISwipeGestureRecognizer *oneFingerSwipeUp = 
-  	[[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerSwipeUp:)] autorelease];
-    [oneFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
-    [[self view] addGestureRecognizer:oneFingerSwipeUp];
-    
-	// -----------------------------
-	// One finger, swipe down
-	// -----------------------------
-    UISwipeGestureRecognizer *oneFingerSwipeDown = 
-  	[[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerSwipeDown:)] autorelease];
-    [oneFingerSwipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
-    [[self view] addGestureRecognizer:oneFingerSwipeDown];
+    UIPanGestureRecognizer *oneFingerPan = 
+  	[[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerPan:)] autorelease];
+    [oneFingerPan setMaximumNumberOfTouches:1];
+    [oneFingerPan setMinimumNumberOfTouches:1];
+    [[self view] addGestureRecognizer:oneFingerPan];
     
 	// -----------------------------
-	// Two finger rotate  
+    // Two finger pan
 	// -----------------------------
-	UIRotationGestureRecognizer *twoFingersRotate = 
-  	[[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingersRotate:)] autorelease];
-    [[self view] addGestureRecognizer:twoFingersRotate];
+    UIPanGestureRecognizer *twoFingerPan = 
+  	[[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerPan:)] autorelease];
+    [twoFingerPan setMaximumNumberOfTouches:2];
+    [twoFingerPan setMinimumNumberOfTouches:2];
+    [[self view] addGestureRecognizer:twoFingerPan];
+    
     
 	// -----------------------------
 	// Two finger pinch
@@ -41,45 +39,21 @@
 }
 
 /*--------------------------------------------------------------
- * One finger, two taps 
+ * One finger swipe
  *-------------------------------------------------------------*/
-- (void)oneFingerTwoTaps
-{
-	NSLog(@"Action: One finger, two taps");
-}
-
-/*--------------------------------------------------------------
- * Two fingers, two taps
- *-------------------------------------------------------------*/
-- (void)twoFingersTwoTaps {
-    NSLog(@"Action: Two fingers, two taps");
-} 
-
-/*--------------------------------------------------------------
- * One finger, swipe up
- *-------------------------------------------------------------*/
-- (void)oneFingerSwipeUp:(UISwipeGestureRecognizer *)recognizer 
+- (void)oneFingerPan:(UISwipeGestureRecognizer *)recognizer 
 { 
     CGPoint point = [recognizer locationInView:[self view]];
-    NSLog(@"Swipe up - start location: %f,%f", point.x, point.y);
+    NSLog(@"Swipe - start location: %f,%f", point.x, point.y);
 }
 
 /*--------------------------------------------------------------
- * One finger, swipe down
+ * Two finger swipe
  *-------------------------------------------------------------*/
-- (void)oneFingerSwipeDown:(UISwipeGestureRecognizer *)recognizer 
+- (void)twoFingerPan:(UISwipeGestureRecognizer *)recognizer 
 { 
     CGPoint point = [recognizer locationInView:[self view]];
-    NSLog(@"Swipe down - start location: %f,%f", point.x, point.y);
-}
-
-/*--------------------------------------------------------------
- * Two finger rotate   
- *-------------------------------------------------------------*/
-- (void)twoFingersRotate:(UIRotationGestureRecognizer *)recognizer 
-{
-	// Convert the radian value to show the degree of rotation
-	NSLog(@"Rotation in degrees since last change: %f", ([recognizer rotation] * 180) / M_PI);
+    NSLog(@"2 finger swipe - start location: %f,%f", point.x, point.y);
 }
 
 /*--------------------------------------------------------------
@@ -87,7 +61,17 @@
  *-------------------------------------------------------------*/
 - (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer 
 {
-	NSLog(@"Pinch scale: %f", recognizer.scale);
+    
+    if([recognizer state] == UIGestureRecognizerStateEnded) {
+		lastScale = 1.0;
+		return;
+	}
+    
+	currentScale*=(1.0 - (lastScale - [recognizer scale]));
+    [delegate redrawScale:currentScale beginX:0 beginY:0];
+    
+    lastScale = [recognizer scale];
+    
 }
 
 - (void)dealloc 

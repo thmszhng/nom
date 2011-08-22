@@ -13,8 +13,11 @@
 #import "Constants.h"
 
 
+
+
 @interface LevelEditorLayer: CCLayer {
-    
+
 }
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch; 
 @end

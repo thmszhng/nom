@@ -23,6 +23,9 @@
 		2EC38FB513FB5A6C003D3AF3 /* LevelEditorScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB413FB5A6C003D3AF3 /* LevelEditorScene.m */; };
 		2EC38FB813FB5AB6003D3AF3 /* HelpScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB713FB5AB6003D3AF3 /* HelpScene.m */; };
 		2EDEA4FD13E8DA2D006CAE1D /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */; };
+		54545C3814000E8E005A71C1 /* LevelEditorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54545C3714000E8E005A71C1 /* LevelEditorLayer.m */; };
+		54545C4214004A4C005A71C1 /* ViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 54545C4114004A4C005A71C1 /* ViewController.h */; };
+		54545C4414004A6C005A71C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54545C4314004A6C005A71C1 /* ViewController.m */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
 		5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05010113FF7A7D00C7385B /* RegularMode.m */; };
@@ -185,6 +188,10 @@
 		2EC38FB613FB5AB6003D3AF3 /* HelpScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScene.h; sourceTree = "<group>"; };
 		2EC38FB713FB5AB6003D3AF3 /* HelpScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpScene.m; sourceTree = "<group>"; };
 		2EDEA4FC13E8DA2D006CAE1D /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
+		54545C3614000C43005A71C1 /* LevelEditorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelEditorLayer.h; sourceTree = "<group>"; };
+		54545C3714000E8E005A71C1 /* LevelEditorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelEditorLayer.m; sourceTree = "<group>"; };
+		54545C4114004A4C005A71C1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		54545C4314004A6C005A71C1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicMode.h; sourceTree = "<group>"; };
 		5F0500E813FF711C00C7385B /* ClassicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassicMode.m; sourceTree = "<group>"; };
 		5F0500EA13FF750A00C7385B /* TimeBonusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBonusFood.h; sourceTree = "<group>"; };
@@ -523,6 +530,10 @@
 		2EC38FAE13FB59F8003D3AF3 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				54545C3614000C43005A71C1 /* LevelEditorLayer.h */,
+				54545C3714000E8E005A71C1 /* LevelEditorLayer.m */,
+				54545C4114004A4C005A71C1 /* ViewController.h */,
+				54545C4314004A6C005A71C1 /* ViewController.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -1131,6 +1142,7 @@
 				2E455E3E13FB560F00A7CD27 /* ToggleMusic.png in Resources */,
 				5F05010D1400753C00C7385B /* GameBackground-hd.png in Resources */,
 				5F05010E1400753C00C7385B /* GameBackground.png in Resources */,
+				54545C4214004A4C005A71C1 /* ViewController.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1257,6 +1269,8 @@
 				5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */,
 				5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */,
 				5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */,
+				54545C3814000E8E005A71C1 /* LevelEditorLayer.m in Sources */,
+				54545C4414004A6C005A71C1 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

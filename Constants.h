@@ -29,11 +29,12 @@ typedef enum
 {
 } GameOptionsSceneLayers;
  */
-/*
+
 typedef enum
 {
+    kLevelEditorLayer = 800,
 } LevelEditorsSceneLayers;
- */
+
 /*
 typedef enum 
 {
