@@ -9,7 +9,7 @@ BOOL edged(int x, int y)
 /*const static int trail[] = { 10, 8, 6, 4, 2, 1 };
 const static int trailLength = sizeof(trail)/sizeof(trail[0]);*/
 
-#define RUNNER_STRENGTH 10
+#define RUNNER_STRENGTH 20
 
 @implementation AnimationLayer
 
@@ -105,7 +105,7 @@ const static int trailLength = sizeof(trail)/sizeof(trail[0]);*/
     if (edged(X[which], Y[which]))
     {
         [self deleteRunner: which];
-        if (random() % 20) [self newRunner];
+        if (random() % 5 == 0) [self newRunner];
     }
     else
     {
@@ -124,7 +124,7 @@ const static int trailLength = sizeof(trail)/sizeof(trail[0]);*/
         if (dX[i] == 0 && dY[i] == 0) continue;
         [self moveRunner: i];
     }
-    [self newRunner];
+    if (random() % 5 == 0) [self newRunner];
 }
 
 -(void) draw

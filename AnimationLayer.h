@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-#define MAX_RUNNERS 400
+#define MAX_RUNNERS 200
 
 #define WIDTH 32
 #define HEIGHT 48
