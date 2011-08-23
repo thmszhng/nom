@@ -60,6 +60,8 @@
 {
     // don't pause if already paused
     if ([GameManager sharedGameManager].isGamePaused) return;
+    // no pausing while lost
+    if ([GameManager sharedGameManager].isGameOver) return;
     
     // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     PauseLayer * p = [[[PauseLayer alloc] init] autorelease];
