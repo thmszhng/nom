@@ -54,7 +54,7 @@
     pos.y += 480;
     [self runAction:
      [CCSequence actions:
-      [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.3 position: pos]],
+      [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]],
       [CCCallFunc actionWithTarget: self selector: @selector(finishResume)],
       nil]
      ];
