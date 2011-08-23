@@ -35,13 +35,13 @@
                                        selector: @selector(playGame)];
         [playButton setPosition: ccp(163, screenSize.height - 273)];
         
-        CCMenuItemImage *levelEditorButton = [CCMenuItemImage 
-                                              itemFromNormalImage: @"LevelEditor.png" 
-                                              selectedImage: @"LevelEditor.png" 
-                                              disabledImage: @"LevelEditor.png"  
+        CCMenuItemImage *gameOptionsButton = [CCMenuItemImage 
+                                              itemFromNormalImage: @"GameOptions.png" 
+                                              selectedImage: @"GameOptions.png"
+                                              disabledImage: @"GameOptions.png"
                                               target: self 
-                                              selector: @selector(openLevelEditor)];
-        [levelEditorButton setPosition: ccp(163, screenSize.height - 371)];
+                                              selector: @selector(openGameOptions)];
+        [gameOptionsButton setPosition: ccp(163, screenSize.height - 371)];
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
                                              itemFromNormalImage: @"Gamecenter.png"
@@ -69,7 +69,7 @@
                                                         selector:@selector(toggleSound:) items:SoundON, SoundOFF, nil];
         [toggleSoundButton setPosition: ccp(229, screenSize.height - 183)];
 
-        mainMenu = [CCMenu menuWithItems: playButton, levelEditorButton, gameCenterButton, helpButton, toggleSoundButton, nil];
+        mainMenu = [CCMenu menuWithItems: playButton, gameOptionsButton, gameCenterButton, helpButton, toggleSoundButton, nil];
         [mainMenu setPosition: CGPointZero];
         
         [self addChild: mainMenu];
@@ -92,9 +92,9 @@
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
--(void) openLevelEditor
+-(void) openGameOptions
 {
-    [[GameManager sharedGameManager] runSceneWithID: kLevelEditorScene];
+    [[GameManager sharedGameManager] runSceneWithID: kGameOptionsScene];
 }
 
 -(void) openGameCenter
@@ -104,7 +104,7 @@
 
 -(void) showHelp
 {
-    [[GameManager sharedGameManager] runSceneWithID: kHelpScene];
+    NSLog(@"Go screw yourself. No help for you. BRB.");
 }
 
 -(void) toggleSound: (id) sender

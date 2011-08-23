@@ -20,7 +20,7 @@
 
 -(id) init;
 -(void) playGame;
--(void) openLevelEditor;
+-(void) openGameOptions;
 -(void) openGameCenter;
 -(void) showHelp;
 -(void) toggleSound: (id) sender;

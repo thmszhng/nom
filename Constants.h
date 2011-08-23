@@ -12,34 +12,26 @@
 typedef enum 
 { 
     kNoSceneUninitialized = 0, 
-    kMainMenuScene = 1,
-    kGameOptionsScene = 2,
-    kLevelEditorScene = 3,
-    kHelpScene = 4,
+    kMainMenuScene,
+    kGameOptionsScene,
     kGameScene = 101,
 } SceneTypes;
 
-/*
+
 typedef enum
 {
+    kAnimationLayer = 0,
+    kMainMenuLayer,
+    kHelpLayer,
 } MainMenuSceneLayers;
-*/
+
+
 /*
 typedef enum
 {
 } GameOptionsSceneLayers;
  */
 
-typedef enum
-{
-    kLevelEditorLayer = 800,
-} LevelEditorsSceneLayers;
-
-/*
-typedef enum 
-{
-} HelpSceneLayers;
- */
 typedef enum
 {
     kGameBackgroundLayer = 600,
