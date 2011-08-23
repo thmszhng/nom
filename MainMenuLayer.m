@@ -72,11 +72,16 @@
         mainMenu = [CCMenu menuWithItems: playButton, levelEditorButton, gameCenterButton, helpButton, toggleSoundButton, nil];
         [mainMenu setPosition: CGPointZero];
         
-        [mainMenu setOpacity: 0];
         [self addChild: mainMenu];
         
-        id animation = [CCFadeIn actionWithDuration: 0.5];
-        [mainMenu runAction: animation];
+        static BOOL firstTime = YES;
+        if (firstTime)
+        {
+            firstTime = NO;
+            [mainMenu setOpacity: 0];
+            id animation = [CCFadeIn actionWithDuration: 0.5];
+            [mainMenu runAction: animation];
+        }
     }
     
     return self;
