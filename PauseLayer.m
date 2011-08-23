@@ -25,20 +25,20 @@
         
         //Menu items
         CCMenuItemImage *resumeButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"PauseMenuResume.png" 
-                                       selectedImage: @"PauseMenuResume.png" 
-                                       disabledImage: @"PauseMenuResume.png"  
+                                       itemFromNormalImage: @"Resume.png" 
+                                       selectedImage: @"Resume.png" 
+                                       disabledImage: @"Resume.png" 
                                        target: self 
                                        selector: @selector(resumeGame)];
-        [resumeButton setPosition: ccp(screenSize.width/2, 180)];
+        [resumeButton setPosition: ccp(screenSize.width/2, screenSize.height - 293)];
         
         CCMenuItemImage *mainMenuButton = [CCMenuItemImage 
-                                              itemFromNormalImage: @"PauseMenuMainMenu.png" 
-                                              selectedImage: @"PauseMenuMainMenu.png"
-                                              disabledImage: @"PauseMenuMainMenu.png"
+                                              itemFromNormalImage: @"MainMenu.png" 
+                                              selectedImage: @"MainMenu.png" 
+                                              disabledImage: @"MainMenu.png" 
                                               target: self 
                                               selector: @selector(goToMainMenu)];
-        [mainMenuButton setPosition: ccp(screenSize.width/2, 75)];
+        [mainMenuButton setPosition: ccp(screenSize.width/2, screenSize.height - 393)];
        
         pauseMenu = [CCMenu menuWithItems: resumeButton, mainMenuButton, nil];
         [pauseMenu setPosition: CGPointZero];

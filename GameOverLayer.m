@@ -25,20 +25,20 @@
         
         //Menu items
         CCMenuItemImage *newGameButton = [CCMenuItemImage 
-                                         itemFromNormalImage: @"GameOverNewGame.png" 
-                                         selectedImage: @"GameOverNewGame.png" 
-                                         disabledImage: @"GameOverNewGame.png"  
+                                         itemFromNormalImage: @"NewGame.png" 
+                                         selectedImage: @"NewGame.png" 
+                                         disabledImage: @"NewGame.png"
                                          target: self 
                                          selector: @selector(newGame)];
-        [newGameButton setPosition: ccp(screenSize.width/2, 180)];
+        [newGameButton setPosition: ccp(screenSize.width/2, screenSize.height - 293)];
         
         CCMenuItemImage *mainMenuButton = [CCMenuItemImage 
-                                           itemFromNormalImage: @"PauseMenuMainMenu.png" 
-                                           selectedImage: @"PauseMenuMainMenu.png"
-                                           disabledImage: @"PauseMenuMainMenu.png"
+                                           itemFromNormalImage: @"MainMenu.png" 
+                                           selectedImage: @"MainMenu.png" 
+                                           disabledImage: @"MainMenu.png" 
                                            target: self 
                                            selector: @selector(goToMainMenu)];
-        [mainMenuButton setPosition: ccp(screenSize.width/2, 75)];
+        [mainMenuButton setPosition: ccp(screenSize.width/2, screenSize.height - 393)];
         
         menu = [CCMenu menuWithItems: newGameButton, mainMenuButton, nil];
         [menu setPosition: CGPointZero];
