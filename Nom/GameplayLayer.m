@@ -11,6 +11,7 @@
 #import "GameConstants.h"
 #import "GameManager.h"
 #import "PauseLayer.h"
+#import "GameOverLayer.h"
 #import "RegularMode.h"
 
 @implementation GameplayLayer
@@ -21,22 +22,12 @@
     {
         //enable touches
         self.isTouchEnabled = YES;
-        trackTouch = NO;
-        
-        //initialize game
-        accumulatedTime = INITIAL_SPEED;
-        newDirection = NoDirection;
-        [GameManager sharedGameManager].isGameOver = NO;
-        [GameManager sharedGameManager].isGamePaused = NO;
-        game = [[RegularMode alloc] init];
-        
         //set up score display
-        scoreText = [CCLabelAtlas labelWithString: [NSString stringWithFormat: @"%d", game.score] charMapFile: @"numbers.png" itemWidth: 12 itemHeight: 14 startCharMap: '0'];
+        scoreText = [CCLabelAtlas labelWithString: @"" charMapFile: @"numbers.png" itemWidth: 12 itemHeight: 14 startCharMap: '0'];
         scoreText.color = ccc3(90, 220, 216);
         [scoreText setPosition: CGPointMake(16, 457)];
         [self addChild: scoreText];
-        
-        [self scheduleUpdate];
+        [self newGame];
     }
     
     return self;
@@ -46,6 +37,22 @@
 {
     [game release];
     [super dealloc];
+}
+
+-(void) newGame
+{
+    trackTouch = NO;
+    
+    //initialize game
+    accumulatedTime = INITIAL_SPEED;
+    newDirection = NoDirection;
+    [GameManager sharedGameManager].isGameOver = NO;
+    [GameManager sharedGameManager].isGamePaused = NO;
+    [game release];
+    game = [[RegularMode alloc] init];
+    
+    [scoreText setString: @"0"];
+    [self scheduleUpdate];
 }
 
 //pauses the game
@@ -83,7 +90,16 @@
 {
     if ([GameManager sharedGameManager].isGameOver)
     {
-        [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
+        // creates a new GameOverLayer, adds it to GameScene, places on top of GameplayLayer
+        GameOverLayer * p = [[[GameOverLayer alloc] init] autorelease];
+        [self.parent addChild: p z: 10 tag: kPauseLayer];
+        CGPoint pos = p.position;
+        id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.3 position: pos]];
+        pos.y += 480;
+        p.position = pos;
+        [p runAction: animation];
+        // we're done here
+        [self unscheduleUpdate];
         return;
     }
     

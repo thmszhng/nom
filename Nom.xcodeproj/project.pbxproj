@@ -49,6 +49,11 @@
 		5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05010113FF7A7D00C7385B /* RegularMode.m */; };
 		5F05012A1402106000C7385B /* numbers-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0501281402106000C7385B /* numbers-hd.png */; };
 		5F05012B1402106000C7385B /* numbers.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0501291402106000C7385B /* numbers.png */; };
+		5F05015714036AB100C7385B /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05015614036AAF00C7385B /* GameOverLayer.m */; };
+		5F05015C14036B2500C7385B /* GameOverBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F05015814036B2500C7385B /* GameOverBackground-hd.png */; };
+		5F05015D14036B2500C7385B /* GameOverBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F05015914036B2500C7385B /* GameOverBackground.png */; };
+		5F05015E14036B2500C7385B /* GameOverNewGame-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F05015A14036B2500C7385B /* GameOverNewGame-hd.png */; };
+		5F05015F14036B2500C7385B /* GameOverNewGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F05015B14036B2500C7385B /* GameOverNewGame.png */; };
 		5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F0E813FA0E1A00A3EA80 /* Game.m */; };
 		5F26B5AC13FB7705008B0024 /* RegularFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AB13FB7705008B0024 /* RegularFood.m */; };
 		5F26B5B013FB88E2008B0024 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AF13FB88E1008B0024 /* Food.m */; };
@@ -227,6 +232,12 @@
 		5F05010113FF7A7D00C7385B /* RegularMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularMode.m; sourceTree = "<group>"; };
 		5F0501281402106000C7385B /* numbers-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "numbers-hd.png"; sourceTree = "<group>"; };
 		5F0501291402106000C7385B /* numbers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbers.png; sourceTree = "<group>"; };
+		5F05015414036AA300C7385B /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
+		5F05015614036AAF00C7385B /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
+		5F05015814036B2500C7385B /* GameOverBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameOverBackground-hd.png"; sourceTree = "<group>"; };
+		5F05015914036B2500C7385B /* GameOverBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameOverBackground.png; sourceTree = "<group>"; };
+		5F05015A14036B2500C7385B /* GameOverNewGame-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameOverNewGame-hd.png"; sourceTree = "<group>"; };
+		5F05015B14036B2500C7385B /* GameOverNewGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameOverNewGame.png; sourceTree = "<group>"; };
 		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		5F16F0EA13FA103000A3EA80 /* GameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
@@ -642,6 +653,10 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F05015814036B2500C7385B /* GameOverBackground-hd.png */,
+				5F05015914036B2500C7385B /* GameOverBackground.png */,
+				5F05015A14036B2500C7385B /* GameOverNewGame-hd.png */,
+				5F05015B14036B2500C7385B /* GameOverNewGame.png */,
 				2EF66509140362D30027CBE5 /* GameBackground-hd.png */,
 				2EF6650A140362D30027CBE5 /* GameBackground.png */,
 				2EE9C73114035804000333DF /* PauseMenuBackground-hd.png */,
@@ -1057,6 +1072,8 @@
 				66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */,
 				5FC41C2413EE144D00EBDC13 /* PauseLayer.h */,
 				5FC41C2513EE144D00EBDC13 /* PauseLayer.m */,
+				5F05015414036AA300C7385B /* GameOverLayer.h */,
+				5F05015614036AAF00C7385B /* GameOverLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -1181,6 +1198,10 @@
 				2EE9C73C14035819000333DF /* PauseMenuResume.png in Resources */,
 				2EF6650B140362D30027CBE5 /* GameBackground-hd.png in Resources */,
 				2EF6650C140362D30027CBE5 /* GameBackground.png in Resources */,
+				5F05015C14036B2500C7385B /* GameOverBackground-hd.png in Resources */,
+				5F05015D14036B2500C7385B /* GameOverBackground.png in Resources */,
+				5F05015E14036B2500C7385B /* GameOverNewGame-hd.png in Resources */,
+				5F05015F14036B2500C7385B /* GameOverNewGame.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1309,6 +1330,7 @@
 				5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */,
 				54545C3814000E8E005A71C1 /* LevelEditorLayer.m in Sources */,
 				54545C4414004A6C005A71C1 /* ViewController.m in Sources */,
+				5F05015714036AB100C7385B /* GameOverLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

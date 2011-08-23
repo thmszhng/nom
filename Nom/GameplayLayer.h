@@ -26,6 +26,7 @@
 -(id) init;
 -(void) dealloc;
 
+-(void) newGame;
 -(void) pauseGame;
 -(void) onExit;
 -(void) onEnter;
