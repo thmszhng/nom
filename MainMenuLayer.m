@@ -33,7 +33,7 @@
                                        disabledImage: @"Play.png"  
                                        target: self 
                                        selector: @selector(playGame)];
-        [playButton setPosition: ccp(163, screenSize.height - 273)];
+        [playButton setPosition: ccp(screenSize.width/2, screenSize.height - 273)];
         
         CCMenuItemImage *gameOptionsButton = [CCMenuItemImage 
                                               itemFromNormalImage: @"GameOptions.png" 
@@ -41,7 +41,7 @@
                                               disabledImage: @"GameOptions.png"
                                               target: self 
                                               selector: @selector(openGameOptions)];
-        [gameOptionsButton setPosition: ccp(163, screenSize.height - 371)];
+        [gameOptionsButton setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
                                              itemFromNormalImage: @"Gamecenter.png"
