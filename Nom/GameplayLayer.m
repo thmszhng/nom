@@ -33,7 +33,7 @@
         //set up score display
         scoreText = [CCLabelAtlas labelWithString: [NSString stringWithFormat: @"%d", game.score] charMapFile: @"numbers.png" itemWidth: 12 itemHeight: 14 startCharMap: '0'];
         scoreText.color = ccc3(90, 220, 216);
-        [scoreText setPosition: CGPointMake(12, 457)];
+        [scoreText setPosition: CGPointMake(16, 457)];
         [self addChild: scoreText];
         
         [self scheduleUpdate];
