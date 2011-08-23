@@ -30,7 +30,7 @@
                                          disabledImage: @"GameOverNewGame.png"  
                                          target: self 
                                          selector: @selector(newGame)];
-        [newGameButton setPosition: ccp(screenSize.width/2, 250)];
+        [newGameButton setPosition: ccp(screenSize.width/2, 180)];
         
         CCMenuItemImage *mainMenuButton = [CCMenuItemImage 
                                            itemFromNormalImage: @"PauseMenuMainMenu.png" 
@@ -38,7 +38,7 @@
                                            disabledImage: @"PauseMenuMainMenu.png"
                                            target: self 
                                            selector: @selector(goToMainMenu)];
-        [mainMenuButton setPosition: ccp(screenSize.width/2, 125)];
+        [mainMenuButton setPosition: ccp(screenSize.width/2, 75)];
         
         menu = [CCMenu menuWithItems: newGameButton, mainMenuButton, nil];
         [menu setPosition: CGPointZero];
