@@ -22,18 +22,18 @@
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         
         //background
-        CCSprite *bg = [CCSprite spriteWithFile: @"MainMenuBackground.png"];
+        CCSprite *bg = [CCSprite spriteWithFile: @"Frame.png"];
         [bg setPosition: ccp(screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
         //Menu items
         CCMenuItemImage *playButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"PlayGame.png" 
-                                       selectedImage: @"PlayGame.png" 
-                                       disabledImage: @"PlayGame.png"  
+                                       itemFromNormalImage: @"Play.png" 
+                                       selectedImage: @"Play.png" 
+                                       disabledImage: @"Play.png"  
                                        target: self 
                                        selector: @selector(playGame)];
-        [playButton setPosition: ccp(screenSize.width/2, screenSize.height/2 - 45)];
+        [playButton setPosition: ccp(163, screenSize.height - 273)];
         
         CCMenuItemImage *levelEditorButton = [CCMenuItemImage 
                                               itemFromNormalImage: @"LevelEditor.png" 
@@ -41,7 +41,7 @@
                                               disabledImage: @"LevelEditor.png"  
                                               target: self 
                                               selector: @selector(openLevelEditor)];
-        [levelEditorButton setPosition: ccp(screenSize.width/2, screenSize.height/2 - 75)];
+        [levelEditorButton setPosition: ccp(163, screenSize.height - 371)];
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
                                              itemFromNormalImage: @"Gamecenter.png"
@@ -49,7 +49,7 @@
                                              disabledImage: nil
                                              target: self
                                              selector: @selector(openGameCenter)];
-        [gameCenterButton setPosition: ccp(screenSize.width/2, screenSize.height/2 - 105)];
+        [gameCenterButton setPosition: ccp(89, screenSize.height - 183)];
         
         CCMenuItemImage *helpButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"Help.png" 
@@ -57,15 +57,15 @@
                                        disabledImage: @"Help.png"  
                                        target: self 
                                        selector: @selector(showHelp)];
-        [helpButton setPosition: ccp(screenSize.width/2, screenSize.height/2 - 135)];
+        [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
         CCMenuItemImage *toggleMusicButton = [CCMenuItemImage 
-                                              itemFromNormalImage: @"ToggleMusic.png" 
-                                              selectedImage: @"ToggleMusic.png" 
-                                              disabledImage: @"ToggleMusic.png"  
+                                              itemFromNormalImage: @"SoundON.png" 
+                                              selectedImage: @"SoundON.png" 
+                                              disabledImage: @"SoundOFF.png"  
                                               target: self 
                                               selector: @selector(toggleMusic)];
-        [toggleMusicButton setPosition: ccp(screenSize.width/2, screenSize.height/2 - 165)];
+        [toggleMusicButton setPosition: ccp(229, screenSize.height - 183)];
         
         mainMenu = [CCMenu menuWithItems: playButton, levelEditorButton, gameCenterButton, helpButton, toggleMusicButton, nil];
         [mainMenu setPosition: CGPointZero];
