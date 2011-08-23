@@ -67,10 +67,9 @@
     [gl onEnter];
 }
 
-// unpauses game when screen is tapped
 -(void) goToMainMenu
 {
-    [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
+    [self.parent mainMenu];
 }
 
 @end

@@ -18,4 +18,6 @@
     GameplayLayer *gameplayLayer;
 }
 
+-(void) mainMenu;
+
 @end
