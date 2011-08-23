@@ -11,27 +11,54 @@
 
 @implementation PauseLayer
 
--(id) initWithColor: (ccColor4B) color
+-(id) init
 {
-    if ((self = [super initWithColor: color]))
+    self = [super init];
+    if (self != nil)
     {
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         self.isTouchEnabled = YES;
         
-        CCSprite *paused = [CCSprite spriteWithFile: @"PauseOverlay.png"];
+        CCSprite *paused = [CCSprite spriteWithFile: @"PauseMenuBackground.png"];
         [paused setPosition: ccp(screenSize.width/2, screenSize.height/2)];
         [self addChild: paused];
+        
+        //Menu items
+        CCMenuItemImage *resumeButton = [CCMenuItemImage 
+                                       itemFromNormalImage: @"PauseMenuResume.png" 
+                                       selectedImage: @"PauseMenuResume.png" 
+                                       disabledImage: @"PauseMenuResume.png"  
+                                       target: self 
+                                       selector: @selector(resumeGame)];
+        [resumeButton setPosition: ccp(screenSize.width/2, 250)];
+        
+        CCMenuItemImage *mainMenuButton = [CCMenuItemImage 
+                                              itemFromNormalImage: @"PauseMenuMainMenu.png" 
+                                              selectedImage: @"PauseMenuMainMenu.png"
+                                              disabledImage: @"PauseMenuMainMenu.png"
+                                              target: self 
+                                              selector: @selector(goToMainMenu)];
+        [mainMenuButton setPosition: ccp(screenSize.width/2, 125)];
+        
+        pauseMenu = [CCMenu menuWithItems: resumeButton, mainMenuButton, nil];
+        [pauseMenu setPosition: CGPointZero];
+        [self addChild: pauseMenu];
     }
     
     return self;
 }
 
-// unpauses game when screen is tapped
--(void) ccTouchesBegan: (NSSet *) touches withEvent: (UIEvent *) event
+-(void) resumeGame
 {
     GameplayLayer *gl = (GameplayLayer *) [self.parent getChildByTag: kGameplayLayer];
     [self.parent removeChild: self cleanup: YES];
     [gl onEnter];
+}
+
+// unpauses game when screen is tapped
+-(void) goToMainMenu
+{
+    [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
 }
 
 @end

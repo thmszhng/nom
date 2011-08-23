@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameManager.h"
 
-@interface PauseLayer : CCLayerColor {
-    
+@interface PauseLayer : CCLayer {
+    CCMenu *pauseMenu;
 }
+
+-(void) resumeGame;
+-(void) goToMainMenu;
 
 @end
