@@ -117,7 +117,7 @@ const static int trailLength = sizeof(trail)/sizeof(trail[0]);*/
 {
     for (int x = 0; x < WIDTH; ++x)
         for (int y = 0; y < HEIGHT; ++y)
-            grid[x][y] = (grid[x][y] * 3) >> 2;
+            grid[x][y] = (grid[x][y] * 7) >> 3;
     
     for (int i = 0; i < MAX_RUNNERS; ++i)
     {
