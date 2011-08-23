@@ -57,6 +57,11 @@
     // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     PauseLayer * p = [[[PauseLayer alloc] init] autorelease];
     [self.parent addChild: p z: 10 tag: kPauseLayer];
+    CGPoint pos = p.position;
+    id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.3 position: pos]];
+    pos.y += 480;
+    p.position = pos;
+    [p runAction: animation];
     
     [self onExit];
 }

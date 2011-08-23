@@ -15,6 +15,7 @@
 }
 
 -(void) resumeGame;
+-(void) finishResume;
 -(void) goToMainMenu;
 
 @end
