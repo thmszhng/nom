@@ -14,6 +14,8 @@
 @interface MainMenuLayer : CCLayer 
 {
     CCMenu *mainMenu;
+    CCMenuItem *SoundON;
+    CCMenuItem *SoundOFF;
 }
 
 -(id) init;
@@ -21,5 +23,5 @@
 -(void) openLevelEditor;
 -(void) openGameCenter;
 -(void) showHelp;
--(void) toggleMusic;
+-(void) toggleSound: (id) sender;
 @end

@@ -59,15 +59,17 @@
                                        selector: @selector(showHelp)];
         [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
-        CCMenuItemImage *toggleMusicButton = [CCMenuItemImage 
-                                              itemFromNormalImage: @"SoundON.png" 
-                                              selectedImage: @"SoundON.png" 
-                                              disabledImage: @"SoundOFF.png"  
-                                              target: self 
-                                              selector: @selector(toggleMusic)];
-        [toggleMusicButton setPosition: ccp(229, screenSize.height - 183)];
+        SoundON = [[CCMenuItemImage itemFromNormalImage:@"SoundON.png" 
+                                            selectedImage:@"SoundON.png" target:nil selector:nil] retain];
         
-        mainMenu = [CCMenu menuWithItems: playButton, levelEditorButton, gameCenterButton, helpButton, toggleMusicButton, nil];
+        SoundOFF = [[CCMenuItemImage itemFromNormalImage:@"SoundOFF.png" 
+                                             selectedImage:@"ButtonMinusSel.jpg" target:nil selector:nil] retain];
+        
+        CCMenuItemToggle *toggleSoundButton = [CCMenuItemToggle itemWithTarget:self 
+                                                        selector:@selector(toggleSound:) items:SoundON, SoundOFF, nil];
+        [toggleSoundButton setPosition: ccp(229, screenSize.height - 183)];
+
+        mainMenu = [CCMenu menuWithItems: playButton, levelEditorButton, gameCenterButton, helpButton, toggleSoundButton, nil];
         [mainMenu setPosition: CGPointZero];
         [self addChild: mainMenu];
     }
@@ -95,8 +97,18 @@
     [[GameManager sharedGameManager] runSceneWithID: kHelpScene];
 }
 
--(void) toggleMusic
+-(void) toggleSound: (id) sender
 {
-    [GameManager sharedGameManager].isMusicON = NO;
+    CCMenuItemToggle *toggleItem = (CCMenuItemToggle *)sender;
+    
+    if (toggleItem.selectedItem == SoundON) 
+    {
+        [GameManager sharedGameManager].isMusicON = NO;
+    } 
+    
+    else if (toggleItem.selectedItem == SoundOFF) 
+    {
+        [GameManager sharedGameManager].isMusicON = YES;    
+    }
 }
 @end
