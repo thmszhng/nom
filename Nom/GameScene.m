@@ -26,10 +26,4 @@
     
     return self;
 }
-
--(void) mainMenu
-{
-    // TODO: animate
-    [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
-}
 @end

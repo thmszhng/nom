@@ -67,9 +67,10 @@
     [self.parent removeChild: self cleanup: YES];
 }
 
+// unpauses game when screen is tapped
 -(void) goToMainMenu
 {
-    [self.parent mainMenu];
+    [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
 }
 
 @end
