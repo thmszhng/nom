@@ -29,7 +29,7 @@
         //Menu items
         CCMenuItemImage *playButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"Play.png" 
-                                       selectedImage: @"Play.png" 
+                                       selectedImage: @"Play-selected.png" 
                                        disabledImage: @"Play.png"  
                                        target: self 
                                        selector: @selector(playGame)];
@@ -37,7 +37,7 @@
         
         CCMenuItemImage *gameOptionsButton = [CCMenuItemImage 
                                               itemFromNormalImage: @"GameOptions.png" 
-                                              selectedImage: @"GameOptions.png"
+                                              selectedImage: @"GameOptions-selected.png"
                                               disabledImage: @"GameOptions.png"
                                               target: self 
                                               selector: @selector(openGameOptions)];
@@ -45,7 +45,7 @@
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
                                              itemFromNormalImage: @"Gamecenter.png"
-                                             selectedImage: @"Gamecenter.png"
+                                             selectedImage: @"Gamecenter-selected.png"
                                              disabledImage: nil
                                              target: self
                                              selector: @selector(openGameCenter)];
@@ -53,17 +53,17 @@
         
         CCMenuItemImage *helpButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"Help.png" 
-                                       selectedImage: @"Help.png" 
+                                       selectedImage: @"Help-selected.png" 
                                        disabledImage: @"Help.png"  
                                        target: self 
                                        selector: @selector(showHelp)];
         [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
         SoundON = [[CCMenuItemImage itemFromNormalImage:@"SoundON.png" 
-                                            selectedImage:@"SoundON.png" target:nil selector:nil] retain];
+                                            selectedImage:@"SoundON-selected.png" target:nil selector:nil] retain];
         
         SoundOFF = [[CCMenuItemImage itemFromNormalImage:@"SoundOFF.png" 
-                                             selectedImage:@"ButtonMinusSel.jpg" target:nil selector:nil] retain];
+                                             selectedImage:@"SoundOFF-selected.png" target:nil selector:nil] retain];
         
         CCMenuItemToggle *toggleSoundButton = [CCMenuItemToggle itemWithTarget:self 
                                                         selector:@selector(toggleSound:) items:SoundON, SoundOFF, nil];

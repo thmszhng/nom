@@ -26,7 +26,7 @@
         //Menu items
         CCMenuItemImage *newGameButton = [CCMenuItemImage 
                                          itemFromNormalImage: @"NewGame.png" 
-                                         selectedImage: @"NewGame.png" 
+                                         selectedImage: @"NewGame-selected.png" 
                                          disabledImage: @"NewGame.png"
                                          target: self 
                                          selector: @selector(newGame)];
@@ -34,7 +34,7 @@
         
         CCMenuItemImage *mainMenuButton = [CCMenuItemImage 
                                            itemFromNormalImage: @"MainMenu.png" 
-                                           selectedImage: @"MainMenu.png" 
+                                           selectedImage: @"MainMenu-selected.png" 
                                            disabledImage: @"MainMenu.png" 
                                            target: self 
                                            selector: @selector(goToMainMenu)];

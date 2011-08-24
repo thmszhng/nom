@@ -26,7 +26,7 @@
         //Menu items
         CCMenuItemImage *resumeButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"Resume.png" 
-                                       selectedImage: @"Resume.png" 
+                                       selectedImage: @"Resume-selected.png" 
                                        disabledImage: @"Resume.png" 
                                        target: self 
                                        selector: @selector(resumeGame)];
@@ -34,7 +34,7 @@
         
         CCMenuItemImage *mainMenuButton = [CCMenuItemImage 
                                               itemFromNormalImage: @"MainMenu.png" 
-                                              selectedImage: @"MainMenu.png" 
+                                              selectedImage: @"MainMenu-selected.png" 
                                               disabledImage: @"MainMenu.png" 
                                               target: self 
                                               selector: @selector(goToMainMenu)];
