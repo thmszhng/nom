@@ -14,6 +14,7 @@
 
 #import "Constants.h"
 
+#import "Transitions.h"
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;
@@ -60,8 +61,6 @@ static GameManager* _sharedGameManager = nil;
 
 -(void) runSceneWithID: (SceneTypes) sceneID
 {
-    SceneTypes oldScene = currentScene;
-    currentScene = sceneID;
     id sceneToRun = nil;
     
     switch (sceneID) 
@@ -83,19 +82,20 @@ static GameManager* _sharedGameManager = nil;
             break;
     }
     
-    if (sceneToRun == nil)
-    {
-        currentScene = oldScene;
-        return;
-    }
-    
-    if ([[CCDirector sharedDirector] runningScene] == nil)
+    SceneTypes oldScene = currentScene;
+    currentScene = sceneID;
+
+    if (oldScene == kNoSceneUninitialized)
     {
         [[CCDirector sharedDirector] runWithScene: sceneToRun];
+        return;
     }
-    else
-    {
-        [[CCDirector sharedDirector] replaceScene: sceneToRun];
-    }
+
+    sceneToRun = [currentScene < oldScene ?
+                  [SlideUp class] :
+                  [SlideDown class]
+                  transitionWithDuration: 0.4 scene: sceneToRun];
+    
+    [[CCDirector sharedDirector] replaceScene: sceneToRun];
 }
 @end

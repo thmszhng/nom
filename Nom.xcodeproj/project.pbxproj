@@ -54,6 +54,7 @@
 		5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F0E813FA0E1A00A3EA80 /* Game.m */; };
 		5F26B5AC13FB7705008B0024 /* RegularFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AB13FB7705008B0024 /* RegularFood.m */; };
 		5F26B5B013FB88E2008B0024 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AF13FB88E1008B0024 /* Food.m */; };
+		5F29C9E614047E280091D12D /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F29C9E514047E280091D12D /* Transitions.m */; };
 		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
 		5FC41C2613EE144E00EBDC13 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC41C2513EE144D00EBDC13 /* PauseLayer.m */; };
@@ -232,6 +233,8 @@
 		5F26B5A913FB76AD008B0024 /* RegularFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularFood.h; sourceTree = "<group>"; };
 		5F26B5AB13FB7705008B0024 /* RegularFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularFood.m; sourceTree = "<group>"; };
 		5F26B5AF13FB88E1008B0024 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		5F29C9E314047D990091D12D /* Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitions.h; sourceTree = "<group>"; };
+		5F29C9E514047E280091D12D /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transitions.m; sourceTree = "<group>"; };
 		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Render.h; sourceTree = "<group>"; };
 		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
 		5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationLayer.h; sourceTree = "<group>"; };
@@ -964,6 +967,8 @@
 				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
 				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
 				5F0500E513FF70BE00C7385B /* GameModes */,
+				5F29C9E314047D990091D12D /* Transitions.h */,
+				5F29C9E514047E280091D12D /* Transitions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1261,6 +1266,7 @@
 				5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */,
 				5F05015714036AB100C7385B /* GameOverLayer.m in Sources */,
 				2EC9F0F41404607A002629BA /* HelpLayer.m in Sources */,
+				5F29C9E614047E280091D12D /* Transitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
