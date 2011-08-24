@@ -12,6 +12,7 @@
 void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height);
 void drawBox(int x, int y, int width, int height, ccColor3B main, ccColor3B shadow);
 
+CCRenderTexture *getTexture(int entry);
 // grid coordinates
 void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright);
 

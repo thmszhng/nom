@@ -13,6 +13,7 @@
 #import "RootViewController.h"
 #import "GameScene.h"
 #import "GameManager.h"
+#import "Render.h"
 
 int haveRetina;
 
@@ -119,6 +120,9 @@ int haveRetina;
 	
 	// Run the main menu Scene
     [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
+    
+    // Cache snake pieces
+    for (int i = 0; i < 16; ++i) getTexture(i);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

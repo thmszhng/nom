@@ -35,13 +35,15 @@ void drawBox(int x, int y, int width, int height, ccColor3B main, ccColor3B shad
     glDrawRect(x+1, y+1, width-2, height-2);
 }
 
-void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
+CCRenderTexture *getTexture(int entry)
+{
     static CCRenderTexture* cache[16] = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil };
-
+    
     const int width = 10, height = 10;
-    int xx = x * width + 10, yy = y * height + 148;
-
-    int entry = (ctop ? 1 : 0) | (cleft ? 2 : 0) | (cbottom ? 4 : 0) | (cright ? 8 : 0);
+    BOOL ctop = entry & 1,
+         cleft = entry & 2,
+         cbottom = entry & 4,
+         cright = entry & 8;
     if (cache[entry] == nil)
     {
         cache[entry] = [[CCRenderTexture alloc] initWithWidth: 10 height: 10 pixelFormat: kCCTexture2DPixelFormat_RGBA8888];
@@ -49,7 +51,7 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
         glDisable(GL_TEXTURE_2D);
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);
         glDisableClientState(GL_COLOR_ARRAY);
-
+        
         glColor4ub(255, 255, 255, 255);
         glDrawRect(0, 0, width, height);
         glColor4ub(DARKEN(60), DARKEN(60), DARKEN(60), 255);
@@ -97,13 +99,22 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright) {
                 glDrawRect(0, 1, 1, height-2);
             }
         }
-
+        
         glEnableClientState(GL_COLOR_ARRAY);
         glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         glEnable(GL_TEXTURE_2D);
         [cache[entry] end];
     }
-    CCSprite* sprite = [cache[entry] sprite];
+    return cache[entry];
+}
+
+void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright)
+{
+    const int width = 10, height = 10;
+    int xx = x * width + 10, yy = y * height + 148;
+
+    int entry = (ctop ? 1 : 0) | (cleft ? 2 : 0) | (cbottom ? 4 : 0) | (cright ? 8 : 0);
+    CCSprite* sprite = [getTexture(entry) sprite];
     sprite.position = CGPointMake(xx + width/2, yy + height/2);
     [sprite visit];
 }
