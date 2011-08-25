@@ -57,7 +57,7 @@
                                        disabledImage: @"Help.png"  
                                        target: self 
                                        selector: @selector(showHelp)];
-        [helpButton setPosition: ccp(screenSize.width/2, screenSize.height - 183)];
+        [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
         SoundON = [[CCMenuItemImage itemFromNormalImage:@"SoundON.png" 
                                             selectedImage:@"SoundON-selected.png" target:nil selector:nil] retain];
