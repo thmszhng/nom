@@ -90,7 +90,7 @@ static GameManager* _sharedGameManager = nil;
         [[CCDirector sharedDirector] runWithScene: sceneToRun];
         return;
     }
-
+    
     sceneToRun = [currentScene < oldScene ?
                   [SlideUp class] :
                   [SlideDown class]
