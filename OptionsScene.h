@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Constants.h"
+#import "OptionsBackgroundLayer.h"
 
-@interface GameOptionsScene : CCScene {
-    
+@interface OptionsScene : CCScene {
+    OptionsBackgroundLayer *optionsBackgroundLayer;
 }
 
 @end

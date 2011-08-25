@@ -35,13 +35,13 @@
                                        selector: @selector(playGame)];
         [playButton setPosition: ccp(screenSize.width/2, screenSize.height - 273)];
         
-        CCMenuItemImage *gameOptionsButton = [CCMenuItemImage 
+        CCMenuItemImage *optionsButton = [CCMenuItemImage 
                                               itemFromNormalImage: @"GameOptions.png" 
                                               selectedImage: @"GameOptions-selected.png"
                                               disabledImage: @"GameOptions.png"
                                               target: self 
-                                              selector: @selector(openGameOptions)];
-        [gameOptionsButton setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
+                                              selector: @selector(openOptions)];
+        [optionsButton setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
                                              itemFromNormalImage: @"Gamecenter.png"
@@ -69,7 +69,7 @@
                                                         selector:@selector(toggleSound:) items:SoundON, SoundOFF, nil];
         [toggleSoundButton setPosition: ccp(229, screenSize.height - 183)];
 
-        mainMenu = [CCMenu menuWithItems: playButton, gameOptionsButton, gameCenterButton, helpButton, toggleSoundButton, nil];
+        mainMenu = [CCMenu menuWithItems: playButton, optionsButton, gameCenterButton, helpButton, toggleSoundButton, nil];
         [mainMenu setPosition: CGPointZero];
         
         [self addChild: mainMenu];
@@ -92,9 +92,9 @@
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
--(void) openGameOptions
+-(void) openOptions
 {
-    [[GameManager sharedGameManager] runSceneWithID: kGameOptionsScene];
+    [[GameManager sharedGameManager] runSceneWithID: kOptionsScene];
 }
 
 -(void) openGameCenter

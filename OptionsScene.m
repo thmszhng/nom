@@ -6,16 +6,20 @@
 //  Copyright 2011 Cisco. All rights reserved.
 //
 
-#import "GameOptionsScene.h"
+#import "OptionsScene.h"
 
 
-@implementation GameOptionsScene
+@implementation OptionsScene
+
 -(id) init
 {
     self = [super init];
     if (self != nil)
     {
-        
+        //Background Layer
+        optionsBackgroundLayer = [OptionsBackgroundLayer node];
+        [self addChild: optionsBackgroundLayer z: 0 tag: kOptionsBackgroundLayer];
+
     }
     
     return self;
