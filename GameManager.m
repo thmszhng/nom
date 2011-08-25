@@ -94,7 +94,7 @@ static GameManager* _sharedGameManager = nil;
     sceneToRun = [currentScene < oldScene ?
                   [SlideUp class] :
                   [SlideDown class]
-                  transitionWithDuration: 0.4 scene: sceneToRun];
+                  transitionWithDuration: 0.5 scene: sceneToRun];
     
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
 }
