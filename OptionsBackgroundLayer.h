@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Constants.h"
+#import "GameManager.h"
+
 @interface OptionsBackgroundLayer : CCLayer {
     
 }
 
 -(id) init;
+-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+
 @end

@@ -27,4 +27,9 @@
     
     return self;
 }
+
+-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [[GameManager sharedGameManager] runSceneWithID: kGameScene];
+}
 @end
