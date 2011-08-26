@@ -10,9 +10,12 @@
 #import "cocos2d.h"
 #import "Constants.h"
 #import "GameManager.h"
+#import "HelpLayer.h"
 
 @interface MainMenuLayer : CCLayer 
 {
+    BOOL isHelpShowing;
+    
     CCMenu *mainMenu;
     CCMenuItem *SoundON;
     CCMenuItem *SoundOFF;
@@ -23,5 +26,7 @@
 -(void) openOptions;
 -(void) openGameCenter;
 -(void) showHelp;
+-(void) onEnter;
+-(void) onExit;
 -(void) toggleSound: (id) sender;
 @end

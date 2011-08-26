@@ -46,8 +46,8 @@
     //initialize game
     accumulatedTime = INITIAL_SPEED;
     newDirection = NoDirection;
-    [GameManager sharedGameManager].isGameOver = NO;
-    [GameManager sharedGameManager].isGamePaused = NO;
+    isGameOver = NO;
+    isGamePaused = NO;
     [game release];
     game = [[RegularMode alloc] init];
     
@@ -59,9 +59,9 @@
 -(void) pauseGame
 {
     // don't pause if already paused
-    if ([GameManager sharedGameManager].isGamePaused) return;
+    if (isGamePaused) return;
     // no pausing while lost
-    if ([GameManager sharedGameManager].isGameOver) return;
+    if (isGameOver) return;
     
     // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     PauseLayer * p = [[[PauseLayer alloc] init] autorelease];
@@ -77,20 +77,20 @@
 
 -(void) onExit
 {
-    [GameManager sharedGameManager].isGamePaused = YES;
+    isGamePaused = YES;
     [super onExit];
 }
 
 -(void) onEnter
 {
-    [GameManager sharedGameManager].isGamePaused = NO;
+    isGamePaused = NO;
     [super onEnter];
 }
 
 //updates the game, 60Hz
 -(void) update: (ccTime) deltaTime
 {
-    if ([GameManager sharedGameManager].isGameOver)
+    if (isGameOver)
     {
         // creates a new GameOverLayer, adds it to GameScene, places on top of GameplayLayer
         GameOverLayer * p = [[[GameOverLayer alloc] init] autorelease];
@@ -116,7 +116,7 @@
         
         if (![game moveSnake])
         {
-            [GameManager sharedGameManager].isGameOver = YES;
+            isGameOver = YES;
         };
         
         [scoreText setString: [NSString stringWithFormat: @"%d", game.score]];

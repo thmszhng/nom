@@ -13,4 +13,8 @@
     
 }
 
+-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void) goAway;
+-(void) finishGoingAway;
+
 @end

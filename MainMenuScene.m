@@ -18,11 +18,11 @@
     {
         // animation layer
         animationLayer = [AnimationLayer node];
-        [self addChild: animationLayer z:0];
+        [self addChild: animationLayer z:0 tag: kAnimationLayer];
  
         //main menu layer
         mainMenuLayer = [MainMenuLayer node];
-        [self addChild: mainMenuLayer z:5];
+        [self addChild: mainMenuLayer z:5 tag: kMainMenuLayer];
     }
     
     return self;

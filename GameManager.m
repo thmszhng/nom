@@ -51,8 +51,6 @@ static GameManager* _sharedGameManager = nil;
         //Game Manager initialized
         isMusicON = YES;
         isSoundEffectsON = YES;
-        isGameOver = NO;
-        isGamePaused = NO;
         currentScene = kNoSceneUninitialized;
     }
     

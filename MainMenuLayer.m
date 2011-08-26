@@ -16,6 +16,8 @@
     
     if (self != nil)
     {
+        isHelpShowing = NO;
+        
         //enable touches
         self.isTouchEnabled = YES;
         
@@ -104,7 +106,29 @@
 
 -(void) showHelp
 {
-    NSLog(@"Go screw yourself. No help for you. BRB.");
+    if(isHelpShowing) return;
+    
+    HelpLayer * hl = [[[HelpLayer alloc] init] autorelease];
+    [self.parent addChild: hl z: 10 tag: kHelpLayer];
+    CGPoint pos = hl.position;
+    id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
+    pos.y += 480;
+    hl.position = pos;
+    [hl runAction: animation];
+    
+    [self onExit];
+}
+
+-(void) onEnter
+{
+    isHelpShowing = NO;
+    [super onEnter];
+}
+
+-(void) onExit
+{
+    isHelpShowing = YES;
+    [super onExit];
 }
 
 -(void) toggleSound: (id) sender

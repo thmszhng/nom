@@ -17,6 +17,8 @@
     Game *game;
     ccTime accumulatedTime;
     enum Direction newDirection;
+    BOOL isGamePaused;
+    BOOL isGameOver;
     
     // controls
     BOOL trackTouch;
