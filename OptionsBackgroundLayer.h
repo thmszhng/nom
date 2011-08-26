@@ -12,10 +12,11 @@
 #import "GameManager.h"
 
 @interface OptionsBackgroundLayer : CCLayer {
-    
+    CCMenu *optionsMenu;
 }
 
 -(id) init;
+-(void) playGame;
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end

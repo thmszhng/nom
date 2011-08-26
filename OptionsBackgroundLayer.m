@@ -23,9 +23,26 @@
         bg = [CCSprite spriteWithFile: @"OptionsBackground.png"];
         [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
+        
+        /* TODO: Make this proper.
+        CCMenuItemImage *playButton = [CCMenuItemImage 
+                                       itemFromNormalImage: @"OptionsPlay.png" 
+                                       selectedImage: @"OptionsPlay-selected.png" 
+                                       disabledImage: @"OptionsPlay.png"  
+                                       target: self 
+                                       selector: @selector(playGame)];
+        [playButton setPosition: ccp(1, 1)];
+        
+        optionsMenu = [CCMenu menuWithItems: playButton, nil];
+        [optionsMenu setPosition: CGPointZero];*/
     }
     
     return self;
+}
+
+-(void) playGame
+{
+    [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
