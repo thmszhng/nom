@@ -11,24 +11,20 @@
 #import "Game.h"
 #import "RegularFood.h"
 #import "TimeBonusFood.h"
-
-Class randomFood()
-{
-    Class FoodTypes[] =
-    {
-        [RegularFood class],
-        [TimeBonusFood class]
-    };
-    return FoodTypes[random() % 2];
-}
+#import "FoodRandomizer.h"
 
 @implementation BurstFood
+
++(void) load
+{
+    [FoodRandomizer addFood: [self class] weight: 1];
+}
 
 -(void) eat: (Game *) game
 {
     for (int i = 5; i--; )
     {
-        [game createFood: randomFood() at: [game findSpaceNear: self.pos]];
+        [game createFood: [FoodRandomizer randomFoodExcept: [self class]] at: [game findSpaceNear: self.pos]];
     }
 }
 

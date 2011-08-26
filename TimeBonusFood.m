@@ -8,8 +8,14 @@
 
 #import "TimeBonusFood.h"
 #import "Game.h"
+#import "FoodRandomizer.h"
 
 @implementation TimeBonusFood
+
++(void) load
+{
+    [FoodRandomizer addFood: [self class] weight: 3];
+}
 
 -(id) initWithGame: (Game *) game
 {

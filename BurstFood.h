@@ -12,6 +12,8 @@
 {
 }
 
++(void) load;
+
 -(void) eat: (Game *) game;
 -(ccColor3B) color;
 

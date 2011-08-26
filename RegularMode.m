@@ -7,9 +7,9 @@
 //
 
 #import "RegularMode.h"
+
 #import "RegularFood.h"
-#import "TimeBonusFood.h"
-#import "BurstFood.h"
+#import "FoodRandomizer.h"
 
 @implementation RegularMode
 
@@ -30,9 +30,7 @@
         [self createFood: [RegularFood class]];
         if (random() % 4 == 0)
         {
-            [self createFood: [TimeBonusFood class]];
-            [self createFood: [BurstFood class]];
-            // TODO: generalize to a list of bonus foods
+            [self createFood: [FoodRandomizer randomFoodExcept: [RegularFood class]]];
         }
     }
 }

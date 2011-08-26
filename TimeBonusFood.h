@@ -14,6 +14,8 @@
     int stepsOnCreation;
 }
 
++(void) load;
+
 -(id) initWithGame: (Game *) game;
 -(void) eat: (Game *) game;
 -(ccColor3B) color;

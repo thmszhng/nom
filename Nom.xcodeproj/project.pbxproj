@@ -83,6 +83,7 @@
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
 		5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4593F61405E2E90053CC7F /* BurstFood.m */; };
 		5FC41C2613EE144E00EBDC13 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC41C2513EE144D00EBDC13 /* PauseLayer.m */; };
+		5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDD89031407F23800BAEB43 /* FoodRandomizer.m */; };
 		66347C6713DF93D6000B80CF /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = 66347C6613DF93D6000B80CF /* Vector.m */; };
 		66424E2313DE3EA800CCCCCB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2213DE3EA800CCCCCB /* QuartzCore.framework */; };
 		66424E2513DE3EA800CCCCCB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66424E2413DE3EA800CCCCCB /* OpenGLES.framework */; };
@@ -292,6 +293,8 @@
 		5F4593F61405E2E90053CC7F /* BurstFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstFood.m; sourceTree = "<group>"; };
 		5FC41C2413EE144D00EBDC13 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		5FC41C2513EE144D00EBDC13 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
+		5FDD89011407F1EE00BAEB43 /* FoodRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodRandomizer.h; sourceTree = "<group>"; };
+		5FDD89031407F23800BAEB43 /* FoodRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodRandomizer.m; sourceTree = "<group>"; };
 		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		66347C6613DF93D6000B80CF /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 		66424E1E13DE3EA800CCCCCB /* Nom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -595,6 +598,8 @@
 				5F0500F313FF776100C7385B /* TimeBonusFood.m */,
 				5F29CA24140566290091D12D /* BurstFood.h */,
 				5F4593F61405E2E90053CC7F /* BurstFood.m */,
+				5FDD89011407F1EE00BAEB43 /* FoodRandomizer.h */,
+				5FDD89031407F23800BAEB43 /* FoodRandomizer.m */,
 			);
 			name = Food;
 			sourceTree = "<group>";
@@ -1367,6 +1372,7 @@
 				5F29C9E614047E280091D12D /* Transitions.m in Sources */,
 				2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */,
 				5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */,
+				5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
