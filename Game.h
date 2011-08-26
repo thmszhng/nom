@@ -66,6 +66,10 @@ enum GridSpot {
 -(void) onEat: (Food *) food; // to be overriden
 -(void) deleteFood: (int) index;
 -(void) createFood: (Class) foodType;
+-(void) createFood: (Class) foodType at: (Vector *) where;
+
+-(Vector *) findSpace;
+-(Vector *) findSpaceNear: (Vector *) where;
 
 // information
 -(Vector *) getSnakePiece: (int) index;

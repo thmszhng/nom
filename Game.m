@@ -20,6 +20,33 @@ void wrap(Vector *pos)
     while (pos.y >= 30) pos.y -= 30;
 }
 
+int randomNormal(int num)
+{
+    int r = 0;
+    int N = num >> 1;
+    while (num--) {
+        int d = random();
+        r += d & 1;
+        if (num--) r += !!(d & 2); else break;
+        if (num--) r += !!(d & 4); else break;
+        if (num--) r += !!(d & 8); else break;
+        if (num--) r += !!(d & 16); else break;
+        if (num--) r += !!(d & 32); else break;
+        if (num--) r += !!(d & 64); else break;
+        if (num--) r += !!(d & 128); else break;
+    }
+    return r - N;
+}
+
+int randomNear(int what, int min, int num)
+{
+    int ret = randomNormal(num) + what;
+    while (ret < 0) ret += num;
+    ret %= num;
+    ret += min;
+    return ret;
+}
+
 @implementation Game
 
 @synthesize steps;
@@ -163,16 +190,35 @@ void wrap(Vector *pos)
 
 -(void) createFood: (Class) foodType;
 {
-    int x, y;
-    do {
-        x = random() % 30;
-        y = random() % 30;
-    } while (gridInfo[x][y] != GridNothing);
-    
+    [self createFood: foodType at: [self findSpace]];
+}
+
+-(void) createFood: (Class) foodType at: (Vector *) where;
+{
     food[foodAmount] = [[foodType alloc] initWithGame: self];
-    food[foodAmount].pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
+    food[foodAmount].pos = where;
     [self setSpot: food[foodAmount].pos withValue: GridFood + foodAmount];
     ++foodAmount;
+}
+
+-(Vector *) findSpace
+{
+    Vector *r = [[Vector new] autorelease];
+    do {
+        r.x = random() % 30;
+        r.y = random() % 30;
+    } while (gridInfo[r.x][r.y] != GridNothing);
+    return r;
+}
+
+-(Vector *) findSpaceNear: (Vector *) where
+{
+    Vector *r = [[Vector new] autorelease];
+    do {
+        r.x = randomNear(where.x, 0, 30);
+        r.y = randomNear(where.y, 0, 30);
+    } while (gridInfo[r.x][r.y] != GridNothing);
+    return r;
 }
 
 -(Food *) getFood: (int) index
