@@ -7,10 +7,6 @@
 
 #import "FoodRandomizer.h"
 
-#import "RegularFood.h"
-#import "TimeBonusFood.h"
-#import "BurstFood.h"
-
 @interface Entry: NSObject
 {
 }
@@ -34,7 +30,6 @@ int totalWeight = 0;
 }
 +(void) addFood: (Class) type weight: (int) weight
 {
-    assert(allFood != nil);
     Entry *e = [Entry new];
     e.type = type;
     e.weight = weight;
