@@ -36,11 +36,10 @@
         glEnable(GL_TEXTURE_2D);
         [texture end];
         
-        /*
         CCSprite *control;
         control = [CCSprite spriteWithFile: @"Control.png"];
         [control setPosition: CGPointMake (screenSize.width/2, 74)];
-        [self addChild: control z: 1];*/
+        [self addChild: control z: 1];
         
         CCSprite *bg;
         bg = [CCSprite spriteWithFile: @"GameBackground.png"];
