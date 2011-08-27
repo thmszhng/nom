@@ -57,6 +57,7 @@ int randomNear(int what, int min, int num)
 @synthesize deltaLength;
 @synthesize snakeLength;
 @synthesize foodAmount;
+@synthesize isProtected;
 
 -(id) init
 {
@@ -74,6 +75,7 @@ int randomNear(int what, int min, int num)
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
+        is_protected = false;
         
         //initialize food
         foodAmount = 0;
@@ -143,6 +145,10 @@ int randomNear(int what, int min, int num)
     switch (gridInfo[head.x][head.y])
     {
         case GridWall:
+            if (is_protected) {
+                is_protected = false;
+                return YES;
+            }
             return NO; // player lost
             break;
             

@@ -49,6 +49,7 @@
 		2EE9C73014034FC0000333DF /* SoundON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C72414034FBD000333DF /* SoundON.png */; };
 		2EE9C73714035819000333DF /* PauseMenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73114035804000333DF /* PauseMenuBackground-hd.png */; };
 		2EE9C73814035819000333DF /* PauseMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73214035804000333DF /* PauseMenuBackground.png */; };
+		54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF2CCD1409B1340004E671 /* ShieldFood.m */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
 		5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05010113FF7A7D00C7385B /* RegularMode.m */; };
@@ -246,6 +247,8 @@
 		2EE9C72414034FBD000333DF /* SoundON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundON.png; sourceTree = "<group>"; };
 		2EE9C73114035804000333DF /* PauseMenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PauseMenuBackground-hd.png"; sourceTree = "<group>"; };
 		2EE9C73214035804000333DF /* PauseMenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseMenuBackground.png; sourceTree = "<group>"; };
+		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldFood.h; sourceTree = "<group>"; };
+		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldFood.m; sourceTree = "<group>"; };
 		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicMode.h; sourceTree = "<group>"; };
 		5F0500E813FF711C00C7385B /* ClassicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassicMode.m; sourceTree = "<group>"; };
 		5F0500EA13FF750A00C7385B /* TimeBonusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBonusFood.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 				5F26B5AF13FB88E1008B0024 /* Food.m */,
 				5F26B5A913FB76AD008B0024 /* RegularFood.h */,
 				5F26B5AB13FB7705008B0024 /* RegularFood.m */,
+				54CF2CC91409B1070004E671 /* ShieldFood.h */,
+				54CF2CCD1409B1340004E671 /* ShieldFood.m */,
 				5F0500EA13FF750A00C7385B /* TimeBonusFood.h */,
 				5F0500F313FF776100C7385B /* TimeBonusFood.m */,
 				5F29CA24140566290091D12D /* BurstFood.h */,
@@ -1373,6 +1378,7 @@
 				2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */,
 				5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */,
 				5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */,
+				54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

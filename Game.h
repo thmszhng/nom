@@ -33,6 +33,7 @@ enum GridSpot {
     int snakeLength;
     int deltaLength;
     Vector *snakePiece[900];
+    bool is_protected;
     
     // food
     int foodAmount;
@@ -48,6 +49,7 @@ enum GridSpot {
 @property (readwrite, assign) enum Direction currentDirection;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;
+@property (readwrite, assign) bool isProtected;
 
 @property (readonly) int snakeLength;
 @property (readonly) int foodAmount;
