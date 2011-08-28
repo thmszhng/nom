@@ -75,7 +75,7 @@ int randomNear(int what, int min, int num)
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
-        is_protected = false;
+        isProtected = false;
         
         //initialize food
         foodAmount = 0;
@@ -145,8 +145,8 @@ int randomNear(int what, int min, int num)
     switch (gridInfo[head.x][head.y])
     {
         case GridWall:
-            if (is_protected) {
-                is_protected = false;
+            if (isProtected) {
+                isProtected = false;
                 return YES;
             }
             return NO; // player lost
