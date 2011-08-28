@@ -9,8 +9,6 @@
 #import "BurstFood.h"
 
 #import "Game.h"
-#import "RegularFood.h"
-#import "TimeBonusFood.h"
 #import "FoodRandomizer.h"
 
 @implementation BurstFood
@@ -30,7 +28,7 @@
 
 -(ccColor3B) color
 {
-    return ccc3(0, 255, 0);
+    return ccGREEN;
 }
 
 @end

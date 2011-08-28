@@ -8,9 +8,11 @@
 @interface FoodRandomizer: NSObject
 {
 }
+
 +(void) initialize;
 +(void) addFood: (Class) food weight: (int) weight;
 
 +(Class) randomFood;
 +(Class) randomFoodExcept: (Class) exclude;
+
 @end

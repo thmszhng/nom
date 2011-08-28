@@ -7,6 +7,7 @@
 //
 
 #import "TimeBonusFood.h"
+
 #import "Game.h"
 #import "FoodRandomizer.h"
 
@@ -39,4 +40,5 @@
 {
     return ccBLUE;
 }
+
 @end

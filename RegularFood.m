@@ -9,7 +9,6 @@
 #import "RegularFood.h"
 
 #import "Game.h"
-#import "Vector.h"
 #import "FoodRandomizer.h"
 
 #define SPEED_BOOST(x) (1./(1./(x)+0.25))

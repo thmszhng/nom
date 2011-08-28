@@ -9,9 +9,7 @@
 #import "ShieldFood.h"
 
 #import "Game.h"
-#import "Vector.h"
 #import "FoodRandomizer.h"
-
 
 @implementation ShieldFood
 
@@ -23,7 +21,7 @@
 -(void) eat: (Game *) game
 {
     // adds a new snake piece to the end of the snake
-    game.isProtected=true;
+    game.isProtected = true;
 }
 
 -(ccColor3B) color
