@@ -34,7 +34,7 @@
     // a chance for bonus food
     if (random() % 4 == 0)
     {
-        [self createFood: [FoodRandomizer randomFoodExcept: [RegularFood class]]];
+        [self createFood: [FoodRandomizer randomFoodExcept: [RegularFood class], Nil]];
     }
 }
 

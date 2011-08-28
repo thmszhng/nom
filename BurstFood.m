@@ -22,7 +22,8 @@
 {
     for (int i = 5; i--; )
     {
-        [game createFood: [FoodRandomizer randomFoodExcept: [self class]] at: [game findSpaceNear: self.pos]];
+        [game createFood: [FoodRandomizer randomFoodExcept: [self class], Nil]
+                      at: [game findSpaceNear: self.pos]];
     }
 }
 

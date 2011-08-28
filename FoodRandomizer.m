@@ -19,7 +19,6 @@
 @end
 
 NSMutableArray *allFood = nil;
-int totalWeight = 0;
 
 @implementation FoodRandomizer
 
@@ -34,39 +33,49 @@ int totalWeight = 0;
     e.type = type;
     e.weight = weight;
     [allFood addObject: e];
-    totalWeight += weight;
+}
+
+Class randomInArray(id<NSFastEnumeration> array)
+{
+    int totalWeight = 0;
+    for (Entry *e in array) totalWeight += e.weight;
+    int r = random() % totalWeight;
+    for (Entry *e in array)
+    {
+        if (r < e.weight) 
+        {
+            return e.type;
+        }
+        r -= e.weight;
+    }
+    [NSException raise: @"FailureError" format: @"Failed to generate a random food"];
+    return [NSObject class]; // shouldn't happen
 }
 
 +(Class) randomFood
 {
-    int r = random() % totalWeight;
-    for (Entry *e in allFood)
-    {
-        if (r < e.weight) return e.type;
-        r -= e.weight;
-    }
-    return [NSObject class]; // shouldn't happen
+    return randomInArray(allFood);
 }
-+(Class) randomFoodExcept: (Class) exclude
++(Class) randomFoodExcept: (Class) exclude, ...
 {
-    Entry *ex = nil;
-    for (Entry *e in allFood)
+    NSMutableArray *rest = [[allFood mutableCopy] autorelease];
+    va_list args;
+    va_start(args, exclude);
+    for (Class arg = exclude; arg != Nil; arg = va_arg(args, Class))
     {
-        if (e.type == exclude)
+        id toRemove = nil;
+        for (Entry *e in rest)
         {
-            ex = e;
-            break;
+            if (e.type == arg)
+            {
+                toRemove = e;
+                break;
+            }
         }
+        if (toRemove) [rest removeObject: toRemove];
     }
-    if (ex == nil) return [self randomFood];
-    int r = random() % (totalWeight - ex.weight);
-    for (Entry *e in allFood)
-    {
-        if (ex == e) continue;
-        if (r < e.weight) return e.type;
-        r -= e.weight;
-    }
-    return [NSObject class]; // shouldn't happen
+    va_end(args);
+    return randomInArray(rest);
 }
 
 @end

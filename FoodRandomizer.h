@@ -13,6 +13,6 @@
 +(void) addFood: (Class) food weight: (int) weight;
 
 +(Class) randomFood;
-+(Class) randomFoodExcept: (Class) exclude;
++(Class) randomFoodExcept: (Class) exclude, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
