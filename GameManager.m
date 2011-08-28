@@ -21,8 +21,6 @@ static GameManager* _sharedGameManager = nil;
 
 @synthesize isMusicON;
 @synthesize isSoundEffectsON;
-@synthesize isGameOver;
-@synthesize isGamePaused;
 
 +(GameManager*) sharedGameManager
 {

@@ -26,7 +26,7 @@
 
 -(ccColor3B) color
 {
-    return ccORANGE;
+    return ccYELLOW;
 }
 
 @end
