@@ -123,6 +123,9 @@ int haveRetina;
     
     // Cache snake pieces
     for (int i = 0; i < 16; ++i) getTexture(i);
+    
+    //Load Settings
+    [[GameManager sharedGameManager] load];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -134,10 +137,13 @@ int haveRetina;
         [((GameplayLayer *) layer) pauseGame];
     }
     
+    [[GameManager sharedGameManager] save];
+    
 	[[CCDirector sharedDirector] pause];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[GameManager sharedGameManager] load];
 	[[CCDirector sharedDirector] resume];
 }
 
@@ -163,6 +169,8 @@ int haveRetina;
 	[window release];
 	
 	[director end];	
+    
+    [[GameManager sharedGameManager] save];
 }
 
 - (void)applicationSignificantTimeChange:(UIApplication *)application {

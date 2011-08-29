@@ -94,4 +94,33 @@ static GameManager* _sharedGameManager = nil;
     
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
 }
+
+-(int)getInt:(NSString*)value
+{
+    return [[settings objectForKey:value] intValue];
+}
+
+-(void)setValue:(NSString*)value newInt:(int)aValue
+{
+    [settings setObject:[NSString stringWithFormat:@"%i",aValue] forKey:value];
+}
+
+-(void)save
+{
+	[[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"Nom"];
+	[[NSUserDefaults standardUserDefaults] synchronize];	
+}
+
+-(void)load
+{
+	[settings addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"Nom"]];
+}
+
+-(void)logSettings
+{
+    for(NSString* item in [settings allKeys])
+	{
+		NSLog(@"[SettingsManager KEY:%@ - VALUE:%@]", item, [settings valueForKey:item]);
+	}
+}
 @end
