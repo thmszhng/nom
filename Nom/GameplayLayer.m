@@ -48,6 +48,7 @@
     newDirection = NoDirection;
     isGameOver = NO;
     isGamePaused = NO;
+    gameOverTimer = 0;
     [game release];
     game = [[RegularMode alloc] init];
     
@@ -92,16 +93,20 @@
 {
     if (isGameOver)
     {
-        // creates a new GameOverLayer, adds it to GameScene, places on top of GameplayLayer
-        GameOverLayer * p = [[[GameOverLayer alloc] init] autorelease];
-        [self.parent addChild: p z: 10 tag: kPauseLayer];
-        CGPoint pos = p.position;
-        id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
-        pos.y += 480;
-        p.position = pos;
-        [p runAction: animation];
-        // we're done here
-        [self unscheduleUpdate];
+        gameOverTimer += deltaTime;
+        if (gameOverTimer > 0.3*6)
+        {
+            // creates a new GameOverLayer, adds it to GameScene, places on top of GameplayLayer
+            GameOverLayer * p = [[[GameOverLayer alloc] init] autorelease];
+            [self.parent addChild: p z: 10 tag: kPauseLayer];
+            CGPoint pos = p.position;
+            id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
+            pos.y += 480;
+            p.position = pos;
+            [p runAction: animation];
+            // we're done here
+            [self unscheduleUpdate];
+        }
         return;
     }
     
@@ -223,6 +228,7 @@
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
     
+    if (isGameOver && gameOverTimer < 0.3*6 && (int)(gameOverTimer / 0.3) % 2 == 0) return;
     enum Direction lastdir = NoDirection;
     for (int i = game.snakeLength; i--; )
     {
