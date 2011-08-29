@@ -50,7 +50,9 @@
     isGamePaused = NO;
     gameOverTimer = 0;
     [game release];
-    game = [[RegularMode alloc] init];
+    
+    NSString *mode = [[GameManager sharedGameManager] getString:@"mode"];
+    game = [[NSClassFromString(mode) alloc] init];
     
     [scoreText setString: @"0"];
     [self scheduleUpdate];

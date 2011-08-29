@@ -128,13 +128,13 @@ int haveRetina;
     [[GameManager sharedGameManager] load];
     
     //for very first launch
-    BOOL defaultsSaved = [[GameManager sharedGameManager] getInt:@"defaultsSaved"];
+    bool defaultsSaved = [[GameManager sharedGameManager] getInt:@"defaultsSaved"];
+        
     if(!defaultsSaved) {
         [[GameManager sharedGameManager] setValue:@"defaultsSaved" newInt:1];
-        [[GameManager sharedGameManager] setValue:@"mode" newString:@"ClassicMode"];
+        [[GameManager sharedGameManager] setValue:@"mode" newString:@"RegularMode"];
         [[GameManager sharedGameManager] setValue:@"level" newString:@"default"];
-    }
-
+    }    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -118,19 +118,19 @@ static GameManager* _sharedGameManager = nil;
 
 -(void)save
 {
-	[[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"Nom"];
+	[[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"com.xamigo.nom"];
 	[[NSUserDefaults standardUserDefaults] synchronize];	
 }
 
 -(void)load
 {
-	[settings addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"Nom"]];
+	[settings addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"com.xamigo.nom"]];
 }
 
 -(void)logSettings
 {
-    for(NSString* item in [settings allKeys])
-	{
+    for(NSString* item in settings)	
+    {
 		NSLog(@"[SettingsManager KEY:%@ - VALUE:%@]", item, [settings valueForKey:item]);
 	}
 }
