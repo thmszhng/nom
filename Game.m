@@ -7,7 +7,7 @@
 //
 
 #import "Game.h"
-#import "GameConstants.h"
+#import "GameManager.h"
 
 static const int dirX[4] = {0, 0, -1, 1};
 static const int dirY[4] = {1, -1, 0, 0};
@@ -65,7 +65,7 @@ int randomNear(int what, int min, int num)
     if (self)
     {
         //initialize game
-        speed = INITIAL_SPEED;
+        speed = [[GameManager sharedGameManager] getInt: @"speed" withDefault: 350] / 1000.;
         timestamp = 0;
         steps = 0;
         

@@ -282,7 +282,6 @@
 		5F05015914036B2500C7385B /* GameOverBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameOverBackground.png; sourceTree = "<group>"; };
 		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		5F16F0EA13FA103000A3EA80 /* GameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		5F16F26713FA15AD00A3EA80 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		5F26B5A913FB76AD008B0024 /* RegularFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularFood.h; sourceTree = "<group>"; };
 		5F26B5AB13FB7705008B0024 /* RegularFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularFood.m; sourceTree = "<group>"; };
@@ -1177,7 +1176,6 @@
 			isa = PBXGroup;
 			children = (
 				66FE35A413E04F2E00CD333E /* Constants.h */,
-				5F16F0EA13FA103000A3EA80 /* GameConstants.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";

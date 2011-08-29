@@ -7,7 +7,7 @@
 //
 
 #import "OptionsBackgroundLayer.h"
-
+#import "GameManager.h"
 
 @implementation OptionsBackgroundLayer
 -(id) init
@@ -59,30 +59,38 @@
         [optionsMenu setPosition: CGPointZero];
         [self addChild: optionsMenu];
         
-        [self setSlow];
+        int speed = [[GameManager sharedGameManager] getInt: @"speed" withDefault: 350];
+        if (speed == 150)
+            [self setFast];
+        else if (speed == 250)
+            [self setMedium];
+        else
+            [self setSlow];
     }
     
     return self;
 }
 
-// TODO: make stuff work
 -(void) setSlow
 {
     [slowButton setIsEnabled: NO];
     [mediumButton setIsEnabled: YES];
     [fastButton setIsEnabled: YES];
+    [[GameManager sharedGameManager] setValue: @"speed" newInt: 350];
 }
 -(void) setMedium
 {
     [slowButton setIsEnabled: YES];
     [mediumButton setIsEnabled: NO];
     [fastButton setIsEnabled: YES];
+    [[GameManager sharedGameManager] setValue: @"speed" newInt: 250];
 }
 -(void) setFast
 {
     [slowButton setIsEnabled: YES];
     [mediumButton setIsEnabled: YES];
     [fastButton setIsEnabled: NO];
+    [[GameManager sharedGameManager] setValue: @"speed" newInt: 150];
 }
 
 -(void) playGame
