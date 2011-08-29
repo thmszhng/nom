@@ -73,7 +73,7 @@
 
         mainMenu = [CCMenu menuWithItems: playButton, optionsButton, gameCenterButton, helpButton, toggleSoundButton, nil];
         [mainMenu setPosition: CGPointZero];
-        
+        if (![GameManager sharedGameManager].isMusicON) [toggleSoundButton setSelectedIndex: 1];
         [self addChild: mainMenu];
         
         static BOOL firstTime = YES;
@@ -137,12 +137,15 @@
     
     if (toggleItem.selectedItem == SoundON) 
     {
-        [GameManager sharedGameManager].isMusicON = NO;
+        [GameManager sharedGameManager].isMusicON = YES;
+        NSLog(@"on");
     } 
     
     else if (toggleItem.selectedItem == SoundOFF) 
     {
-        [GameManager sharedGameManager].isMusicON = YES;    
+        [GameManager sharedGameManager].isMusicON = NO;    
+        NSLog(@"off");
     }
+    
 }
 @end
