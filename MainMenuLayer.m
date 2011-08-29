@@ -138,13 +138,11 @@
     if (toggleItem.selectedItem == SoundON) 
     {
         [GameManager sharedGameManager].isMusicON = YES;
-        NSLog(@"on");
     } 
     
     else if (toggleItem.selectedItem == SoundOFF) 
     {
         [GameManager sharedGameManager].isMusicON = NO;    
-        NSLog(@"off");
     }
     
 }
