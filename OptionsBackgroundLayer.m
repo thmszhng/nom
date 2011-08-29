@@ -89,8 +89,4 @@
 {
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
-
--(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-}
 @end

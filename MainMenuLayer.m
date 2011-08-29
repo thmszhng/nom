@@ -138,11 +138,13 @@
     if (toggleItem.selectedItem == SoundON) 
     {
         [GameManager sharedGameManager].isMusicON = YES;
+        [[GameManager sharedGameManager] setValue: @"isMusicON" newInt: 1];
     } 
     
     else if (toggleItem.selectedItem == SoundOFF) 
     {
         [GameManager sharedGameManager].isMusicON = NO;    
+        [[GameManager sharedGameManager] setValue: @"isMusicON" newInt: 0];
     }
     
 }

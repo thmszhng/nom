@@ -48,11 +48,23 @@ static GameManager* _sharedGameManager = nil;
     self = [super init];
     if (self != nil)
     {
-        //Game Manager initialized
-        isMusicON = YES;
+        //Initialize/load settings
+        settings = [NSMutableDictionary new];
+        [self load];
+        
+        //for very first launch
+        bool defaultsSaved = [self getInt: @"defaultsSaved"];
+        if (!defaultsSaved) {
+            [self setValue: @"defaultsSaved" newInt: 1];
+            [self setValue: @"isMusicON" newInt: 1];
+            [self setValue: @"mode" newString: @"RegularMode"];
+            [self setValue: @"level" newString: @"default"];
+        }
+        
+        //Initialize GameManager
+        isMusicON = [self getInt: @"isMusicON"];
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
-        settings = [NSMutableDictionary new];
     }
     
     return self;
@@ -105,15 +117,18 @@ static GameManager* _sharedGameManager = nil;
 	return [settings objectForKey:value];
 }
 
--(int)getInt:(NSString*)value {
+-(int)getInt:(NSString*)value 
+{
 	return [[settings objectForKey:value] intValue];
 }
 
--(void)setValue:(NSString*)value newString:(NSString *)aValue {
+-(void)setValue:(NSString*)value newString:(NSString *)aValue 
+{
 	[settings setObject:aValue forKey:value];
 }
 
--(void)setValue:(NSString*)value newInt:(int)aValue {
+-(void)setValue:(NSString*)value newInt:(int)aValue
+{
 	[settings setObject:[NSNumber numberWithInt:aValue] forKey:value];
 }
 

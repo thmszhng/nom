@@ -21,6 +21,5 @@
 -(void) setSlow;
 -(void) setMedium;
 -(void) setFast;
--(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end

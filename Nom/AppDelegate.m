@@ -123,18 +123,6 @@ int haveRetina;
     
     // Cache snake pieces
     for (int i = 0; i < 16; ++i) getTexture(i);
-    
-    //Load Settings
-    [[GameManager sharedGameManager] load];
-    
-    //for very first launch
-    bool defaultsSaved = [[GameManager sharedGameManager] getInt: @"defaultsSaved"];
-    if (!defaultsSaved) {
-        [[GameManager sharedGameManager] setValue: @"defaultsSaved" newInt: 1];
-        [[GameManager sharedGameManager] setValue: @"mode" newString: @"RegularMode"];
-        [[GameManager sharedGameManager] setValue: @"level" newString: @"default"];
-    }
-    [[GameManager sharedGameManager] logSettings];
 }
 
 -(void) applicationWillResignActive:(UIApplication *)application {
@@ -152,7 +140,6 @@ int haveRetina;
 }
 
 -(void) applicationDidBecomeActive:(UIApplication *)application {
-    [[GameManager sharedGameManager] load];
 	[[CCDirector sharedDirector] resume];
 }
 
