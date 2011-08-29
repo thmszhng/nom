@@ -52,6 +52,7 @@ static GameManager* _sharedGameManager = nil;
         isMusicON = YES;
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
+        settings = [NSMutableDictionary new];
     }
     
     return self;
@@ -100,7 +101,7 @@ static GameManager* _sharedGameManager = nil;
 }
 
 -(NSString *)getString:(NSString*)value
-{	
+{
 	return [settings objectForKey:value];
 }
 
@@ -108,18 +109,18 @@ static GameManager* _sharedGameManager = nil;
 	return [[settings objectForKey:value] intValue];
 }
 
--(void)setValue:(NSString*)value newString:(NSString *)aValue {	
+-(void)setValue:(NSString*)value newString:(NSString *)aValue {
 	[settings setObject:aValue forKey:value];
 }
 
 -(void)setValue:(NSString*)value newInt:(int)aValue {
-	[settings setObject:[NSString stringWithFormat:@"%i",aValue] forKey:value];
+	[settings setObject:[NSNumber numberWithInt:aValue] forKey:value];
 }
 
 -(void)save
 {
 	[[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"com.xamigo.nom"];
-	[[NSUserDefaults standardUserDefaults] synchronize];	
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void)load
@@ -129,7 +130,7 @@ static GameManager* _sharedGameManager = nil;
 
 -(void)logSettings
 {
-    for(NSString* item in settings)	
+    for(NSString* item in settings)
     {
 		NSLog(@"[SettingsManager KEY:%@ - VALUE:%@]", item, [settings valueForKey:item]);
 	}
