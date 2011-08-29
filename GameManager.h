@@ -16,29 +16,28 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 
-@interface GameManager : NSObject 
+@interface GameManager: NSObject 
 {
     NSMutableDictionary *settings;
     
-    BOOL isMusicON;
     BOOL isSoundEffectsON;
-    BOOL isGameOver;
     SceneTypes currentScene;
 }
 
 @property (readwrite) BOOL isMusicON;
 @property (readwrite) BOOL isSoundEffectsON; 
 
-+(GameManager*) sharedGameManager;
++(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;
 
--(NSString *)getString:(NSString*)value;
--(int)getInt:(NSString*)value;
--(void)setValue:(NSString*)value newString:(NSString *)aValue;
--(void)setValue:(NSString*)value newInt:(int)aValue;
--(void)save;
--(void)load;
--(void)logSettings;
-
+-(NSString *) getString: (NSString *) value;
+-(NSString *) getString: (NSString *) value withDefault: (NSString *) def;
+-(int) getInt: (NSString *) value;
+-(int) getInt: (NSString *) value withDefault: (int) def;
+-(void) setValue: (NSString *) value newString: (NSString *) aValue;
+-(void) setValue: (NSString *) value newInt: (int) aValue;
+-(void) save;
+-(void) load;
+-(void) logSettings;
 
 @end

@@ -51,7 +51,7 @@
     gameOverTimer = 0;
     [game release];
     
-    NSString *mode = [[GameManager sharedGameManager] getString:@"mode"];
+    NSString *mode = [[GameManager sharedGameManager] getString: @"mode" withDefault: @"RegularMode"];
     game = [[NSClassFromString(mode) alloc] init];
     
     [scoreText setString: @"0"];

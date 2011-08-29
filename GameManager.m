@@ -19,12 +19,11 @@
 #import "CocosDenshion.h"
 
 @implementation GameManager
-static GameManager* _sharedGameManager = nil;
+static GameManager *_sharedGameManager = nil;
 
-@synthesize isMusicON;
 @synthesize isSoundEffectsON;
 
-+(GameManager*) sharedGameManager
++(GameManager *) sharedGameManager
 {
     @synchronized([GameManager class])
     {
@@ -53,16 +52,15 @@ static GameManager* _sharedGameManager = nil;
         [self load];
         
         //for very first launch
-        bool defaultsSaved = [self getInt: @"defaultsSaved"];
+/*        bool defaultsSaved = [self getInt: @"defaultsSaved"];
         if (!defaultsSaved) {
             [self setValue: @"defaultsSaved" newInt: 1];
             [self setValue: @"isMusicON" newInt: 1];
             [self setValue: @"mode" newString: @"RegularMode"];
             [self setValue: @"level" newString: @"default"];
-        }
+        }*/
         
         //Initialize GameManager
-        isMusicON = [self getInt: @"isMusicON"];
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
     }
@@ -82,7 +80,7 @@ static GameManager* _sharedGameManager = nil;
             break;
         
         case kGameScene:
-            if(isMusicON) [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"midnight-ride.mp3" loop:YES];
+            if (self.isMusicON) [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"midnight-ride.mp3" loop: YES];
             sceneToRun = [GameScene node];
             break;
             
@@ -112,38 +110,60 @@ static GameManager* _sharedGameManager = nil;
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
 }
 
--(NSString *)getString:(NSString*)value
+-(BOOL) isMusicON
+{
+    return [self getInt: @"isMusicON" withDefault: YES];
+}
+
+-(void) setIsMusicON: (BOOL) val
+{
+    [self setValue: @"isMusicOn" newInt: val];
+}
+
+-(NSString *) getString: (NSString *) value
 {
 	return [settings objectForKey:value];
 }
 
--(int)getInt:(NSString*)value 
+-(NSString *) getString: (NSString *) value withDefault: (NSString *) def
+{
+	NSString *ret = [settings objectForKey:value];
+    return ret ? ret : def;
+}
+
+-(int) getInt: (NSString *) value 
 {
 	return [[settings objectForKey:value] intValue];
 }
 
--(void)setValue:(NSString*)value newString:(NSString *)aValue 
+-(int) getInt: (NSString *) value withDefault: (int) def
+{
+    id ret = [settings objectForKey: value];
+    return ret ? [ret intValue] : def;
+}
+
+-(void) setValue: (NSString *) value newString: (NSString *) aValue
 {
 	[settings setObject:aValue forKey:value];
 }
 
--(void)setValue:(NSString*)value newInt:(int)aValue
+-(void) setValue: (NSString *) value newInt: (int) aValue
 {
 	[settings setObject:[NSNumber numberWithInt:aValue] forKey:value];
 }
 
--(void)save
+-(void) save
 {
 	[[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"com.xamigo.nom"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(void)load
+-(void) load
 {
 	[settings addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"com.xamigo.nom"]];
 }
 
--(void)logSettings
+-(void) logSettings
 {
     for(NSString* item in settings)
     {
