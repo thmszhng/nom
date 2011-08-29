@@ -104,15 +104,12 @@ int randomNear(int what, int min, int num)
     
     // keep last element, which will be removed from snakePiece
     Vector *tail = snakePiece[snakeLength - 1];
-    
-    // advance snake except head
-    for (int i = snakeLength; --i; )
+
+    if (deltaLength == 0)
     {
-        snakePiece[i] = snakePiece[i-1];
+        // don't allow hitting the tail
+        [self setSpot: tail withValue: GridShadow];
     }
-    
-    // don't allow hitting the tail
-    [self setSpot: tail withValue: GridShadow];
     
     // advance head
     Vector *head = [[Vector alloc] init];
@@ -120,7 +117,19 @@ int randomNear(int what, int min, int num)
     head.y = snakePiece[0].y + dirY[currentDirection];
     wrap(head);
     BOOL survived = [self headChecks: head];
+    if (!survived)
+    {
+        [head release];
+        return NO;
+    }
     [self setSpot: head withValue: GridWall];
+    
+    // advance snake except head
+    for (int i = snakeLength; --i; )
+    {
+        snakePiece[i] = snakePiece[i-1];
+    }
+    
     snakePiece[0] = head;
     
     // lengthen snake as needed
