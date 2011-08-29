@@ -15,6 +15,8 @@
 #import "Constants.h"
 
 #import "Transitions.h"
+#import "SimpleAudioEngine.h"
+#import "CocosDenshion.h"
 
 @implementation GameManager
 static GameManager* _sharedGameManager = nil;
@@ -62,10 +64,12 @@ static GameManager* _sharedGameManager = nil;
     switch (sceneID) 
     {
         case kMainMenuScene:
+            if ([[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying]) [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
             sceneToRun = [MainMenuScene node];
             break;
         
         case kGameScene:
+            if(isMusicON) [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"midnight-ride.mp3" loop:YES];
             sceneToRun = [GameScene node];
             break;
             

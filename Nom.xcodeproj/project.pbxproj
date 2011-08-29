@@ -50,6 +50,7 @@
 		2EE9C73714035819000333DF /* PauseMenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73114035804000333DF /* PauseMenuBackground-hd.png */; };
 		2EE9C73814035819000333DF /* PauseMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73214035804000333DF /* PauseMenuBackground.png */; };
 		54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF2CCD1409B1340004E671 /* ShieldFood.m */; };
+		54F0620B140C1FE700240AE5 /* midnight-ride.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
 		5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05010113FF7A7D00C7385B /* RegularMode.m */; };
@@ -250,6 +251,7 @@
 		2EE9C73214035804000333DF /* PauseMenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseMenuBackground.png; sourceTree = "<group>"; };
 		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldFood.h; sourceTree = "<group>"; };
 		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldFood.m; sourceTree = "<group>"; };
+		54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "midnight-ride.mp3"; sourceTree = "<group>"; };
 		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicMode.h; sourceTree = "<group>"; };
 		5F0500E813FF711C00C7385B /* ClassicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassicMode.m; sourceTree = "<group>"; };
 		5F0500EA13FF750A00C7385B /* TimeBonusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBonusFood.h; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 				2EE9C72114034FB6000333DF /* SoundOFF-hd.png */,
 				2EE9C72214034FB8000333DF /* SoundOFF.png */,
 				2EE9C72314034FBA000333DF /* SoundON-hd.png */,
+				54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */,
 				2EE9C72414034FBD000333DF /* SoundON.png */,
 				5F0501281402106000C7385B /* numbers-hd.png */,
 				5F0501291402106000C7385B /* numbers.png */,
@@ -1253,6 +1256,7 @@
 				2EC5F22614073DD900DFCCFB /* Control.png in Resources */,
 				2ED770351407447B00BFA1AD /* HelpLayer-hd.png in Resources */,
 				2ED770361407447B00BFA1AD /* HelpLayer.png in Resources */,
+				54F0620B140C1FE700240AE5 /* midnight-ride.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

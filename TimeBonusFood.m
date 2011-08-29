@@ -10,6 +10,7 @@
 
 #import "Game.h"
 #import "FoodRandomizer.h"
+#import <math.h>
 
 @implementation TimeBonusFood
 
@@ -31,7 +32,7 @@
 -(void) eat: (Game *) game
 {
     // variable advancement
-    game.score += 30 * powf(1.02f, stepsOnCreation - game.steps);
+    game.score += ceilf(30.f * powf(1.02f, stepsOnCreation - game.steps));
     // speed ramp
     game.speed = 1./(1./(game.speed)+0.4);
 }
