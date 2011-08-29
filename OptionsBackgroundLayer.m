@@ -30,21 +30,21 @@
                                        disabledImage: @"OptionHard-selected.png"  
                                        target: self 
                                        selector: @selector(setSlow)];
-        [slowButton setPosition: ccp(66.5, 117.5)];
+        [slowButton setPosition: ccp(66, 118)];
         mediumButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"OptionHarder.png" 
                                        selectedImage: @"OptionHarder-selected.png" 
                                        disabledImage: @"OptionHarder-selected.png"
                                        target: self 
                                        selector: @selector(setMedium)];
-        [mediumButton setPosition: ccp(160, 117.5)];
+        [mediumButton setPosition: ccp(160, 118)];
         fastButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"OptionCrazy.png" 
                                        selectedImage: @"OptionCrazy-selected.png" 
                                        disabledImage: @"OptionCrazy-selected.png"
                                        target: self 
                                        selector: @selector(setFast)];
-        [fastButton setPosition: ccp(253.5, 117.5)];
+        [fastButton setPosition: ccp(254, 118)];
         
         CCMenuItemImage *playButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"OptionPlayGame.png" 
