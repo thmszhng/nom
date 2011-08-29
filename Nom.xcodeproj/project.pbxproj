@@ -83,6 +83,7 @@
 		5F2C339213E6537900D4B5F7 /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339113E6537900D4B5F7 /* Render.m */; };
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
 		5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4593F61405E2E90053CC7F /* BurstFood.m */; };
+		5F58846D140C1D6500B632E8 /* BurstMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58846C140C1D6400B632E8 /* BurstMode.m */; };
 		5FC41C2613EE144E00EBDC13 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC41C2513EE144D00EBDC13 /* PauseLayer.m */; };
 		5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FDD89031407F23800BAEB43 /* FoodRandomizer.m */; };
 		66347C6713DF93D6000B80CF /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = 66347C6613DF93D6000B80CF /* Vector.m */; };
@@ -294,6 +295,8 @@
 		5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationLayer.h; sourceTree = "<group>"; };
 		5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationLayer.m; sourceTree = "<group>"; };
 		5F4593F61405E2E90053CC7F /* BurstFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstFood.m; sourceTree = "<group>"; };
+		5F58846C140C1D6400B632E8 /* BurstMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstMode.m; sourceTree = "<group>"; };
+		5F58846E140C1E3700B632E8 /* BurstMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurstMode.h; sourceTree = "<group>"; };
 		5FC41C2413EE144D00EBDC13 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		5FC41C2513EE144D00EBDC13 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
 		5FDD89011407F1EE00BAEB43 /* FoodRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodRandomizer.h; sourceTree = "<group>"; };
@@ -586,6 +589,8 @@
 				5F0500E813FF711C00C7385B /* ClassicMode.m */,
 				5F0500FF13FF7A7300C7385B /* RegularMode.h */,
 				5F05010113FF7A7D00C7385B /* RegularMode.m */,
+				5F58846E140C1E3700B632E8 /* BurstMode.h */,
+				5F58846C140C1D6400B632E8 /* BurstMode.m */,
 			);
 			name = GameModes;
 			sourceTree = "<group>";
@@ -1379,6 +1384,7 @@
 				5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */,
 				5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */,
 				54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */,
+				5F58846D140C1D6500B632E8 /* BurstMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
