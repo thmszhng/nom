@@ -24,20 +24,65 @@
         [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
-        /* TODO: Make this proper.
+        slowButton = [CCMenuItemImage 
+                                       itemFromNormalImage: @"OptionHard.png" 
+                                       selectedImage: @"OptionHard-selected.png" 
+                                       disabledImage: @"OptionHard-selected.png"  
+                                       target: self 
+                                       selector: @selector(setSlow)];
+        [slowButton setPosition: ccp(66.5, 117.5)];
+        mediumButton = [CCMenuItemImage 
+                                       itemFromNormalImage: @"OptionHarder.png" 
+                                       selectedImage: @"OptionHarder-selected.png" 
+                                       disabledImage: @"OptionHarder-selected.png"
+                                       target: self 
+                                       selector: @selector(setMedium)];
+        [mediumButton setPosition: ccp(160, 117.5)];
+        fastButton = [CCMenuItemImage 
+                                       itemFromNormalImage: @"OptionCrazy.png" 
+                                       selectedImage: @"OptionCrazy-selected.png" 
+                                       disabledImage: @"OptionCrazy-selected.png"
+                                       target: self 
+                                       selector: @selector(setFast)];
+        [fastButton setPosition: ccp(253.5, 117.5)];
+        
         CCMenuItemImage *playButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"OptionsPlay.png" 
-                                       selectedImage: @"OptionsPlay-selected.png" 
-                                       disabledImage: @"OptionsPlay.png"  
+                                       itemFromNormalImage: @"OptionPlayGame.png" 
+                                       selectedImage: @"OptionPlayGame-selected.png" 
+                                       disabledImage: @"OptionPlayGame.png"  
                                        target: self 
                                        selector: @selector(playGame)];
-        [playButton setPosition: ccp(1, 1)];
+        [playButton setPosition: ccp(160, 55)];
         
-        optionsMenu = [CCMenu menuWithItems: playButton, nil];
-        [optionsMenu setPosition: CGPointZero];*/
+        optionsMenu = [CCMenu menuWithItems: slowButton,
+                       mediumButton, fastButton, playButton, nil];
+        [optionsMenu setPosition: CGPointZero];
+        [self addChild: optionsMenu];
+        
+        [self setSlow];
     }
     
     return self;
+}
+
+// TODO: make stuff work
+-(void) setSlow
+{
+    [slowButton setIsEnabled: NO];
+    [mediumButton setIsEnabled: YES];
+    [fastButton setIsEnabled: YES];
+}
+-(void) setMedium
+{
+    [slowButton setIsEnabled: YES];
+    [mediumButton setIsEnabled: NO];
+    [fastButton setIsEnabled: YES];
+}
+-(void) setFast
+{
+    [slowButton setIsEnabled: YES];
+    [mediumButton setIsEnabled: YES];
+    [fastButton setIsEnabled: NO];
 }
 
 -(void) playGame
@@ -47,6 +92,5 @@
 
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 @end

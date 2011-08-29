@@ -13,10 +13,14 @@
 
 @interface OptionsBackgroundLayer : CCLayer {
     CCMenu *optionsMenu;
+    CCMenuItemImage *slowButton, *mediumButton, *fastButton;
 }
 
 -(id) init;
 -(void) playGame;
+-(void) setSlow;
+-(void) setMedium;
+-(void) setFast;
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end
