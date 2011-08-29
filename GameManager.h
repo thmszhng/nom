@@ -8,7 +8,7 @@
 
 /* Settings Saving Example
  
- [[GameManager sharedGameManager] saveValue:@"hiscore" newValue:@"10000"];
+ [[GameManager sharedGameManager] setValue:@"hiscore" newValue:@"10000"];
  int myInt = [[GameManager sharedGameManager] getInt:@"challenges_won"];
 
 */
@@ -32,10 +32,13 @@
 +(GameManager*) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;
 
+-(NSString *)getString:(NSString*)value;
 -(int)getInt:(NSString*)value;
+-(void)setValue:(NSString*)value newString:(NSString *)aValue;
 -(void)setValue:(NSString*)value newInt:(int)aValue;
 -(void)save;
 -(void)load;
 -(void)logSettings;
+
 
 @end

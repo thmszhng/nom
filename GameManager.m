@@ -99,14 +99,21 @@ static GameManager* _sharedGameManager = nil;
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
 }
 
--(int)getInt:(NSString*)value
-{
-    return [[settings objectForKey:value] intValue];
+-(NSString *)getString:(NSString*)value
+{	
+	return [settings objectForKey:value];
 }
 
--(void)setValue:(NSString*)value newInt:(int)aValue
-{
-    [settings setObject:[NSString stringWithFormat:@"%i",aValue] forKey:value];
+-(int)getInt:(NSString*)value {
+	return [[settings objectForKey:value] intValue];
+}
+
+-(void)setValue:(NSString*)value newString:(NSString *)aValue {	
+	[settings setObject:aValue forKey:value];
+}
+
+-(void)setValue:(NSString*)value newInt:(int)aValue {
+	[settings setObject:[NSString stringWithFormat:@"%i",aValue] forKey:value];
 }
 
 -(void)save
