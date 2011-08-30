@@ -76,5 +76,6 @@ enum GridSpot {
 // information
 -(Vector *) getSnakePiece: (int) index;
 -(Food *) getFood: (int) index;
+-(Vector *) beginSpace;
 
 @end

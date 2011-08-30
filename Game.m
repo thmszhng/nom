@@ -70,7 +70,7 @@ int randomNear(int what, int min, int num)
         steps = 0;
         
         //initialize snake
-        snakePiece[0] = [[Vector alloc] initWithX: 15 withY: 15];
+        snakePiece[0] = [[self beginSpace] retain];
         [self setSpot: snakePiece[0] withValue: GridWall];
         snakeLength = 1;
         deltaLength = 4;
@@ -146,7 +146,6 @@ int randomNear(int what, int min, int num)
     }
     return survived;
 }
-
 
 //checks lose condition and if snake head has hit food
 -(BOOL) headChecks: (Vector *) head
@@ -246,4 +245,8 @@ int randomNear(int what, int min, int num)
     return snakePiece[index];
 }
 
+-(Vector *) beginSpace
+{
+    return [[[Vector alloc] initWithX: 15 withY: 15] autorelease];
+}
 @end
