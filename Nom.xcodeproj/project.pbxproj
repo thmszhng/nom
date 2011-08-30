@@ -51,6 +51,8 @@
 		2EE9C73814035819000333DF /* PauseMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73214035804000333DF /* PauseMenuBackground.png */; };
 		54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF2CCD1409B1340004E671 /* ShieldFood.m */; };
 		54F0620B140C1FE700240AE5 /* midnight-ride.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */; };
+		54F0621E140C3F9D00240AE5 /* QuestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0621D140C3F9D00240AE5 /* QuestMode.m */; };
+		54F0622D140C82B200240AE5 /* Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0622B140C82B100240AE5 /* Swizzle.m */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
 		5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05010113FF7A7D00C7385B /* RegularMode.m */; };
@@ -268,6 +270,10 @@
 		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldFood.h; sourceTree = "<group>"; };
 		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldFood.m; sourceTree = "<group>"; };
 		54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "midnight-ride.mp3"; sourceTree = "<group>"; };
+		54F0621A140C3F6E00240AE5 /* QuestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestMode.h; sourceTree = "<group>"; };
+		54F0621D140C3F9D00240AE5 /* QuestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestMode.m; sourceTree = "<group>"; };
+		54F0622B140C82B100240AE5 /* Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swizzle.m; sourceTree = "<group>"; };
+		54F0622C140C82B200240AE5 /* Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swizzle.h; sourceTree = "<group>"; };
 		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicMode.h; sourceTree = "<group>"; };
 		5F0500E813FF711C00C7385B /* ClassicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassicMode.m; sourceTree = "<group>"; };
 		5F0500EA13FF750A00C7385B /* TimeBonusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBonusFood.h; sourceTree = "<group>"; };
@@ -624,6 +630,8 @@
 				5F05010113FF7A7D00C7385B /* RegularMode.m */,
 				5F58846E140C1E3700B632E8 /* BurstMode.h */,
 				5F58846C140C1D6400B632E8 /* BurstMode.m */,
+				54F0621A140C3F6E00240AE5 /* QuestMode.h */,
+				54F0621D140C3F9D00240AE5 /* QuestMode.m */,
 			);
 			name = GameModes;
 			sourceTree = "<group>";
@@ -1104,6 +1112,8 @@
 				66347C6513DF93D5000B80CF /* Vector.h */,
 				66347C6613DF93D6000B80CF /* Vector.m */,
 				5F2C339013E6534300D4B5F7 /* Render.h */,
+				54F0622B140C82B100240AE5 /* Swizzle.m */,
+				54F0622C140C82B200240AE5 /* Swizzle.h */,
 				5F2C339113E6537900D4B5F7 /* Render.m */,
 				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
 				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
@@ -1451,6 +1461,8 @@
 				5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */,
 				54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */,
 				5F58846D140C1D6500B632E8 /* BurstMode.m in Sources */,
+				54F0621E140C3F9D00240AE5 /* QuestMode.m in Sources */,
+				54F0622D140C82B200240AE5 /* Swizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
