@@ -8,7 +8,6 @@
 
 #import "GameplayLayer.h"
 #import "Render.h"
-#import "GameConstants.h"
 #import "GameManager.h"
 #import "PauseLayer.h"
 #import "GameOverLayer.h"
@@ -44,7 +43,7 @@
     trackTouch = NO;
     
     //initialize game
-    accumulatedTime = INITIAL_SPEED;
+    accumulatedTime = 0;
     newDirection = NoDirection;
     isGameOver = NO;
     isGamePaused = NO;
