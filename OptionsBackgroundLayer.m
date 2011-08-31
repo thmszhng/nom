@@ -8,6 +8,7 @@
 
 #import "OptionsBackgroundLayer.h"
 #import "GameManager.h"
+#import "ScrollView.h"
 
 @implementation OptionsBackgroundLayer
 -(id) init
@@ -59,6 +60,18 @@
         [optionsMenu setPosition: CGPointZero];
         [self addChild: optionsMenu];
         
+        NSMutableDictionary *gameModes =
+        [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+         @"QuestMode.png", @"QuestMode",
+         @"BurstMode.png", @"BurstMode",
+         @"ClassicMode.png", @"ClassicMode",
+         @"RegularMode.png", @"RegularMode",
+         nil];
+        gameModeView = [[ScrollView alloc] initWithDictionary: gameModes];
+        gameModeView.initialPage = [[GameManager sharedGameManager] getString: @"mode" withDefault: @"RegularMode"];
+        gameModeView.position = CGPointMake(20, 145);
+        [self addChild: gameModeView];
+        
         int speed = [[GameManager sharedGameManager] getInt: @"speed" withDefault: 350];
         if (speed == 150)
             [self setFast];
@@ -95,6 +108,7 @@
 
 -(void) playGame
 {
+    [[GameManager sharedGameManager] setValue: @"mode" newString: [gameModeView selected]];
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 @end

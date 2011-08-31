@@ -11,9 +11,12 @@
 #import "Constants.h"
 #import "GameManager.h"
 
+@class ScrollView;
+
 @interface OptionsBackgroundLayer : CCLayer {
     CCMenu *optionsMenu;
     CCMenuItemImage *slowButton, *mediumButton, *fastButton;
+    ScrollView *gameModeView, *levelView;
 }
 
 -(id) init;
