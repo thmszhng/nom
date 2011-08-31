@@ -148,6 +148,7 @@
     self.touchView = nil;
     self.spriteView = nil;
     self.sprites = nil;
+    self.initialPage = nil;
     [super dealloc];
 }
 
@@ -159,9 +160,9 @@
     int initialOffset = 0;
     {
         int i = 0;
-        for (id key in sprites)
+        for (NSString *key in sprites)
         {
-            if (key == initialPage) initialOffset = i;
+            if ([key isEqualToString: initialPage]) initialOffset = i;
             ++i;
         }
     }
@@ -192,6 +193,7 @@
     self.touchView = nil;
     self.spriteView = nil;
     self.sprites = nil;
+    self.initialPage = nil;
     
     [super onExit];
 }

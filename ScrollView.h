@@ -16,13 +16,13 @@
     TouchView *touchView;
     Sprites *spriteView;
     NSDictionary *sprites;
-    id initialPage;
+    NSString *initialPage;
 }
 @property(readwrite, retain) InnerScrollView *scrollView;
 @property(readwrite, retain) TouchView *touchView;
 @property(readwrite, retain) Sprites *spriteView;
 @property(readwrite, retain) NSDictionary *sprites;
-@property(readwrite, assign) id initialPage;
+@property(readwrite, retain) NSString *initialPage;
 
 -(id) initWithDictionary: (NSDictionary *) sprites;
 -(void) dealloc;

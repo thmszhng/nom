@@ -9,6 +9,8 @@
 #import "OptionsBackgroundLayer.h"
 #import "GameManager.h"
 #import "ScrollView.h"
+#import "Game.h"
+#import "Subclasser.h"
 
 @implementation OptionsBackgroundLayer
 -(id) init
@@ -60,14 +62,16 @@
         [optionsMenu setPosition: CGPointZero];
         [self addChild: optionsMenu];
         
-        NSMutableDictionary *gameModes =
-        [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-         @"QuestMode.png", @"QuestMode",
-         @"BurstMode.png", @"BurstMode",
-         @"ClassicMode.png", @"ClassicMode",
-         @"RegularMode.png", @"RegularMode",
-         nil];
-        gameModeView = [[ScrollView alloc] initWithDictionary: gameModes];
+        NSMutableDictionary *modeDictionary = [NSMutableDictionary new];
+        NSArray *gameModes = [Game immediateSubclasses];
+        for (Class cls in gameModes)
+        {
+            NSString *str = NSStringFromClass(cls);
+            NSLog(@"%@", str);
+            if ([str rangeOfString: @"Mode"].location == NSNotFound) continue;
+            [modeDictionary setObject: [str stringByAppendingString: @".png"] forKey: str];
+        }
+        gameModeView = [[ScrollView alloc] initWithDictionary: modeDictionary];
         gameModeView.initialPage = [[GameManager sharedGameManager] getString: @"mode" withDefault: @"RegularMode"];
         gameModeView.position = CGPointMake(20, 145);
         [self addChild: gameModeView];
