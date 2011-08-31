@@ -166,13 +166,13 @@
             ++i;
         }
     }
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
     spriteView.position = CGPointMake((VIEW_WIDTH - ITEM_TOTAL_WIDTH)/2, 0);
-    CGRect frame = CGRectMake(self.position.x,
-                              self.position.y,
-                              VIEW_WIDTH,
-                              ITEM_HEIGHT);
+    CGRect frame = CGRectMake(0, self.position.y,
+                              winSize.width, ITEM_HEIGHT);
     frame.origin.y = [[CCDirector sharedDirector] winSize].height - frame.origin.y - frame.size.height;
     touchView = [[TouchView alloc] initWithFrame: frame];
+    frame.origin.x = self.position.x;
     frame.size.width = ITEM_TOTAL_WIDTH;
     scrollView = [[InnerScrollView alloc] initWithFrame: frame
                                                numPages: numPages
