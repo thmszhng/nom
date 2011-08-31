@@ -11,10 +11,6 @@
 #import "Game.h"
 #import "FoodRandomizer.h"
 
-#define SPEED_BOOST(x) (1./(1./(x)+0.25))
-// #define SPEED_BOOST(x) ((x) * 0.95)
-// #define SPEED_BOOST(x) powf(powf(x, -1./1.5)+0.1, -1.5)
-
 @implementation RegularFood
 
 +(void) load
@@ -29,7 +25,7 @@
     // advancement
     game.score += 10;
     // speed ramp
-    game.speed = SPEED_BOOST(game.speed);
+    [game rampSpeedBy: 1.f];
 }
 
 -(ccColor3B) color

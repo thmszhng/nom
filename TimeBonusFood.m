@@ -34,7 +34,7 @@
     // variable advancement
     game.score += ceilf(30.f * powf(1.02f, stepsOnCreation - game.steps));
     // speed ramp
-    game.speed = 1./(1./(game.speed)+0.4);
+    [game rampSpeedBy: 1.6f];
 }
 
 -(ccColor3B) color

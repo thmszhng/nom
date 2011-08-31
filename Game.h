@@ -69,6 +69,7 @@ enum GridSpot {
 -(void) deleteFood: (int) index;
 -(void) createFood: (Class) foodType;
 -(void) createFood: (Class) foodType at: (Vector *) where;
+-(void) rampSpeedBy: (float) amt;
 
 -(Vector *) findSpace;
 -(Vector *) findSpaceNear: (Vector *) where;

@@ -215,6 +215,13 @@ int randomNear(int what, int min, int num)
     ++foodAmount;
 }
 
+-(void) rampSpeedBy: (float) amt
+{
+    speed = 1.f/(1.f/speed + 0.25f * amt);
+    // speed *= powf(0.95f, amt);
+    // speed = powf(powf(speed, -1/1.5) + 0.1 * amt, -1.5)
+}
+
 -(Vector *) findSpace
 {
     Vector *r = [[Vector new] autorelease];
