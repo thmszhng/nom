@@ -109,15 +109,17 @@
     for (id sprite in sprites)
     {
         CCSprite *realSprite = nil;
+        CCSprite *shadow = [CCSprite spriteWithFile: @"120Shadow.png"];
         if ([sprite isKindOfClass: [NSString class]])
             realSprite = [CCSprite spriteWithFile: sprite];
         else if ([sprite isKindOfClass: [CCSprite class]])
             realSprite = sprite;
         else
             [NSException raise: @"TypeError" format: @"Incorrect type given to Sprites"];
-        realSprite.position = CGPointMake(x, ITEM_HEIGHT/2);
+        shadow.position = realSprite.position = CGPointMake(x, ITEM_HEIGHT/2);
         x += ITEM_TOTAL_WIDTH;
-        [self addChild: realSprite];
+        [self addChild: realSprite z: 1];
+        [self addChild: shadow z: 0];
     }
     [super onEnter];
 }
