@@ -202,8 +202,10 @@
 {
     if (!self.visible) return;
     glEnable(GL_SCISSOR_TEST);
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    glScissor(self.position.x, 0, VIEW_WIDTH, winSize.height);
+    CGSize winSize = [[CCDirector sharedDirector] winSizeInPixels];
+    int retinaMultiplier = winSize.width / 320;
+    glScissor(self.position.x * retinaMultiplier, 0,
+              VIEW_WIDTH * retinaMultiplier, winSize.height);
     [super visit];
     glDisable(GL_SCISSOR_TEST);
 }
