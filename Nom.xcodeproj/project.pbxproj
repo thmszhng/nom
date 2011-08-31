@@ -49,6 +49,7 @@
 		2EE9C73014034FC0000333DF /* SoundON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C72414034FBD000333DF /* SoundON.png */; };
 		2EE9C73714035819000333DF /* PauseMenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73114035804000333DF /* PauseMenuBackground-hd.png */; };
 		2EE9C73814035819000333DF /* PauseMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C73214035804000333DF /* PauseMenuBackground.png */; };
+		5411E272140DD1C600CC1CFC /* FeastMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5411E271140DD1C600CC1CFC /* FeastMode.m */; };
 		54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF2CCD1409B1340004E671 /* ShieldFood.m */; };
 		54F0620B140C1FE700240AE5 /* midnight-ride.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */; };
 		54F0621E140C3F9D00240AE5 /* QuestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0621D140C3F9D00240AE5 /* QuestMode.m */; };
@@ -279,6 +280,8 @@
 		2EE9C72414034FBD000333DF /* SoundON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoundON.png; sourceTree = "<group>"; };
 		2EE9C73114035804000333DF /* PauseMenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PauseMenuBackground-hd.png"; sourceTree = "<group>"; };
 		2EE9C73214035804000333DF /* PauseMenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseMenuBackground.png; sourceTree = "<group>"; };
+		5411E26F140DD1BD00CC1CFC /* FeastMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeastMode.h; sourceTree = "<group>"; };
+		5411E271140DD1C600CC1CFC /* FeastMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeastMode.m; path = Nom.xcodeproj/FeastMode.m; sourceTree = "<group>"; };
 		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldFood.h; sourceTree = "<group>"; };
 		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldFood.m; sourceTree = "<group>"; };
 		54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "midnight-ride.mp3"; sourceTree = "<group>"; };
@@ -658,6 +661,8 @@
 				5F58846C140C1D6400B632E8 /* BurstMode.m */,
 				54F0621A140C3F6E00240AE5 /* QuestMode.h */,
 				54F0621D140C3F9D00240AE5 /* QuestMode.m */,
+				5411E26F140DD1BD00CC1CFC /* FeastMode.h */,
+				5411E271140DD1C600CC1CFC /* FeastMode.m */,
 			);
 			name = GameModes;
 			sourceTree = "<group>";
@@ -1515,6 +1520,7 @@
 				54F0622D140C82B200240AE5 /* Swizzle.m in Sources */,
 				5F4E4ADA140DC26200EAB633 /* ScrollView.m in Sources */,
 				5F5C58F3140DD40B000A02DB /* Subclasser.m in Sources */,
+				5411E272140DD1C600CC1CFC /* FeastMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
