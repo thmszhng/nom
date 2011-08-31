@@ -67,7 +67,6 @@
         for (Class cls in gameModes)
         {
             NSString *str = NSStringFromClass(cls);
-            NSLog(@"%@", str);
             if ([str rangeOfString: @"Mode"].location == NSNotFound) continue;
             [modeDictionary setObject: [str stringByAppendingString: @".png"] forKey: str];
         }
