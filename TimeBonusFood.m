@@ -16,7 +16,7 @@
 
 +(void) load
 {
-    [FoodRandomizer addFood: [self class] weight: 3];
+    [FoodRandomizer addFood: [self class] weight: 2];
 }
 
 -(id) initWithGame: (Game *) game
@@ -24,7 +24,7 @@
     self = [super initWithGame: game];
     if (self != nil)
     {
-        stepsOnCreation = game.steps;
+        timeAtCreation = game.timestamp;
     }
     return self;
 }
@@ -32,9 +32,11 @@
 -(void) eat: (Game *) game
 {
     // variable advancement
-    game.score += ceilf(30.f * powf(1.02f, stepsOnCreation - game.steps));
+    float boost = ceilf(30.f * powf(1.02f, timeAtCreation - game.timestamp));
+    if (boost < 5.f) boost = 5.f;
+    game.score += boost;
     // speed ramp
-    [game rampSpeedBy: 1.6f];
+    [game rampSpeedBy: 1.f];
 }
 
 -(ccColor3B) color

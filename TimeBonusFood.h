@@ -10,7 +10,7 @@
 
 @interface TimeBonusFood: Food
 {
-    int stepsOnCreation;
+    int timeAtCreation;
 }
 
 +(void) load;
