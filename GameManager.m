@@ -142,14 +142,30 @@ static GameManager *_sharedGameManager = nil;
     return ret ? [ret intValue] : def;
 }
 
+-(NSArray *) getArray: (NSString *) value
+{
+    return [settings objectForKey: value];
+}
+
+-(NSArray * ) getArray: (NSString *) value withDefault: (NSArray *) def
+{
+    id ret = [settings objectForKey: value];
+    return ret ? ret : def;
+}
+
 -(void) setValue: (NSString *) value newString: (NSString *) aValue
 {
-	[settings setObject:aValue forKey:value];
+	[settings setObject: aValue forKey:value];
 }
 
 -(void) setValue: (NSString *) value newInt: (int) aValue
 {
 	[settings setObject:[NSNumber numberWithInt:aValue] forKey:value];
+}
+
+-(void) setValue: (NSString *) value newArray: (NSArray *) aValue
+{
+    [settings setObject: aValue forKey: value];
 }
 
 -(void) save

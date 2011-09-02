@@ -34,8 +34,13 @@
 -(NSString *) getString: (NSString *) value withDefault: (NSString *) def;
 -(int) getInt: (NSString *) value;
 -(int) getInt: (NSString *) value withDefault: (int) def;
+-(NSArray *) getArray: (NSString *) value;
+-(NSArray *) getArray: (NSString *) value withDefault: (NSArray *) def;
+
 -(void) setValue: (NSString *) value newString: (NSString *) aValue;
 -(void) setValue: (NSString *) value newInt: (int) aValue;
+-(void) setValue: (NSString *) value newArray: (NSArray*) aValue;
+
 -(void) save;
 -(void) load;
 -(void) logSettings;
