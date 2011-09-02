@@ -30,14 +30,15 @@
     return self;
 }
 
--(void) eat: (Game *) game
+-(BOOL) eat: (Game *) game
 {
     // variable advancement
     float boost = ceilf(30.f * powf(1.03f, timeAtCreation - game.timestamp));
-    if (boost < 5.f) boost = 5.f;
+    if (boost < 5.f) return NO; // is a rock
     game.score += boost;
     // speed ramp
     [game rampSpeedBy: 1.f];
+    return YES;
 }
 
 -(ccColor3B) color

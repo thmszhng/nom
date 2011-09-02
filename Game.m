@@ -165,7 +165,17 @@ int randomNear(int what, int min, int num)
         {
             int i = gridInfo[head.x][head.y] - GridFood;
             assert([head isEqualTo: food[i].pos]);
-            [food[i] eat: self];
+            if (![food[i] eat: self])
+            {
+                if (isProtected)
+                {
+                    isProtected = false;
+                }
+                else
+                {
+                    return NO;
+                }
+            };
             [self onEat: food[i]];
             [self deleteFood: i];
             break;

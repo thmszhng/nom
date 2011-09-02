@@ -18,10 +18,11 @@
     [FoodRandomizer addFood: [self class] weight: 1];
 }
 
--(void) eat: (Game *) game
+-(BOOL) eat: (Game *) game
 {
     // adds a new snake piece to the end of the snake
     game.isProtected = true;
+    return YES;
 }
 
 -(ccColor3B) color

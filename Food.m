@@ -23,9 +23,10 @@
     [super dealloc];
 }
 
--(void) eat: (Game *) game
+-(BOOL) eat: (Game *) game
 {
     [self doesNotRecognizeSelector: _cmd];
+    return NO;
 }
 
 -(ccColor3B) color

@@ -18,13 +18,14 @@
     [FoodRandomizer addFood: [self class] weight: 1];
 }
 
--(void) eat: (Game *) game
+-(BOOL) eat: (Game *) game
 {
     for (int i = 5; i--; )
     {
         [game createFood: [FoodRandomizer randomFoodExcept: [self class], Nil]
                       at: [game findSpaceNear: self.pos]];
     }
+    return YES;
 }
 
 -(ccColor3B) color

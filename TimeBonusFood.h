@@ -17,7 +17,7 @@
 +(void) load;
 
 -(id) initWithGame: (Game *) game;
--(void) eat: (Game *) game;
+-(BOOL) eat: (Game *) game;
 -(ccColor3B) color;
 
 @end

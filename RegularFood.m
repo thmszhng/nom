@@ -18,7 +18,7 @@
     [FoodRandomizer addFood: [self class] weight: 3];
 }
 
--(void) eat: (Game *) game
+-(BOOL) eat: (Game *) game
 {
     // adds a new snake piece to the end of the snake
     ++game.deltaLength;
@@ -26,6 +26,7 @@
     game.score += 10;
     // speed ramp
     [game rampSpeedBy: 1.f];
+    return YES;
 }
 
 -(ccColor3B) color
