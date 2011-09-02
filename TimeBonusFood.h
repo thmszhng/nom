@@ -11,6 +11,7 @@
 @interface TimeBonusFood: Food
 {
     int timeAtCreation;
+    Game *_game;
 }
 
 +(void) load;
