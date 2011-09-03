@@ -117,11 +117,11 @@ static GameManager *_sharedGameManager = nil;
 -(void) loadLevels
 {
     //level one: empty
-    Level *emptyLevel;
+    Level *emptyLevel = [Level level];
     [levels addObject: emptyLevel];
     
     //level two: box
-    Level *boxLevel;
+    Level *boxLevel = [Level level];
     for (int i = 0; i < 30; i++)
     {
         for (int j = 0; j < 30; j++)

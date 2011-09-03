@@ -27,6 +27,11 @@
     return self;
 }
 
++(id) level
+{
+    return [[[self alloc] init] autorelease];
+}
+
 -(enum LevelSpot) getValue: (int) i: (int) j
 {
     return levelInfo[i][j];

@@ -19,6 +19,8 @@ enum LevelSpot {
     enum LevelSpot levelInfo[30][30];
 }
 
++(id) level;
+
 -(enum LevelSpot) getValue: (int) i: (int) j;
 -(void) setValue: (int) i: (int) j: (enum LevelSpot) value;
 
