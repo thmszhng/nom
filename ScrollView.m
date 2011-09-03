@@ -160,9 +160,9 @@
     int initialOffset = 0;
     {
         int i = 0;
-        for (NSString *key in sprites)
+        for (NSObject *key in sprites)
         {
-            if ([key isEqualToString: initialPage]) initialOffset = i;
+            if ([key isEqual: initialPage]) initialOffset = i;
             ++i;
         }
     }
