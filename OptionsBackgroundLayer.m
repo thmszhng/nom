@@ -73,7 +73,7 @@
 
         }*/
         
-        NSMutableDictionary *levelDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+        NSMutableDictionary *levelDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                                 @"LevelOne.png", [NSNumber numberWithInt: 0],
                                                 @"LevelTwo.png", [NSNumber numberWithInt: 1],
                                                 nil];
@@ -83,7 +83,7 @@
         levelView.position = CGPointMake(20, 310);
         [self addChild: levelView];
 
-        NSMutableDictionary *modeDictionary = [NSMutableDictionary new];
+        NSMutableDictionary *modeDictionary = [NSMutableDictionary dictionary];
         NSArray *gameModes = [Game immediateSubclasses];
         for (Class cls in gameModes)
         {
