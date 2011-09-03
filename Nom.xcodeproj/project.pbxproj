@@ -18,6 +18,8 @@
 		2E4FF1DB1405F7E100CD0901 /* OptionsBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4FF1D91405F7E100CD0901 /* OptionsBackground-hd.png */; };
 		2E4FF1DC1405F7E100CD0901 /* OptionsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DA1405F7E100CD0901 /* OptionsBackground.png */; };
 		2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */; };
+		2E690C4F1411506E0042214C /* midnight-ride.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E690C4E1411506E0042214C /* midnight-ride.mp3 */; };
+		2E690C521411530A0042214C /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E690C51141153070042214C /* Level.m */; };
 		2EC38FB213FB5A2F003D3AF3 /* OptionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */; };
 		2EC5F21D1407374C00DFCCFB /* GameBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */; };
 		2EC5F21E1407374C00DFCCFB /* GameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F21A1407374C00DFCCFB /* GameBackground.png */; };
@@ -53,7 +55,6 @@
 		54D7A950140DDDBC004E8197 /* FeastMode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7A94E140DDDBC004E8197 /* FeastMode-hd.png */; };
 		54D7A951140DDDBC004E8197 /* FeastMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7A94F140DDDBC004E8197 /* FeastMode.png */; };
 		54D7A954140DDDD7004E8197 /* FeastMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7A953140DDDD7004E8197 /* FeastMode.m */; };
-		54F0620B140C1FE700240AE5 /* midnight-ride.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */; };
 		54F0621E140C3F9D00240AE5 /* QuestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0621D140C3F9D00240AE5 /* QuestMode.m */; };
 		54F0622D140C82B200240AE5 /* Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0622B140C82B100240AE5 /* Swizzle.m */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
@@ -249,6 +250,9 @@
 		2E4FF1DA1405F7E100CD0901 /* OptionsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OptionsBackground.png; sourceTree = "<group>"; };
 		2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsBackgroundLayer.h; sourceTree = "<group>"; };
 		2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsBackgroundLayer.m; sourceTree = "<group>"; };
+		2E690C4E1411506E0042214C /* midnight-ride.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "midnight-ride.mp3"; sourceTree = "<group>"; };
+		2E690C50141153050042214C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
 		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
 		2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBackground-hd.png"; sourceTree = "<group>"; };
@@ -288,7 +292,6 @@
 		54D7A94E140DDDBC004E8197 /* FeastMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FeastMode-hd.png"; sourceTree = "<group>"; };
 		54D7A94F140DDDBC004E8197 /* FeastMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FeastMode.png; sourceTree = "<group>"; };
 		54D7A953140DDDD7004E8197 /* FeastMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeastMode.m; sourceTree = "<group>"; };
-		54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "midnight-ride.mp3"; sourceTree = "<group>"; };
 		54F0621A140C3F6E00240AE5 /* QuestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestMode.h; sourceTree = "<group>"; };
 		54F0621D140C3F9D00240AE5 /* QuestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestMode.m; sourceTree = "<group>"; };
 		54F0622B140C82B100240AE5 /* Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swizzle.m; sourceTree = "<group>"; };
@@ -744,6 +747,7 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E690C4E1411506E0042214C /* midnight-ride.mp3 */,
 				5FADA406140DC6FC0088E71E /* 120Shadow-hd.png */,
 				5FADA407140DC6FC0088E71E /* 120Shadow.png */,
 				5FADA3F5140DC5960088E71E /* BurstMode-hd.png */,
@@ -830,7 +834,6 @@
 				2EE9C72114034FB6000333DF /* SoundOFF-hd.png */,
 				2EE9C72214034FB8000333DF /* SoundOFF.png */,
 				2EE9C72314034FBA000333DF /* SoundON-hd.png */,
-				54F0620A140C1FE700240AE5 /* midnight-ride.mp3 */,
 				2EE9C72414034FBD000333DF /* SoundON.png */,
 				5F0501281402106000C7385B /* numbers-hd.png */,
 				5F0501291402106000C7385B /* numbers.png */,
@@ -1159,9 +1162,9 @@
 				66347C6513DF93D5000B80CF /* Vector.h */,
 				66347C6613DF93D6000B80CF /* Vector.m */,
 				5F2C339013E6534300D4B5F7 /* Render.h */,
+				5F2C339113E6537900D4B5F7 /* Render.m */,
 				54F0622B140C82B100240AE5 /* Swizzle.m */,
 				54F0622C140C82B200240AE5 /* Swizzle.h */,
-				5F2C339113E6537900D4B5F7 /* Render.m */,
 				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
 				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
 				5F0500E513FF70BE00C7385B /* GameModes */,
@@ -1171,6 +1174,8 @@
 				5F4E4AD9140DC26200EAB633 /* ScrollView.m */,
 				5F5C58F1140DD40A000A02DB /* Subclasser.h */,
 				5F5C58F2140DD40A000A02DB /* Subclasser.m */,
+				2E690C50141153050042214C /* Level.h */,
+				2E690C51141153070042214C /* Level.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1363,7 +1368,6 @@
 				2EC5F22614073DD900DFCCFB /* Control.png in Resources */,
 				2ED770351407447B00BFA1AD /* HelpLayer-hd.png in Resources */,
 				2ED770361407447B00BFA1AD /* HelpLayer.png in Resources */,
-				54F0620B140C1FE700240AE5 /* midnight-ride.mp3 in Resources */,
 				5F588606140C272600B632E8 /* OptionCrazy-hd.png in Resources */,
 				5F588607140C272600B632E8 /* OptionCrazy-selected-hd.png in Resources */,
 				5F588608140C272600B632E8 /* OptionCrazy-selected.png in Resources */,
@@ -1392,6 +1396,7 @@
 				5FADA409140DC6FC0088E71E /* 120Shadow.png in Resources */,
 				54D7A950140DDDBC004E8197 /* FeastMode-hd.png in Resources */,
 				54D7A951140DDDBC004E8197 /* FeastMode.png in Resources */,
+				2E690C4F1411506E0042214C /* midnight-ride.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1529,6 +1534,7 @@
 				5F4E4ADA140DC26200EAB633 /* ScrollView.m in Sources */,
 				5F5C58F3140DD40B000A02DB /* Subclasser.m in Sources */,
 				54D7A954140DDDD7004E8197 /* FeastMode.m in Sources */,
+				2E690C521411530A0042214C /* Level.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

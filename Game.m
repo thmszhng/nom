@@ -8,6 +8,7 @@
 
 #import "Game.h"
 #import "GameManager.h"
+#import "Level.h"
 
 static const int dirX[4] = {0, 0, -1, 1};
 static const int dirY[4] = {1, -1, 0, 0};
@@ -150,10 +151,22 @@ int randomNear(int what, int min, int num)
 //checks lose condition and if snake head has hit food
 -(BOOL) headChecks: (Vector *) head
 {
+    if([[GameManager sharedGameManager].currentLevel getValue:head.x :head.y] == LevelWall)
+    {
+        if (isProtected)
+        {
+            isProtected = false;
+            return YES;
+        }
+        
+        return NO;
+    }
+        
     switch (gridInfo[head.x][head.y])
     {
         case GridWall:
-            if (isProtected) {
+            if (isProtected) 
+            {
                 isProtected = false;
                 return YES;
             }

@@ -8,6 +8,7 @@
 
 #import "GameManager.h"
 
+#import "Level.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
 #import "OptionsScene.h"
@@ -21,7 +22,10 @@
 @implementation GameManager
 static GameManager *_sharedGameManager = nil;
 
+@synthesize isMusicON;
 @synthesize isSoundEffectsON;
+@synthesize levels;
+@synthesize currentLevel;
 
 +(GameManager *) sharedGameManager
 {
@@ -63,6 +67,7 @@ static GameManager *_sharedGameManager = nil;
         //Initialize GameManager
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
+        currentLevel = [Level new];
     }
     
     return self;

@@ -16,16 +16,24 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 
+@class Level;
+
 @interface GameManager: NSObject 
 {
     NSMutableDictionary *settings;
     
+    BOOL isMusicON;
     BOOL isSoundEffectsON;
     SceneTypes currentScene;
+    
+    NSArray *levels;
+    Level *currentLevel;
 }
 
 @property (readwrite) BOOL isMusicON;
 @property (readwrite) BOOL isSoundEffectsON; 
+@property (readwrite, retain) NSArray *levels;
+@property (readwrite, assign) Level *currentLevel;
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;
