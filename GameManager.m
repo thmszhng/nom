@@ -55,20 +55,18 @@ static GameManager *_sharedGameManager = nil;
         settings = [NSMutableDictionary new];
         [self load];
         
-        //for very first launch
-/*        bool defaultsSaved = [self getInt: @"defaultsSaved"];
-        if (!defaultsSaved) {
-            [self setValue: @"defaultsSaved" newInt: 1];
-            [self setValue: @"isMusicON" newInt: 1];
-            [self setValue: @"mode" newString: @"RegularMode"];
-            [self setValue: @"level" newString: @"default"];
+        /*for very first launch
+        bool defaultsSaved = [self getInt: @"defaultsSaved"];
+        if (!defaultsSaved) 
+        {
         }*/
         
         //Initialize GameManager
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
-        currentLevel = [Level new];
-        [self loadLevel: 1];
+        
+        //Load levels
+        [self loadLevels];
     }
     
     return self;
@@ -116,26 +114,29 @@ static GameManager *_sharedGameManager = nil;
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
 }
 
--(void) loadLevel: (int) number
+-(void) loadLevels
 {
-    switch (number) {
-        case 1: // box level
-            for (int i = 0; i < 30; i++)
-            {
-                for (int j = 0; j < 30; j++)
-                {
-                    if(i == 0 || i == 29)
-                        [currentLevel setValue: i: j: LevelWall];
-                    
-                    if(j == 0 || j == 29)
-                        [currentLevel setValue: i: j: LevelWall];
-                }
-            }
-            break;
+    //level one: empty
+    Level *emptyLevel;
+    [levels addObject: emptyLevel];
+    
+    //level two: box
+    Level *boxLevel;
+    for (int i = 0; i < 30; i++)
+    {
+        for (int j = 0; j < 30; j++)
+        {
+            if(i == 0 || i == 29)
+                [boxLevel setValue: i: j: LevelWall];
             
-        default:
-            break;
+            if(j == 0 || j == 29)
+                [boxLevel setValue: i: j: LevelWall];
+        }
     }
+    [levels addObject: boxLevel];
+    
+    //user levels
+    [levels addObjectsFromArray: [self getMutableArray: @"userLevels"]];
 }
 
 -(BOOL) isMusicON
@@ -170,15 +171,9 @@ static GameManager *_sharedGameManager = nil;
     return ret ? [ret intValue] : def;
 }
 
--(NSArray *) getArray: (NSString *) value
+-(NSMutableArray *) getMutableArray: (NSString *) value
 {
     return [settings objectForKey: value];
-}
-
--(NSArray * ) getArray: (NSString *) value withDefault: (NSArray *) def
-{
-    id ret = [settings objectForKey: value];
-    return ret ? ret : def;
 }
 
 -(void) setValue: (NSString *) value newString: (NSString *) aValue
@@ -191,7 +186,7 @@ static GameManager *_sharedGameManager = nil;
 	[settings setObject:[NSNumber numberWithInt:aValue] forKey:value];
 }
 
--(void) setValue: (NSString *) value newArray: (NSArray *) aValue
+-(void) setValue: (NSString *) value newMutableArray: (NSMutableArray *) aValue
 {
     [settings setObject: aValue forKey: value];
 }

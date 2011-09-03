@@ -26,29 +26,29 @@
     BOOL isSoundEffectsON;
     SceneTypes currentScene;
     
-    //NSArray *levels;
-    Level *currentLevel;
+    NSMutableArray *levels;
 }
 
 @property (readwrite) BOOL isMusicON;
 @property (readwrite) BOOL isSoundEffectsON; 
-@property (readwrite, retain) NSArray *levels;
-@property (readwrite, assign) Level *currentLevel;
+@property (readwrite, retain) NSMutableArray *levels;
+@property (readwrite, assign) int *currentLevel;
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;
--(void) loadLevel: (int) number;
+-(void) loadLevels;
 
 -(NSString *) getString: (NSString *) value;
 -(NSString *) getString: (NSString *) value withDefault: (NSString *) def;
+
 -(int) getInt: (NSString *) value;
 -(int) getInt: (NSString *) value withDefault: (int) def;
--(NSArray *) getArray: (NSString *) value;
--(NSArray *) getArray: (NSString *) value withDefault: (NSArray *) def;
+
+-(NSMutableArray *) getMutableArray: (NSString *) value;
 
 -(void) setValue: (NSString *) value newString: (NSString *) aValue;
 -(void) setValue: (NSString *) value newInt: (int) aValue;
--(void) setValue: (NSString *) value newArray: (NSArray*) aValue;
+-(void) setValue: (NSString *) value newMutableArray: (NSMutableArray*) aValue;
 
 -(void) save;
 -(void) load;

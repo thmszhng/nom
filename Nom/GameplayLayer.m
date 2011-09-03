@@ -52,7 +52,7 @@
     
     NSString *mode = [[GameManager sharedGameManager] getString: @"mode" withDefault: @"RegularMode"];
     game = [[NSClassFromString(mode) alloc] init];
-    
+        
     [scoreText setString: @"0"];
     [self scheduleUpdate];
 }

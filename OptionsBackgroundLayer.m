@@ -62,6 +62,27 @@
         [optionsMenu setPosition: CGPointZero];
         [self addChild: optionsMenu];
         
+        /*int num = 0;
+        NSMutableDictionary *levelDictionary = [NSMutableDictionary new];
+        for (id item in [GameManager sharedGameManager].levels)
+        {
+            num++;
+            NSString *str = [NSString stringWithFormat: @"%d", num];
+            [levelDictionary setObject: [str stringByAppendingString: @".png"] forKey: str];
+            num++;
+
+        }*/
+        
+        NSMutableDictionary *levelDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                                @"LevelOne.png", [NSNumber numberWithInt: 0],
+                                                @"LevelTwo.png", [NSNumber numberWithInt: 1],
+                                                nil];
+        levelView = [[ScrollView alloc] initWithDictionary: levelDictionary];
+        //officer, problem
+        levelView.initialPage = [NSNumber numberWithInt: [[GameManager sharedGameManager] getInt: @"currentLevelIndex" withDefault: 0]];
+        levelView.position = CGPointMake(20, 310);
+        [self addChild: levelView];
+
         NSMutableDictionary *modeDictionary = [NSMutableDictionary new];
         NSArray *gameModes = [Game immediateSubclasses];
         for (Class cls in gameModes)
@@ -112,6 +133,7 @@
 -(void) playGame
 {
     [[GameManager sharedGameManager] setValue: @"mode" newString: [gameModeView selected]];
+    [[GameManager sharedGameManager] setValue: @"currentLevelIndex" newInt: [[levelView selected] intValue]];
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 @end

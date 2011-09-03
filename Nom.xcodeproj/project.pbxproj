@@ -20,6 +20,10 @@
 		2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */; };
 		2E690C4F1411506E0042214C /* midnight-ride.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E690C4E1411506E0042214C /* midnight-ride.mp3 */; };
 		2E690C521411530A0042214C /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E690C51141153070042214C /* Level.m */; };
+		2E9043521412D1C8007302CE /* LevelOne-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E90434E1412D1C8007302CE /* LevelOne-hd.png */; };
+		2E9043531412D1C8007302CE /* LevelOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E90434F1412D1C8007302CE /* LevelOne.png */; };
+		2E9043541412D1C8007302CE /* LevelTwo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9043501412D1C8007302CE /* LevelTwo-hd.png */; };
+		2E9043551412D1C8007302CE /* LevelTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9043511412D1C8007302CE /* LevelTwo.png */; };
 		2EC38FB213FB5A2F003D3AF3 /* OptionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */; };
 		2EC5F21D1407374C00DFCCFB /* GameBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */; };
 		2EC5F21E1407374C00DFCCFB /* GameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F21A1407374C00DFCCFB /* GameBackground.png */; };
@@ -254,6 +258,10 @@
 		2E690C4E1411506E0042214C /* midnight-ride.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "midnight-ride.mp3"; sourceTree = "<group>"; };
 		2E690C50141153050042214C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		2E90434E1412D1C8007302CE /* LevelOne-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelOne-hd.png"; sourceTree = "<group>"; };
+		2E90434F1412D1C8007302CE /* LevelOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelOne.png; sourceTree = "<group>"; };
+		2E9043501412D1C8007302CE /* LevelTwo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelTwo-hd.png"; sourceTree = "<group>"; };
+		2E9043511412D1C8007302CE /* LevelTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelTwo.png; sourceTree = "<group>"; };
 		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
 		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
 		2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBackground-hd.png"; sourceTree = "<group>"; };
@@ -750,6 +758,10 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E90434E1412D1C8007302CE /* LevelOne-hd.png */,
+				2E90434F1412D1C8007302CE /* LevelOne.png */,
+				2E9043501412D1C8007302CE /* LevelTwo-hd.png */,
+				2E9043511412D1C8007302CE /* LevelTwo.png */,
 				2E690C4E1411506E0042214C /* midnight-ride.mp3 */,
 				5FADA406140DC6FC0088E71E /* 120Shadow-hd.png */,
 				5FADA407140DC6FC0088E71E /* 120Shadow.png */,
@@ -1402,6 +1414,10 @@
 				54D7A950140DDDBC004E8197 /* FeastMode-hd.png in Resources */,
 				54D7A951140DDDBC004E8197 /* FeastMode.png in Resources */,
 				2E690C4F1411506E0042214C /* midnight-ride.mp3 in Resources */,
+				2E9043521412D1C8007302CE /* LevelOne-hd.png in Resources */,
+				2E9043531412D1C8007302CE /* LevelOne.png in Resources */,
+				2E9043541412D1C8007302CE /* LevelTwo-hd.png in Resources */,
+				2E9043551412D1C8007302CE /* LevelTwo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
