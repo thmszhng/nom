@@ -151,7 +151,7 @@ int randomNear(int what, int min, int num)
 //checks lose condition and if snake head has hit food
 -(BOOL) headChecks: (Vector *) head
 {
-    if([[[GameManager sharedGameManager].levels objectAtIndex: [[GameManager sharedGameManager] getInt: @"currentLevelIndex" withDefault: 0]] getValue:head.x :head.y] == LevelWall)
+    if ([[GameManager sharedGameManager].level getValue: head.x : head.y] == LevelWall)
     {
         if (isProtected)
         {
@@ -251,7 +251,8 @@ int randomNear(int what, int min, int num)
     do {
         r.x = random() % 30;
         r.y = random() % 30;
-    } while (gridInfo[r.x][r.y] != GridNothing && [[[GameManager sharedGameManager].levels objectAtIndex: [[GameManager sharedGameManager] getInt: @"currentLevelIndex"]] getValue:r.x : r.y] != LevelNothing);
+    } while (gridInfo[r.x][r.y] != GridNothing ||
+             [[GameManager sharedGameManager].level getValue:r.x : r.y] != LevelNothing);
     return r;
 }
 
@@ -261,7 +262,8 @@ int randomNear(int what, int min, int num)
     do {
         r.x = randomNear(where.x, 0, 30);
         r.y = randomNear(where.y, 0, 30);
-    } while (gridInfo[r.x][r.y] != GridNothing && [[[GameManager sharedGameManager].levels objectAtIndex: [[GameManager sharedGameManager] getInt: @"currentLevelIndex"]] getValue:r.x : r.y] != LevelNothing);
+    } while (gridInfo[r.x][r.y] != GridNothing ||
+             [[GameManager sharedGameManager].level getValue:r.x : r.y] != LevelNothing);
     return r;
 }
 

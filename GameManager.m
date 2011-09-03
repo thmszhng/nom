@@ -22,10 +22,8 @@
 @implementation GameManager
 static GameManager *_sharedGameManager = nil;
 
-@synthesize isMusicON;
 @synthesize isSoundEffectsON;
 @synthesize levels;
-@synthesize currentLevel;
 
 +(GameManager *) sharedGameManager
 {
@@ -152,6 +150,21 @@ static GameManager *_sharedGameManager = nil;
 -(void) setIsMusicON: (BOOL) val
 {
     [self setValue: @"isMusicOn" newInt: val];
+}
+
+-(Level *) level
+{
+    return [levels objectAtIndex: self.levelIndex];
+}
+
+-(int) levelIndex
+{
+    return [self getInt: @"levelIndex" withDefault: 0];
+}
+
+-(void) setLevelIndex: (int) levelIndex
+{
+    [self setValue: @"levelIndex" newInt: levelIndex];
 }
 
 -(NSString *) getString: (NSString *) value

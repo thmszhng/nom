@@ -78,8 +78,7 @@
                                                 @"LevelTwo.png", [NSNumber numberWithInt: 1],
                                                 nil];
         levelView = [[ScrollView alloc] initWithDictionary: levelDictionary];
-        //officer, problem
-        levelView.initialPage = [NSNumber numberWithInt: [[GameManager sharedGameManager] getInt: @"currentLevelIndex" withDefault: 0]];
+        levelView.initialPage = [NSNumber numberWithInt: [GameManager sharedGameManager].levelIndex];
         levelView.position = CGPointMake(20, 310);
         [self addChild: levelView];
 
@@ -133,7 +132,7 @@
 -(void) playGame
 {
     [[GameManager sharedGameManager] setValue: @"mode" newString: [gameModeView selected]];
-    [[GameManager sharedGameManager] setValue: @"currentLevelIndex" newInt: [[levelView selected] intValue]];
+    [GameManager sharedGameManager].levelIndex = [[levelView selected] intValue];
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 @end

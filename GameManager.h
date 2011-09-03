@@ -22,7 +22,6 @@
 {
     NSMutableDictionary *settings;
     
-    BOOL isMusicON;
     BOOL isSoundEffectsON;
     SceneTypes currentScene;
     
@@ -31,8 +30,9 @@
 
 @property (readwrite) BOOL isMusicON;
 @property (readwrite) BOOL isSoundEffectsON; 
-@property (readwrite, retain) NSMutableArray *levels;
-@property (readwrite, assign) int *currentLevel;
+@property (readonly, retain) NSMutableArray *levels;
+@property (readonly) Level *level;
+@property (readwrite) int levelIndex;
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;

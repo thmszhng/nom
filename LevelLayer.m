@@ -15,7 +15,7 @@
 @implementation LevelLayer
 -(void) draw
 {
-    Level *level = [[GameManager sharedGameManager].levels objectAtIndex: [[GameManager sharedGameManager] getInt: @"currentLevelIndex" withDefault: 0]];
+    Level *level = [GameManager sharedGameManager].level;
     if (level == nil) return;
     for (int y = 0; y < 30; ++y)
     {
