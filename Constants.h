@@ -35,6 +35,7 @@ typedef enum
 typedef enum
 {
     kGameBackgroundLayer = 400,
+    kGameLevelLayer,
     kGameplayLayer,
     kPauseLayer,
 } GameSceneLayers;

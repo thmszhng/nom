@@ -7,7 +7,9 @@
 //
 
 #import "GameScene.h"
-#import "AnimationLayer.h"
+#import "GameBackgroundLayer.h"
+#import "LevelLayer.h"
+#import "GameplayLayer.h"
 
 @implementation GameScene
 -(id) init
@@ -18,6 +20,10 @@
         //Background Layer
         gameBackgroundLayer = [GameBackgroundLayer node];
         [self addChild: gameBackgroundLayer z: 0 tag: kGameBackgroundLayer];
+        
+        //Level Layer
+        levelLayer = [LevelLayer node];
+        [self addChild: levelLayer z: 2 tag: kGameLevelLayer];
         
         //Gameplay Layer
         gameplayLayer = [GameplayLayer node];
