@@ -26,7 +26,7 @@
     BOOL isSoundEffectsON;
     SceneTypes currentScene;
     
-    NSArray *levels;
+    //NSArray *levels;
     Level *currentLevel;
 }
 
@@ -37,6 +37,7 @@
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;
+-(void) loadLevel: (int) number;
 
 -(NSString *) getString: (NSString *) value;
 -(NSString *) getString: (NSString *) value withDefault: (NSString *) def;

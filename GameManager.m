@@ -68,6 +68,7 @@ static GameManager *_sharedGameManager = nil;
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
         currentLevel = [Level new];
+        [self loadLevel: 1];
     }
     
     return self;
@@ -113,6 +114,28 @@ static GameManager *_sharedGameManager = nil;
                   transitionWithDuration: 0.5 scene: sceneToRun];
     
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
+}
+
+-(void) loadLevel: (int) number
+{
+    switch (number) {
+        case 1: // box level
+            for (int i = 0; i < 30; i++)
+            {
+                for (int j = 0; j < 30; j++)
+                {
+                    if(i == 0 || i == 29)
+                        [currentLevel setValue: i: j: LevelWall];
+                    
+                    if(j == 0 || j == 29)
+                        [currentLevel setValue: i: j: LevelWall];
+                }
+            }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 -(BOOL) isMusicON
