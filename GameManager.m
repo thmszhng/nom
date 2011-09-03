@@ -136,7 +136,11 @@ static GameManager *_sharedGameManager = nil;
     [levels addObject: boxLevel];
     
     //user levels
-    [levels addObjectsFromArray: [self getMutableArray: @"userLevels"]];
+    NSArray *userLevels = [self getMutableArray: @"userLevels"];
+    if (userLevels)
+    {
+        [levels addObjectsFromArray: userLevels];
+    }
 }
 
 -(BOOL) isMusicON
