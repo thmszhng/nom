@@ -116,6 +116,7 @@ static GameManager *_sharedGameManager = nil;
 
 -(void) loadLevels
 {
+    levels = [NSMutableArray new];
     //level one: empty
     Level *emptyLevel = [Level level];
     [levels addObject: emptyLevel];
