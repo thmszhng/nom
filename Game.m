@@ -261,7 +261,7 @@ int randomNear(int what, int min, int num)
     do {
         r.x = randomNear(where.x, 0, 30);
         r.y = randomNear(where.y, 0, 30);
-    } while (gridInfo[r.x][r.y] != GridNothing);
+    } while (gridInfo[r.x][r.y] != GridNothing && [[[GameManager sharedGameManager].levels objectAtIndex: [[GameManager sharedGameManager] getInt: @"currentLevelIndex"]] getValue:r.x : r.y] != LevelNothing);
     return r;
 }
 
