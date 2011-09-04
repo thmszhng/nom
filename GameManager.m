@@ -70,6 +70,11 @@ static GameManager *_sharedGameManager = nil;
     return self;
 }
 
+-(void) cdAudioSourceDidFinishPlaying: (CDLongAudioSource *) audioSource
+{
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"loop.mp3"];
+}
+
 -(void) runSceneWithID: (SceneTypes) sceneID
 {
     id sceneToRun = nil;
@@ -82,7 +87,12 @@ static GameManager *_sharedGameManager = nil;
             break;
         
         case kGameScene:
-            if (self.isMusicON) [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"midnight-ride.mp3" loop: YES];
+            if (self.isMusicON)
+            {
+                [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic: @"loop.mp3"];
+                [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"intro.mp3" loop: NO];
+                [CDAudioManager sharedManager].backgroundMusic.delegate = self;
+            }
             sceneToRun = [GameScene node];
             break;
             

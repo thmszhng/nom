@@ -15,10 +15,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Constants.h"
+#import "CDAudioManager.h"
 
 @class Level;
 
-@interface GameManager: NSObject 
+@interface GameManager: NSObject<CDLongAudioSourceDelegate>
 {
     NSMutableDictionary *settings;
     
