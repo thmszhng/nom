@@ -144,6 +144,69 @@ static GameManager *_sharedGameManager = nil;
     }
     [levels addObject: boxLevel];
     
+    //level three: cage
+    Level *thirdLevel = [Level level];
+    for (int i = 0; i < 30; i++)
+    {
+        for (int j = 0; j < 30; j++)
+        {
+            if (i == 5 && 5 <= j && j <= 24 && j != 14 && j != 15)
+                [thirdLevel setValue: i: j: LevelWall];
+            
+            if (i == 24 && 5 <= j && j <= 24 && j != 14 && j != 15)
+                [thirdLevel setValue: i: j: LevelWall];
+            
+            if (j == 5 && 5 <= i && i <= 24 && i != 14 && i != 15)
+                [thirdLevel setValue: i: j: LevelWall];
+            
+            if (j == 24 && 5 <= i && i <= 24 && i != 14 && i != 15)
+                [thirdLevel setValue: i: j: LevelWall];
+        }
+    }
+    [levels addObject: thirdLevel];
+    
+    //level four: x
+    Level *fourthLevel = [Level level];
+    for (int i = 0; i < 30; i++)
+    {
+        for (int j = 0; j < 30; j++)
+        {
+            if (i == j || i == (29 - j))
+            {
+                if (i != 0 && i != 14 && i != 15 && i != 29 && j != 0 && j != 14 && j != 15 && j != 29)
+                    [fourthLevel setValue: i: j: LevelWall];
+            }
+        }
+    }
+    [levels addObject: fourthLevel];
+    
+    //level five: holy boxes (har har har)
+    Level *fifthLevel = [Level level];
+    for (int i = 0; i < 30; i++)
+    {
+        for (int j = 0; j < 30; j++)
+        {
+            if ((i == 2 || i == 27) && 4 <= j && j <= 25)
+                [fifthLevel setValue: i: j: LevelWall];
+            
+            if ((i == 7 || i == 22) && 9 <= j && j <= 20)
+                [fifthLevel setValue: i: j: LevelWall];
+            
+            if ((i == 12 || i == 17) && (j == 14 || j == 15))
+                [fifthLevel setValue: i: j: LevelWall];
+            
+            if ((j == 2 || j == 27) && 4 <= i && i <= 25)
+                [fifthLevel setValue: i: j: LevelWall];
+            
+            if ((j == 7 || j == 22) && 9 <= i && i <= 20)
+                [fifthLevel setValue: i: j: LevelWall];
+            
+            if ((j == 12 || j == 17) && (i == 14 || i == 15))
+                [fifthLevel setValue: i: j: LevelWall];
+        }
+    }
+    [levels addObject: fifthLevel];
+    
     //user levels
     NSArray *userLevels = [self getMutableArray: @"userLevels"];
     if (userLevels)
