@@ -72,7 +72,7 @@ static GameManager *_sharedGameManager = nil;
 
 -(void) cdAudioSourceDidFinishPlaying: (CDLongAudioSource *) audioSource
 {
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"loop.mp3"];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"loop.aac"];
 }
 
 -(void) runSceneWithID: (SceneTypes) sceneID
@@ -89,8 +89,8 @@ static GameManager *_sharedGameManager = nil;
         case kGameScene:
             if (self.isMusicON)
             {
-                [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic: @"loop.mp3"];
-                [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"intro.mp3" loop: NO];
+                [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic: @"loop.aac"];
+                [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"intro.aac" loop: NO];
                 [CDAudioManager sharedManager].backgroundMusic.delegate = self;
             }
             sceneToRun = [GameScene node];
