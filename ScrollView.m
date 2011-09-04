@@ -112,7 +112,7 @@
         CCSprite *shadow = [CCSprite spriteWithFile: @"120Shadow.png"];
         if ([sprite isKindOfClass: [NSString class]])
             realSprite = [CCSprite spriteWithFile: sprite];
-        else if ([sprite isKindOfClass: [CCSprite class]])
+        else if ([sprite isKindOfClass: [CCNode class]])
             realSprite = sprite;
         else
             [NSException raise: @"TypeError" format: @"Incorrect type given to Sprites"];

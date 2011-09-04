@@ -11,6 +11,7 @@
 #import "ScrollView.h"
 #import "Game.h"
 #import "Subclasser.h"
+#import "Level.h"
 
 @implementation OptionsBackgroundLayer
 -(id) init
@@ -73,10 +74,13 @@
 
         }*/
         
-        NSMutableDictionary *levelDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                                @"LevelOne.png", [NSNumber numberWithInt: 0],
-                                                @"LevelTwo.png", [NSNumber numberWithInt: 1],
-                                                nil];
+        NSMutableDictionary *levelDictionary = [NSMutableDictionary dictionary];
+        NSArray *levels = [GameManager sharedGameManager].levels;
+        for (NSUInteger i = 0; i < [levels count]; ++i)
+        {
+            CCRenderTexture *texture = [(Level*)[levels objectAtIndex: i] drawWithSize: 4];
+            [levelDictionary setObject: texture forKey: [NSNumber numberWithUnsignedInt: i]];
+        }
         levelView = [[ScrollView alloc] initWithDictionary: levelDictionary];
         levelView.initialPage = [NSNumber numberWithInt: [GameManager sharedGameManager].levelIndex];
         levelView.position = CGPointMake(20, 310);

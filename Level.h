@@ -14,6 +14,8 @@ enum LevelSpot {
     LevelFood,
 };
 
+@class CCRenderTexture;
+
 @interface Level: NSObject
 {
     enum LevelSpot levelInfo[30][30];
@@ -23,5 +25,6 @@ enum LevelSpot {
 
 -(enum LevelSpot) getValue: (int) i: (int) j;
 -(void) setValue: (int) i: (int) j: (enum LevelSpot) value;
+-(CCRenderTexture *) drawWithSize: (int) size;
 
 @end

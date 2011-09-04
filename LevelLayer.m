@@ -13,25 +13,12 @@
 #import "Level.h"
 
 @implementation LevelLayer
--(void) draw
+
+-(void) onEnter
 {
-    Level *level = [GameManager sharedGameManager].level;
-    if (level == nil) return;
-    for (int y = 0; y < 30; ++y)
-    {
-        for (int x = 0; x < 30; ++x)
-        {
-            if ([level getValue: x : y] != LevelWall)
-            {
-                continue;
-            }
-            BOOL top = (y < 29 && [level getValue: x : y+1] == LevelWall),
-                 left = (x > 0 && [level getValue: x-1 : y] == LevelWall),
-                 bottom = (y > 0 && [level getValue: x : y-1] == LevelWall),
-                 right = (x < 29 && [level getValue: x+1 : y] == LevelWall);
-            drawSnake(x, y, top, left, bottom, right);
-        }
-    }
+    CCRenderTexture *sprite = [[GameManager sharedGameManager].level drawWithSize: 10];
+    sprite.position = ccp(160, 298);
+    [self addChild: sprite];
 }
 
 @end
