@@ -54,8 +54,6 @@
     
     const int width = size, height = size;
     const float scale = [[CCDirector sharedDirector] winSizeInPixels].width / 320.f;
-    glPushMatrix();
-    glScalef(scale, scale, 1.f);
     
     for (int y = 0; y < 30; ++y) for (int x = 0; x < 30; ++x)
     {
@@ -71,7 +69,7 @@
             dark = 249;
         }
         glPushMatrix();
-        glTranslatef(x * size, y * size, 0);
+        glTranslatef(x * size * scale, y * size * scale, 0);
         
         BOOL
         ctop = (y < 29 && levelInfo[x][y+1] == LevelWall),
@@ -149,7 +147,6 @@
         glPopMatrix();
     }
     
-    glPopMatrix();
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
