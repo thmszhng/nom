@@ -15,11 +15,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Constants.h"
-#import "CDAudioManager.h"
 
 @class Level;
+@class CDSoundEngine;
 
-@interface GameManager: NSObject<CDLongAudioSourceDelegate>
+@interface GameManager: NSObject
 {
     NSMutableDictionary *settings;
     
@@ -27,8 +27,8 @@
     SceneTypes currentScene;
     
     NSMutableArray *levels;
-    CDLongAudioSource *intro;
-    CDLongAudioSource *loop;
+    CDSoundEngine *engine;
+    NSThread *soundThread;
 }
 
 @property (readwrite) BOOL isMusicON;
@@ -36,8 +36,6 @@
 @property (readonly, retain) NSMutableArray *levels;
 @property (readonly) Level *level;
 @property (readwrite) int levelIndex;
-@property (readwrite, retain) CDLongAudioSource *intro;
-@property (readwrite, retain) CDLongAudioSource *loop;
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;

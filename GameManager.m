@@ -16,7 +16,6 @@
 #import "Constants.h"
 
 #import "Transitions.h"
-#import "SimpleAudioEngine.h"
 #import "CocosDenshion.h"
 
 @implementation GameManager
@@ -24,8 +23,6 @@ static GameManager *_sharedGameManager = nil;
 
 @synthesize isSoundEffectsON;
 @synthesize levels;
-@synthesize intro;
-@synthesize loop;
 
 +(GameManager *) sharedGameManager
 {
@@ -66,12 +63,9 @@ static GameManager *_sharedGameManager = nil;
         currentScene = kNoSceneUninitialized;
         /*intro = [[CDAudioManager sharedManager] audioSourceForChannel: kASC_Right];
         loop = [[CDAudioManager sharedManager] audioSourceForChannel: kASC_Left];*/
-        intro = [[CDLongAudioSource alloc] init];
-        loop = [[CDLongAudioSource alloc] init];
-        [intro load: @"intro.aac"];
-        [loop load: @"loop.aac"];
-        intro.delegate = self;
-        loop.numberOfLoops = -1;
+        engine = [[CDSoundEngine alloc] init];
+        [engine loadBuffer: 0 filePath: @"intro.aac"];
+        [engine loadBuffer: 1 filePath: @"loop.aac"];
         
         //Load levels
         [self loadLevels];
@@ -80,11 +74,19 @@ static GameManager *_sharedGameManager = nil;
     return self;
 }
 
--(void) cdAudioSourceDidFinishPlaying: (CDLongAudioSource *) audioSource
+-(void) playMusic
 {
-    if (audioSource == intro)
+    CDSoundSource *intro = [engine soundSourceForSound: 0 sourceGroupId: 0];
+    float length = [intro durationInSeconds];
+    length -= 0.06; // slight fudging
+    [engine playSound: 0 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: NO];
+    [NSThread sleepForTimeInterval: length];
+    @synchronized(engine)
     {
-        [loop play];
+        if (![[NSThread currentThread] isCancelled])
+        {
+            [engine playSound: 1 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: YES];
+        }
     }
 }
 
@@ -95,13 +97,10 @@ static GameManager *_sharedGameManager = nil;
     switch (sceneID) 
     {   
         case kMainMenuScene:
-            if ([intro isPlaying])
+            @synchronized(engine)
             {
-                [intro stop];
-            }
-            else if ([loop isPlaying])
-            {
-                [loop stop];
+                [soundThread cancel];
+                [engine stopAllSounds];
             }
             sceneToRun = [MainMenuScene node];
             break;
@@ -109,7 +108,11 @@ static GameManager *_sharedGameManager = nil;
         case kGameScene:
             if (self.isMusicON)
             {
-                [intro play];
+                [soundThread release];
+                soundThread = [[NSThread alloc] initWithTarget: self
+                                                      selector: @selector(playMusic)
+                                                        object: nil];
+                [soundThread start];
             }
             sceneToRun = [GameScene node];
             break;
