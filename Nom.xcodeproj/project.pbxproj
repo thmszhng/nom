@@ -57,6 +57,8 @@
 		54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF2CCD1409B1340004E671 /* ShieldFood.m */; };
 		54D7A950140DDDBC004E8197 /* FeastMode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7A94E140DDDBC004E8197 /* FeastMode-hd.png */; };
 		54D7A951140DDDBC004E8197 /* FeastMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D7A94F140DDDBC004E8197 /* FeastMode.png */; };
+		54D7A98314154CD5004E8197 /* FeastMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7A98014154CD5004E8197 /* FeastMode.m */; };
+		54D7A98414154CD5004E8197 /* QuestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7A98214154CD5004E8197 /* QuestMode.m */; };
 		54F0622D140C82B200240AE5 /* Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0622B140C82B100240AE5 /* Swizzle.m */; };
 		5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500E813FF711C00C7385B /* ClassicMode.m */; };
 		5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0500F313FF776100C7385B /* TimeBonusFood.m */; };
@@ -297,6 +299,10 @@
 		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldFood.m; sourceTree = "<group>"; };
 		54D7A94E140DDDBC004E8197 /* FeastMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FeastMode-hd.png"; sourceTree = "<group>"; };
 		54D7A94F140DDDBC004E8197 /* FeastMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FeastMode.png; sourceTree = "<group>"; };
+		54D7A97F14154CD5004E8197 /* FeastMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeastMode.h; sourceTree = "<group>"; };
+		54D7A98014154CD5004E8197 /* FeastMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeastMode.m; sourceTree = "<group>"; };
+		54D7A98114154CD5004E8197 /* QuestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestMode.h; sourceTree = "<group>"; };
+		54D7A98214154CD5004E8197 /* QuestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestMode.m; sourceTree = "<group>"; };
 		54F0622B140C82B100240AE5 /* Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swizzle.m; sourceTree = "<group>"; };
 		54F0622C140C82B200240AE5 /* Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swizzle.h; sourceTree = "<group>"; };
 		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicMode.h; sourceTree = "<group>"; };
@@ -673,6 +679,10 @@
 				5F05010113FF7A7D00C7385B /* RegularMode.m */,
 				5F58846E140C1E3700B632E8 /* BurstMode.h */,
 				5F58846C140C1D6400B632E8 /* BurstMode.m */,
+				54D7A97F14154CD5004E8197 /* FeastMode.h */,
+				54D7A98014154CD5004E8197 /* FeastMode.m */,
+				54D7A98114154CD5004E8197 /* QuestMode.h */,
+				54D7A98214154CD5004E8197 /* QuestMode.m */,
 			);
 			name = GameModes;
 			sourceTree = "<group>";
@@ -1549,6 +1559,8 @@
 				5F5C58F3140DD40B000A02DB /* Subclasser.m in Sources */,
 				2E690C521411530A0042214C /* Level.m in Sources */,
 				5F7A9CB41411BF6F00491896 /* LevelLayer.m in Sources */,
+				54D7A98314154CD5004E8197 /* FeastMode.m in Sources */,
+				54D7A98414154CD5004E8197 /* QuestMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

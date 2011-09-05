@@ -11,6 +11,7 @@
 #import "GameplayLayer.h"
 #import "Render.h"
 #import "Swizzle.h"
+#import "BurstFood.h"
 
 @implementation GameplayLayer (DisplayOrigin)
 -(void) drawWithOrigin
@@ -39,9 +40,9 @@
     if (self != nil)
     {
         Swizzle([GameplayLayer class], @selector(draw), @selector(drawWithOrigin));
-        for (int i = 15; i--; )
+        for (int i = 3; i--; )
         {
-            [self createFood: [FoodRandomizer randomFood]];
+            [self createFood: [FoodRandomizer randomFoodExcept:[BurstFood class], nil]];
         }
     }
     return self;
@@ -56,9 +57,9 @@
 {
     if (![super headChecks: head]) return NO;
     if ([head isEqualTo: [self beginSpace]] && foodAmount == 0) {
-        for (int i = 15; i--; )
+        for (int i = 3; i--; )
         {
-            [self createFood: [FoodRandomizer randomFood]];
+            [self createFood: [FoodRandomizer randomFoodExcept:[BurstFood class], nil]];
         }
     }
     return YES;

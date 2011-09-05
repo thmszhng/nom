@@ -8,6 +8,7 @@
 
 #import "FeastMode.h"
 #import "FoodRandomizer.h"
+#import "BurstFood.h"
 
 @implementation FeastMode
 
@@ -16,9 +17,9 @@
     self = [super init];
     if (self != nil)
     {
-        for (int i = 10; i--; )
+        for (int i = 5; i--; )
         {
-            [self createFood: [FoodRandomizer randomFood]];
+            [self createFood: [FoodRandomizer randomFoodExcept:[BurstFood class], nil]];
         }    
     }
     return self;
@@ -26,8 +27,8 @@
 
 -(void) onEat: (Food *) eaten
 {
-    if (foodAmount <= 10) {
-        [self createFood: [FoodRandomizer randomFood]];
+    if (foodAmount <= 5) {
+        [self createFood: [FoodRandomizer randomFoodExcept:[BurstFood class], nil]];
     }
 }
 
