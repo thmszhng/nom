@@ -74,10 +74,10 @@ int randomNear(int what, int min, int num)
         snakePiece[0] = [[self beginSpace] retain];
         [self setSpot: snakePiece[0] withValue: GridWall];
         snakeLength = 1;
-        deltaLength = 4;
+        deltaLength = 40;
         currentDirection = NoDirection;
         isProtected = false;
-        
+        wasInWall = false;
         //initialize food
         foodAmount = 0;
     }
@@ -156,20 +156,24 @@ int randomNear(int what, int min, int num)
         if (isProtected)
         {
             isProtected = false;
+            wasInWall = true;
             return YES;
         }
-        
+        if (wasInWall) return YES;
         return NO;
     }
         
     switch (gridInfo[head.x][head.y])
     {
         case GridWall:
+            NSLog(@"Protected: %d, wall: %d", isProtected, wasInWall);
             if (isProtected) 
             {
                 isProtected = false;
+                wasInWall = true;
                 return YES;
             }
+            if (wasInWall) return YES;
             return NO; // player lost
             break;
             
@@ -183,18 +187,24 @@ int randomNear(int what, int min, int num)
                 if (isProtected)
                 {
                     isProtected = false;
+                    wasInWall = true;
+                    [self onEat: food[i]];
+                    [self deleteFood: i];
+                    return YES;
                 }
                 else
                 {
-                    return NO;
+                    if (!wasInWall) return NO;
                 }
             };
+            wasInWall = false;
             [self onEat: food[i]];
             [self deleteFood: i];
             break;
         }
             
         default:
+            wasInWall = false;
             break;
     }
     return YES;

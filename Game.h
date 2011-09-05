@@ -34,6 +34,7 @@ enum GridSpot {
     int deltaLength;
     Vector *snakePiece[900];
     bool isProtected;
+    bool wasInWall;
     
     // food
     int foodAmount;
