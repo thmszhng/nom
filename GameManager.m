@@ -93,7 +93,7 @@ static GameManager *_sharedGameManager = nil;
     id sceneToRun = nil;
     
     switch (sceneID) 
-    {
+    {   
         case kMainMenuScene:
             if ([intro isPlaying])
             {
@@ -239,6 +239,27 @@ static GameManager *_sharedGameManager = nil;
         }
     }
     [levels addObject: sixthLevel];
+    
+    //level seven: +
+    Level *seventhLevel = [Level level];
+    for (int i = 0; i < 30; i++)
+    {
+        for(int j = 0; j < 30; j++)
+        {
+            if ((i == 0 || i == 1 || i == 28 || i == 29) && (j == 0 || j == 1 || j == 28 || j == 29))
+                [seventhLevel setValue: i: j: LevelWall];
+            
+            if ((i == 14 || i == 15) && ((2 <= j && j <= 10) || (19 <= j && j <= 27)))
+                [seventhLevel setValue: i: j: LevelWall];
+            
+            if ((j == 0 || j == 1 || j == 28 || j == 29) && (i == 0 || i == 1 || i == 28 || i == 29))
+                [seventhLevel setValue: i: j: LevelWall];
+            
+            if ((j == 14 || j == 15) && ((2 <= i && i <= 10) || (19 <= i && i <= 27)))
+                [seventhLevel setValue: i: j: LevelWall];
+        }
+    }
+    [levels addObject: seventhLevel];
     
     //user levels
     NSArray *userLevels = [self getMutableArray: @"userLevels"];
