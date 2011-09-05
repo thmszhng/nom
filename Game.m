@@ -9,6 +9,8 @@
 #import "Game.h"
 #import "GameManager.h"
 #import "Level.h"
+#import "GridObject.h"
+#import "SnakeTail.h"
 
 static const int dirX[4] = {0, 0, -1, 1};
 static const int dirY[4] = {1, -1, 0, 0};
@@ -50,49 +52,52 @@ int randomNear(int what, int min, int num)
 
 @implementation Game
 
-@synthesize steps;
-@synthesize timestamp;
-@synthesize score;
-@synthesize currentDirection;
-@synthesize speed;
-@synthesize deltaLength;
-@synthesize snakeLength;
-@synthesize foodAmount;
-@synthesize isProtected;
+@synthesize steps, timestamp, score, currentDirection, speed, isProtected;
+@synthesize head, tail, deltaLength, snakeLength;
+@synthesize food;
 
 -(id) init
 {
     self = [super init];
     if (self)
     {
-        //initialize game
+        // initialize game
         speed = [[GameManager sharedGameManager] getInt: @"speed" withDefault: 350] / 1000.;
         timestamp = 0;
         steps = 0;
         
-        //initialize snake
-        snakePiece[0] = [[self beginSpace] retain];
-        [self setSpot: snakePiece[0] withValue: GridWall];
+        // initialize snake
+        self.head = self.tail = [[SnakeTail alloc] initAt: [self beginSpace]];
+        [self addObject: self.head];
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
         isProtected = false;
         
-        //initialize food
-        foodAmount = 0;
+        // initialize food
+        food = [NSMutableSet new];
+        
+        // initialize grid with level
+        Level *level = [GameManager sharedGameManager].level;
+        for (int x = 0; x < 30; ++x) for (int y = 0; y < 30; ++y)
+        {
+            if ([level getValue: x : y] != LevelWall) continue;
+            Wall *wall = [Wall new];
+            wall.pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
+            [self addObject: wall];
+        }
     }
     return self;
 }
 
 -(void) dealloc
 {
-    while (foodAmount--)
+    self.head = nil;
+    self.tail = nil;
+    self.food = nil;
+    for (int y = 0; y < 30; ++y) for (int x = 0; x < 30; ++x)
     {
-        [food[foodAmount] release];
-    }
-    while (snakeLength--)
-    {
-        [snakePiece[snakeLength] release];
+        [grid[x][y] release];
     }
     [super dealloc];
 }
@@ -102,108 +107,112 @@ int randomNear(int what, int min, int num)
     // time passed
     ++steps;
     timestamp += speed;
-    
-    // keep last element, which will be removed from snakePiece
-    Vector *tail = snakePiece[snakeLength - 1];
 
+    BOOL removed = NO;
     if (deltaLength == 0)
     {
         // don't allow hitting the tail
-        [self setSpot: tail withValue: GridShadow];
+        [self removeObject: tail];
+        removed = YES;
     }
     
     // advance head
-    Vector *head = [[Vector alloc] init];
-    head.x = snakePiece[0].x + dirX[currentDirection];
-    head.y = snakePiece[0].y + dirY[currentDirection];
-    wrap(head);
-    BOOL survived = [self headChecks: head];
+    SnakeTail *newHead = [[head copy] autorelease];
+    newHead.pos.x += dirX[currentDirection];
+    newHead.pos.y += dirY[currentDirection];
+    wrap(newHead.pos);
+    // check for death
+    BOOL survived = [self headChecks: newHead.pos];
     if (!survived)
     {
-        [head release];
         return NO;
     }
-    [self setSpot: head withValue: GridWall];
+    head.forward = newHead;
+    head = newHead;
+    [self addObject: head];
     
-    // advance snake except head
-    for (int i = snakeLength; --i; )
-    {
-        snakePiece[i] = snakePiece[i-1];
-    }
-    
-    snakePiece[0] = head;
-    
-    // lengthen snake as needed
     if (deltaLength > 0)
     {
+        // keep the tail
+        if (removed)
+        {
+            [self addObject: tail];
+        }
         --deltaLength;
-        snakePiece[snakeLength++] = tail;
-        [self setSpot: tail withValue: GridWall];
     }
     else
     {
-        [self setSpot: tail withValue: GridNothing];
-        [tail release];
+        // remove the last piece
+        if (!removed)
+        {
+            [self removeObject: tail];
+        }
+        tail = tail.forward;
     }
     return survived;
 }
 
 //checks lose condition and if snake head has hit food
--(BOOL) headChecks: (Vector *) head
+-(BOOL) headChecks: (Vector *) where
 {
-    if ([[GameManager sharedGameManager].level getValue: head.x : head.y] == LevelWall)
+    if (grid[where.x][where.y] == nil) return YES;
+    BOOL survival = [grid[where.x][where.y] eatRecursively: self];
+    for (GridObject *obj = grid[where.x][where.y]; obj != nil; )
     {
-        if (isProtected)
+        if ([obj isKindOfClass: [Food class]])
         {
-            isProtected = false;
-            return YES;
+            Food *ofood = (Food*) obj;
+            obj = ofood.next;
+            [self onEat: ofood];
+            [self removeObject: ofood];
+            [self removeFood: ofood];
         }
-        
-        return NO;
+        else
+        {
+            obj = obj.next;
+        }
     }
-        
-    switch (gridInfo[head.x][head.y])
+    if (survival) return YES;
+    if (isProtected)
     {
-        case GridWall:
-            if (isProtected) 
-            {
-                isProtected = false;
-                return YES;
-            }
-            return NO; // player lost
-            break;
-            
-            //check if the snake head found some food
-        case GridFood ... GridFoodMax:
-        {
-            int i = gridInfo[head.x][head.y] - GridFood;
-            assert([head isEqualTo: food[i].pos]);
-            if (![food[i] eat: self])
-            {
-                if (isProtected)
-                {
-                    isProtected = false;
-                }
-                else
-                {
-                    return NO;
-                }
-            };
-            [self onEat: food[i]];
-            [self deleteFood: i];
-            break;
-        }
-            
-        default:
-            break;
+        isProtected = NO;
+        return YES;
     }
-    return YES;
+    return NO;
 }
 
-// sets the given space in gridInfo
--(void) setSpot: (Vector *) pos withValue: (enum GridSpot) n
+-(void) addObject: (GridObject *) object
 {
-    gridInfo[pos.x][pos.y] = n;
+    Vector *pos = object.pos;
+    GridObject *current = grid[pos.x][pos.y];
+    if (current == nil)
+    {
+        grid[pos.x][pos.y] = [object retain];
+    }
+    else
+    {
+        for (; current.next != nil; current = current.next);
+        current.next = object;
+    }
+}
+
+-(void) removeObject: (GridObject *) object
+{
+    Vector *pos = object.pos;
+    GridObject *prev = grid[pos.x][pos.y];
+    if (prev == object)
+    {
+        grid[pos.x][pos.y] = object.next;
+        [object release];
+    }
+    else
+    {
+        for (; prev.next != object; prev = prev.next)
+        {
+            assert(prev != nil);
+        }
+        prev.next = object.next;
+    }
 }
 
 -(void) onEat: (Food *) food;
@@ -211,18 +220,9 @@ int randomNear(int what, int min, int num)
     [self doesNotRecognizeSelector: _cmd];
 }
 
--(void) deleteFood: (int) index
+-(void) removeFood: (Food *) what
 {
-//    [self setSpot: foodPos[index] withValue: GridNothing];
-    [food[index] release];
-    --foodAmount;
-    if (index != foodAmount)
-    {
-        // move the deleted element to the back of the array
-        food[index] = food[foodAmount];
-        [self setSpot: food[index].pos withValue: GridFood + index];
-    }
-    food[foodAmount] = nil;
+    [food removeObject: what];
 }
 
 -(void) createFood: (Class) foodType;
@@ -232,10 +232,10 @@ int randomNear(int what, int min, int num)
 
 -(void) createFood: (Class) foodType at: (Vector *) where;
 {
-    food[foodAmount] = [[foodType alloc] initWithGame: self];
-    food[foodAmount].pos = where;
-    [self setSpot: food[foodAmount].pos withValue: GridFood + foodAmount];
-    ++foodAmount;
+    Food *new = [[foodType alloc] initWithGame: self];
+    new.pos = where;
+    [food addObject: new];
+    [self addObject: new];
 }
 
 -(void) rampSpeedBy: (float) amt
@@ -251,8 +251,7 @@ int randomNear(int what, int min, int num)
     do {
         r.x = random() % 30;
         r.y = random() % 30;
-    } while (gridInfo[r.x][r.y] != GridNothing ||
-             [[GameManager sharedGameManager].level getValue:r.x : r.y] != LevelNothing);
+    } while (grid[r.x][r.y] != nil);
     return r;
 }
 
@@ -262,19 +261,8 @@ int randomNear(int what, int min, int num)
     do {
         r.x = randomNear(where.x, 0, 30);
         r.y = randomNear(where.y, 0, 30);
-    } while (gridInfo[r.x][r.y] != GridNothing ||
-             [[GameManager sharedGameManager].level getValue:r.x : r.y] != LevelNothing);
+    } while (grid[r.x][r.y] != nil);
     return r;
-}
-
--(Food *) getFood: (int) index
-{
-    return food[index];
-}
-
--(Vector *) getSnakePiece: (int) index
-{
-    return snakePiece[index];
 }
 
 -(Vector *) beginSpace

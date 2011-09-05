@@ -10,23 +10,9 @@
 
 @implementation Food
 
-@synthesize pos;
-
 -(id) initWithGame: (Game *) game
 {
     return [self init];
-}
-
--(void) dealloc
-{
-    [pos release];
-    [super dealloc];
-}
-
--(BOOL) eat: (Game *) game
-{
-    [self doesNotRecognizeSelector: _cmd];
-    return NO;
 }
 
 -(ccColor3B) color

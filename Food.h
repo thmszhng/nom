@@ -6,22 +6,17 @@
 //  Copyright Thomas Zhang, Geoffry Song, Eddy Gao. All rights reserved.
 //
 
-#import <Foundation/NSObject.h>
+#import "GridObject.h"
 #import "cocos2d.h"
 
 @class Game;
 @class Vector;
 
-@interface Food: NSObject
+@interface Food: GridObject
 {
-    Vector *pos;
 }
 
-@property (readwrite,retain) Vector *pos;
-
 -(id) initWithGame: (Game *) game;
--(void) dealloc;
--(BOOL) eat: (Game *) game;
 -(ccColor3B) color;
 
 @end

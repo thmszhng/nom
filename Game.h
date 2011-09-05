@@ -12,13 +12,8 @@
 
 enum Direction {NoDirection = -1, up = 0, down, left, right};
 
-enum GridSpot {
-    GridNothing = 0,
-    GridWall,
-    GridShadow,
-    GridFood = 1000,
-    GridFoodMax = 1900
-};
+@class GridObject;
+@class SnakeTail;
 
 @interface Game: NSObject
 {
@@ -30,16 +25,15 @@ enum GridSpot {
     
     // snake
     enum Direction currentDirection;
+    SnakeTail *head, *tail;
     int snakeLength;
     int deltaLength;
-    Vector *snakePiece[900];
     bool isProtected;
     
     // food
-    int foodAmount;
-    Food *food[900];
+    NSMutableSet *food;
 
-    enum GridSpot gridInfo[30][30];
+    GridObject *grid[30][30];
 }
 
 @property (readonly, assign) int steps;
@@ -47,12 +41,13 @@ enum GridSpot {
 @property (readwrite, assign) int score;
 
 @property (readwrite, assign) enum Direction currentDirection;
+@property (readwrite, retain) SnakeTail *head, *tail;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;
 @property (readwrite, assign) bool isProtected;
 
 @property (readonly) int snakeLength;
-@property (readonly) int foodAmount;
+@property (readwrite, retain) NSMutableSet *food;
 
 -(id) init;
 -(void) dealloc;
@@ -62,11 +57,12 @@ enum GridSpot {
 -(BOOL) headChecks: (Vector *) head; // returns NO if lost game
 
 // grid
--(void) setSpot: (Vector *) pos withValue: (enum GridSpot) n;
+-(void) addObject: (GridObject *) object;
+-(void) removeObject: (GridObject *) object;
 
 // food
 -(void) onEat: (Food *) food; // to be overriden
--(void) deleteFood: (int) index;
+-(void) removeFood: (Food *) food;
 -(void) createFood: (Class) foodType;
 -(void) createFood: (Class) foodType at: (Vector *) where;
 -(void) rampSpeedBy: (float) amt;
@@ -75,8 +71,6 @@ enum GridSpot {
 -(Vector *) findSpaceNear: (Vector *) where;
 
 // information
--(Vector *) getSnakePiece: (int) index;
--(Food *) getFood: (int) index;
 -(Vector *) beginSpace;
 
 @end

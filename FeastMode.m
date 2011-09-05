@@ -27,7 +27,7 @@
 
 -(void) onEat: (Food *) eaten
 {
-    if (foodAmount <= 5) {
+    if ([food count] <= 5) {
         [self createFood: [FoodRandomizer randomFoodExcept:[BurstFood class], nil]];
     }
 }

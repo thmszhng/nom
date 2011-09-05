@@ -16,7 +16,7 @@
 @implementation GameplayLayer (DisplayOrigin)
 -(void) drawWithOrigin
 {
-    if (game.foodAmount == 0)
+    if ([game.food count] == 0)
     {
         glDisable(GL_TEXTURE_2D);
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);
@@ -53,13 +53,13 @@
     [super dealloc];
 }
 
--(BOOL) headChecks: (Vector *)head
+-(BOOL) headChecks: (Vector *) where
 {
-    if (![super headChecks: head]) return NO;
-    if ([head isEqualTo: [self beginSpace]] && foodAmount == 0) {
+    if (![super headChecks: where]) return NO;
+    if ([where isEqualTo: [self beginSpace]] && [food count] == 0) {
         for (int i = 3; i--; )
         {
-            [self createFood: [FoodRandomizer randomFoodExcept:[BurstFood class], nil]];
+            [self createFood: [FoodRandomizer randomFoodExcept: [BurstFood class], nil]];
         }
     }
     return YES;

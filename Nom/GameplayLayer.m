@@ -11,7 +11,7 @@
 #import "GameManager.h"
 #import "PauseLayer.h"
 #import "GameOverLayer.h"
-#import "RegularMode.h"
+#import "SnakeTail.h"
 
 @implementation GameplayLayer
 -(id) init
@@ -217,9 +217,8 @@
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    for (int i = game.foodAmount; i--; )
+    for (Food *food in game.food)
     {
-        Food *food = [game getFood: i];
         Vector *pos = food.pos;
         ccColor3B color = [food color];
         ccColor3B darkened = {DARKEN(color.r), DARKEN(color.g), DARKEN(color.b)};
@@ -231,22 +230,25 @@
     
     if (isGameOver && gameOverTimer < 0.3*6 && (int)(gameOverTimer / 0.3) % 2 == 0) return;
     enum Direction lastdir = NoDirection;
-    for (int i = game.snakeLength; i--; )
+    SnakeTail *piece = game.tail;
+    while (piece != nil)
     {
-        Vector *piece = [game getSnakePiece: i];
         enum Direction dir = NoDirection;
-        if (i != 0)
+        SnakeTail *after = piece.forward;
+        Vector *pos = piece.pos;
+        if (after != nil)
         {
-            Vector *after = [game getSnakePiece: i - 1];
-            if (abs(piece.x - after.x) + abs(piece.y - after.y) == 1)
+            Vector *apos = after.pos;
+            if (abs(pos.x - apos.x) + abs(pos.y - apos.y) == 1)
             {
-                if (after.x - piece.x == 1) dir = right;
-                if (after.x - piece.x == -1) dir = left;
-                if (after.y - piece.y == 1) dir = up;
-                if (after.y - piece.y == -1) dir = down;
+                if (apos.x - pos.x == 1) dir = right;
+                if (apos.x - pos.x == -1) dir = left;
+                if (apos.y - pos.y == 1) dir = up;
+                if (apos.y - pos.y == -1) dir = down;
             }
         }
-        drawSnake(piece.x, piece.y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
+        drawSnake(pos.x, pos.y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
+        piece = after;
         lastdir = dir;
     }
 }

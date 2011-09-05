@@ -26,9 +26,9 @@
 -(void) onEat: (Food *) eaten
 {
     // trigger a new spawn if there is no regular food left
-    for (int i = foodAmount; i--; )
+    for (Food *f in food)
     {
-        if (food[i] != eaten && [food[i] isKindOfClass: [RegularFood class]]) return;
+        if (f != eaten && [f isKindOfClass: [RegularFood class]]) return;
     }
     [self createFood: [RegularFood class]];
     // a chance for bonus food
