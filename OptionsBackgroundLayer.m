@@ -83,7 +83,7 @@
         }
         levelView = [[ScrollView alloc] initWithDictionary: levelDictionary];
         levelView.initialPage = [NSNumber numberWithInt: [GameManager sharedGameManager].levelIndex];
-        levelView.position = CGPointMake(20, 310);
+        levelView.position = CGPointMake(20, 307);
         [self addChild: levelView];
 
         NSMutableDictionary *modeDictionary = [NSMutableDictionary dictionary];
