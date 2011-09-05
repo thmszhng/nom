@@ -34,7 +34,7 @@
                                        disabledImage: @"OptionHard-selected.png"  
                                        target: self 
                                        selector: @selector(setSlow)];
-        [slowButton setPosition: ccp(66, 118)];
+        [slowButton setPosition: ccp(66.5, 118)];
         mediumButton = [CCMenuItemImage 
                                        itemFromNormalImage: @"OptionHarder.png" 
                                        selectedImage: @"OptionHarder-selected.png" 
