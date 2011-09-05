@@ -28,7 +28,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     SnakeTail *head, *tail;
     int snakeLength;
     int deltaLength;
-    bool isProtected;
+    BOOL isProtected, wasInWall;
     
     // food
     NSMutableSet *food;
@@ -44,7 +44,7 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 @property (readwrite, retain) SnakeTail *head, *tail;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;
-@property (readwrite, assign) bool isProtected;
+@property (readwrite, assign) BOOL isProtected, wasInWall;
 
 @property (readonly) int snakeLength;
 @property (readwrite, retain) NSMutableSet *food;

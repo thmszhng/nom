@@ -52,7 +52,7 @@ int randomNear(int what, int min, int num)
 
 @implementation Game
 
-@synthesize steps, timestamp, score, currentDirection, speed, isProtected;
+@synthesize steps, timestamp, score, currentDirection, speed, isProtected, wasInWall;
 @synthesize head, tail, deltaLength, snakeLength;
 @synthesize food;
 
@@ -72,7 +72,7 @@ int randomNear(int what, int min, int num)
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
-        isProtected = false;
+        isProtected = wasInWall = NO;
         
         // initialize food
         food = [NSMutableSet new];
@@ -155,8 +155,8 @@ int randomNear(int what, int min, int num)
 //checks lose condition and if snake head has hit food
 -(BOOL) headChecks: (Vector *) where
 {
-    if (grid[where.x][where.y] == nil) return YES;
-    BOOL survival = [grid[where.x][where.y] eatRecursively: self];
+    BOOL survival =  grid[where.x][where.y] == nil ||
+                    [grid[where.x][where.y] eatRecursively: self];
     for (GridObject *obj = grid[where.x][where.y]; obj != nil; )
     {
         if ([obj isKindOfClass: [Food class]])
@@ -172,10 +172,15 @@ int randomNear(int what, int min, int num)
             obj = obj.next;
         }
     }
-    if (survival) return YES;
-    if (isProtected)
+    if (survival)
+    {
+        wasInWall = NO;
+        return YES;
+    }
+    if (isProtected || wasInWall)
     {
         isProtected = NO;
+        wasInWall = YES;
         return YES;
     }
     return NO;
