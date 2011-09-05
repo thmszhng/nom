@@ -228,13 +228,13 @@ static GameManager *_sharedGameManager = nil;
     {
         for (int j = 0; j < 30; j++)
         {
-            if ((i == 0 || i == 29) && ((2 <= j && j <= 13) || (16 <= j && j <= 27)))
+            if ((i == 0 || i == 29) && ((/*2 <= j &&*/ j <= 13) || (16 <= j /*&& j <= 27*/)))
                 [sixthLevel setValue: i: j: LevelWall];
             
             if ((i == 10 || i == 19) && ((0 <= j && j <= 4) || (7 <= j && j <= 13) || (16 <= j && j <= 22) || (25 <= j && j <= 29)))
                 [sixthLevel setValue: i: j: LevelWall];
             
-            if ((j == 0 || j == 29) && ((2 <= i && i <= 13) || (16 <= i && i <= 27)))
+            if ((j == 0 || j == 29) && ((/*2 <= i &&*/ i <= 13) || (16 <= i /*&& i <= 27*/)))
                 [sixthLevel setValue: i: j: LevelWall];
             
             if ((j == 10 || j == 19) && ((0 <= i && i <= 4) || (7 <= i && i <= 13) || (16 <= i && i <= 22) || (25 <= i && i <= 29)))
@@ -249,14 +249,14 @@ static GameManager *_sharedGameManager = nil;
     {
         for(int j = 0; j < 30; j++)
         {
-            if ((i == 0 || i == 1 || i == 28 || i == 29) && (j == 0 || j == 1 || j == 28 || j == 29))
-                [seventhLevel setValue: i: j: LevelWall];
+            /*if ((i == 0 || i == 1 || i == 28 || i == 29) && (j == 0 || j == 1 || j == 28 || j == 29))
+                [seventhLevel setValue: i: j: LevelWall];*/
             
             if ((i == 14 || i == 15) && ((2 <= j && j <= 10) || (19 <= j && j <= 27)))
                 [seventhLevel setValue: i: j: LevelWall];
             
-            if ((j == 0 || j == 1 || j == 28 || j == 29) && (i == 0 || i == 1 || i == 28 || i == 29))
-                [seventhLevel setValue: i: j: LevelWall];
+            /*if ((j == 0 || j == 1 || j == 28 || j == 29) && (i == 0 || i == 1 || i == 28 || i == 29))
+                [seventhLevel setValue: i: j: LevelWall];*/
             
             if ((j == 14 || j == 15) && ((2 <= i && i <= 10) || (19 <= i && i <= 27)))
                 [seventhLevel setValue: i: j: LevelWall];
