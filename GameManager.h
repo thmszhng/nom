@@ -27,6 +27,8 @@
     SceneTypes currentScene;
     
     NSMutableArray *levels;
+    CDLongAudioSource *intro;
+    CDLongAudioSource *loop;
 }
 
 @property (readwrite) BOOL isMusicON;
@@ -34,6 +36,8 @@
 @property (readonly, retain) NSMutableArray *levels;
 @property (readonly) Level *level;
 @property (readwrite) int levelIndex;
+@property (readwrite, retain) CDLongAudioSource *intro;
+@property (readwrite, retain) CDLongAudioSource *loop;
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;

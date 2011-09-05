@@ -24,6 +24,8 @@ static GameManager *_sharedGameManager = nil;
 
 @synthesize isSoundEffectsON;
 @synthesize levels;
+@synthesize intro;
+@synthesize loop;
 
 +(GameManager *) sharedGameManager
 {
@@ -62,6 +64,14 @@ static GameManager *_sharedGameManager = nil;
         //Initialize GameManager
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
+        /*intro = [[CDAudioManager sharedManager] audioSourceForChannel: kASC_Right];
+        loop = [[CDAudioManager sharedManager] audioSourceForChannel: kASC_Left];*/
+        intro = [[CDLongAudioSource alloc] init];
+        loop = [[CDLongAudioSource alloc] init];
+        [intro load: @"intro.aac"];
+        [loop load: @"loop.aac"];
+        intro.delegate = self;
+        loop.numberOfLoops = -1;
         
         //Load levels
         [self loadLevels];
@@ -72,7 +82,10 @@ static GameManager *_sharedGameManager = nil;
 
 -(void) cdAudioSourceDidFinishPlaying: (CDLongAudioSource *) audioSource
 {
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"loop.aac"];
+    if (audioSource == intro)
+    {
+        [loop play];
+    }
 }
 
 -(void) runSceneWithID: (SceneTypes) sceneID
@@ -82,16 +95,21 @@ static GameManager *_sharedGameManager = nil;
     switch (sceneID) 
     {
         case kMainMenuScene:
-            if ([[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying]) [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+            if ([intro isPlaying])
+            {
+                [intro stop];
+            }
+            else if ([loop isPlaying])
+            {
+                [loop stop];
+            }
             sceneToRun = [MainMenuScene node];
             break;
         
         case kGameScene:
             if (self.isMusicON)
             {
-                [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic: @"loop.aac"];
-                [[SimpleAudioEngine sharedEngine] playBackgroundMusic: @"intro.aac" loop: NO];
-                [CDAudioManager sharedManager].backgroundMusic.delegate = self;
+                [intro play];
             }
             sceneToRun = [GameScene node];
             break;
