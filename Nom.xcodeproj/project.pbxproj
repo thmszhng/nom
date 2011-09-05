@@ -706,6 +706,38 @@
 			name = Food;
 			sourceTree = "<group>";
 		};
+		5F97212C141559D8009EC8F1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5F5C58F1140DD40A000A02DB /* Subclasser.h */,
+				5F5C58F2140DD40A000A02DB /* Subclasser.m */,
+				54F0622B140C82B100240AE5 /* Swizzle.m */,
+				54F0622C140C82B200240AE5 /* Swizzle.h */,
+				5F29C9E314047D990091D12D /* Transitions.h */,
+				5F29C9E514047E280091D12D /* Transitions.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		5F97212E14155A04009EC8F1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				5F26B5A713FB7689008B0024 /* Food */,
+				66347C6513DF93D5000B80CF /* Vector.h */,
+				66347C6613DF93D6000B80CF /* Vector.m */,
+				5F2C339013E6534300D4B5F7 /* Render.h */,
+				5F2C339113E6537900D4B5F7 /* Render.m */,
+				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
+				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
+				5F0500E513FF70BE00C7385B /* GameModes */,
+				5F4E4AD8140DC26200EAB633 /* ScrollView.h */,
+				5F4E4AD9140DC26200EAB633 /* ScrollView.m */,
+				2E690C50141153050042214C /* Level.h */,
+				2E690C51141153070042214C /* Level.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		66424E1313DE3EA800CCCCCB = {
 			isa = PBXGroup;
 			children = (
@@ -1176,24 +1208,8 @@
 		66424FBB13DE409A00CCCCCB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5F26B5A713FB7689008B0024 /* Food */,
-				66347C6513DF93D5000B80CF /* Vector.h */,
-				66347C6613DF93D6000B80CF /* Vector.m */,
-				5F2C339013E6534300D4B5F7 /* Render.h */,
-				5F2C339113E6537900D4B5F7 /* Render.m */,
-				54F0622B140C82B100240AE5 /* Swizzle.m */,
-				54F0622C140C82B200240AE5 /* Swizzle.h */,
-				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
-				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
-				5F0500E513FF70BE00C7385B /* GameModes */,
-				5F29C9E314047D990091D12D /* Transitions.h */,
-				5F29C9E514047E280091D12D /* Transitions.m */,
-				5F4E4AD8140DC26200EAB633 /* ScrollView.h */,
-				5F4E4AD9140DC26200EAB633 /* ScrollView.m */,
-				5F5C58F1140DD40A000A02DB /* Subclasser.h */,
-				5F5C58F2140DD40A000A02DB /* Subclasser.m */,
-				2E690C50141153050042214C /* Level.h */,
-				2E690C51141153070042214C /* Level.m */,
+				5F97212E14155A04009EC8F1 /* Game */,
+				5F97212C141559D8009EC8F1 /* Utility */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
