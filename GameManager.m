@@ -264,6 +264,69 @@ static GameManager *_sharedGameManager = nil;
     }
     [levels addObject: seventhLevel];
     
+    //level eight: / \ \ /
+    Level *eightLevel = [Level level];
+    for (int i = 0; i < 30; i++)
+    {
+        for (int j = 0; j < 30; j++)
+        {            
+            if ((i == 4 || i == 25) && (j == 11 || j == 12 || j == 17 || j == 18))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((i == 5 || i == 24) && (j == 10 || j == 11 || j == 18 || j == 19))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((i == 6 || i == 23) && (j == 9 || j == 10 || j == 19 || j == 20))
+                [eightLevel setValue: i: j: LevelWall];
+
+            if ((i == 7 || i == 22) && (j == 8 || j == 9 || j == 20 || j == 21))
+                [eightLevel setValue: i: j: LevelWall];
+
+            if ((i == 8 || i == 21) && (j == 7 || j == 8 || j == 21 || j == 22))
+                [eightLevel setValue: i: j: LevelWall];
+
+            if ((i == 9 || i == 20) && (j == 6 || j == 7 || j == 22 || j == 23))
+                [eightLevel setValue: i: j: LevelWall];
+
+            if ((i == 10 || i == 19) && (j == 5 || j == 6 || j == 23 || j == 24))
+                [eightLevel setValue: i: j: LevelWall];
+
+            if ((i == 11 || i == 18 ) && (j == 4 || j == 5 || j == 24 || j == 25))
+                [eightLevel setValue: i: j: LevelWall];
+
+            if ((i == 12 || i == 17) && (j == 3 || j == 4 || j == 25 || j == 26))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 4 || j == 25) && (i == 11 || i ==12 || i ==17 || i ==18))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 5 || j == 24) && (i == 10 || i ==11 || i ==18 || i ==19))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 6 || j == 23) && (i == 9 || i ==10 || i ==19 || i ==20))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 7 || j == 22) && (i == 8 || i ==9 || i ==20 || i ==21))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 8 || j == 21) && (i == 7 || i ==8 || i ==21 || i ==22))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 9 || j == 20) && (i == 6 || i ==7 || i ==22 || i ==23))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 10 || j == 19) && (i == 5 || i ==6 || i ==23 || i ==24))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 11 || j == 18 ) && (i == 4 || i == 5 || i == 24 || i == 25))
+                [eightLevel setValue: i: j: LevelWall];
+            
+            if ((j == 12 || j == 17) && (i == 3 || i == 4 || i == 25 || i == 26))
+                [eightLevel setValue: i: j: LevelWall];
+        }
+    }
+    [levels addObject: eightLevel];
+    
     //user levels
     NSArray *userLevels = [self getMutableArray: @"userLevels"];
     if (userLevels)
