@@ -168,10 +168,10 @@ static GameManager *_sharedGameManager = nil;
     {
         for (int j = 0; j < 30; j++)
         {
-            if ((i == 5 || i == 24) && ((5 <= j && j <= 13) || (16 <= j && j <= 24)))
+            if ((i == 5 || i == 24) && ((5 <= j && j <= 12) || (17 <= j && j <= 24)))
                 [thirdLevel setValue: i: j: LevelWall];
                         
-            if ((j == 5 || j == 24) && ((5 <= i && i <= 13) || (16 <= i && i <= 24)))
+            if ((j == 5 || j == 24) && ((5 <= i && i <= 12) || (17 <= i && i <= 24)))
                 [thirdLevel setValue: i: j: LevelWall];
         }
     }
