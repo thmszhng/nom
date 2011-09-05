@@ -21,7 +21,7 @@
         glDisable(GL_TEXTURE_2D);
         glDisableClientState(GL_TEXTURE_COORD_ARRAY);
         glDisableClientState(GL_COLOR_ARRAY);
-        ccColor3B color = ccORANGE;
+        ccColor3B color = {255, 200, 170};
         ccColor3B darkened = {DARKEN(color.r), DARKEN(color.g), DARKEN(color.b)};
         drawBox(15 * 10 + 10, 15 * 10 + 148, 10, 10, color, darkened);
         glEnableClientState(GL_COLOR_ARRAY);
