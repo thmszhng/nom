@@ -52,7 +52,7 @@ int randomNear(int what, int min, int num)
 
 @implementation Game
 
-@synthesize steps, timestamp, score, currentDirection, speed, isProtected, wasInWall;
+@synthesize steps, timestamp, currentDirection, speed, isProtected, wasInWall, isRaged, rageExpiry;
 @synthesize head, tail, deltaLength, snakeLength;
 @synthesize food;
 
@@ -72,8 +72,8 @@ int randomNear(int what, int min, int num)
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
-        isProtected = wasInWall = NO;
-        
+        isProtected = wasInWall = isRaged = NO;
+        rageExpiry = 0;
         // initialize food
         food = [NSMutableSet new];
         
@@ -100,6 +100,21 @@ int randomNear(int what, int min, int num)
         [grid[x][y] release];
     }
     [super dealloc];
+}
+
+-(int) score
+{
+    return score;
+}
+
+-(void) setScore:(int)newScore
+{
+    if (newScore != score)
+    {
+        int deltaScore = newScore - score;
+        if (deltaScore > 0 && self.isRaged) deltaScore *= 2;
+        score += deltaScore;
+    }
 }
 
 -(BOOL) moveSnake

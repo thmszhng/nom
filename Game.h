@@ -28,8 +28,8 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
     SnakeTail *head, *tail;
     int snakeLength;
     int deltaLength;
-    BOOL isProtected, wasInWall;
-    
+    BOOL isProtected, wasInWall, isRaged;
+    ccTime rageExpiry;
     // food
     NSMutableSet *food;
 
@@ -38,19 +38,21 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 
 @property (readonly, assign) int steps;
 @property (readonly, assign) ccTime timestamp;
-@property (readwrite, assign) int score;
 
 @property (readwrite, assign) enum Direction currentDirection;
 @property (readwrite, retain) SnakeTail *head, *tail;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;
-@property (readwrite, assign) BOOL isProtected, wasInWall;
-
+@property (readwrite, assign) BOOL isProtected, wasInWall, isRaged;
+@property (readwrite, assign) ccTime rageExpiry;
 @property (readonly) int snakeLength;
 @property (readwrite, retain) NSMutableSet *food;
 
 -(id) init;
 -(void) dealloc;
+
+-(int) score;
+-(void) setScore: (int) newScore;
 
 // related to moving the snake
 -(BOOL) moveSnake; // returns NO if lost game

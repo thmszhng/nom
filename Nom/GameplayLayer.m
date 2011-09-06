@@ -119,7 +119,10 @@
         accumulatedTime -= game.speed;
         
         game.currentDirection = newDirection;
-        
+        if ([game isRaged] && [game rageExpiry] < [game timestamp]) {
+            [game setSpeed: [game speed]*2];  
+            [game setIsRaged: false];
+        }
         if (![game moveSnake])
         {
             isGameOver = YES;
