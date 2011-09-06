@@ -139,6 +139,7 @@ int randomNear(int what, int min, int num)
             [self addObject: tail];
         }
         --deltaLength;
+        ++snakeLength;
     }
     else
     {
