@@ -138,7 +138,7 @@
             isGameOver = YES;
         };
         
-        [scoreText setString: [NSString stringWithFormat: @"%-21d%s %s", game.score, game.isProtected ? "<=" : "  ", game.isRaged ? "2" : " "]];
+        [scoreText setString: [NSString stringWithFormat: @"%-19d%s %s", game.score, game.isRaged ? ">2" : "  ", game.isProtected ? "<=" : "  "]];
     }
 }
 
@@ -266,3 +266,4 @@
     }
 }
 @end
+
