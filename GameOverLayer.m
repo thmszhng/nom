@@ -59,6 +59,7 @@
       nil]
      ];
     GameplayLayer *gl = (GameplayLayer *) [self.parent getChildByTag: kGameplayLayer];
+    [[CCDirector sharedDirector] setAnimationInterval: 1/60.f];
     [gl newGame];
 }
 

@@ -39,6 +39,7 @@
 
 +(GameManager *) sharedGameManager;
 -(void) runSceneWithID: (SceneTypes) sceneID;
+-(void) slowFPS;
 -(void) loadLevels;
 
 -(NSString *) getString: (NSString *) value;

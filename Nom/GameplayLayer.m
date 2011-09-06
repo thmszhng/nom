@@ -72,7 +72,12 @@
     id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
     pos.y += 480;
     p.position = pos;
+
+    animation = [CCSequence actions: animation,
+                 [CCCallFunc actionWithTarget: [GameManager sharedGameManager]
+                                     selector: @selector(slowFPS)], nil];
     [p runAction: animation];
+    [[CCDirector sharedDirector] setAnimationInterval: 1/60.f];
     
     [self onExit];
 }
@@ -86,6 +91,7 @@
 -(void) onEnter
 {
     isGamePaused = NO;
+    [CCDirector sharedDirector].animationInterval = 1/30.f;
     [super onEnter];
 }
 
@@ -104,7 +110,11 @@
             id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
             pos.y += 480;
             p.position = pos;
+            animation = [CCSequence actions: animation,
+                         [CCCallFunc actionWithTarget: [GameManager sharedGameManager]
+                                             selector: @selector(slowFPS)], nil];
             [p runAction: animation];
+            [[CCDirector sharedDirector] setAnimationInterval: 1/60.f];
             // we're done here
             [self unscheduleUpdate];
         }

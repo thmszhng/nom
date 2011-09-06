@@ -97,7 +97,7 @@ int haveRetina;
 	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
 #endif
 	
-	[director setAnimationInterval:1.0/60];
+	[director setAnimationInterval:1.0/30];
 	[director setDisplayFPS:YES];
 	
 	

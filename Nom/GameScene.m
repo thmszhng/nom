@@ -32,4 +32,9 @@
     
     return self;
 }
+
+-(void) transitionedIn
+{
+    [CCDirector sharedDirector].animationInterval = 1.f/30.f;
+}
 @end

@@ -8,6 +8,10 @@
 
 #import "cocos2d.h"
 
+@interface CCNode(TransitionFinish)
+-(void) transitionedIn;
+@end
+
 @interface SlideUp: CCTransitionSlideInB
 {
 }

@@ -58,6 +58,7 @@
       [CCCallFunc actionWithTarget: self selector: @selector(finishResume)],
       nil]
      ];
+    [[CCDirector sharedDirector] setAnimationInterval: 1/60.f];
 }
 
 -(void) finishResume

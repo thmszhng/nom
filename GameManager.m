@@ -126,6 +126,7 @@ static GameManager *_sharedGameManager = nil;
             break;
     }
     
+    
     SceneTypes oldScene = currentScene;
     currentScene = sceneID;
 
@@ -135,12 +136,19 @@ static GameManager *_sharedGameManager = nil;
         return;
     }
     
+    [[CCDirector sharedDirector] setAnimationInterval: 1/60.f];
+    
     sceneToRun = [currentScene < oldScene ?
                   [SlideUp class] :
                   [SlideDown class]
                   transitionWithDuration: 0.5 scene: sceneToRun];
     
     [[CCDirector sharedDirector] replaceScene: sceneToRun];
+}
+
+-(void) slowFPS
+{
+    [[CCDirector sharedDirector] setAnimationInterval: 1/15.f];
 }
 
 -(void) loadLevels

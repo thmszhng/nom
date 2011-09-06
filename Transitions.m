@@ -10,6 +10,12 @@
 
 @implementation SlideDown
 
+-(void) finish
+{
+    [inScene_ transitionedIn];
+    [super finish];
+}
+
 -(CCActionInterval *) easeActionWithAction: (CCActionInterval *) action
 {
     return [CCEaseExponentialOut actionWithAction: action];
@@ -18,6 +24,12 @@
 @end
 
 @implementation SlideUp
+
+-(void) finish
+{
+    [inScene_ transitionedIn];
+    [super finish];
+}
 
 -(CCActionInterval *) easeActionWithAction: (CCActionInterval *) action
 {
