@@ -622,7 +622,6 @@
 		66424F7C13DE3EAA00CCCCCB /* ZFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZFont.h; path = libs/FontLabel/ZFont.h; sourceTree = "<group>"; };
 		66424F7D13DE3EAA00CCCCCB /* ZFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZFont.m; path = libs/FontLabel/ZFont.m; sourceTree = "<group>"; };
 		66424F7F13DE3EAA00CCCCCB /* LICENSE_FontLabel.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_FontLabel.txt; path = libs/LICENSE_FontLabel.txt; sourceTree = "<group>"; };
-		66424F8113DE3EAA00CCCCCB /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		66424F8213DE3EAA00CCCCCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66424F8413DE3EAA00CCCCCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66424F8513DE3EAA00CCCCCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -769,11 +768,9 @@
 		66424E1313DE3EA800CCCCCB = {
 			isa = PBXGroup;
 			children = (
-				66FE35A513E04FC900CD333E /* Singletons */,
-				66FE35A213E04F1200CD333E /* Constants */,
-				66424FBB13DE409A00CCCCCB /* Classes */,
-				66424FBE13DE40A700CCCCCB /* Scenes */,
-				66424E3213DE3EA800CCCCCB /* Nom */,
+				66424FBB13DE409A00CCCCCB /* Sources */,
+				66424E3313DE3EA800CCCCCB /* Resources */,
+				66424E4713DE3EA800CCCCCB /* libs */,
 				66424E2113DE3EA800CCCCCB /* Frameworks */,
 				66424E1F13DE3EA800CCCCCB /* Products */,
 			);
@@ -810,9 +807,7 @@
 				66424F8713DE3EAA00CCCCCB /* RootViewController.h */,
 				66424F8813DE3EAA00CCCCCB /* RootViewController.m */,
 				66424F8D13DE3EAA00CCCCCB /* GameConfig.h */,
-				66424E3313DE3EA800CCCCCB /* Resources */,
-				66424E4713DE3EA800CCCCCB /* libs */,
-				66424F8013DE3EAA00CCCCCB /* Supporting Files */,
+				66424F8213DE3EAA00CCCCCB /* main.m */,
 			);
 			path = Nom;
 			sourceTree = "<group>";
@@ -920,6 +915,7 @@
 				66424E4513DE3EA800CCCCCB /* iTunesArtwork */,
 			);
 			name = Resources;
+			path = Nom;
 			sourceTree = "<group>";
 		};
 		66424E4713DE3EA800CCCCCB /* libs */ = {
@@ -936,6 +932,7 @@
 				66424F6E13DE3EAA00CCCCCB /* FontLabel */,
 			);
 			name = libs;
+			path = Nom;
 			sourceTree = "<group>";
 		};
 		66424E4813DE3EA800CCCCCB /* cocos2d */ = {
@@ -1224,22 +1221,17 @@
 			name = FontLabel;
 			sourceTree = "<group>";
 		};
-		66424F8013DE3EAA00CCCCCB /* Supporting Files */ = {
+		66424FBB13DE409A00CCCCCB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				66424F8113DE3EAA00CCCCCB /* Prefix.pch */,
-				66424F8213DE3EAA00CCCCCB /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		66424FBB13DE409A00CCCCCB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
+				66FE35A513E04FC900CD333E /* Singletons */,
+				66FE35A213E04F1200CD333E /* Constants */,
 				5F97212E14155A04009EC8F1 /* Game */,
 				5F97212C141559D8009EC8F1 /* Utility */,
+				66424FBE13DE40A700CCCCCB /* Scenes */,
+				66424E3213DE3EA800CCCCCB /* Nom */,
 			);
-			name = Classes;
+			name = Sources;
 			sourceTree = "<group>";
 		};
 		66424FBE13DE40A700CCCCCB /* Scenes */ = {

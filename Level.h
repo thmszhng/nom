@@ -19,6 +19,7 @@ enum LevelSpot {
 @interface Level: NSObject
 {
     enum LevelSpot levelInfo[30][30];
+    NSMutableDictionary *renderCache;
 }
 
 +(id) level;
