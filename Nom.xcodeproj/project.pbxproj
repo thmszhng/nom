@@ -387,6 +387,7 @@
 		5F97213914155D38009EC8F1 /* SnakeTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeTail.m; sourceTree = "<group>"; };
 		5F97213B14156041009EC8F1 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
 		5F97213C14156047009EC8F1 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
+		5F97215314170C76009EC8F1 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		5FADA3F5140DC5960088E71E /* BurstMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BurstMode-hd.png"; sourceTree = "<group>"; };
 		5FADA3F6140DC5960088E71E /* BurstMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BurstMode.png; sourceTree = "<group>"; };
 		5FADA3F7140DC5960088E71E /* ClassicMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ClassicMode-hd.png"; sourceTree = "<group>"; };
@@ -802,6 +803,7 @@
 		66424E3213DE3EA800CCCCCB /* Nom */ = {
 			isa = PBXGroup;
 			children = (
+				5F97215314170C76009EC8F1 /* Prefix.pch */,
 				66424F8413DE3EAA00CCCCCB /* AppDelegate.h */,
 				66424F8513DE3EAA00CCCCCB /* AppDelegate.m */,
 				66424F8713DE3EAA00CCCCCB /* RootViewController.h */,
