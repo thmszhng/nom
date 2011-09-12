@@ -236,16 +236,17 @@ static GameManager *_sharedGameManager = nil;
     {
         for (int j = 0; j < 30; j++)
         {
-            if ((i == 0 || i == 29) && ((/*2 <= j &&*/ j <= 13) || (16 <= j /*&& j <= 27*/)))
+            
+            //if ((i == 0 || i == 29) && ((/*2 <= j &&*/ j <= 13) || (16 <= j /*&& j <= 27*/)))
+              //  [sixthLevel setValue: i: j: LevelWall];
+            
+            if ((i == 0 || i == 10 || i == 19 || i == 29) && ((0 <= j && j <= 4) || (7 <= j && j <= 13) || (16 <= j && j <= 22) || (25 <= j && j <= 29)))
                 [sixthLevel setValue: i: j: LevelWall];
             
-            if ((i == 10 || i == 19) && ((0 <= j && j <= 4) || (7 <= j && j <= 13) || (16 <= j && j <= 22) || (25 <= j && j <= 29)))
-                [sixthLevel setValue: i: j: LevelWall];
+            //if ((j == 0 || j == 29) && ((/*2 <= i &&*/ i <= 13) || (16 <= i /*&& i <= 27*/)))
+              //  [sixthLevel setValue: i: j: LevelWall];
             
-            if ((j == 0 || j == 29) && ((/*2 <= i &&*/ i <= 13) || (16 <= i /*&& i <= 27*/)))
-                [sixthLevel setValue: i: j: LevelWall];
-            
-            if ((j == 10 || j == 19) && ((0 <= i && i <= 4) || (7 <= i && i <= 13) || (16 <= i && i <= 22) || (25 <= i && i <= 29)))
+            if ((j == 0 || j == 10 || j == 19 || j == 29) && ((0 <= i && i <= 4) || (7 <= i && i <= 13) || (16 <= i && i <= 22) || (25 <= i && i <= 29)))
                 [sixthLevel setValue: i: j: LevelWall];
         }
     }

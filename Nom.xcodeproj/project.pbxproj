@@ -19,11 +19,9 @@
 		2E4FF1DC1405F7E100CD0901 /* OptionsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DA1405F7E100CD0901 /* OptionsBackground.png */; };
 		2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */; };
 		2E690C521411530A0042214C /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E690C51141153070042214C /* Level.m */; };
-		2E9043521412D1C8007302CE /* LevelOne-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E90434E1412D1C8007302CE /* LevelOne-hd.png */; };
-		2E9043531412D1C8007302CE /* LevelOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E90434F1412D1C8007302CE /* LevelOne.png */; };
-		2E9043541412D1C8007302CE /* LevelTwo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9043501412D1C8007302CE /* LevelTwo-hd.png */; };
-		2E9043551412D1C8007302CE /* LevelTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9043511412D1C8007302CE /* LevelTwo.png */; };
+		2E9BFD7B14190BCD0087775D /* GardenMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BFD7A14190BCD0087775D /* GardenMode.m */; };
 		2EC38FB213FB5A2F003D3AF3 /* OptionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */; };
+		2EC4EC55141E6F7F00473FBA /* SlaveFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4EC54141E6F7F00473FBA /* SlaveFood.m */; };
 		2EC5F21D1407374C00DFCCFB /* GameBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */; };
 		2EC5F21E1407374C00DFCCFB /* GameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F21A1407374C00DFCCFB /* GameBackground.png */; };
 		2EC5F22514073DD900DFCCFB /* Control-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5F22314073DD800DFCCFB /* Control-hd.png */; };
@@ -44,6 +42,8 @@
 		2EC9F0F41404607A002629BA /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC9F0F314046079002629BA /* HelpLayer.m */; };
 		2ED770351407447B00BFA1AD /* HelpLayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED770331407447B00BFA1AD /* HelpLayer-hd.png */; };
 		2ED770361407447B00BFA1AD /* HelpLayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED770341407447B00BFA1AD /* HelpLayer.png */; };
+		2EE421AF141D8F8C00D55CC6 /* GardenMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE421AD141D8F8C00D55CC6 /* GardenMode.png */; };
+		2EE421B0141D8F8C00D55CC6 /* GardenMode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE421AE141D8F8C00D55CC6 /* GardenMode-hd.png */; };
 		2EE9C72514034FC0000333DF /* Gamecenter-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C71914034FAE000333DF /* Gamecenter-hd.png */; };
 		2EE9C72614034FC0000333DF /* Gamecenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C71A14034FAE000333DF /* Gamecenter.png */; };
 		2EE9C72714034FC0000333DF /* Help-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C71B14034FAF000333DF /* Help-hd.png */; };
@@ -262,12 +262,12 @@
 		2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsBackgroundLayer.m; sourceTree = "<group>"; };
 		2E690C50141153050042214C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
-		2E90434E1412D1C8007302CE /* LevelOne-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelOne-hd.png"; sourceTree = "<group>"; };
-		2E90434F1412D1C8007302CE /* LevelOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelOne.png; sourceTree = "<group>"; };
-		2E9043501412D1C8007302CE /* LevelTwo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelTwo-hd.png"; sourceTree = "<group>"; };
-		2E9043511412D1C8007302CE /* LevelTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelTwo.png; sourceTree = "<group>"; };
+		2E9BFD7914190BCD0087775D /* GardenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GardenMode.h; sourceTree = "<group>"; };
+		2E9BFD7A14190BCD0087775D /* GardenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GardenMode.m; sourceTree = "<group>"; };
 		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
 		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
+		2EC4EC53141E6F7F00473FBA /* SlaveFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlaveFood.h; sourceTree = "<group>"; };
+		2EC4EC54141E6F7F00473FBA /* SlaveFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlaveFood.m; sourceTree = "<group>"; };
 		2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBackground-hd.png"; sourceTree = "<group>"; };
 		2EC5F21A1407374C00DFCCFB /* GameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameBackground.png; sourceTree = "<group>"; };
 		2EC5F22314073DD800DFCCFB /* Control-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control-hd.png"; sourceTree = "<group>"; };
@@ -289,6 +289,8 @@
 		2EC9F0F314046079002629BA /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
 		2ED770331407447B00BFA1AD /* HelpLayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HelpLayer-hd.png"; sourceTree = "<group>"; };
 		2ED770341407447B00BFA1AD /* HelpLayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelpLayer.png; sourceTree = "<group>"; };
+		2EE421AD141D8F8C00D55CC6 /* GardenMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GardenMode.png; sourceTree = "<group>"; };
+		2EE421AE141D8F8C00D55CC6 /* GardenMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GardenMode-hd.png"; sourceTree = "<group>"; };
 		2EE9C71914034FAE000333DF /* Gamecenter-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gamecenter-hd.png"; sourceTree = "<group>"; };
 		2EE9C71A14034FAE000333DF /* Gamecenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gamecenter.png; sourceTree = "<group>"; };
 		2EE9C71B14034FAF000333DF /* Help-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help-hd.png"; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 		5F0500E513FF70BE00C7385B /* GameModes */ = {
 			isa = PBXGroup;
 			children = (
+				5F2C339113E6537900D4B5F7 /* Render.m */,
 				5F0500E713FF70E000C7385B /* ClassicMode.h */,
 				5F0500E813FF711C00C7385B /* ClassicMode.m */,
 				5F0500FF13FF7A7300C7385B /* RegularMode.h */,
@@ -695,6 +698,8 @@
 				54D7A98014154CD5004E8197 /* FeastMode.m */,
 				54D7A98114154CD5004E8197 /* QuestMode.h */,
 				54D7A98214154CD5004E8197 /* QuestMode.m */,
+				2E9BFD7914190BCD0087775D /* GardenMode.h */,
+				2E9BFD7A14190BCD0087775D /* GardenMode.m */,
 			);
 			name = GameModes;
 			sourceTree = "<group>";
@@ -716,6 +721,8 @@
 				54D7A99414159ED2004E8197 /* RageFood.m */,
 				5FDD89011407F1EE00BAEB43 /* FoodRandomizer.h */,
 				5FDD89031407F23800BAEB43 /* FoodRandomizer.m */,
+				2EC4EC53141E6F7F00473FBA /* SlaveFood.h */,
+				2EC4EC54141E6F7F00473FBA /* SlaveFood.m */,
 			);
 			name = Food;
 			sourceTree = "<group>";
@@ -738,14 +745,13 @@
 		5F97212E14155A04009EC8F1 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				5F0500E513FF70BE00C7385B /* GameModes */,
 				5F97213714155CE9009EC8F1 /* GridObject */,
 				66347C6513DF93D5000B80CF /* Vector.h */,
 				66347C6613DF93D6000B80CF /* Vector.m */,
 				5F2C339013E6534300D4B5F7 /* Render.h */,
-				5F2C339113E6537900D4B5F7 /* Render.m */,
 				5F16F0E713FA0D6D00A3EA80 /* Game.h */,
 				5F16F0E813FA0E1A00A3EA80 /* Game.m */,
-				5F0500E513FF70BE00C7385B /* GameModes */,
 				2E690C50141153050042214C /* Level.h */,
 				2E690C51141153070042214C /* Level.m */,
 			);
@@ -817,12 +823,10 @@
 		66424E3313DE3EA800CCCCCB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2EE421AD141D8F8C00D55CC6 /* GardenMode.png */,
+				2EE421AE141D8F8C00D55CC6 /* GardenMode-hd.png */,
 				5F9720F814132DB9009EC8F1 /* intro.aac */,
 				5F9720F914132DB9009EC8F1 /* loop.aac */,
-				2E90434E1412D1C8007302CE /* LevelOne-hd.png */,
-				2E90434F1412D1C8007302CE /* LevelOne.png */,
-				2E9043501412D1C8007302CE /* LevelTwo-hd.png */,
-				2E9043511412D1C8007302CE /* LevelTwo.png */,
 				5FADA406140DC6FC0088E71E /* 120Shadow-hd.png */,
 				5FADA407140DC6FC0088E71E /* 120Shadow.png */,
 				5FADA3F5140DC5960088E71E /* BurstMode-hd.png */,
@@ -1454,12 +1458,10 @@
 				5FADA409140DC6FC0088E71E /* 120Shadow.png in Resources */,
 				54D7A950140DDDBC004E8197 /* FeastMode-hd.png in Resources */,
 				54D7A951140DDDBC004E8197 /* FeastMode.png in Resources */,
-				2E9043521412D1C8007302CE /* LevelOne-hd.png in Resources */,
-				2E9043531412D1C8007302CE /* LevelOne.png in Resources */,
-				2E9043541412D1C8007302CE /* LevelTwo-hd.png in Resources */,
-				2E9043551412D1C8007302CE /* LevelTwo.png in Resources */,
 				5F9720FA14132DB9009EC8F1 /* intro.aac in Resources */,
 				5F9720FB14132DB9009EC8F1 /* loop.aac in Resources */,
+				2EE421AF141D8F8C00D55CC6 /* GardenMode.png in Resources */,
+				2EE421B0141D8F8C00D55CC6 /* GardenMode-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1603,6 +1605,8 @@
 				5F97213A14155D38009EC8F1 /* SnakeTail.m in Sources */,
 				5F97213D1415604C009EC8F1 /* Wall.m in Sources */,
 				54D7A99514159ED2004E8197 /* RageFood.m in Sources */,
+				2E9BFD7B14190BCD0087775D /* GardenMode.m in Sources */,
+				2EC4EC55141E6F7F00473FBA /* SlaveFood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
