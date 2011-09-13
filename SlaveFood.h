@@ -14,8 +14,6 @@
     Game *_game;
 }
 
-+(void) load;
-
 -(id) initWithGame: (Game *) game;
 -(BOOL) eat: (Game *) game;
 -(ccColor3B) color;

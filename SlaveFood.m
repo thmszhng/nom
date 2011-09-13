@@ -14,11 +14,6 @@
 
 @implementation SlaveFood
 
-+(void) load
-{
-    [FoodRandomizer addFood: [self class] weight: 2];
-}
-
 -(id) initWithGame: (Game *) game
 {
     self = [super initWithGame: game];
