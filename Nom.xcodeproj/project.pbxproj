@@ -15,6 +15,8 @@
 		2E10D4A3140420F7006ED9EE /* MainMenu-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E10D49D140420AF006ED9EE /* MainMenu-hd.png */; };
 		2E10D4A4140420F7006ED9EE /* MainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E10D49E140420C3006ED9EE /* MainMenu.png */; };
 		2E10D4A5140420F7006ED9EE /* Resume-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E10D49F140420DB006ED9EE /* Resume-hd.png */; };
+		2E3DADA31426AF12008ADB3D /* HelpLayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3DADA11426AF11008ADB3D /* HelpLayer-hd.png */; };
+		2E3DADA41426AF12008ADB3D /* HelpLayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3DADA21426AF11008ADB3D /* HelpLayer.png */; };
 		2E4FF1DB1405F7E100CD0901 /* OptionsBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4FF1D91405F7E100CD0901 /* OptionsBackground-hd.png */; };
 		2E4FF1DC1405F7E100CD0901 /* OptionsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DA1405F7E100CD0901 /* OptionsBackground.png */; };
 		2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */; };
@@ -40,8 +42,8 @@
 		2EC9F0F014045F4F002629BA /* GameOptions-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC9F0EE14045F4F002629BA /* GameOptions-hd.png */; };
 		2EC9F0F114045F4F002629BA /* GameOptions.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC9F0EF14045F4F002629BA /* GameOptions.png */; };
 		2EC9F0F41404607A002629BA /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC9F0F314046079002629BA /* HelpLayer.m */; };
-		2ED770351407447B00BFA1AD /* HelpLayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED770331407447B00BFA1AD /* HelpLayer-hd.png */; };
-		2ED770361407447B00BFA1AD /* HelpLayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED770341407447B00BFA1AD /* HelpLayer.png */; };
+		2ED770351407447B00BFA1AD /* EpicHelpLayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED770331407447B00BFA1AD /* EpicHelpLayer-hd.png */; };
+		2ED770361407447B00BFA1AD /* EpicHelpLayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED770341407447B00BFA1AD /* EpicHelpLayer.png */; };
 		2EE421AF141D8F8C00D55CC6 /* GardenMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE421AD141D8F8C00D55CC6 /* GardenMode.png */; };
 		2EE421B0141D8F8C00D55CC6 /* GardenMode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE421AE141D8F8C00D55CC6 /* GardenMode-hd.png */; };
 		2EE9C72514034FC0000333DF /* Gamecenter-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EE9C71914034FAE000333DF /* Gamecenter-hd.png */; };
@@ -256,6 +258,8 @@
 		2E10D49D140420AF006ED9EE /* MainMenu-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainMenu-hd.png"; sourceTree = "<group>"; };
 		2E10D49E140420C3006ED9EE /* MainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenu.png; sourceTree = "<group>"; };
 		2E10D49F140420DB006ED9EE /* Resume-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resume-hd.png"; sourceTree = "<group>"; };
+		2E3DADA11426AF11008ADB3D /* HelpLayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HelpLayer-hd.png"; sourceTree = "<group>"; };
+		2E3DADA21426AF11008ADB3D /* HelpLayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelpLayer.png; sourceTree = "<group>"; };
 		2E4FF1D91405F7E100CD0901 /* OptionsBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OptionsBackground-hd.png"; sourceTree = "<group>"; };
 		2E4FF1DA1405F7E100CD0901 /* OptionsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OptionsBackground.png; sourceTree = "<group>"; };
 		2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsBackgroundLayer.h; sourceTree = "<group>"; };
@@ -287,8 +291,8 @@
 		2EC9F0EF14045F4F002629BA /* GameOptions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameOptions.png; sourceTree = "<group>"; };
 		2EC9F0F214046079002629BA /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpLayer.h; sourceTree = "<group>"; };
 		2EC9F0F314046079002629BA /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
-		2ED770331407447B00BFA1AD /* HelpLayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HelpLayer-hd.png"; sourceTree = "<group>"; };
-		2ED770341407447B00BFA1AD /* HelpLayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelpLayer.png; sourceTree = "<group>"; };
+		2ED770331407447B00BFA1AD /* EpicHelpLayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EpicHelpLayer-hd.png"; sourceTree = "<group>"; };
+		2ED770341407447B00BFA1AD /* EpicHelpLayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EpicHelpLayer.png; sourceTree = "<group>"; };
 		2EE421AD141D8F8C00D55CC6 /* GardenMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GardenMode.png; sourceTree = "<group>"; };
 		2EE421AE141D8F8C00D55CC6 /* GardenMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GardenMode-hd.png"; sourceTree = "<group>"; };
 		2EE9C71914034FAE000333DF /* Gamecenter-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gamecenter-hd.png"; sourceTree = "<group>"; };
@@ -853,10 +857,12 @@
 				5F588603140C272600B632E8 /* OptionPlayGame-selected-hd.png */,
 				5F588604140C272600B632E8 /* OptionPlayGame-selected.png */,
 				5F588605140C272600B632E8 /* OptionPlayGame.png */,
-				2ED770331407447B00BFA1AD /* HelpLayer-hd.png */,
+				2E3DADA11426AF11008ADB3D /* HelpLayer-hd.png */,
+				2E3DADA21426AF11008ADB3D /* HelpLayer.png */,
+				2ED770331407447B00BFA1AD /* EpicHelpLayer-hd.png */,
 				54D7A94E140DDDBC004E8197 /* FeastMode-hd.png */,
 				54D7A94F140DDDBC004E8197 /* FeastMode.png */,
-				2ED770341407447B00BFA1AD /* HelpLayer.png */,
+				2ED770341407447B00BFA1AD /* EpicHelpLayer.png */,
 				2EC5F22314073DD800DFCCFB /* Control-hd.png */,
 				2EC5F22414073DD800DFCCFB /* Control.png */,
 				2EC5F2191407374C00DFCCFB /* GameBackground-hd.png */,
@@ -1428,8 +1434,8 @@
 				2EC5F21E1407374C00DFCCFB /* GameBackground.png in Resources */,
 				2EC5F22514073DD900DFCCFB /* Control-hd.png in Resources */,
 				2EC5F22614073DD900DFCCFB /* Control.png in Resources */,
-				2ED770351407447B00BFA1AD /* HelpLayer-hd.png in Resources */,
-				2ED770361407447B00BFA1AD /* HelpLayer.png in Resources */,
+				2ED770351407447B00BFA1AD /* EpicHelpLayer-hd.png in Resources */,
+				2ED770361407447B00BFA1AD /* EpicHelpLayer.png in Resources */,
 				5F588606140C272600B632E8 /* OptionCrazy-hd.png in Resources */,
 				5F588607140C272600B632E8 /* OptionCrazy-selected-hd.png in Resources */,
 				5F588608140C272600B632E8 /* OptionCrazy-selected.png in Resources */,
@@ -1462,6 +1468,8 @@
 				5F9720FB14132DB9009EC8F1 /* loop.aac in Resources */,
 				2EE421AF141D8F8C00D55CC6 /* GardenMode.png in Resources */,
 				2EE421B0141D8F8C00D55CC6 /* GardenMode-hd.png in Resources */,
+				2E3DADA31426AF12008ADB3D /* HelpLayer-hd.png in Resources */,
+				2E3DADA41426AF12008ADB3D /* HelpLayer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
