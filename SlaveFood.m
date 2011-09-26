@@ -30,7 +30,7 @@
     //increase snake length
     ++game.deltaLength;
     // variable advancement
-    float boost = ceilf(30.f * powf(1.03f, timeAtCreation - game.timestamp));
+    float boost = ceilf(30.f * powf(1.15f, timeAtCreation - game.timestamp));
     if (boost < 5.f) return NO; // is a rock
     game.score += boost;
     // speed ramp

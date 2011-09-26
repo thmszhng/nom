@@ -97,15 +97,6 @@ static GameManager *_sharedGameManager = nil;
     switch (sceneID) 
     {   
         case kMainMenuScene:
-            @synchronized(engine)
-            {
-                [soundThread cancel];
-                [engine stopAllSounds];
-            }
-            sceneToRun = [MainMenuScene node];
-            break;
-        
-        case kGameScene:
             if (self.isMusicON)
             {
                 [soundThread release];
@@ -114,6 +105,15 @@ static GameManager *_sharedGameManager = nil;
                                                         object: nil];
                 [soundThread start];
             }
+            /*@synchronized(engine)
+            {
+                [soundThread cancel];
+                [engine stopAllSounds];
+            }*/
+            sceneToRun = [MainMenuScene node];
+            break;
+        
+        case kGameScene:
             sceneToRun = [GameScene node];
             break;
             
