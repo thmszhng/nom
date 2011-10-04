@@ -66,7 +66,6 @@
 		5F1B07A3143BB92C00CAD984 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0741143BB92C00CAD984 /* Icon-Small@2x.png */; };
 		5F1B07A4143BB92C00CAD984 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0742143BB92C00CAD984 /* Icon.png */; };
 		5F1B07A5143BB92C00CAD984 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0743143BB92C00CAD984 /* Icon@2x.png */; };
-		5F1B07A6143BB92C00CAD984 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0744143BB92C00CAD984 /* Info.plist */; };
 		5F1B07A7143BB92C00CAD984 /* intro.aac in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0745143BB92C00CAD984 /* intro.aac */; };
 		5F1B07A8143BB92C00CAD984 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0746143BB92C00CAD984 /* iTunesArtwork */; };
 		5F1B07A9143BB92C00CAD984 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0747143BB92C00CAD984 /* iTunesArtwork.png */; };
@@ -1396,7 +1395,6 @@
 				5F1B07A3143BB92C00CAD984 /* Icon-Small@2x.png in Resources */,
 				5F1B07A4143BB92C00CAD984 /* Icon.png in Resources */,
 				5F1B07A5143BB92C00CAD984 /* Icon@2x.png in Resources */,
-				5F1B07A6143BB92C00CAD984 /* Info.plist in Resources */,
 				5F1B07A7143BB92C00CAD984 /* intro.aac in Resources */,
 				5F1B07A8143BB92C00CAD984 /* iTunesArtwork in Resources */,
 				5F1B07A9143BB92C00CAD984 /* iTunesArtwork.png in Resources */,
