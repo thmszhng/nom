@@ -66,7 +66,7 @@
         else
         {
             light = 252;
-            dark = 249;
+            dark = 232;
         }
         glPushMatrix();
         glTranslatef(x * size * scale, y * size * scale, 0);
