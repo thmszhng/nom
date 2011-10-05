@@ -8,6 +8,8 @@
 
 #import "MainMenuScene.h"
 
+#import "MainMenuLayer.h"
+#import "AnimationLayer.h"
 
 @implementation MainMenuScene
 -(id) init

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "MainMenuLayer.h"
-#import "AnimationLayer.h"
+
+@class MainMenuLayer;
+@class AnimationLayer;
 
 @interface MainMenuScene : CCScene 
 {
