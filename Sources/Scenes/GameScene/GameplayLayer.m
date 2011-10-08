@@ -240,10 +240,11 @@
     glDisableClientState(GL_COLOR_ARRAY);
     for (Food *food in game.food)
     {
+        int deltaX = isFancy ? 15 - game.head.pos.x : 0, deltaY = isFancy ? 15 - game.head.pos.y : 0;
         Vector *pos = food.pos;
         ccColor3B color = [food color];
         ccColor3B darkened = {DARKEN(color.r), DARKEN(color.g), DARKEN(color.b)};
-        int deltaX = isFancy ? 15 - game.head.pos.x : 0, deltaY = isFancy ? 15 - game.head.pos.y : 0;
+
         drawBox(((pos.x + deltaX + 30) % 30) * 10 + 10, ((pos.y + deltaY + 30) % 30) * 10 + 148, 10, 10, color, darkened);
         
     }
@@ -260,19 +261,22 @@
         enum Direction dir = NoDirection;
         SnakeTail *after = piece.forward;
         Vector *pos = piece.pos;
+        int deltaX = isFancy ? 15 - game.head.pos.x : 0, deltaY = isFancy ? 15 - game.head.pos.y : 0;
+        int posx = ((pos.x + deltaX + 30) % 30), posy = ((pos.y + deltaY + 30) % 30);
+
         if (after != nil)
-        {
+        {   
             Vector *apos = after.pos;
-            if (abs(pos.x - apos.x) + abs(pos.y - apos.y) == 1)
+            int aposx = ((apos.x + deltaX + 30) % 30), aposy = ((apos.y + deltaY + 30) % 30);
+            if (abs(posx - aposx) + abs(posy - aposy) == 1)
             {
-                if (apos.x - pos.x == 1) dir = right;
-                if (apos.x - pos.x == -1) dir = left;
-                if (apos.y - pos.y == 1) dir = up;
-                if (apos.y - pos.y == -1) dir = down;
+                if (aposx - posx == 1) dir = right;
+                if (aposx - posx == -1) dir = left;
+                if (aposy - posy == 1) dir = up;
+                if (aposy - posy == -1) dir = down;
             }
         }
-        int deltaX = isFancy ? 15 - game.head.pos.x : 0, deltaY = isFancy ? 15 - game.head.pos.y : 0;
-        drawSnake(((pos.x + deltaX + 30) % 30), ((pos.y + deltaY + 30) % 30), dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
+                drawSnake(posx, posy, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
         piece = after;
         lastdir = dir;
 
