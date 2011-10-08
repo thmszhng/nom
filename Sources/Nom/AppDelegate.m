@@ -15,6 +15,9 @@
 #import "GameManager.h"
 #import "Render.h"
 
+#import "GameCenter.h"
+#import <GameKit/GameKit.h>
+
 int haveRetina;
 
 @implementation AppDelegate
@@ -123,6 +126,17 @@ int haveRetina;
     
     // Cache snake pieces
     for (int i = 0; i < 16; ++i) getTexture(i);
+    
+    if (isGameCenterAPIAvailable())
+    {
+        GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+        [localPlayer authenticateWithCompletionHandler: ^(NSError *error) {
+            if (localPlayer.isAuthenticated)
+            {
+                // TODO: do stuff?
+            }
+        }];
+    }
 }
 
 -(void) applicationWillResignActive:(UIApplication *)application {

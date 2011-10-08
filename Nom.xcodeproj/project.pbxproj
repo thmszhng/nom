@@ -222,6 +222,8 @@
 		5F1B0929143BBB4800CAD984 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B0923143BBB4800CAD984 /* AppDelegate.m */; };
 		5F1B092A143BBB4800CAD984 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B0925143BBB4800CAD984 /* main.m */; };
 		5F1B092B143BBB4800CAD984 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B0928143BBB4800CAD984 /* RootViewController.m */; };
+		5F1B092E143D2D6800CAD984 /* GameCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B092D143D2D6800CAD984 /* GameCenter.m */; };
+		5F1B0930143D2F3100CAD984 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1B092F143D2F3100CAD984 /* GameKit.framework */; };
 		5F26B5AC13FB7705008B0024 /* RegularFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AB13FB7705008B0024 /* RegularFood.m */; };
 		5F26B5B013FB88E2008B0024 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F26B5AF13FB88E1008B0024 /* Food.m */; };
 		5F29C9E614047E280091D12D /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F29C9E514047E280091D12D /* Transitions.m */; };
@@ -255,41 +257,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionsBackgroundLayer.h; path = Sources/Scenes/OptionsScene/OptionsBackgroundLayer.h; sourceTree = "<group>"; };
-		2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsBackgroundLayer.m; path = Sources/Scenes/OptionsScene/OptionsBackgroundLayer.m; sourceTree = "<group>"; };
-		2E690C50141153050042214C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Sources/Game/Level.h; sourceTree = "<group>"; };
-		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Sources/Game/Level.m; sourceTree = "<group>"; };
-		2E9BFD7914190BCD0087775D /* GardenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GardenMode.h; path = Sources/Game/GameModes/GardenMode.h; sourceTree = "<group>"; };
-		2E9BFD7A14190BCD0087775D /* GardenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GardenMode.m; path = Sources/Game/GameModes/GardenMode.m; sourceTree = "<group>"; };
-		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionsScene.h; path = Sources/Scenes/OptionsScene/OptionsScene.h; sourceTree = "<group>"; };
-		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsScene.m; path = Sources/Scenes/OptionsScene/OptionsScene.m; sourceTree = "<group>"; };
-		2EC4EC53141E6F7F00473FBA /* SlaveFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlaveFood.h; path = Sources/Game/GridObject/Food/SlaveFood.h; sourceTree = "<group>"; };
-		2EC4EC54141E6F7F00473FBA /* SlaveFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlaveFood.m; path = Sources/Game/GridObject/Food/SlaveFood.m; sourceTree = "<group>"; };
-		2EC9F0F214046079002629BA /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpLayer.h; path = Sources/Scenes/MainMenuScene/HelpLayer.h; sourceTree = "<group>"; };
-		2EC9F0F314046079002629BA /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpLayer.m; path = Sources/Scenes/MainMenuScene/HelpLayer.m; sourceTree = "<group>"; };
-		543A182F143FD441005F51A4 /* QuestFood.h */ = {isa = PBXFileReference; fileEncoding = 4; name = QuestFood.h; path = Sources/Game/GridObject/Food/QuestFood.h; sourceTree = "<group>"; };
-		543A1830143FD441005F51A4 /* QuestFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestFood.m; path = Sources/Game/GridObject/Food/QuestFood.m; sourceTree = "<group>"; };
-		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShieldFood.h; path = Sources/Game/GridObject/Food/ShieldFood.h; sourceTree = "<group>"; };
-		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShieldFood.m; path = Sources/Game/GridObject/Food/ShieldFood.m; sourceTree = "<group>"; };
-		54D7A97F14154CD5004E8197 /* FeastMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeastMode.h; path = Sources/Game/GameModes/FeastMode.h; sourceTree = "<group>"; };
-		54D7A98014154CD5004E8197 /* FeastMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeastMode.m; path = Sources/Game/GameModes/FeastMode.m; sourceTree = "<group>"; };
-		54D7A98114154CD5004E8197 /* QuestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestMode.h; path = Sources/Game/GameModes/QuestMode.h; sourceTree = "<group>"; };
-		54D7A98214154CD5004E8197 /* QuestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestMode.m; path = Sources/Game/GameModes/QuestMode.m; sourceTree = "<group>"; };
-		54D7A99214159EC8004E8197 /* RageFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RageFood.h; path = Sources/Game/GridObject/Food/RageFood.h; sourceTree = "<group>"; };
-		54D7A99414159ED2004E8197 /* RageFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RageFood.m; path = Sources/Game/GridObject/Food/RageFood.m; sourceTree = "<group>"; };
-		54F0622B140C82B100240AE5 /* Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Swizzle.m; path = Sources/Utility/Swizzle.m; sourceTree = "<group>"; };
-		54F0622C140C82B200240AE5 /* Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swizzle.h; path = Sources/Utility/Swizzle.h; sourceTree = "<group>"; };
-		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassicMode.h; path = Sources/Game/GameModes/ClassicMode.h; sourceTree = "<group>"; };
-		5F0500E813FF711C00C7385B /* ClassicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassicMode.m; path = Sources/Game/GameModes/ClassicMode.m; sourceTree = "<group>"; };
-		5F0500EA13FF750A00C7385B /* TimeBonusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeBonusFood.h; path = Sources/Game/GridObject/Food/TimeBonusFood.h; sourceTree = "<group>"; };
-		5F0500F313FF776100C7385B /* TimeBonusFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeBonusFood.m; path = Sources/Game/GridObject/Food/TimeBonusFood.m; sourceTree = "<group>"; };
-		5F0500FF13FF7A7300C7385B /* RegularMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegularMode.h; path = Sources/Game/GameModes/RegularMode.h; sourceTree = "<group>"; };
-		5F05010113FF7A7D00C7385B /* RegularMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegularMode.m; path = Sources/Game/GameModes/RegularMode.m; sourceTree = "<group>"; };
-		5F05015414036AA300C7385B /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = Sources/Scenes/GameScene/GameOverLayer.h; sourceTree = "<group>"; };
-		5F05015614036AAF00C7385B /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = Sources/Scenes/GameScene/GameOverLayer.m; sourceTree = "<group>"; };
-		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Sources/Game/Game.h; sourceTree = "<group>"; };
-		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Sources/Game/Game.m; sourceTree = "<group>"; };
-		5F16F26713FA15AD00A3EA80 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Food.h; path = Sources/Game/GridObject/Food/Food.h; sourceTree = "<group>"; };
+		2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = OptionsBackgroundLayer.h; sourceTree = "<group>"; };
+		2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsBackgroundLayer.m; sourceTree = "<group>"; };
+		2E690C50141153050042214C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Level.h; sourceTree = "<group>"; };
+		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		2E9BFD7914190BCD0087775D /* GardenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GardenMode.h; sourceTree = "<group>"; };
+		2E9BFD7A14190BCD0087775D /* GardenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GardenMode.m; sourceTree = "<group>"; };
+		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
+		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
+		2EC4EC53141E6F7F00473FBA /* SlaveFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlaveFood.h; sourceTree = "<group>"; };
+		2EC4EC54141E6F7F00473FBA /* SlaveFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlaveFood.m; sourceTree = "<group>"; };
+		2EC9F0F214046079002629BA /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpLayer.h; sourceTree = "<group>"; };
+		2EC9F0F314046079002629BA /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
+        543A182F143FD441005F51A4 /* QuestFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestFood.h; sourceTree = "<group>"; };
+        543A1830143FD441005F51A4 /* QuestFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestFood.m; sourceTree = "<group>"; };
+		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldFood.h; sourceTree = "<group>"; };
+		54CF2CCD1409B1340004E671 /* ShieldFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldFood.m; sourceTree = "<group>"; };
+		54D7A97F14154CD5004E8197 /* FeastMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeastMode.h; sourceTree = "<group>"; };
+		54D7A98014154CD5004E8197 /* FeastMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeastMode.m; sourceTree = "<group>"; };
+		54D7A98114154CD5004E8197 /* QuestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestMode.h; sourceTree = "<group>"; };
+		54D7A98214154CD5004E8197 /* QuestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestMode.m; sourceTree = "<group>"; };
+		54D7A99214159EC8004E8197 /* RageFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RageFood.h; sourceTree = "<group>"; };
+		54D7A99414159ED2004E8197 /* RageFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RageFood.m; sourceTree = "<group>"; };
+		54F0622B140C82B100240AE5 /* Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swizzle.m; sourceTree = "<group>"; };
+		54F0622C140C82B200240AE5 /* Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Swizzle.h; sourceTree = "<group>"; };
+		5F0500E713FF70E000C7385B /* ClassicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassicMode.h; sourceTree = "<group>"; };
+		5F0500E813FF711C00C7385B /* ClassicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassicMode.m; sourceTree = "<group>"; };
+		5F0500EA13FF750A00C7385B /* TimeBonusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeBonusFood.h; sourceTree = "<group>"; };
+		5F0500F313FF776100C7385B /* TimeBonusFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeBonusFood.m; sourceTree = "<group>"; };
+		5F0500FF13FF7A7300C7385B /* RegularMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularMode.h; sourceTree = "<group>"; };
+		5F05010113FF7A7D00C7385B /* RegularMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularMode.m; sourceTree = "<group>"; };
+		5F05015414036AA300C7385B /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GameOverLayer.h; sourceTree = "<group>"; };
+		5F05015614036AAF00C7385B /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
+		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Game.h; sourceTree = "<group>"; };
+		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		5F16F26713FA15AD00A3EA80 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		5F1B0719143BB92C00CAD984 /* 120Shadow-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120Shadow-hd.png"; sourceTree = "<group>"; };
 		5F1B071A143BB92C00CAD984 /* 120Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120Shadow.png; sourceTree = "<group>"; };
 		5F1B071B143BB92C00CAD984 /* BurstMode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BurstMode-hd.png"; sourceTree = "<group>"; };
@@ -599,40 +601,43 @@
 		5F1B0923143BBB4800CAD984 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5F1B0924143BBB4800CAD984 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		5F1B0925143BBB4800CAD984 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5F1B0926143BBB4800CAD984 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		5F1B0927143BBB4800CAD984 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		5F1B0926143BBB4800CAD984 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; path = Prefix.pch; sourceTree = "<group>"; };
+		5F1B0927143BBB4800CAD984 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RootViewController.h; sourceTree = "<group>"; };
 		5F1B0928143BBB4800CAD984 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		5F26B5A913FB76AD008B0024 /* RegularFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegularFood.h; path = Sources/Game/GridObject/Food/RegularFood.h; sourceTree = "<group>"; };
-		5F26B5AB13FB7705008B0024 /* RegularFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegularFood.m; path = Sources/Game/GridObject/Food/RegularFood.m; sourceTree = "<group>"; };
-		5F26B5AF13FB88E1008B0024 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Food.m; path = Sources/Game/GridObject/Food/Food.m; sourceTree = "<group>"; };
-		5F29C9E314047D990091D12D /* Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transitions.h; path = Sources/Utility/Transitions.h; sourceTree = "<group>"; };
-		5F29C9E514047E280091D12D /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transitions.m; path = Sources/Utility/Transitions.m; sourceTree = "<group>"; };
-		5F29CA24140566290091D12D /* BurstFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BurstFood.h; path = Sources/Game/GridObject/Food/BurstFood.h; sourceTree = "<group>"; };
-		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Render.h; path = Sources/Game/Render.h; sourceTree = "<group>"; };
-		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Render.m; path = Sources/Game/Render.m; sourceTree = "<group>"; };
-		5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimationLayer.h; path = Sources/Scenes/MainMenuScene/AnimationLayer.h; sourceTree = "<group>"; };
-		5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimationLayer.m; path = Sources/Scenes/MainMenuScene/AnimationLayer.m; sourceTree = "<group>"; };
-		5F4593F61405E2E90053CC7F /* BurstFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BurstFood.m; path = Sources/Game/GridObject/Food/BurstFood.m; sourceTree = "<group>"; };
-		5F4E4AD8140DC26200EAB633 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollView.h; path = Sources/Utility/ScrollView.h; sourceTree = "<group>"; };
-		5F4E4AD9140DC26200EAB633 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollView.m; path = Sources/Utility/ScrollView.m; sourceTree = "<group>"; };
-		5F58846C140C1D6400B632E8 /* BurstMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BurstMode.m; path = Sources/Game/GameModes/BurstMode.m; sourceTree = "<group>"; };
-		5F58846E140C1E3700B632E8 /* BurstMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BurstMode.h; path = Sources/Game/GameModes/BurstMode.h; sourceTree = "<group>"; };
-		5F5C58F1140DD40A000A02DB /* Subclasser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subclasser.h; path = Sources/Utility/Subclasser.h; sourceTree = "<group>"; };
-		5F5C58F2140DD40A000A02DB /* Subclasser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Subclasser.m; path = Sources/Utility/Subclasser.m; sourceTree = "<group>"; };
-		5F7A9CB21411BF6F00491896 /* LevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelLayer.h; path = Sources/Scenes/GameScene/LevelLayer.h; sourceTree = "<group>"; };
-		5F7A9CB31411BF6F00491896 /* LevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelLayer.m; path = Sources/Scenes/GameScene/LevelLayer.m; sourceTree = "<group>"; };
-		5F97213314155BFC009EC8F1 /* GridObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridObject.h; path = Sources/Game/GridObject/GridObject.h; sourceTree = "<group>"; };
-		5F97213414155BFC009EC8F1 /* GridObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GridObject.m; path = Sources/Game/GridObject/GridObject.m; sourceTree = "<group>"; };
-		5F97213814155D37009EC8F1 /* SnakeTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SnakeTail.h; path = Sources/Game/GridObject/SnakeTail.h; sourceTree = "<group>"; };
-		5F97213914155D38009EC8F1 /* SnakeTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SnakeTail.m; path = Sources/Game/GridObject/SnakeTail.m; sourceTree = "<group>"; };
-		5F97213B14156041009EC8F1 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wall.h; path = Sources/Game/GridObject/Wall.h; sourceTree = "<group>"; };
-		5F97213C14156047009EC8F1 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wall.m; path = Sources/Game/GridObject/Wall.m; sourceTree = "<group>"; };
-		5FC41C2413EE144D00EBDC13 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayer.h; path = Sources/Scenes/GameScene/PauseLayer.h; sourceTree = "<group>"; };
-		5FC41C2513EE144D00EBDC13 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseLayer.m; path = Sources/Scenes/GameScene/PauseLayer.m; sourceTree = "<group>"; };
-		5FDD89011407F1EE00BAEB43 /* FoodRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodRandomizer.h; path = Sources/Game/GridObject/Food/FoodRandomizer.h; sourceTree = "<group>"; };
-		5FDD89031407F23800BAEB43 /* FoodRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodRandomizer.m; path = Sources/Game/GridObject/Food/FoodRandomizer.m; sourceTree = "<group>"; };
-		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector.h; path = Sources/Game/Vector.h; sourceTree = "<group>"; };
-		66347C6613DF93D6000B80CF /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vector.m; path = Sources/Game/Vector.m; sourceTree = "<group>"; };
+		5F1B092C143D2D6800CAD984 /* GameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenter.h; sourceTree = "<group>"; };
+		5F1B092D143D2D6800CAD984 /* GameCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenter.m; sourceTree = "<group>"; };
+		5F1B092F143D2F3100CAD984 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		5F26B5A913FB76AD008B0024 /* RegularFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularFood.h; sourceTree = "<group>"; };
+		5F26B5AB13FB7705008B0024 /* RegularFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularFood.m; sourceTree = "<group>"; };
+		5F26B5AF13FB88E1008B0024 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		5F29C9E314047D990091D12D /* Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Transitions.h; sourceTree = "<group>"; };
+		5F29C9E514047E280091D12D /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transitions.m; sourceTree = "<group>"; };
+		5F29CA24140566290091D12D /* BurstFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurstFood.h; sourceTree = "<group>"; };
+		5F2C339013E6534300D4B5F7 /* Render.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Render.h; sourceTree = "<group>"; };
+		5F2C339113E6537900D4B5F7 /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Render.m; sourceTree = "<group>"; };
+		5F2C339313E8DC2E00D4B5F7 /* AnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AnimationLayer.h; sourceTree = "<group>"; };
+		5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationLayer.m; sourceTree = "<group>"; };
+		5F4593F61405E2E90053CC7F /* BurstFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstFood.m; sourceTree = "<group>"; };
+		5F4E4AD8140DC26200EAB633 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ScrollView.h; sourceTree = "<group>"; };
+		5F4E4AD9140DC26200EAB633 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
+		5F58846C140C1D6400B632E8 /* BurstMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstMode.m; sourceTree = "<group>"; };
+		5F58846E140C1E3700B632E8 /* BurstMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurstMode.h; sourceTree = "<group>"; };
+		5F5C58F1140DD40A000A02DB /* Subclasser.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Subclasser.h; sourceTree = "<group>"; };
+		5F5C58F2140DD40A000A02DB /* Subclasser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subclasser.m; sourceTree = "<group>"; };
+		5F7A9CB21411BF6F00491896 /* LevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = LevelLayer.h; sourceTree = "<group>"; };
+		5F7A9CB31411BF6F00491896 /* LevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayer.m; sourceTree = "<group>"; };
+		5F97213314155BFC009EC8F1 /* GridObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridObject.h; sourceTree = "<group>"; };
+		5F97213414155BFC009EC8F1 /* GridObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridObject.m; sourceTree = "<group>"; };
+		5F97213814155D37009EC8F1 /* SnakeTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeTail.h; sourceTree = "<group>"; };
+		5F97213914155D38009EC8F1 /* SnakeTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeTail.m; sourceTree = "<group>"; };
+		5F97213B14156041009EC8F1 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		5F97213C14156047009EC8F1 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
+		5FC41C2413EE144D00EBDC13 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PauseLayer.h; sourceTree = "<group>"; };
+		5FC41C2513EE144D00EBDC13 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
+		5FDD89011407F1EE00BAEB43 /* FoodRandomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodRandomizer.h; sourceTree = "<group>"; };
+		5FDD89031407F23800BAEB43 /* FoodRandomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodRandomizer.m; sourceTree = "<group>"; };
+		66347C6513DF93D5000B80CF /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		66347C6613DF93D6000B80CF /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 		66424E1E13DE3EA800CCCCCB /* Nom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66424E2213DE3EA800CCCCCB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		66424E2413DE3EA800CCCCCB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -642,19 +647,19 @@
 		66424E2C13DE3EA800CCCCCB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66424E2E13DE3EA800CCCCCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66424E3013DE3EA800CCCCCB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		66424F9C13DE3ED100CCCCCB /* GameBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameBackgroundLayer.h; path = Sources/Scenes/GameScene/GameBackgroundLayer.h; sourceTree = "<group>"; };
-		66424F9D13DE3ED100CCCCCB /* GameBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBackgroundLayer.m; path = Sources/Scenes/GameScene/GameBackgroundLayer.m; sourceTree = "<group>"; };
-		66424F9F13DE3EDA00CCCCCB /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayLayer.h; path = Sources/Scenes/GameScene/GameplayLayer.h; sourceTree = "<group>"; };
-		66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayLayer.m; path = Sources/Scenes/GameScene/GameplayLayer.m; sourceTree = "<group>"; };
-		66424FA113DE3EDA00CCCCCB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Sources/Scenes/GameScene/GameScene.h; sourceTree = "<group>"; };
-		66424FA213DE3EDA00CCCCCB /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Sources/Scenes/GameScene/GameScene.m; sourceTree = "<group>"; };
-		66EE3B7713E05EE90040ED20 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Sources/Scenes/MainMenuScene/MainMenuScene.h; sourceTree = "<group>"; };
-		66EE3B7813E05EE90040ED20 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Sources/Scenes/MainMenuScene/MainMenuScene.m; sourceTree = "<group>"; };
-		66EE3B7B13E05F0B0040ED20 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuLayer.h; path = Sources/Scenes/MainMenuScene/MainMenuLayer.h; sourceTree = "<group>"; };
-		66EE3B7C13E05F0B0040ED20 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuLayer.m; path = Sources/Scenes/MainMenuScene/MainMenuLayer.m; sourceTree = "<group>"; };
-		66FE35A413E04F2E00CD333E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Sources/Constants/Constants.h; sourceTree = "<group>"; };
-		66FE35A613E04FEB00CD333E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = Sources/Singletons/GameManager.h; sourceTree = "<group>"; };
-		66FE35A713E04FEB00CD333E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameManager.m; path = Sources/Singletons/GameManager.m; sourceTree = SOURCE_ROOT; };
+		66424F9C13DE3ED100CCCCCB /* GameBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GameBackgroundLayer.h; sourceTree = "<group>"; };
+		66424F9D13DE3ED100CCCCCB /* GameBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBackgroundLayer.m; sourceTree = "<group>"; };
+		66424F9F13DE3EDA00CCCCCB /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = GameplayLayer.h; sourceTree = "<group>"; };
+		66424FA013DE3EDA00CCCCCB /* GameplayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayLayer.m; sourceTree = "<group>"; };
+		66424FA113DE3EDA00CCCCCB /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		66424FA213DE3EDA00CCCCCB /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		66EE3B7713E05EE90040ED20 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		66EE3B7813E05EE90040ED20 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		66EE3B7B13E05F0B0040ED20 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		66EE3B7C13E05F0B0040ED20 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		66FE35A413E04F2E00CD333E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		66FE35A613E04FEB00CD333E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		66FE35A713E04FEB00CD333E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -670,6 +675,7 @@
 				66424E2D13DE3EA800CCCCCB /* UIKit.framework in Frameworks */,
 				66424E2F13DE3EA800CCCCCB /* Foundation.framework in Frameworks */,
 				66424E3113DE3EA800CCCCCB /* CoreGraphics.framework in Frameworks */,
+				5F1B0930143D2F3100CAD984 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +690,7 @@
 				2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */,
 				2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */,
 			);
-			name = OptionsScene;
+			path = OptionsScene;
 			sourceTree = "<group>";
 		};
 		5F0500E513FF70BE00C7385B /* GameModes */ = {
@@ -703,7 +709,7 @@
 				2E9BFD7914190BCD0087775D /* GardenMode.h */,
 				2E9BFD7A14190BCD0087775D /* GardenMode.m */,
 			);
-			name = GameModes;
+			path = GameModes;
 			sourceTree = "<group>";
 		};
 		5F1B0718143BB92C00CAD984 /* Resources */ = {
@@ -1124,8 +1130,7 @@
 				5F1B0927143BBB4800CAD984 /* RootViewController.h */,
 				5F1B0928143BBB4800CAD984 /* RootViewController.m */,
 			);
-			name = Nom;
-			path = Sources/Nom;
+			path = Nom;
 			sourceTree = "<group>";
 		};
 		5F26B5A713FB7689008B0024 /* Food */ = {
@@ -1150,12 +1155,14 @@
 				543A182F143FD441005F51A4 /* QuestFood.h */,
 				543A1830143FD441005F51A4 /* QuestFood.m */,
 			);
-			name = Food;
+			path = Food;
 			sourceTree = "<group>";
 		};
 		5F97212C141559D8009EC8F1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B092C143D2D6800CAD984 /* GameCenter.h */,
+				5F1B092D143D2D6800CAD984 /* GameCenter.m */,
 				5F4E4AD8140DC26200EAB633 /* ScrollView.h */,
 				5F4E4AD9140DC26200EAB633 /* ScrollView.m */,
 				5F5C58F1140DD40A000A02DB /* Subclasser.h */,
@@ -1165,7 +1172,7 @@
 				5F29C9E314047D990091D12D /* Transitions.h */,
 				5F29C9E514047E280091D12D /* Transitions.m */,
 			);
-			name = Utility;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		5F97212E14155A04009EC8F1 /* Game */ = {
@@ -1182,7 +1189,7 @@
 				2E690C50141153050042214C /* Level.h */,
 				2E690C51141153070042214C /* Level.m */,
 			);
-			name = Game;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		5F97213714155CE9009EC8F1 /* GridObject */ = {
@@ -1196,7 +1203,7 @@
 				5F97213B14156041009EC8F1 /* Wall.h */,
 				5F97213C14156047009EC8F1 /* Wall.m */,
 			);
-			name = GridObject;
+			path = GridObject;
 			sourceTree = "<group>";
 		};
 		66424E1313DE3EA800CCCCCB = {
@@ -1221,6 +1228,7 @@
 		66424E2113DE3EA800CCCCCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B092F143D2F3100CAD984 /* GameKit.framework */,
 				66424E2213DE3EA800CCCCCB /* QuartzCore.framework */,
 				66424E2413DE3EA800CCCCCB /* OpenGLES.framework */,
 				66424E2613DE3EA800CCCCCB /* OpenAL.framework */,
@@ -1243,7 +1251,7 @@
 				66424FBE13DE40A700CCCCCB /* Scenes */,
 				5F1B0921143BBB4800CAD984 /* Nom */,
 			);
-			name = Sources;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		66424FBE13DE40A700CCCCCB /* Scenes */ = {
@@ -1253,7 +1261,7 @@
 				2E455E4A13FB570F00A7CD27 /* OptionsScene */,
 				66EE3B7513E05E710040ED20 /* GameScene */,
 			);
-			name = Scenes;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		66EE3B7213E05E540040ED20 /* MainMenuScene */ = {
@@ -1268,7 +1276,7 @@
 				2EC9F0F214046079002629BA /* HelpLayer.h */,
 				2EC9F0F314046079002629BA /* HelpLayer.m */,
 			);
-			name = MainMenuScene;
+			path = MainMenuScene;
 			sourceTree = "<group>";
 		};
 		66EE3B7513E05E710040ED20 /* GameScene */ = {
@@ -1287,7 +1295,7 @@
 				5F7A9CB21411BF6F00491896 /* LevelLayer.h */,
 				5F7A9CB31411BF6F00491896 /* LevelLayer.m */,
 			);
-			name = GameScene;
+			path = GameScene;
 			sourceTree = "<group>";
 		};
 		66FE35A213E04F1200CD333E /* Constants */ = {
@@ -1295,7 +1303,7 @@
 			children = (
 				66FE35A413E04F2E00CD333E /* Constants.h */,
 			);
-			name = Constants;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		66FE35A513E04FC900CD333E /* Singletons */ = {
@@ -1304,7 +1312,7 @@
 				66FE35A613E04FEB00CD333E /* GameManager.h */,
 				66FE35A713E04FEB00CD333E /* GameManager.m */,
 			);
-			name = Singletons;
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1603,6 +1611,7 @@
 				5F1B0929143BBB4800CAD984 /* AppDelegate.m in Sources */,
 				5F1B092A143BBB4800CAD984 /* main.m in Sources */,
 				5F1B092B143BBB4800CAD984 /* RootViewController.m in Sources */,
+                5F1B092E143D2D6800CAD984 /* GameCenter.m in Sources */,
 				543A1831143FD441005F51A4 /* QuestFood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

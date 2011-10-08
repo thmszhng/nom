@@ -8,8 +8,12 @@
 
 #import "MainMenuLayer.h"
 
+#import "GameManager.h"
+#import "GameCenter.h"
+#import <GameKit/GameKit.h>
 
 @implementation MainMenuLayer
+
 -(id) init
 {
     self = [super init];
@@ -101,7 +105,27 @@
 
 -(void) openGameCenter
 {
-    NSLog(@"Gamecenter support is currently unavailable. BRB.");
+    if (!isGameCenterAPIAvailable())
+    {
+        NSLog(@"No Game Center!");
+        return;
+    }
+    // TODO: create a game center scene
+    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != nil)
+    {
+        leaderboardController.leaderboardDelegate = self;
+        vc = [[UIViewController alloc] init];
+        [[[CCDirector sharedDirector] openGLView] addSubview: vc.view];
+        [vc presentModalViewController: leaderboardController animated: YES];
+    }
+}
+
+-(void) leaderboardViewControllerDidFinish: (GKLeaderboardViewController *) viewController {
+    [vc dismissModalViewControllerAnimated: YES];
+    [vc.view removeFromSuperview];
+    [viewController autorelease];
+    [vc autorelease];
 }
 
 -(void) showHelp

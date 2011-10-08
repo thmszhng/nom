@@ -103,7 +103,7 @@ static GameManager *_sharedGameManager = nil;
                 soundThread = [[NSThread alloc] initWithTarget: self
                                                       selector: @selector(playMusic)
                                                         object: nil];
-                [soundThread start];
+//                [soundThread start];
             }
             /*@synchronized(engine)
             {
