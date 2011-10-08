@@ -12,12 +12,8 @@
 }
 
 -(id) init;
--(void) dealloc;
 
--(BOOL) headChecks: (Vector *) head;
 -(void) onEat: (Food *) food;
 
--(Vector *) findSpace;
--(Vector *) findSpaceNear: (Vector *) where;
 
 @end
