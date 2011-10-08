@@ -230,13 +230,17 @@
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
+    bool isFancy = false;
     for (Food *food in game.food)
     {
         Vector *pos = food.pos;
         ccColor3B color = [food color];
         ccColor3B darkened = {DARKEN(color.r), DARKEN(color.g), DARKEN(color.b)};
-        drawBox(pos.x * 10 + 10, pos.y * 10 + 148, 10, 10, color, darkened);
+        int deltaX = isFancy ? 15 - game.head.pos.x : 0, deltaY = isFancy ? 15 - game.head.pos.y : 0;
+        drawBox(((pos.x + deltaX + 30) % 30) * 10 + 10, ((pos.y + deltaY + 30) % 30) * 10 + 148, 10, 10, color, darkened);
+        
     }
+    //NSLog(@"%d %d %d", game.head.pos.x, game.head.pos.y);
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
@@ -260,9 +264,11 @@
                 if (apos.y - pos.y == -1) dir = down;
             }
         }
-        drawSnake(pos.x, pos.y, dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
+        int deltaX = isFancy ? 15 - game.head.pos.x : 0, deltaY = isFancy ? 15 - game.head.pos.y : 0;
+        drawSnake(((pos.x + deltaX + 30) % 30), ((pos.y + deltaY + 30) % 30), dir == up || lastdir == down, dir == left || lastdir == right, dir == down || lastdir == up, dir == right || lastdir == left);
         piece = after;
         lastdir = dir;
+
     }
 }
 @end
