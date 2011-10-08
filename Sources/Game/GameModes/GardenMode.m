@@ -52,7 +52,8 @@
     {
         foodEaten = 0;
         foodQueue++;
-        timeLimit++;
+        if((foodQueue + timeLimit)%2 == 1)
+            timeLimit++;
     }
 }
 
