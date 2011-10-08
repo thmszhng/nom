@@ -57,17 +57,13 @@
     
     for (int y = 0; y < 30; ++y) for (int x = 0; x < 30; ++x)
     {
-        int dark, light;
-        if (levelInfo[x][y] == LevelWall)
+        if (levelInfo[x][y] != LevelWall)
         {
-            light = 60;
-            dark = DARKEN(light);
+            drawBox(x * size, y * size, size, size, ccc3(252, 252, 252), ccc3(232, 232, 232));
+            continue;
         }
-        else
-        {
-            light = 252;
-            dark = 232;
-        }
+        const int light = 60,
+                   dark = DARKEN(light);
         glPushMatrix();
         glTranslatef(x * size * scale, y * size * scale, 0);
         
