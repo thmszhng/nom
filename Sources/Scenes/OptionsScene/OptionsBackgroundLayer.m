@@ -12,6 +12,7 @@
 #import "Game.h"
 #import "Subclasser.h"
 #import "Level.h"
+#import "Render.h"
 
 @implementation OptionsBackgroundLayer
 -(id) init
@@ -28,33 +29,43 @@
         [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
-        slowButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"OptionHard.png" 
-                                       selectedImage: @"OptionHard-selected.png" 
-                                       disabledImage: @"OptionHard-selected.png"  
-                                       target: self 
-                                       selector: @selector(setSlow)];
-        [slowButton setPosition: ccp(66.5, 118)];
-        mediumButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"OptionHarder.png" 
-                                       selectedImage: @"OptionHarder-selected.png" 
-                                       disabledImage: @"OptionHarder-selected.png"
-                                       target: self 
-                                       selector: @selector(setMedium)];
+        const ccColor3B c_slow = ccc3(242, 180, 0);
+        const ccColor3B c_medium = ccc3(255, 100, 54);
+        const ccColor3B c_fast = ccc3(181, 18, 18);
+        CGSize size = CGSizeMake(94, 36);
+#define slow createButton(@"hard", size, 25.0f, NO, c_slow)
+#define slowS createButton(@"hard", size, 25.0f, YES, c_slow)
+#define medium createButton(@"harder", size, 25.0f, NO, c_medium)
+#define mediumS createButton(@"harder", size, 25.0f, YES, c_medium)
+#define fast createButton(@"crazy", size, 25.0f, NO, c_fast)
+#define fastS createButton(@"crazy", size, 25.0f, YES, c_fast)
+        slowButton = [CCMenuItemSprite itemFromNormalSprite: slow
+                                             selectedSprite: slowS
+                                             disabledSprite: slowS
+                                                     target: self
+                                                   selector: @selector(setSlow)];
+        [slowButton setPosition: ccp(66, 118)];
+        mediumButton = [CCMenuItemSprite itemFromNormalSprite: medium
+                                               selectedSprite: mediumS
+                                               disabledSprite: mediumS
+                                                      target: self
+                                                    selector: @selector(setMedium)];
         [mediumButton setPosition: ccp(160, 118)];
-        fastButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"OptionCrazy.png" 
-                                       selectedImage: @"OptionCrazy-selected.png" 
-                                       disabledImage: @"OptionCrazy-selected.png"
-                                       target: self 
-                                       selector: @selector(setFast)];
+        fastButton = [CCMenuItemSprite itemFromNormalSprite: fast
+                                             selectedSprite: fastS
+                                             disabledSprite: fastS
+                                                     target: self
+                                                   selector: @selector(setFast)];
         [fastButton setPosition: ccp(254, 118)];
         
-        CCMenuItemImage *playButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"OptionPlayGame.png" 
-                                       selectedImage: @"OptionPlayGame-selected.png" 
-                                       disabledImage: @"OptionPlayGame.png"  
-                                       target: self 
+        CCMenuItemImage *playButton = [CCMenuItemSprite
+                                       itemFromNormalSprite: createButton(@"Play Game",
+                                                                          CGSizeMake(280, 70),
+                                                                          40, NO, ccBLACK)
+                                       selectedSprite: createButton(@"Play Game",
+                                                                    CGSizeMake(280, 70),
+                                                                    40, YES, ccBLACK)
+                                       target: self
                                        selector: @selector(playGame)];
         [playButton setPosition: ccp(160, 55)];
         

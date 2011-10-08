@@ -21,7 +21,7 @@ void glDrawRect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
         x + width, y + height,
         x, y + height
     };
-    glVertexPointer(2, GL_FLOAT, 0, vertices);	
+    glVertexPointer(2, GL_FLOAT, 0, vertices);
 	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 }
 
@@ -117,4 +117,99 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright)
     CCSprite* sprite = [getTexture(entry) sprite];
     sprite.position = CGPointMake(xx + width/2, yy + height/2);
     [sprite visit];
+}
+
+CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color)
+{
+    int scale = haveRetina ? 2 : 1;
+    CCRenderTexture *texture = [[CCRenderTexture alloc]
+                                initWithWidth: size.width * scale
+                                height: size.height * scale
+                                pixelFormat: kTexture2DPixelFormat_RGBA8888];
+    [texture begin];
+    glPushMatrix();
+    if (haveRetina)
+    {
+        glScalef(2.0f, 2.0f, 1.0f);
+    }
+    const GLubyte colors[2][2][16] = {
+        // unselected
+        {
+            // lower
+            {
+                255, 255, 255, 255,
+                255, 255, 255, 255,
+                217, 217, 217, 255,
+                217, 217, 217, 255
+            },
+            // upper
+            {
+                230, 230, 230, 255,
+                230, 230, 230, 255,
+                255, 255, 255, 255,
+                255, 255, 255, 255
+            }
+        },
+        // selected
+        {
+            // lower
+            {
+                195, 195, 195, 255,
+                195, 195, 195, 255,
+                197, 197, 197, 255,
+                197, 197, 197, 255
+            },
+            // upper
+            {
+                215, 215, 215, 255,
+                215, 215, 215, 255,
+                204, 204, 204, 255,
+                204, 204, 204, 255
+            }
+        }
+    };
+    glDisable(GL_TEXTURE_2D);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    {
+        GLfloat vertices[8] = {
+            0, 0,
+            size.width, 0,
+            size.width, size.height * 0.5f,
+            0, size.height * 0.5f
+        };
+        glColorPointer(4, GL_UNSIGNED_BYTE, 0, colors[selected][0]);
+        glVertexPointer(2, GL_FLOAT, 0, vertices);
+        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+    }
+    {
+        GLfloat vertices[8] = {
+            0, size.height * 0.5f,
+            size.width, size.height * 0.5f,
+            size.width, size.height,
+            0, size.height
+        };
+        glColorPointer(4, GL_UNSIGNED_BYTE, 0, colors[selected][1]);
+        glVertexPointer(2, GL_FLOAT, 0, vertices);
+        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+    }
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glEnable(GL_TEXTURE_2D);
+    glPopMatrix();
+    CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
+                                                dimensions: size
+                                                 alignment: CCTextAlignmentCenter
+                                                  fontName: @"Varela Round"
+                                                  fontSize: fontsize];
+    label.anchorPoint = CGPointMake(0.5f, 0.5f);
+    label.position = CGPointMake(size.width * 0.5f + (selected ? 2.0f : 0.0f),
+                                 size.height * 0.5f - fontsize * 0.5f + 10.0f - (selected ? 2.0f : 0.0f));
+    label.color = color;
+    [label visit];
+    [label release];
+    [texture end];
+    CCSprite *ret = [[texture.sprite retain] autorelease];
+    ret.scaleY = 1;
+    ret.flipY = YES;
+    [texture release];
+    return ret;
 }
