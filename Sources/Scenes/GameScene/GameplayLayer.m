@@ -22,6 +22,7 @@
         //enable touches
         self.isTouchEnabled = YES;
         //set up score display
+        isFancy = false;
         scoreText = [CCLabelAtlas labelWithString: @"" charMapFile: @"numbers.png" itemWidth: 12 itemHeight: 14 startCharMap: '0'];
         scoreText.color = ccc3(90, 220, 216);
         [scoreText setPosition: CGPointMake(16, 457)];
@@ -150,7 +151,14 @@
     {
 		touchCoord = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
     }
-    CGRect pauseGameArea = CGRectMake (0, 200, 320, 280);
+    NSLog(@"%f %f", touchCoord.x, touchCoord.y);
+    CGRect fancySwitchArea = CGRectMake(0, 450, 320, 30);
+    if (CGRectContainsPoint(fancySwitchArea, touchCoord))
+    {
+        isFancy = !isFancy;
+    }
+    
+    CGRect pauseGameArea = CGRectMake (0, 200, 320, 250);
     // determine whether or not to pause the game
     if (CGRectContainsPoint(pauseGameArea, touchCoord))
     {
@@ -230,7 +238,6 @@
     glDisable(GL_TEXTURE_2D);
     glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    bool isFancy = false;
     for (Food *food in game.food)
     {
         Vector *pos = food.pos;

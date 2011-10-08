@@ -19,6 +19,7 @@
     enum Direction newDirection;
     
     // game state
+    BOOL isFancy;
     BOOL isGamePaused;
     BOOL isGameOver;
     ccTime gameOverTimer;
