@@ -131,7 +131,7 @@
         
         game.currentDirection = newDirection;
         if ([game isRaged] && [game rageExpiry] < [game timestamp]) {
-            [game setSpeed: [game speed]*2];  
+            [game setSpeed: [game speed]*1.75];  
             [game setIsRaged: false];
         }
         if (![game moveSnake])

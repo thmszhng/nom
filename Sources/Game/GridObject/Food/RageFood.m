@@ -24,7 +24,7 @@
     if (game.isRaged) 
         return YES;
     [game setIsRaged: true];
-    [game setSpeed: [game speed]/2];
+    [game setSpeed: [game speed]/1.75];
     return YES;
 }
 

@@ -16,13 +16,14 @@
     if (self != nil)
     {
         timeStart = timestamp;
-        timeLimit = 7;
+        timeLimit = 5;
+        foodQueue = 0;
         foodEaten = 0;
         
-        for (int i = 0; i < 3; i++)
-        {
+        //for (int i = 0; i < foodQueue; i++)
+        //{
             [self createFood: [SlaveFood class]];
-        }
+        //}
     }
     
     return self;
@@ -36,7 +37,7 @@
     {
         if((timestamp - timeStart) > timeLimit)
         {
-            for(int i = 0; i <= (8 - timeLimit); i++)
+            for(int i = 0; i <= foodQueue; i++)
                 [self createFood: [SlaveFood class]];
             timeStart = timestamp;
         }
@@ -47,11 +48,11 @@
 
 -(void) onEat:(Food *)food
 {
-    if(++foodEaten == 10)
+    if(++foodEaten == 5)
     {
         foodEaten = 0;
-        if(timeLimit != 1)
-            timeLimit--;
+        foodQueue++;
+        timeLimit++;
     }
 }
 

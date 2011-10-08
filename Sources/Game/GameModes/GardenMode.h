@@ -11,6 +11,7 @@
 @interface GardenMode : Game {
     int timeStart;
     int timeLimit;
+    int foodQueue;
     int foodEaten;
 }
 
