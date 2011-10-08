@@ -16,7 +16,7 @@
     if (self != nil)
     {
         timeStart = timestamp;
-        timeLimit = 5;
+        timeLimit = 4;
         foodQueue = 0;
         foodEaten = 0;
         
