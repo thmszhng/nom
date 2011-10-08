@@ -8,8 +8,13 @@
 
 #import "cocos2d.h"
 
+@class GameplayLayer;
+
 @interface LevelLayer : CCLayer {
-    
+    CCRenderTexture *sprite;
+    GameplayLayer *theGameplayLayer;
 }
 
+@property (readwrite, assign) GameplayLayer *theGameplayLayer;
+-(void) draw;
 @end

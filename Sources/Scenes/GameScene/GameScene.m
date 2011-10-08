@@ -28,6 +28,7 @@
         //Gameplay Layer
         gameplayLayer = [GameplayLayer node];
         [self addChild: gameplayLayer z: 5 tag: kGameplayLayer];
+        levelLayer.theGameplayLayer = gameplayLayer;
     }
     
     return self;

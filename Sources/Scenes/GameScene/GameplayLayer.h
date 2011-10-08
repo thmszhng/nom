@@ -28,7 +28,8 @@
     BOOL trackTouch;
     CCLabelAtlas *scoreText;
 }
-
+@property (readonly) Game *game;
+@property (readonly) BOOL isFancy;
 -(id) init;
 -(void) dealloc;
 

@@ -14,6 +14,8 @@
 #import "SnakeTail.h"
 
 @implementation GameplayLayer
+@synthesize game;
+@synthesize isFancy;
 -(id) init
 {
     self = [super init];
@@ -151,7 +153,6 @@
     {
 		touchCoord = [[CCDirector sharedDirector] convertToGL: [touch locationInView: [touch view]]];
     }
-    NSLog(@"%f %f", touchCoord.x, touchCoord.y);
     CGRect fancySwitchArea = CGRectMake(0, 450, 320, 30);
     if (CGRectContainsPoint(fancySwitchArea, touchCoord))
     {
