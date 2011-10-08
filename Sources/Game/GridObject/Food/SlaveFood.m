@@ -40,11 +40,11 @@
 
 -(ccColor3B) color
 {
-    if (timeAtCreation - _game.timestamp < -68.1659f) // 4 points
+    if (timeAtCreation - _game.timestamp < -14.41667872f) // 4 points
         return ccc3(0, 0, 0);
-    if (timeAtCreation - _game.timestamp < -40.7314f) // 9 points
+    if (timeAtCreation - _game.timestamp < -8.614453863f) // 9 points
         return ccc3(0, 0, 150);
-    if (timeAtCreation - _game.timestamp < -15.4525f) // 19 points
+    if (timeAtCreation - _game.timestamp < -3.268117162f) // 19 points
         return ccc3(0, 0, 200);
     return ccBLUE;
 }
