@@ -6,6 +6,7 @@
 //
 
 #import "ScrollView.h"
+#import "SpriteLoader.h"
 
 #define ITEM_WIDTH 120
 #define ITEM_HEIGHT 135
@@ -109,17 +110,17 @@
     for (id sprite in sprites)
     {
         CCSprite *realSprite = nil;
-        CCSprite *shadow = [CCSprite spriteWithFile: @"120Shadow.png"];
+        CCSprite *shadow = loadSprite(@"120Shadow.png");
         if ([sprite isKindOfClass: [NSString class]])
-            realSprite = [CCSprite spriteWithFile: sprite];
+            realSprite = loadSprite(sprite);
         else if ([sprite isKindOfClass: [CCNode class]])
             realSprite = sprite;
         else
             [NSException raise: @"TypeError" format: @"Incorrect type given to Sprites"];
         shadow.position = realSprite.position = CGPointMake(x, ITEM_HEIGHT/2);
         x += ITEM_TOTAL_WIDTH;
-        [self addChild: realSprite z: 1];
-        [self addChild: shadow z: 0];
+        [self addChild: realSprite z: 2];
+        [self addChild: shadow z: 1];
     }
     [super onEnter];
 }

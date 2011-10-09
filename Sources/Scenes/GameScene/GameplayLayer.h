@@ -26,7 +26,8 @@
     
     // controls
     BOOL trackTouch;
-    CCLabelAtlas *scoreText;
+    CCLabelBMFont *scoreText;
+    CCLabelAtlas *emblems;
 }
 @property (readonly) Game *game;
 @property (readonly) BOOL isFancy;

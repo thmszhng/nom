@@ -7,6 +7,7 @@
 //
 
 #import "GameBackgroundLayer.h"
+#import "SpriteLoader.h"
 #import "Render.h"
 
 @implementation GameBackgroundLayer
@@ -16,7 +17,7 @@
     if (self != nil)
     {
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
-        CCRenderTexture *texture = [CCRenderTexture renderTextureWithWidth: 300 height: 300];
+/*        CCRenderTexture *texture = [CCRenderTexture renderTextureWithWidth: 300 height: 300];
         [texture setPosition: CGPointMake (screenSize.width/2, 298)];
         [self addChild: texture z: 0];
         [texture beginWithClear: 1.f g: 1.f b: 1.f a: 1.f];
@@ -34,15 +35,13 @@
         glEnableClientState(GL_COLOR_ARRAY);
         glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         glEnable(GL_TEXTURE_2D);
-        [texture end];
+        [texture end];*/
         
-        CCSprite *control;
-        control = [CCSprite spriteWithFile: @"Control.png"];
+        CCSprite *control = loadSprite(@"Control.png");
         [control setPosition: CGPointMake (screenSize.width/2, 74)];
         [self addChild: control z: 1];
         
-        CCSprite *bg;
-        bg = [CCSprite spriteWithFile: @"GameBackground.png"];
+        CCSprite *bg = loadSprite(@"GameBackground.png");
         [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: bg z: -1];
     }

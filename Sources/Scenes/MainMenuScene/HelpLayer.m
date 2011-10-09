@@ -8,6 +8,7 @@
 
 #import "HelpLayer.h"
 #import "MainMenuLayer.h"
+#import "SpriteLoader.h"
 
 @implementation HelpLayer
 -(id) init
@@ -18,7 +19,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         self.isTouchEnabled = YES;
         
-        CCSprite *help = [CCSprite spriteWithFile: @"HelpLayer.png"];
+        CCSprite *help = loadSprite(@"HelpLayer.png");
         [help setPosition: ccp(screenSize.width/2, screenSize.height/2)];
         [self addChild: help];
     }

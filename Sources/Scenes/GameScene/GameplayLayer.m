@@ -25,10 +25,14 @@
         self.isTouchEnabled = YES;
         //set up score display
         isFancy = false;
-        scoreText = [CCLabelAtlas labelWithString: @"" charMapFile: @"numbers.png" itemWidth: 12 itemHeight: 14 startCharMap: '0'];
-        scoreText.color = ccc3(90, 220, 216);
-        [scoreText setPosition: CGPointMake(16, 457)];
+        scoreText = [CCLabelBMFont labelWithString: @"" fntFile: haveRetina ? @"Varela Round-hd.fnt" : @"Varela Round.fnt"];
+//        scoreText.color = ccc3(90, 220, 216);
+        scoreText.anchorPoint = CGPointMake(0, 0.5f);
+        scoreText.position = CGPointMake(16, 463);
         [self addChild: scoreText];
+        emblems = [CCLabelAtlas labelWithString:@"" charMapFile: @"emblems.png" itemWidth:24 itemHeight: 14 startCharMap: 'a'];
+        emblems.position = CGPointMake(256, 457);
+        [self addChild: emblems];
         [self newGame];
     }
     
@@ -141,7 +145,8 @@
             isGameOver = YES;
         };
         
-        [scoreText setString: [NSString stringWithFormat: @"%-19d%s %s", game.score, game.isRaged ? ">2" : "  ", game.isProtected ? "<=" : "  "]];
+        [scoreText setString: [NSString stringWithFormat: @"%d", game.score]];
+        [emblems setString: [NSString stringWithFormat: @"%c%c", game.isRaged ? 'b' : ' ', game.isProtected ? 'a' : ' ']];
     }
 }
 

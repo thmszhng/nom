@@ -12,6 +12,7 @@
 #import "Game.h"
 #import "Subclasser.h"
 #import "Level.h"
+#import "SpriteLoader.h"
 #import "Render.h"
 
 @implementation OptionsBackgroundLayer
@@ -24,8 +25,7 @@
         
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
 
-        CCSprite *bg;
-        bg = [CCSprite spriteWithFile: @"OptionsBackground.png"];
+        CCSprite *bg = loadSprite(@"OptionsBackground.png");
         [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         

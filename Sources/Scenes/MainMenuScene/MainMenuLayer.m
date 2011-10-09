@@ -8,9 +8,11 @@
 
 #import "MainMenuLayer.h"
 
+#import <GameKit/GameKit.h>
 #import "GameManager.h"
 #import "GameCenter.h"
-#import <GameKit/GameKit.h>
+#import "SpriteLoader.h"
+#import "Render.h"
 
 @implementation MainMenuLayer
 
@@ -28,25 +30,27 @@
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         
         //background
-        CCSprite *bg = [CCSprite spriteWithFile: @"Frame.png"];
+        CCSprite *bg = loadSprite(@"Frame.png");
         [bg setPosition: ccp(screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
         //Menu items
-        CCMenuItemImage *playButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"Play.png" 
-                                       selectedImage: @"Play-selected.png" 
-                                       disabledImage: @"Play.png"  
-                                       target: self 
-                                       selector: @selector(playGame)];
+        CCMenuItem *playButton =
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"Play", CGSizeMake(220, 106), 90,
+                                                             NO, ccBLACK)
+                                selectedSprite: createButton(@"Play", CGSizeMake(220, 106), 90,
+                                                             YES, ccBLACK)
+                                        target: self 
+                                      selector: @selector(playGame)];
         [playButton setPosition: ccp(screenSize.width/2, screenSize.height - 273)];
         
-        CCMenuItemImage *optionsButton = [CCMenuItemImage 
-                                              itemFromNormalImage: @"GameOptions.png" 
-                                              selectedImage: @"GameOptions-selected.png"
-                                              disabledImage: @"GameOptions.png"
-                                              target: self 
-                                              selector: @selector(openOptions)];
+        CCMenuItem *optionsButton =
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"with options", CGSizeMake(220, 50),
+                                                             35, NO, ccc3(61, 187, 56))
+                                selectedSprite: createButton(@"with options", CGSizeMake(220, 50),
+                                                             35, YES, ccc3(61, 187, 56))    
+                                        target: self 
+                                      selector: @selector(openOptions)];
         [optionsButton setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
         
         CCMenuItemImage *gameCenterButton = [CCMenuItemImage
@@ -65,14 +69,20 @@
                                        selector: @selector(showHelp)];
         [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
-        SoundON = [[CCMenuItemImage itemFromNormalImage:@"SoundON.png" 
-                                            selectedImage:@"SoundON-selected.png" target:nil selector:nil] retain];
+        SoundON = [CCMenuItemImage itemFromNormalImage:@"SoundON.png"
+                                         selectedImage:@"SoundON-selected.png"
+                                                target:nil
+                                              selector:nil];
         
-        SoundOFF = [[CCMenuItemImage itemFromNormalImage:@"SoundOFF.png" 
-                                             selectedImage:@"SoundOFF-selected.png" target:nil selector:nil] retain];
+        SoundOFF = [CCMenuItemImage itemFromNormalImage:@"SoundOFF.png"
+                                          selectedImage:@"SoundOFF-selected.png"
+                                                 target:nil
+                                               selector:nil];
         
-        CCMenuItemToggle *toggleSoundButton = [CCMenuItemToggle itemWithTarget:self 
-                                                        selector:@selector(toggleSound:) items:SoundON, SoundOFF, nil];
+        CCMenuItemToggle *toggleSoundButton =
+        [CCMenuItemToggle itemWithTarget: self 
+                                selector: @selector(toggleSound:)
+                                   items: SoundON, SoundOFF, nil];
         [toggleSoundButton setPosition: ccp(229, screenSize.height - 183)];
 
         mainMenu = [CCMenu menuWithItems: playButton, optionsButton, gameCenterButton, helpButton, toggleSoundButton, nil];

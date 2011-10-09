@@ -121,10 +121,9 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright)
 
 CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color)
 {
-    int scale = haveRetina ? 2 : 1;
     CCRenderTexture *texture = [[CCRenderTexture alloc]
-                                initWithWidth: size.width * scale
-                                height: size.height * scale
+                                initWithWidth: size.width
+                                height: size.height
                                 pixelFormat: kTexture2DPixelFormat_RGBA8888];
     [texture begin];
     glPushMatrix();
@@ -200,9 +199,9 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
                                                  alignment: CCTextAlignmentCenter
                                                   fontName: @"Varela Round"
                                                   fontSize: fontsize];
-    label.anchorPoint = CGPointMake(0.5f, 0.5f);
+    label.anchorPoint = CGPointMake(0.5f, 0.0f);
     label.position = CGPointMake(size.width * 0.5f + (selected ? 2.0f : 0.0f),
-                                 size.height * 0.5f - fontsize * 0.5f + 10.0f - (selected ? 2.0f : 0.0f));
+                                 (selected ? -2.0f : 0.0f));
     label.color = color;
     [label visit];
     [label release];
