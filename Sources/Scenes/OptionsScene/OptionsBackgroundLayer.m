@@ -29,9 +29,9 @@
         [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
-        const ccColor3B c_slow = ccc3(242, 180, 0);
-        const ccColor3B c_medium = ccc3(255, 100, 54);
-        const ccColor3B c_fast = ccc3(181, 18, 18);
+        const ccColor3B c_slow = ccc3(0, 52, 160);
+        const ccColor3B c_medium = ccc3(70, 154, 6);
+        const ccColor3B c_fast = ccc3(160, 0, 0);
         CGSize size = CGSizeMake(94, 36);
 #define slow createButton(@"hard", size, 25.0f, NO, c_slow)
 #define slowS createButton(@"hard", size, 25.0f, YES, c_slow)
