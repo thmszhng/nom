@@ -131,7 +131,7 @@
  To enable set it to 1. Enabled by default.
  */
 #ifndef CC_COCOSNODE_RENDER_SUBPIXEL
-#define CC_COCOSNODE_RENDER_SUBPIXEL 1
+#define CC_COCOSNODE_RENDER_SUBPIXEL 0
 #endif
 
 /** @def CC_SPRITEBATCHNODE_RENDER_SUBPIXEL
@@ -141,7 +141,7 @@
  To enable set it to 1. Enabled by default.
  */
 #ifndef CC_SPRITEBATCHNODE_RENDER_SUBPIXEL
-#define CC_SPRITEBATCHNODE_RENDER_SUBPIXEL	1
+#define CC_SPRITEBATCHNODE_RENDER_SUBPIXEL	0
 #endif
 
 /** @def CC_USES_VBO
@@ -257,7 +257,7 @@
  @since v0.99.5
  */
 #ifndef CC_USE_LA88_LABELS_ON_NEON_ARCH
-#define CC_USE_LA88_LABELS_ON_NEON_ARCH 0
+#define CC_USE_LA88_LABELS_ON_NEON_ARCH 1
 #endif
 
 /** @def CC_SPRITE_DEBUG_DRAW
