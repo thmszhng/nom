@@ -230,7 +230,7 @@ int randomNear(int what, int min, int num)
     {
         for (; prev.next != object; prev = prev.next)
         {
-            assert(prev != nil);
+            NSAssert(prev != nil, @"Couldn't find object in chain");
         }
         prev.next = object.next;
     }

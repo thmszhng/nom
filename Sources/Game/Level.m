@@ -59,7 +59,7 @@
     {
         if (levelInfo[x][y] != LevelWall)
         {
-            drawBox(x * size, y * size, size, size, ccc3(252, 252, 252), ccc3(232, 232, 232));
+            drawBox(x * size, y * size, size, size, ccc3(249, 249, 249), ccc3(240, 240, 240));
             continue;
         }
         const int light = 60,
