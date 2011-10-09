@@ -23,16 +23,18 @@
 #define sgn(x) (((x)>0)-((x)<0))
 
 -(void) draw
-{   
-    glEnable(GL_SCISSOR_TEST);
-             
-    if (haveRetina)
-        glScissor(20, 296, 600, 600);
-    else
-        glScissor(10, 148, 300, 300);
-             
+{
     Vector *pos = theGameplayLayer.game.head.pos;
     int deltaX = theGameplayLayer.isFancy ? 15 - pos.x : 0, deltaY = theGameplayLayer.isFancy ? 15 - pos.y : 0;
+    if (deltaX || deltaY)
+    {
+        glEnable(GL_SCISSOR_TEST);
+        CGPoint p = [self positionInPixels];
+        if (haveRetina)
+            glScissor(p.x + 20, p.y + 296, 600, 600);
+        else
+            glScissor(p.x + 10, p.y + 148, 300, 300);
+    }
     sprite.position = ccp(160+deltaX*10, 298+deltaY*10);
     [sprite visit];
     if (deltaY)
