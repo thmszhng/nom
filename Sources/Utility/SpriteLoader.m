@@ -13,7 +13,22 @@
 
 CCSprite *loadSprite(NSString *name)
 {
-    CCSprite *sprite = [CCSprite spriteWithFile: name];
+    static BOOL loaded = NO;
+    if (!loaded)
+    {
+        // Cache sprites
+        if (haveRetina)
+        {
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"spritesheet-1.plist"];
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"spritesheet-2.plist"];
+        }
+        else
+        {
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"spritesheet.plist"];
+        }
+        loaded = YES;
+    }
+    CCSprite *sprite = [CCSprite spriteWithSpriteFrameName: name];
     return sprite;
 /*    if (haveRetina) return sprite;
     CCRenderTexture *texture = [[CCRenderTexture alloc]

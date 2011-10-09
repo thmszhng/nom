@@ -53,31 +53,29 @@
                                       selector: @selector(openOptions)];
         [optionsButton setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
         
-        CCMenuItemImage *gameCenterButton = [CCMenuItemImage
-                                             itemFromNormalImage: @"Gamecenter.png"
-                                             selectedImage: @"Gamecenter-selected.png"
-                                             disabledImage: nil
+        CCMenuItemImage *gameCenterButton = [CCMenuItemSprite
+                                             itemFromNormalSprite: loadSprite(@"Gamecenter.png")
+                                             selectedSprite: loadSprite(@"Gamecenter-selected.png")
                                              target: self
                                              selector: @selector(openGameCenter)];
         [gameCenterButton setPosition: ccp(89, screenSize.height - 183)];
         
-        CCMenuItemImage *helpButton = [CCMenuItemImage 
-                                       itemFromNormalImage: @"Help.png" 
-                                       selectedImage: @"Help-selected.png" 
-                                       disabledImage: @"Help.png"  
+        CCMenuItemImage *helpButton = [CCMenuItemSprite
+                                       itemFromNormalSprite: loadSprite(@"Help.png")
+                                       selectedSprite: loadSprite(@"Help-selected.png")
                                        target: self 
                                        selector: @selector(showHelp)];
         [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
-        SoundON = [CCMenuItemImage itemFromNormalImage:@"SoundON.png"
-                                         selectedImage:@"SoundON-selected.png"
-                                                target:nil
-                                              selector:nil];
+        SoundON = [CCMenuItemImage itemFromNormalSprite: loadSprite(@"SoundON.png")
+                                         selectedSprite: loadSprite(@"SoundON-selected.png")
+                                                 target: nil
+                                               selector: nil];
         
-        SoundOFF = [CCMenuItemImage itemFromNormalImage:@"SoundOFF.png"
-                                          selectedImage:@"SoundOFF-selected.png"
-                                                 target:nil
-                                               selector:nil];
+        SoundOFF = [CCMenuItemImage itemFromNormalSprite: loadSprite(@"SoundOFF.png")
+                                          selectedSprite: loadSprite(@"SoundOFF-selected.png")
+                                                  target: nil
+                                                selector: nil];
         
         CCMenuItemToggle *toggleSoundButton =
         [CCMenuItemToggle itemWithTarget: self 

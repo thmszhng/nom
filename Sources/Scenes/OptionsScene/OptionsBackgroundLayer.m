@@ -10,10 +10,15 @@
 #import "GameManager.h"
 #import "ScrollView.h"
 #import "Game.h"
-#import "Subclasser.h"
 #import "Level.h"
 #import "SpriteLoader.h"
 #import "Render.h"
+#import "RegularMode.h"
+#import "ClassicMode.h"
+#import "BurstMode.h"
+#import "FeastMode.h"
+#import "QuestMode.h"
+#import "GardenMode.h"
 
 @implementation OptionsBackgroundLayer
 -(id) init
@@ -26,7 +31,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
 
         CCSprite *bg = loadSprite(@"OptionsBackground.png");
-        [bg setPosition: CGPointMake (screenSize.width/2, screenSize.height/2)];
+        [bg setPosition: CGPointMake(screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
         const ccColor3B c_slow = ccc3(0, 52, 160);
@@ -98,11 +103,13 @@
         [self addChild: levelView];
 
         NSMutableDictionary *modeDictionary = [NSMutableDictionary dictionary];
-        NSArray *gameModes = [Game immediateSubclasses];
+        NSArray *gameModes = [NSArray arrayWithObjects: [RegularMode class],
+                              [ClassicMode class], [BurstMode class],
+                              [FeastMode class], [QuestMode class],
+                              [GardenMode class], nil];
         for (Class cls in gameModes)
         {
             NSString *str = NSStringFromClass(cls);
-            if ([str rangeOfString: @"Mode"].location == NSNotFound) continue;
             [modeDictionary setObject: [str stringByAppendingString: @".png"] forKey: str];
         }
         gameModeView = [[ScrollView alloc] initWithDictionary: modeDictionary];
