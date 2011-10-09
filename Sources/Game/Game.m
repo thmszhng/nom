@@ -67,7 +67,7 @@ int randomNear(int what, int min, int num)
         steps = 0;
         
         // initialize snake
-        self.head = self.tail = [[SnakeTail alloc] initAt: [self beginSpace]];
+        head = tail = [[SnakeTail alloc] initAt: [self beginSpace]];
         [self addObject: self.head];
         snakeLength = 1;
         deltaLength = 4;
@@ -83,8 +83,10 @@ int randomNear(int what, int min, int num)
         {
             if ([level getValue: x : y] != LevelWall) continue;
             Wall *wall = [Wall new];
-            wall.pos = [[[Vector alloc] initWithX: x withY: y] autorelease];
+            wall.pos = [[Vector alloc] initWithX: x withY: y];
             [self addObject: wall];
+            [wall.pos release];
+            [wall release];
         }
     }
     return self;
