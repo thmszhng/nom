@@ -27,8 +27,9 @@
     SceneTypes currentScene;
     
     NSMutableArray *levels;
-    CDSoundEngine *engine;
     NSThread *soundThread;
+    NSLock *audioLock;
+    BOOL loopLoaded;
 }
 
 @property (readwrite) BOOL isMusicON;
@@ -41,6 +42,9 @@
 -(void) runSceneWithID: (SceneTypes) sceneID;
 -(void) slowFPS;
 -(void) loadLevels;
+
+-(void) loadLoop: (id) engine;
+-(void) playMusic;
 
 -(NSString *) getString: (NSString *) value;
 -(NSString *) getString: (NSString *) value withDefault: (NSString *) def;

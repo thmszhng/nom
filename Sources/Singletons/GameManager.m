@@ -61,12 +61,12 @@ static GameManager *_sharedGameManager = nil;
         //Initialize GameManager
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
-        /*intro = [[CDAudioManager sharedManager] audioSourceForChannel: kASC_Right];
-        loop = [[CDAudioManager sharedManager] audioSourceForChannel: kASC_Left];*/
-        engine = [[CDSoundEngine alloc] init];
-        [engine loadBuffer: 0 filePath: @"intro.aac"];
-        [engine loadBuffer: 1 filePath: @"loop.aac"];
-        
+        audioLock = [[NSLock alloc] init];
+        soundThread = [[NSThread alloc] initWithTarget: self
+                                              selector: @selector(playMusic)
+                                                object: nil];
+        [soundThread start];
+
         //Load levels
         [self loadLevels];
     }
@@ -74,20 +74,66 @@ static GameManager *_sharedGameManager = nil;
     return self;
 }
 
+-(void) loadLoop: (id) engine
+{
+    [(CDSoundEngine *) engine loadBuffer: 1 filePath: @"loop.aac"];
+    [audioLock lock];
+    loopLoaded = YES;
+    [audioLock unlock];
+}
+
 -(void) playMusic
 {
-    CDSoundSource *intro = [engine soundSourceForSound: 0 sourceGroupId: 0];
-    float length = [intro durationInSeconds];
-    length -= 0.06; // slight fudging
-    [engine playSound: 0 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: NO];
-    [NSThread sleepForTimeInterval: length];
-    @synchronized(engine)
+    NSAutoreleasePool *outerPool = [[NSAutoreleasePool alloc] init];
+    CDSoundEngine *engine = [[CDSoundEngine alloc] init];
+    [engine loadBuffer: 0 filePath: @"intro.aac"];
+    loopLoaded = NO;
+    [NSThread detachNewThreadSelector: @selector(loadLoop:)
+                             toTarget: self
+                           withObject: engine];
+    for (NSAutoreleasePool *pool;
+         (pool = [[NSAutoreleasePool alloc] init]);
+         [engine stopAllSounds], [pool drain])
     {
-        if (![[NSThread currentThread] isCancelled])
+        while (true)
         {
-            [engine playSound: 1 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: YES];
+            if (self.isMusicON) break;
+            [NSThread sleepForTimeInterval: 0.1];
+        }
+        CDSoundSource *intro = [engine soundSourceForSound: 0 sourceGroupId: 0];
+        float length = [intro durationInSeconds];
+        length -= 0.06; // slight fudging
+        NSDate *endTime = [NSDate alloc];
+        [engine playSound: 0 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: NO];
+        endTime = [endTime initWithTimeIntervalSinceNow: length];
+        while (true)
+        {
+            NSDate *currentTime = currentTime = [[NSDate alloc] initWithTimeIntervalSinceNow: 0.3];
+            BOOL done = [currentTime compare: endTime] == NSOrderedDescending;
+            [currentTime release];
+            if (done || !self.isMusicON) break;
+            [NSThread sleepForTimeInterval: 0.1];
+        }
+        if (!self.isMusicON) continue;
+        [NSThread sleepUntilDate: endTime];
+        while (true)
+        {
+            [audioLock lock];
+            BOOL stop = loopLoaded;
+            [audioLock unlock];
+            if (stop) break;
+            [NSThread sleepForTimeInterval: 0.1];
+        }
+        [engine playSound: 1 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: YES];
+        [endTime release];
+        while (true)
+        {
+            if (!self.isMusicON) break;
+            [NSThread sleepForTimeInterval: 0.1];
         }
     }
+    [engine release];
+    [outerPool drain];
 }
 
 -(void) runSceneWithID: (SceneTypes) sceneID
@@ -97,19 +143,6 @@ static GameManager *_sharedGameManager = nil;
     switch (sceneID) 
     {   
         case kMainMenuScene:
-            if (self.isMusicON)
-            {
-                [soundThread release];
-                soundThread = [[NSThread alloc] initWithTarget: self
-                                                      selector: @selector(playMusic)
-                                                        object: nil];
-//                [soundThread start];
-            }
-            /*@synchronized(engine)
-            {
-                [soundThread cancel];
-                [engine stopAllSounds];
-            }*/
             sceneToRun = [MainMenuScene node];
             break;
         
@@ -346,12 +379,17 @@ static GameManager *_sharedGameManager = nil;
 
 -(BOOL) isMusicON
 {
-    return [self getInt: @"isMusicON" withDefault: YES];
+    [audioLock lock];
+    BOOL ret = [self getInt: @"isMusicON" withDefault: YES];
+    [audioLock unlock];
+    return ret;
 }
 
 -(void) setIsMusicON: (BOOL) val
 {
+    [audioLock lock];
     [self setValue: @"isMusicOn" newInt: val];
+    [audioLock unlock];
 }
 
 -(Level *) level
