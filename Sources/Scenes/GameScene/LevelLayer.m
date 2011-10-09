@@ -26,7 +26,10 @@
 {   
     glEnable(GL_SCISSOR_TEST);
              
-    glScissor(10, 148, 300, 300);
+    if (haveRetina)
+        glScissor(20, 296, 600, 600);
+    else
+        glScissor(10, 148, 300, 300);
              
     Vector *pos = theGameplayLayer.game.head.pos;
     int deltaX = theGameplayLayer.isFancy ? 15 - pos.x : 0, deltaY = theGameplayLayer.isFancy ? 15 - pos.y : 0;
