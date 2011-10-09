@@ -23,7 +23,11 @@
 #define sgn(x) (((x)>0)-((x)<0))
 
 -(void) draw
-{
+{   
+    glEnable(GL_SCISSOR_TEST);
+             
+    glScissor(10, 148, 300, 300);
+             
     Vector *pos = theGameplayLayer.game.head.pos;
     int deltaX = theGameplayLayer.isFancy ? 15 - pos.x : 0, deltaY = theGameplayLayer.isFancy ? 15 - pos.y : 0;
     sprite.position = ccp(160+deltaX*10, 298+deltaY*10);
@@ -43,5 +47,6 @@
         sprite.position = ccp(160+deltaX*10-sgn(deltaX)*300, 298+deltaY*10-sgn(deltaY)*300);
         [sprite visit];
     }
+    glDisable(GL_SCISSOR_TEST);
 }
 @end
