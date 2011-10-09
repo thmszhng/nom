@@ -8,6 +8,7 @@
 
 #import "GardenMode.h"
 #import "SlaveFood.h"
+#import "ShieldFood.h"
 
 @implementation GardenMode
 -(id) init
@@ -25,7 +26,7 @@
             [self createFood: [SlaveFood class]];
         //}
     }
-    
+    self.isProtected = true;
     return self;
 }
 
@@ -48,9 +49,9 @@
 
 -(void) onEat:(Food *)food
 {
-    if(++foodEaten == 5)
-    {
-        foodEaten = 0;
+    if (foodEaten % 10 == 0 && foodEaten != 0) [self createFood: [ShieldFood class]]; 
+    if(++foodEaten % 5 == 0 && foodEaten != 0)
+    {   
         foodQueue++;
         if((foodQueue + timeLimit)%2 == 1)
             timeLimit++;

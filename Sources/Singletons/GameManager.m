@@ -227,11 +227,10 @@ static GameManager *_sharedGameManager = nil;
     {
         for (int j = 0; j < 30; j++)
         {
-            if (i == j || i == (29 - j))
-            {
-                if (i != 0 && i != 14 && i != 15 && i != 29 && j != 0 && j != 14 && j != 15 && j != 29)
-                    [fourthLevel setValue: i: j: LevelWall];
-            }
+            if (((i == 6 || i == 7 || i == 21 || i == 22) && !((j > 12 && j < 16) || j == 0 || j > 27)) ||
+                ((j == 6 || j == 7 || j == 21 || j == 22) && !((i > 12 && i < 16) || i == 0 || i > 27)))
+                [fourthLevel setValue: i: j: LevelWall];
+            
         }
     }
     [levels addObject: fourthLevel];
