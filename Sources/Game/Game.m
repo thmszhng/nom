@@ -67,8 +67,10 @@ int randomNear(int what, int min, int num)
         steps = 0;
         
         // initialize snake
-        head = tail = [[SnakeTail alloc] initAt: [self beginSpace]];
-        [self addObject: self.head];
+        SnakeTail *piece = [[SnakeTail alloc] initAt: [self beginSpace]];
+        self.head = self.tail = piece;
+        [self addObject: piece];
+        [piece release];
         snakeLength = 1;
         deltaLength = 4;
         currentDirection = NoDirection;
