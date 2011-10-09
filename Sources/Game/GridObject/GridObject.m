@@ -38,6 +38,7 @@
 
 -(BOOL) eatRecursively: (Game *) game
 {
+    NSAssert(next != self, @"Loop in linked list!");
     BOOL here = [self eat: game];
     BOOL there = !next || [next eatRecursively: game];
     return here && there;
