@@ -112,7 +112,7 @@
         CCSprite *realSprite = nil;
         CCSprite *shadow = loadSprite(@"120Shadow.png");
         if ([sprite isKindOfClass: [NSString class]])
-            realSprite = loadSprite(sprite);
+            realSprite = loadSprite([sprite autorelease]);
         else if ([sprite isKindOfClass: [CCNode class]])
             realSprite = sprite;
         else

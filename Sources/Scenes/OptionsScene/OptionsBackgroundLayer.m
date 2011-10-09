@@ -89,7 +89,7 @@
         NSArray *levels = [GameManager sharedGameManager].levels;
         for (NSUInteger i = 0; i < [levels count]; ++i)
         {
-            CCRenderTexture *texture = [(Level*)[levels objectAtIndex: i] drawWithSize: 4];
+            CCSprite *texture = [(Level*)[levels objectAtIndex: i] drawWithSize: 4];
             [levelDictionary setObject: texture forKey: [NSNumber numberWithUnsignedInt: i]];
         }
         levelView = [[ScrollView alloc] initWithDictionary: levelDictionary];

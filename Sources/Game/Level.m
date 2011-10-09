@@ -44,7 +44,7 @@
     levelInfo[i][j] = value;
 }
 
--(CCRenderTexture *) drawWithSize: (int) size
+-(CCSprite *) drawWithSize: (int) size
 {
     CCRenderTexture *texture = [CCRenderTexture renderTextureWithWidth: size*30 height: size*30];
     [texture beginWithClear: 1.f g: 1.f b: 1.f a: 1.f];
@@ -147,7 +147,10 @@
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_TEXTURE_2D);
     [texture end];
-    return texture;
+    CCSprite *ret = [[texture.sprite retain] autorelease];
+    ret.flipY = YES;
+    ret.scaleY = 1;
+    return ret;
 }
 
 @end

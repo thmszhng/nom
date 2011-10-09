@@ -11,7 +11,7 @@
 @class GameplayLayer;
 
 @interface LevelLayer : CCLayer {
-    CCRenderTexture *sprite;
+    CCSprite *sprite;
     GameplayLayer *theGameplayLayer;
 }
 

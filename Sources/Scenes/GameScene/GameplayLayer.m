@@ -25,7 +25,7 @@
         self.isTouchEnabled = YES;
         //set up score display
         isFancy = false;
-        scoreText = [CCLabelBMFont labelWithString: @"" fntFile: haveRetina ? @"Varela Round-hd.fnt" : @"Varela Round.fnt"];
+        scoreText = [CCLabelBMFont labelWithString: @"" fntFile: @"Varela Round.fnt"];
 //        scoreText.color = ccc3(90, 220, 216);
         scoreText.anchorPoint = CGPointMake(0, 0.5f);
         scoreText.position = CGPointMake(16, 463);
