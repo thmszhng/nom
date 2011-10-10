@@ -136,7 +136,7 @@ int randomNear(int what, int min, int num)
     }
     
     // advance head
-    SnakeTail *newHead = [[head copy] autorelease];
+    SnakeTail *newHead = [[SnakeTail alloc] initAt: head.pos];
     newHead.pos.x += dirX[currentDirection];
     newHead.pos.y += dirY[currentDirection];
     wrap(newHead.pos);
@@ -144,11 +144,13 @@ int randomNear(int what, int min, int num)
     BOOL survived = [self headChecks: newHead.pos];
     if (!survived)
     {
+        [newHead release];
         return NO;
     }
     head.forward = newHead;
     head = newHead;
     [self addObject: head];
+    [newHead release];
     
     if (deltaLength > 0)
     {

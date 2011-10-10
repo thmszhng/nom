@@ -11,11 +11,4 @@
 @implementation SnakeTail
 @synthesize forward;
 
--(id) copyWithZone: (NSZone *) zone
-{
-    SnakeTail *ret = [[SnakeTail allocWithZone: zone] initAt: pos];
-    ret.next = self.next;
-    return ret;
-}
-
 @end
