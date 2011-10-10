@@ -169,7 +169,7 @@ int randomNear(int what, int min, int num)
         {
             [self removeObject: tail];
         }
-        tail = tail.forward;
+        self.tail = tail.forward;
     }
     return survived;
 }
