@@ -8,12 +8,29 @@
 
 #import "Transitions.h"
 
+@implementation CCNode(TransitionFinish)
+
+-(void) transitionedIn
+{
+}
+-(void) transitioningOut
+{
+}
+
+@end
+
 @implementation SlideDown
 
 -(void) finish
 {
     [inScene_ transitionedIn];
     [super finish];
+}
+
+-(void) onEnter
+{
+    [super onEnter];
+    [outScene_ transitioningOut];
 }
 
 -(CCActionInterval *) easeActionWithAction: (CCActionInterval *) action
@@ -29,6 +46,12 @@
 {
     [inScene_ transitionedIn];
     [super finish];
+}
+
+-(void) onEnter
+{
+    [super onEnter];
+    [outScene_ transitioningOut];
 }
 
 -(CCActionInterval *) easeActionWithAction: (CCActionInterval *) action

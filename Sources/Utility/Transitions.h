@@ -10,6 +10,7 @@
 
 @interface CCNode(TransitionFinish)
 -(void) transitionedIn;
+-(void) transitioningOut;
 @end
 
 @interface SlideUp: CCTransitionSlideInB
