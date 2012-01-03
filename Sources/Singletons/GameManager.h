@@ -28,8 +28,6 @@
     
     NSMutableArray *levels;
     NSThread *soundThread;
-    NSLock *audioLock;
-    BOOL loopLoaded;
 }
 
 @property (readwrite) BOOL isMusicON;
@@ -43,7 +41,6 @@
 -(void) slowFPS;
 -(void) loadLevels;
 
--(void) loadLoop: (id) engine;
 -(void) playMusic;
 
 -(NSString *) getString: (NSString *) value;

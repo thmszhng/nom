@@ -61,7 +61,6 @@ static GameManager *_sharedGameManager = nil;
         //Initialize GameManager
         isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
-        audioLock = [[NSLock alloc] init];
         soundThread = [[NSThread alloc] initWithTarget: self
                                               selector: @selector(playMusic)
                                                 object: nil];
@@ -74,23 +73,12 @@ static GameManager *_sharedGameManager = nil;
     return self;
 }
 
--(void) loadLoop: (id) engine
-{
-    [(CDSoundEngine *) engine loadBuffer: 1 filePath: @"loop.aac"];
-    [audioLock lock];
-    loopLoaded = YES;
-    [audioLock unlock];
-}
-
 -(void) playMusic
 {
     NSAutoreleasePool *outerPool = [[NSAutoreleasePool alloc] init];
     CDSoundEngine *engine = [[CDSoundEngine alloc] init];
     [engine loadBuffer: 0 filePath: @"intro.aac"];
-    loopLoaded = NO;
-    [NSThread detachNewThreadSelector: @selector(loadLoop:)
-                             toTarget: self
-                           withObject: engine];
+    [engine loadBuffer: 1 filePath: @"loop.aac"];
     for (NSAutoreleasePool *pool;
          (pool = [[NSAutoreleasePool alloc] init]);
          [engine stopAllSounds], [pool drain])
@@ -116,14 +104,6 @@ static GameManager *_sharedGameManager = nil;
         }
         if (!self.isMusicON) continue;
         [NSThread sleepUntilDate: endTime];
-        while (true)
-        {
-            [audioLock lock];
-            BOOL stop = loopLoaded;
-            [audioLock unlock];
-            if (stop) break;
-            [NSThread sleepForTimeInterval: 0.1];
-        }
         [engine playSound: 1 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: YES];
         [endTime release];
         while (true)
@@ -378,17 +358,13 @@ static GameManager *_sharedGameManager = nil;
 
 -(BOOL) isMusicON
 {
-    [audioLock lock];
     BOOL ret = [self getInt: @"isMusicON" withDefault: YES];
-    [audioLock unlock];
     return ret;
 }
 
 -(void) setIsMusicON: (BOOL) val
 {
-    [audioLock lock];
     [self setValue: @"isMusicOn" newInt: val];
-    [audioLock unlock];
 }
 
 -(Level *) level
