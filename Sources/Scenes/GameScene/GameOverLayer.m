@@ -20,29 +20,29 @@
     {
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         self.isTouchEnabled = YES;
-        
+
         CCSprite *paused = loadSprite(@"GameOverBackground.png");
         [paused setPosition: ccp(screenSize.width/2, screenSize.height/2)];
         [self addChild: paused];
-        
+
         //Menu items
         CCMenuItem *newGameButton =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"New Game", CGSizeMake(240, 100),
-                                                             40, NO, ccc3(128, 128, 128))
-                                selectedSprite: createButton(@"New Game", CGSizeMake(240, 100),
-                                                             40, YES, ccc3(128, 128, 128))
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"new game", CGSizeMake(320, 60),
+                                                             45, NO, ccc3(64, 64, 64))
+                                selectedSprite: createButton(@"new game", CGSizeMake(320, 60),
+                                                             45, YES, ccc3(64, 64, 64))
                                         target: self 
                                       selector: @selector(newGame)];
-        [newGameButton setPosition: ccp(screenSize.width/2, 180)];
-        
+        [newGameButton setPosition: ccp(screenSize.width/2, 200)];
+
         CCMenuItem *mainMenuButton =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"Main Menu", CGSizeMake(240, 50),
-                                                             40, NO, ccc3(128, 128, 128))
-                                selectedSprite: createButton(@"Main Menu", CGSizeMake(240, 50),
-                                                             40, YES, ccc3(128, 128, 128))
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"main menu", CGSizeMake(320, 60),
+                                                             45, NO, ccc3(64, 64, 64))
+                                selectedSprite: createButton(@"main menu", CGSizeMake(320, 60),
+                                                             45, YES, ccc3(64, 64, 64))
                                         target: self 
                                       selector: @selector(goToMainMenu)];
-        [mainMenuButton setPosition: ccp(screenSize.width/2, 75)];
+        [mainMenuButton setPosition: ccp(screenSize.width/2, 100)];
         
         menu = [CCMenu menuWithItems: newGameButton, mainMenuButton, nil];
         [menu setPosition: CGPointZero];

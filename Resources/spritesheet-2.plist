@@ -4,36 +4,10 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>GameOverBackground.png</key>
+            <key>GameOverBackground-hd.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{588,860}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{26,50},{588,860}}</string>
-                <key>sourceSize</key>
-                <string>{640,960}</string>
-            </dict>
-            <key>HelpLayer.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{588,0},{588,894}}</string>
-                <key>offset</key>
-                <string>{0,-7}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{26,40},{588,894}}</string>
-                <key>sourceSize</key>
-                <string>{640,960}</string>
-            </dict>
-            <key>OptionsBackground.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1176,0},{640,960}}</string>
+                <string>{{0,0},{640,960}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -43,16 +17,42 @@
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
-            <key>PauseMenuBackground.png</key>
+            <key>HelpLayer-hd.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,960},{588,860}}</string>
+                <string>{{640,0},{588,910}}</string>
+                <key>offset</key>
+                <string>{0,25}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{26,0},{588,910}}</string>
+                <key>sourceSize</key>
+                <string>{640,960}</string>
+            </dict>
+            <key>OptionsBackground-hd.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1228,0},{640,960}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{26,50},{588,860}}</string>
+                <string>{{0,0},{640,960}}</string>
+                <key>sourceSize</key>
+                <string>{640,960}</string>
+            </dict>
+            <key>PauseMenuBackground-hd.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,960},{640,960}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{640,960}}</string>
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
@@ -62,13 +62,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>spritesheet-2.png</string>
+            <string>spritesheet-hd-2.png</string>
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:6004b9bb45403e2578aec6c96c4bcc66$</string>
+            <string>$TexturePacker:SmartUpdate:9e6521d493f03dcecce6196e69783c0b$</string>
             <key>textureFileName</key>
-            <string>spritesheet-2.png</string>
+            <string>spritesheet-hd-2.png</string>
         </dict>
     </dict>
 </plist>

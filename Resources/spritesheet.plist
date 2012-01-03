@@ -72,20 +72,20 @@
             <key>Frame.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{617,0},{320,480}}</string>
+                <string>{{617,0},{140,152}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{0,145}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{320,480}}</string>
+                <string>{{90,19},{140,152}}</string>
                 <key>sourceSize</key>
                 <string>{320,480}</string>
             </dict>
             <key>GameBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,480},{320,480}}</string>
+                <string>{{0,152},{320,480}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,20 +98,20 @@
             <key>GameOverBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{320,480},{294,430}}</string>
+                <string>{{320,152},{320,480}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{13,25},{294,430}}</string>
+                <string>{{0,0},{320,480}}</string>
                 <key>sourceSize</key>
                 <string>{320,480}</string>
             </dict>
             <key>Gamecenter-selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{614,480},{46,44}}</string>
+                <string>{{640,152},{46,44}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>Gamecenter.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{660,480},{46,44}}</string>
+                <string>{{686,152},{46,44}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>GardenMode.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{706,480},{120,120}}</string>
+                <string>{{732,152},{120,120}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>Help-selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{826,480},{42,42}}</string>
+                <string>{{852,152},{42,42}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>Help.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{868,480},{42,42}}</string>
+                <string>{{894,152},{42,42}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -176,20 +176,20 @@
             <key>HelpLayer.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,960},{294,448}}</string>
+                <string>{{0,632},{294,456}}</string>
                 <key>offset</key>
-                <string>{0,-3}</string>
+                <string>{0,12}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{13,19},{294,448}}</string>
+                <string>{{13,0},{294,456}}</string>
                 <key>sourceSize</key>
                 <string>{320,480}</string>
             </dict>
             <key>OptionsBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{294,960},{320,480}}</string>
+                <string>{{294,632},{320,480}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,20 +202,20 @@
             <key>PauseMenuBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{614,960},{294,430}}</string>
+                <string>{{614,632},{320,480}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{13,25},{294,430}}</string>
+                <string>{{0,0},{320,480}}</string>
                 <key>sourceSize</key>
                 <string>{320,480}</string>
             </dict>
             <key>QuestMode.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1440},{120,120}}</string>
+                <string>{{0,1112},{120,120}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>RegularMode.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{120,1440},{120,120}}</string>
+                <string>{{120,1112},{120,120}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +241,7 @@
             <key>SoundOFF-selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{240,1440},{46,40}}</string>
+                <string>{{240,1112},{46,40}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -254,7 +254,7 @@
             <key>SoundOFF.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{286,1440},{46,40}}</string>
+                <string>{{286,1112},{46,40}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -267,7 +267,7 @@
             <key>SoundON-selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{332,1440},{46,42}}</string>
+                <string>{{332,1112},{46,42}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -280,7 +280,7 @@
             <key>SoundON.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{378,1440},{46,42}}</string>
+                <string>{{378,1112},{46,42}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -293,7 +293,7 @@
             <key>emblems.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{424,1440},{42,14}}</string>
+                <string>{{424,1112},{42,14}}</string>
                 <key>offset</key>
                 <string>{1,0}</string>
                 <key>rotated</key>
@@ -313,7 +313,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:14296754c44fa41b0b6e6b5f262d1f71$</string>
+            <string>$TexturePacker:SmartUpdate:d0f775c439093a3fdf9c7ff214c4468e$</string>
             <key>textureFileName</key>
             <string>spritesheet.png</string>
         </dict>

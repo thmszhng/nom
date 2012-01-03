@@ -196,11 +196,11 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
     glPopMatrix();
     CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
                                                 dimensions: size
-                                                 alignment: CCTextAlignmentCenter
+                                                 alignment: CCTextAlignmentLeft
                                                   fontName: @"Varela Round"
                                                   fontSize: fontsize];
-    label.anchorPoint = CGPointMake(0.5f, 0.0f);
-    label.position = CGPointMake(size.width * 0.5f + (selected ? 2.0f : 0.0f),
+    label.anchorPoint = CGPointMake(0.0f, 0.0f);
+    label.position = CGPointMake(20 + (selected ? 2.0f : 0.0f),
                                  (selected ? -2.0f : 0.0f));
     label.color = color;
     [label visit];

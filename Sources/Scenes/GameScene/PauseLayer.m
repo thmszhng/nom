@@ -27,22 +27,22 @@
         
         //Menu items
         CCMenuItem *resumeButton =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"Resume", CGSizeMake(240, 100),
-                                                             50, NO, ccc3(128, 128, 128))
-                                selectedSprite: createButton(@"Resume", CGSizeMake(240, 100),
-                                                             50, YES, ccc3(128, 128, 128))
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"resume", CGSizeMake(320, 60),
+                                                             45, NO, ccc3(64, 64, 64))
+                                selectedSprite: createButton(@"resume", CGSizeMake(320, 60),
+                                                             45, YES, ccc3(64, 64, 64))
                                         target: self
                                       selector: @selector(resumeGame)];
-        [resumeButton setPosition: ccp(screenSize.width/2, 180)];
+        [resumeButton setPosition: ccp(screenSize.width/2, 200)];
         
         CCMenuItem *mainMenuButton =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"Main Menu", CGSizeMake(240, 50),
-                                                             40, NO, ccc3(128, 128, 128))
-                                selectedSprite: createButton(@"Main Menu", CGSizeMake(240, 50),
-                                                             40, YES, ccc3(128, 128, 128))
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"main menu", CGSizeMake(320, 60),
+                                                             45, NO, ccc3(64, 64, 64))
+                                selectedSprite: createButton(@"main menu", CGSizeMake(320, 60),
+                                                             45, YES, ccc3(64, 64, 64))
                                         target: self
                                       selector: @selector(goToMainMenu)];
-        [mainMenuButton setPosition: ccp(screenSize.width/2, 75)];
+        [mainMenuButton setPosition: ccp(screenSize.width/2, 100)];
        
         pauseMenu = [CCMenu menuWithItems: resumeButton, mainMenuButton, nil];
         [pauseMenu setPosition: CGPointZero];
