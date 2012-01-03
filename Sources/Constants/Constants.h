@@ -17,15 +17,12 @@ typedef enum
     kGameScene,
 } SceneTypes;
 
-
 typedef enum
 {
     kAnimationLayer = 200,
     kMainMenuLayer,
     kHelpLayer,
 } MainMenuSceneLayers;
-
-
 
 typedef enum
 {

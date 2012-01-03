@@ -10,6 +10,8 @@
 		2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */; };
 		2E690C521411530A0042214C /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E690C51141153070042214C /* Level.m */; };
 		2E9BFD7B14190BCD0087775D /* GardenMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BFD7A14190BCD0087775D /* GardenMode.m */; };
+		2EB32B9814B3CAAD00B8A84D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB32B9614B3CAAD00B8A84D /* Default.png */; };
+		2EB32B9914B3CAAD00B8A84D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB32B9714B3CAAD00B8A84D /* Default@2x.png */; };
 		2EC38FB213FB5A2F003D3AF3 /* OptionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */; };
 		2EC4EC55141E6F7F00473FBA /* SlaveFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4EC54141E6F7F00473FBA /* SlaveFood.m */; };
 		2EC9F0F41404607A002629BA /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC9F0F314046079002629BA /* HelpLayer.m */; };
@@ -30,8 +32,6 @@
 		5F13D6AA144256FA00F0B9B4 /* spritesheet-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D6A6144256FA00F0B9B4 /* spritesheet-2.plist */; };
 		5F13D6AB144256FA00F0B9B4 /* spritesheet-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D6A7144256FA00F0B9B4 /* spritesheet-2.png */; };
 		5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F0E813FA0E1A00A3EA80 /* Game.m */; };
-		5F1B0783143BB92C00CAD984 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0721143BB92C00CAD984 /* Default.png */; };
-		5F1B0784143BB92C00CAD984 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0722143BB92C00CAD984 /* Default@2x.png */; };
 		5F1B0789143BB92C00CAD984 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0727143BB92C00CAD984 /* fps_images.png */; };
 		5F1B07A0143BB92C00CAD984 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B073E143BB92C00CAD984 /* Icon-72.png */; };
 		5F1B07A1143BB92C00CAD984 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B073F143BB92C00CAD984 /* Icon-Small-50.png */; };
@@ -191,6 +191,8 @@
 		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		2E9BFD7914190BCD0087775D /* GardenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GardenMode.h; sourceTree = "<group>"; };
 		2E9BFD7A14190BCD0087775D /* GardenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GardenMode.m; sourceTree = "<group>"; };
+		2EB32B9614B3CAAD00B8A84D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2EB32B9714B3CAAD00B8A84D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
 		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
 		2EC4EC53141E6F7F00473FBA /* SlaveFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlaveFood.h; sourceTree = "<group>"; };
@@ -226,8 +228,6 @@
 		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		5F16F26713FA15AD00A3EA80 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
-		5F1B0721143BB92C00CAD984 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		5F1B0722143BB92C00CAD984 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5F1B0727143BB92C00CAD984 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		5F1B073E143BB92C00CAD984 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		5F1B073F143BB92C00CAD984 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -572,14 +572,14 @@
 		5F1B0718143BB92C00CAD984 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2EB32B9614B3CAAD00B8A84D /* Default.png */,
+				2EB32B9714B3CAAD00B8A84D /* Default@2x.png */,
 				5F13D6A4144256FA00F0B9B4 /* spritesheet-1.plist */,
 				5F13D6A5144256FA00F0B9B4 /* spritesheet-1.png */,
 				5F13D6A6144256FA00F0B9B4 /* spritesheet-2.plist */,
 				5F13D6A7144256FA00F0B9B4 /* spritesheet-2.png */,
 				5F13D69D14424E7600F0B9B4 /* spritesheet.plist */,
 				5F13D69E14424E7600F0B9B4 /* spritesheet.png */,
-				5F1B0721143BB92C00CAD984 /* Default.png */,
-				5F1B0722143BB92C00CAD984 /* Default@2x.png */,
 				5F1B0727143BB92C00CAD984 /* fps_images.png */,
 				5F1B073E143BB92C00CAD984 /* Icon-72.png */,
 				5F1B073F143BB92C00CAD984 /* Icon-Small-50.png */,
@@ -1151,8 +1151,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F1B0783143BB92C00CAD984 /* Default.png in Resources */,
-				5F1B0784143BB92C00CAD984 /* Default@2x.png in Resources */,
 				5F1B0789143BB92C00CAD984 /* fps_images.png in Resources */,
 				5F1B07A0143BB92C00CAD984 /* Icon-72.png in Resources */,
 				5F1B07A1143BB92C00CAD984 /* Icon-Small-50.png in Resources */,
@@ -1179,6 +1177,8 @@
 				5F13D6A9144256FA00F0B9B4 /* spritesheet-1.png in Resources */,
 				5F13D6AA144256FA00F0B9B4 /* spritesheet-2.plist in Resources */,
 				5F13D6AB144256FA00F0B9B4 /* spritesheet-2.png in Resources */,
+				2EB32B9814B3CAAD00B8A84D /* Default.png in Resources */,
+				2EB32B9914B3CAAD00B8A84D /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

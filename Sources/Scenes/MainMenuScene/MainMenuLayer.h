@@ -10,23 +10,23 @@
 #import "Constants.h"
 #import "GameManager.h"
 #import "HelpLayer.h"
-#import <GameKit/GameKit.h>
 
-@interface MainMenuLayer : CCLayer<GKLeaderboardViewControllerDelegate>
+@interface MainMenuLayer : CCLayer
 {
     BOOL isHelpShowing;
     
     CCMenu *mainMenu;
     CCMenuItem *SoundON;
     CCMenuItem *SoundOFF;
-    UIViewController *vc;
 }
 
 -(id) init;
--(void) playGame;
--(void) openOptions;
--(void) openGameCenter;
+
+-(void) playRegular;
+-(void) playClassic;
+-(void) playBurst;
 -(void) showHelp;
+
 -(void) onEnter;
 -(void) onExit;
 -(void) toggleSound: (id) sender;

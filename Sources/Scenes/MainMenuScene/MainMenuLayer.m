@@ -8,9 +8,7 @@
 
 #import "MainMenuLayer.h"
 
-#import <GameKit/GameKit.h>
 #import "GameManager.h"
-#import "GameCenter.h"
 #import "SpriteLoader.h"
 #import "Render.h"
 
@@ -34,32 +32,37 @@
         [bg setPosition: ccp(screenSize.width/2, screenSize.height/2)];
         [self addChild: bg];
         
-        //Menu items
-        CCMenuItem *playButton =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"Play", CGSizeMake(220, 106), 90,
+        //Play Regular Mode Button
+        CCMenuItem *playRegular =
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"regular mode", CGSizeMake(220, 106), 90,
                                                              NO, ccBLACK)
-                                selectedSprite: createButton(@"Play", CGSizeMake(220, 106), 90,
+                                selectedSprite: createButton(@"regular mode", CGSizeMake(220, 106), 90,
                                                              YES, ccBLACK)
                                         target: self 
-                                      selector: @selector(playGame)];
-        [playButton setPosition: ccp(screenSize.width/2, screenSize.height - 273)];
+                                      selector: @selector(playRegular)];
+        [playRegular setPosition: ccp(screenSize.width/2, screenSize.height - 273)];
         
-        CCMenuItem *optionsButton =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"with options", CGSizeMake(220, 50),
+        //Play Classic Mode Button
+        CCMenuItem *playClassic =
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"classic mode", CGSizeMake(220, 50),
                                                              35, NO, ccc3(61, 187, 56))
-                                selectedSprite: createButton(@"with options", CGSizeMake(220, 50),
+                                selectedSprite: createButton(@"classic mode", CGSizeMake(220, 50),
                                                              35, YES, ccc3(61, 187, 56))    
                                         target: self 
-                                      selector: @selector(openOptions)];
-        [optionsButton setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
+                                      selector: @selector(playClassic)];
+        [playClassic setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
         
-        CCMenuItemImage *gameCenterButton = [CCMenuItemSprite
-                                             itemFromNormalSprite: loadSprite(@"Gamecenter.png")
-                                             selectedSprite: loadSprite(@"Gamecenter-selected.png")
-                                             target: self
-                                             selector: @selector(openGameCenter)];
-        [gameCenterButton setPosition: ccp(89, screenSize.height - 183)];
+        //Play Burst Mode Button
+        CCMenuItem *playBurst =
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"burst mode", CGSizeMake(220, 50),
+                                                             35, NO, ccc3(61, 187, 56))
+                                selectedSprite: createButton(@"burst mode", CGSizeMake(220, 50),
+                                                             35, YES, ccc3(61, 187, 56))    
+                                        target: self 
+                                      selector: @selector(playBurst)];
+        [playBurst setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
         
+        //Show Help Button
         CCMenuItemImage *helpButton = [CCMenuItemSprite
                                        itemFromNormalSprite: loadSprite(@"Help.png")
                                        selectedSprite: loadSprite(@"Help-selected.png")
@@ -67,6 +70,7 @@
                                        selector: @selector(showHelp)];
         [helpButton setPosition: ccp(157, screenSize.height - 183)];
         
+        //Toggle Sound Button
         SoundON = [CCMenuItemImage itemFromNormalSprite: loadSprite(@"SoundON.png")
                                          selectedSprite: loadSprite(@"SoundON-selected.png")
                                                  target: nil
@@ -82,8 +86,9 @@
                                 selector: @selector(toggleSound:)
                                    items: SoundON, SoundOFF, nil];
         [toggleSoundButton setPosition: ccp(229, screenSize.height - 183)];
-
-        mainMenu = [CCMenu menuWithItems: playButton, optionsButton, gameCenterButton, helpButton, toggleSoundButton, nil];
+        
+        //Main Menu Button Collection
+        mainMenu = [CCMenu menuWithItems: playRegular, playClassic, playBurst, helpButton, toggleSoundButton, nil];
         [mainMenu setPosition: CGPointZero];
         if (![GameManager sharedGameManager].isMusicON) [toggleSoundButton setSelectedIndex: 1];
         [self addChild: mainMenu];
@@ -101,39 +106,19 @@
     return self;
 }
 
--(void) playGame
+-(void) playRegular
 {
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
--(void) openOptions
+-(void) playClassic
 {
-    [[GameManager sharedGameManager] runSceneWithID: kOptionsScene];
+    [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
--(void) openGameCenter
+-(void) playBurst
 {
-    if (!isGameCenterAPIAvailable())
-    {
-        NSLog(@"No Game Center!");
-        return;
-    }
-    // TODO: create a game center scene
-    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
-    if (leaderboardController != nil)
-    {
-        leaderboardController.leaderboardDelegate = self;
-        vc = [[UIViewController alloc] init];
-        [[[CCDirector sharedDirector] openGLView] addSubview: vc.view];
-        [vc presentModalViewController: leaderboardController animated: YES];
-    }
-}
-
--(void) leaderboardViewControllerDidFinish: (GKLeaderboardViewController *) viewController {
-    [vc dismissModalViewControllerAnimated: YES];
-    [vc.view removeFromSuperview];
-    [viewController autorelease];
-    [vc autorelease];
+    [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
 -(void) showHelp
