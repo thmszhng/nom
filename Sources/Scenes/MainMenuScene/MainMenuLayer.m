@@ -34,33 +34,33 @@
         
         //Play Regular Mode Button
         CCMenuItem *playRegular =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"regular mode", CGSizeMake(220, 106), 90,
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"regular mode", CGSizeMake(320, 60), 45,
                                                              NO, ccBLACK)
-                                selectedSprite: createButton(@"regular mode", CGSizeMake(220, 106), 90,
+                                selectedSprite: createButton(@"regular mode", CGSizeMake(320, 60), 45,
                                                              YES, ccBLACK)
                                         target: self 
                                       selector: @selector(playRegular)];
-        [playRegular setPosition: ccp(screenSize.width/2, screenSize.height - 273)];
+        [playRegular setPosition: ccp(160, 260)];
         
         //Play Classic Mode Button
         CCMenuItem *playClassic =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"classic mode", CGSizeMake(220, 50),
-                                                             35, NO, ccc3(61, 187, 56))
-                                selectedSprite: createButton(@"classic mode", CGSizeMake(220, 50),
-                                                             35, YES, ccc3(61, 187, 56))    
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"classic mode", CGSizeMake(320, 60), 45,
+                                                             NO, ccc3(61, 187, 56))
+                                selectedSprite: createButton(@"classic mode", CGSizeMake(320, 60), 45,
+                                                             YES, ccc3(61, 187, 56))    
                                         target: self 
                                       selector: @selector(playClassic)];
-        [playClassic setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
+        [playClassic setPosition: ccp(160, 190)];
         
         //Play Burst Mode Button
         CCMenuItem *playBurst =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"burst mode", CGSizeMake(220, 50),
-                                                             35, NO, ccc3(61, 187, 56))
-                                selectedSprite: createButton(@"burst mode", CGSizeMake(220, 50),
-                                                             35, YES, ccc3(61, 187, 56))    
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"burst mode", CGSizeMake(320, 60), 45,
+                                                             NO, ccc3(61, 187, 56))
+                                selectedSprite: createButton(@"burst mode", CGSizeMake(320, 60), 45,
+                                                             YES, ccc3(61, 187, 56))    
                                         target: self 
                                       selector: @selector(playBurst)];
-        [playBurst setPosition: ccp(screenSize.width/2, screenSize.height - 371)];
+        [playBurst setPosition: ccp(160, 120)];
         
         //Show Help Button
         CCMenuItemImage *helpButton = [CCMenuItemSprite
@@ -68,7 +68,7 @@
                                        selectedSprite: loadSprite(@"Help-selected.png")
                                        target: self 
                                        selector: @selector(showHelp)];
-        [helpButton setPosition: ccp(157, screenSize.height - 183)];
+        [helpButton setPosition: ccp(160, 50)];
         
         //Toggle Sound Button
         SoundON = [CCMenuItemImage itemFromNormalSprite: loadSprite(@"SoundON.png")
