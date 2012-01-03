@@ -63,11 +63,13 @@
         [playBurst setPosition: ccp(160, 120)];
         
         //Show Help Button
-        CCMenuItemImage *helpButton = [CCMenuItemSprite
-                                       itemFromNormalSprite: loadSprite(@"Help.png")
-                                       selectedSprite: loadSprite(@"Help-selected.png")
-                                       target: self 
-                                       selector: @selector(showHelp)];
+        CCMenuItemImage *helpButton = 
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"help", CGSizeMake(320, 60), 45,
+                                                             NO, ccc3(61, 187, 56))
+                                selectedSprite: createButton(@"help", CGSizeMake(320, 60), 45,
+                                                             YES, ccc3(61, 187, 56))    
+                                        target: self 
+                                      selector: @selector(showHelp)];
         [helpButton setPosition: ccp(160, 50)];
         
         //Toggle Sound Button
