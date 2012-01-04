@@ -37,6 +37,7 @@
 
 -(void) transitioningOut
 {
+    [CCDirector sharedDirector].animationInterval = 1.f/60.f;
     [animationLayer unscheduleUpdate];
 }
 

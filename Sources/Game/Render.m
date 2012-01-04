@@ -131,7 +131,7 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
     }
     else
     {
-        [texture beginWithClear:1.f g:1.f b:1.f a:0.7f];
+        [texture beginWithClear:1.f g:1.f b:1.f a:0.f];
     }
     CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
                                                 dimensions: size
