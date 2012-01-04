@@ -125,75 +125,14 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
                                 initWithWidth: size.width
                                 height: size.height
                                 pixelFormat: kTexture2DPixelFormat_RGBA8888];
-    [texture begin];
-    glPushMatrix();
-    if (haveRetina)
+    if (selected)
     {
-        glScalef(2.0f, 2.0f, 1.0f);
+        [texture beginWithClear:0.64f g:1.f b:0.63f a:0.7f];
     }
-    const GLubyte colors[2][2][16] = {
-        // unselected
-        {
-            // lower
-            {
-                255, 255, 255, 255,
-                255, 255, 255, 255,
-                217, 217, 217, 255,
-                217, 217, 217, 255
-            },
-            // upper
-            {
-                230, 230, 230, 255,
-                230, 230, 230, 255,
-                255, 255, 255, 255,
-                255, 255, 255, 255
-            }
-        },
-        // selected
-        {
-            // lower
-            {
-                195, 195, 195, 255,
-                195, 195, 195, 255,
-                197, 197, 197, 255,
-                197, 197, 197, 255
-            },
-            // upper
-            {
-                215, 215, 215, 255,
-                215, 215, 215, 255,
-                204, 204, 204, 255,
-                204, 204, 204, 255
-            }
-        }
-    };
-    glDisable(GL_TEXTURE_2D);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    else
     {
-        GLfloat vertices[8] = {
-            0, 0,
-            size.width, 0,
-            size.width, size.height * 0.5f,
-            0, size.height * 0.5f
-        };
-        glColorPointer(4, GL_UNSIGNED_BYTE, 0, colors[selected][0]);
-        glVertexPointer(2, GL_FLOAT, 0, vertices);
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+        [texture beginWithClear:1.f g:1.f b:1.f a:0.7f];
     }
-    {
-        GLfloat vertices[8] = {
-            0, size.height * 0.5f,
-            size.width, size.height * 0.5f,
-            size.width, size.height,
-            0, size.height
-        };
-        glColorPointer(4, GL_UNSIGNED_BYTE, 0, colors[selected][1]);
-        glVertexPointer(2, GL_FLOAT, 0, vertices);
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-    }
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-    glEnable(GL_TEXTURE_2D);
-    glPopMatrix();
     CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
                                                 dimensions: size
                                                  alignment: CCTextAlignmentLeft
