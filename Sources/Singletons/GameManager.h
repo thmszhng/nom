@@ -23,15 +23,11 @@
 {
     NSMutableDictionary *settings;
     
-    BOOL isSoundEffectsON;
     SceneTypes currentScene;
     
     NSMutableArray *levels;
-    NSThread *soundThread;
 }
 
-@property (readwrite) BOOL isMusicON;
-@property (readwrite) BOOL isSoundEffectsON; 
 @property (readonly, retain) NSMutableArray *levels;
 @property (readonly) Level *level;
 @property (readwrite) int levelIndex;
@@ -40,8 +36,6 @@
 -(void) runSceneWithID: (SceneTypes) sceneID;
 -(void) slowFPS;
 -(void) loadLevels;
-
--(void) playMusic;
 
 -(NSString *) getString: (NSString *) value;
 -(NSString *) getString: (NSString *) value withDefault: (NSString *) def;

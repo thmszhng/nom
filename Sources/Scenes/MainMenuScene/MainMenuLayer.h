@@ -13,8 +13,6 @@
 @interface MainMenuLayer : CCLayer
 {    
     CCMenu *mainMenu;
-    CCMenuItem *SoundON;
-    CCMenuItem *SoundOFF;
 }
 
 -(id) init;
@@ -24,5 +22,4 @@
 -(void) playBurst;
 -(void) startGame;
 
--(void) toggleSound: (id) sender;
 @end

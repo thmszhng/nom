@@ -59,28 +59,10 @@
                                         target: self 
                                       selector: @selector(playBurst)];
         [playBurst setPosition: ccp(160, 50)];
-                
-        //Toggle Sound Button
-        SoundON = [CCMenuItemImage itemFromNormalSprite: loadSprite(@"SoundON.png")
-                                         selectedSprite: loadSprite(@"SoundON-selected.png")
-                                                 target: nil
-                                               selector: nil];
-        
-        SoundOFF = [CCMenuItemImage itemFromNormalSprite: loadSprite(@"SoundOFF.png")
-                                          selectedSprite: loadSprite(@"SoundOFF-selected.png")
-                                                  target: nil
-                                                selector: nil];
-        
-        CCMenuItemToggle *toggleSoundButton =
-        [CCMenuItemToggle itemWithTarget: self 
-                                selector: @selector(toggleSound:)
-                                   items: SoundON, SoundOFF, nil];
-        [toggleSoundButton setPosition: ccp(229, screenSize.height - 183)];
-        
+
         //Main Menu Button Collection
-        mainMenu = [CCMenu menuWithItems: playRegular, playClassic, playBurst, toggleSoundButton, nil];
+        mainMenu = [CCMenu menuWithItems: playRegular, playClassic, playBurst, nil];
         [mainMenu setPosition: CGPointZero];
-        if (![GameManager sharedGameManager].isMusicON) [toggleSoundButton setSelectedIndex: 1];
         [self addChild: mainMenu];
         
         static BOOL firstTime = YES;
@@ -119,21 +101,4 @@
     [[GameManager sharedGameManager] runSceneWithID: kGameScene];
 }
 
--(void) toggleSound: (id) sender
-{
-    CCMenuItemToggle *toggleItem = (CCMenuItemToggle *)sender;
-    
-    if (toggleItem.selectedItem == SoundON) 
-    {
-        [GameManager sharedGameManager].isMusicON = YES;
-        [[GameManager sharedGameManager] setValue: @"isMusicON" newInt: 1];
-    } 
-    
-    else if (toggleItem.selectedItem == SoundOFF) 
-    {
-        [GameManager sharedGameManager].isMusicON = NO;    
-        [[GameManager sharedGameManager] setValue: @"isMusicON" newInt: 0];
-    }
-    
-}
 @end

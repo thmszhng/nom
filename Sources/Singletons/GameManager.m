@@ -20,7 +20,6 @@
 @implementation GameManager
 static GameManager *_sharedGameManager = nil;
 
-@synthesize isSoundEffectsON;
 @synthesize levels;
 
 +(GameManager *) sharedGameManager
@@ -58,61 +57,13 @@ static GameManager *_sharedGameManager = nil;
         }*/
         
         //Initialize GameManager
-        isSoundEffectsON = YES;
         currentScene = kNoSceneUninitialized;
-        soundThread = [[NSThread alloc] initWithTarget: self
-                                              selector: @selector(playMusic)
-                                                object: nil];
-        [soundThread start];
 
         //Load levels
         [self loadLevels];
     }
     
     return self;
-}
-
--(void) playMusic
-{
-    NSAutoreleasePool *outerPool = [[NSAutoreleasePool alloc] init];
-    CDSoundEngine *engine = [[CDSoundEngine alloc] init];
-    [engine loadBuffer: 0 filePath: @"intro.aac"];
-    [engine loadBuffer: 1 filePath: @"loop.aac"];
-    for (NSAutoreleasePool *pool;
-         (pool = [[NSAutoreleasePool alloc] init]);
-         [engine stopAllSounds], [pool drain])
-    {
-        while (true)
-        {
-            if (self.isMusicON) break;
-            [NSThread sleepForTimeInterval: 0.1];
-        }
-        CDSoundSource *intro = [engine soundSourceForSound: 0 sourceGroupId: 0];
-        float length = [intro durationInSeconds];
-        length -= 0.06; // slight fudging
-        NSDate *endTime = [NSDate alloc];
-        [engine playSound: 0 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: NO];
-        endTime = [endTime initWithTimeIntervalSinceNow: length];
-        while (true)
-        {
-            NSDate *currentTime = currentTime = [[NSDate alloc] initWithTimeIntervalSinceNow: 0.3];
-            BOOL done = [currentTime compare: endTime] == NSOrderedDescending;
-            [currentTime release];
-            if (done || !self.isMusicON) break;
-            [NSThread sleepForTimeInterval: 0.1];
-        }
-        if (!self.isMusicON) continue;
-        [NSThread sleepUntilDate: endTime];
-        [engine playSound: 1 sourceGroupId: 0 pitch: 1.f pan: 0.f gain: 1.f loop: YES];
-        [endTime release];
-        while (true)
-        {
-            if (!self.isMusicON) break;
-            [NSThread sleepForTimeInterval: 0.1];
-        }
-    }
-    [engine release];
-    [outerPool drain];
 }
 
 -(void) runSceneWithID: (SceneTypes) sceneID
