@@ -20,20 +20,20 @@
             <key>HelpLayer.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{640,0},{588,910}}</string>
+                <string>{{640,0},{640,960}}</string>
                 <key>offset</key>
-                <string>{0,25}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{26,0},{588,910}}</string>
+                <string>{{0,0},{640,960}}</string>
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
             <key>OptionsBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1228,0},{640,960}}</string>
+                <string>{{1280,0},{640,960}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -66,7 +66,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7233b4ab599a5bdeeaa9fd62522cfa20$</string>
+            <string>$TexturePacker:SmartUpdate:ba1b4705ffbdf107d84560b8dc2e8c0d$</string>
             <key>textureFileName</key>
             <string>spritesheet-2.png</string>
         </dict>
