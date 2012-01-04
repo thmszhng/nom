@@ -19,8 +19,7 @@ CCSprite *loadSprite(NSString *name)
         // Cache sprites
         if (haveRetina)
         {
-            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"spritesheet-1.plist"];
-            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"spritesheet-2.plist"];
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"spritesheet-hd.plist"];
         }
         else
         {
