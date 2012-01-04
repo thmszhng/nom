@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */; };
 		2E690C521411530A0042214C /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E690C51141153070042214C /* Level.m */; };
 		2E9BFD7B14190BCD0087775D /* GardenMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BFD7A14190BCD0087775D /* GardenMode.m */; };
 		2EB32B9814B3CAAD00B8A84D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB32B9614B3CAAD00B8A84D /* Default.png */; };
 		2EB32B9914B3CAAD00B8A84D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB32B9714B3CAAD00B8A84D /* Default@2x.png */; };
-		2EC38FB213FB5A2F003D3AF3 /* OptionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */; };
 		2EC4EC55141E6F7F00473FBA /* SlaveFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4EC54141E6F7F00473FBA /* SlaveFood.m */; };
-		2EC9F0F41404607A002629BA /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC9F0F314046079002629BA /* HelpLayer.m */; };
 		543A1831143FD441005F51A4 /* QuestFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A1830143FD441005F51A4 /* QuestFood.m */; };
 		54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CF2CCD1409B1340004E671 /* ShieldFood.m */; };
 		54D7A98314154CD5004E8197 /* FeastMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7A98014154CD5004E8197 /* FeastMode.m */; };
@@ -187,20 +184,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsBackgroundLayer.h; sourceTree = "<group>"; };
-		2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsBackgroundLayer.m; sourceTree = "<group>"; };
 		2E690C50141153050042214C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		2E690C51141153070042214C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		2E9BFD7914190BCD0087775D /* GardenMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GardenMode.h; sourceTree = "<group>"; };
 		2E9BFD7A14190BCD0087775D /* GardenMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GardenMode.m; sourceTree = "<group>"; };
 		2EB32B9614B3CAAD00B8A84D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2EB32B9714B3CAAD00B8A84D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsScene.h; sourceTree = "<group>"; };
-		2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsScene.m; sourceTree = "<group>"; };
 		2EC4EC53141E6F7F00473FBA /* SlaveFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlaveFood.h; sourceTree = "<group>"; };
 		2EC4EC54141E6F7F00473FBA /* SlaveFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlaveFood.m; sourceTree = "<group>"; };
-		2EC9F0F214046079002629BA /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpLayer.h; sourceTree = "<group>"; };
-		2EC9F0F314046079002629BA /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
 		543A182F143FD441005F51A4 /* QuestFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestFood.h; sourceTree = "<group>"; };
 		543A1830143FD441005F51A4 /* QuestFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestFood.m; sourceTree = "<group>"; };
 		54CF2CC91409B1070004E671 /* ShieldFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldFood.h; sourceTree = "<group>"; };
@@ -543,17 +534,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E455E4A13FB570F00A7CD27 /* OptionsScene */ = {
-			isa = PBXGroup;
-			children = (
-				2EC38FB013FB5A2F003D3AF3 /* OptionsScene.h */,
-				2EC38FB113FB5A2F003D3AF3 /* OptionsScene.m */,
-				2E4FF1DE1405F83B00CD0901 /* OptionsBackgroundLayer.h */,
-				2E4FF1DF1405F83B00CD0901 /* OptionsBackgroundLayer.m */,
-			);
-			path = OptionsScene;
-			sourceTree = "<group>";
-		};
 		5F0500E513FF70BE00C7385B /* GameModes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1050,7 +1030,6 @@
 			isa = PBXGroup;
 			children = (
 				66EE3B7213E05E540040ED20 /* MainMenuScene */,
-				2E455E4A13FB570F00A7CD27 /* OptionsScene */,
 				66EE3B7513E05E710040ED20 /* GameScene */,
 			);
 			path = Scenes;
@@ -1065,8 +1044,6 @@
 				5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */,
 				66EE3B7B13E05F0B0040ED20 /* MainMenuLayer.h */,
 				66EE3B7C13E05F0B0040ED20 /* MainMenuLayer.m */,
-				2EC9F0F214046079002629BA /* HelpLayer.h */,
-				2EC9F0F314046079002629BA /* HelpLayer.m */,
 			);
 			path = MainMenuScene;
 			sourceTree = "<group>";
@@ -1208,16 +1185,13 @@
 				5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */,
 				5FC41C2613EE144E00EBDC13 /* PauseLayer.m in Sources */,
 				5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */,
-				2EC38FB213FB5A2F003D3AF3 /* OptionsScene.m in Sources */,
 				5F26B5AC13FB7705008B0024 /* RegularFood.m in Sources */,
 				5F26B5B013FB88E2008B0024 /* Food.m in Sources */,
 				5F0500E913FF711C00C7385B /* ClassicMode.m in Sources */,
 				5F0500F413FF776100C7385B /* TimeBonusFood.m in Sources */,
 				5F05010213FF7A7D00C7385B /* RegularMode.m in Sources */,
 				5F05015714036AB100C7385B /* GameOverLayer.m in Sources */,
-				2EC9F0F41404607A002629BA /* HelpLayer.m in Sources */,
 				5F29C9E614047E280091D12D /* Transitions.m in Sources */,
-				2E4FF1E01405F83B00CD0901 /* OptionsBackgroundLayer.m in Sources */,
 				5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */,
 				5FDD89041407F23800BAEB43 /* FoodRandomizer.m in Sources */,
 				54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */,

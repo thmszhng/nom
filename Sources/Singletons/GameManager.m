@@ -11,7 +11,6 @@
 #import "Level.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
-#import "OptionsScene.h"
 
 #import "Constants.h"
 
@@ -129,11 +128,7 @@ static GameManager *_sharedGameManager = nil;
         case kGameScene:
             sceneToRun = [GameScene node];
             break;
-            
-        case kOptionsScene:
-            sceneToRun = [OptionsScene node];
-            break;
-            
+                        
         default:
             return;
             break;

@@ -12,7 +12,6 @@
 typedef enum 
 { 
     kNoSceneUninitialized = 0, 
-    kOptionsScene,
     kMainMenuScene,
     kGameScene,
 } SceneTypes;
@@ -23,11 +22,6 @@ typedef enum
     kMainMenuLayer,
     kHelpLayer,
 } MainMenuSceneLayers;
-
-typedef enum
-{
-    kOptionsBackgroundLayer = 300,
-} OptionsSceneLayers;
 
 typedef enum
 {
