@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>GameOverBackground-hd.png</key>
+            <key>GameOverBackground.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,0},{640,960}}</string>
@@ -17,7 +17,7 @@
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
-            <key>HelpLayer-hd.png</key>
+            <key>HelpLayer.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,0},{588,910}}</string>
@@ -30,7 +30,7 @@
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
-            <key>OptionsBackground-hd.png</key>
+            <key>OptionsBackground.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1228,0},{640,960}}</string>
@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
-            <key>PauseMenuBackground-hd.png</key>
+            <key>PauseMenuBackground.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,960},{640,960}}</string>

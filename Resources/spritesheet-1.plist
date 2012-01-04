@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>120Shadow-hd.png</key>
+            <key>120Shadow.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,0},{270,270}}</string>
@@ -13,7 +13,7 @@
                 <key>sourceSize</key>
                 <string>{270,270}</string>
             </dict>
-            <key>BurstMode-hd.png</key>
+            <key>BurstMode.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{270,0},{240,240}}</string>
@@ -22,7 +22,7 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>ClassicMode-hd.png</key>
+            <key>ClassicMode.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{510,0},{240,240}}</string>
@@ -31,7 +31,7 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>Control-hd.png</key>
+            <key>Control.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{750,0},{252,252}}</string>
@@ -40,7 +40,7 @@
                 <key>sourceSize</key>
                 <string>{252,252}</string>
             </dict>
-            <key>FeastMode-hd.png</key>
+            <key>FeastMode.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1002,0},{240,240}}</string>
@@ -49,7 +49,7 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>Frame-hd.png</key>
+            <key>Frame.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1242,0},{640,960}}</string>
@@ -58,7 +58,7 @@
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
-            <key>GameBackground-hd.png</key>
+            <key>GameBackground.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,960},{640,960}}</string>
@@ -67,7 +67,7 @@
                 <key>sourceSize</key>
                 <string>{640,960}</string>
             </dict>
-            <key>Gamecenter-hd.png</key>
+            <key>Gamecenter.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{640,960},{92,88}}</string>
@@ -76,7 +76,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>Gamecenter-selected-hd.png</key>
+            <key>Gamecenter-selected.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{732,960},{92,88}}</string>
@@ -85,7 +85,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>GardenMode-hd.png</key>
+            <key>GardenMode.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{824,960},{240,240}}</string>
@@ -94,7 +94,7 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>Help-hd.png</key>
+            <key>Help.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1064,960},{92,88}}</string>
@@ -103,7 +103,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>Help-selected-hd.png</key>
+            <key>Help-selected.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1156,960},{92,88}}</string>
@@ -112,7 +112,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>QuestMode-hd.png</key>
+            <key>QuestMode.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1248,960},{240,240}}</string>
@@ -121,7 +121,7 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>RegularMode-hd.png</key>
+            <key>RegularMode.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1488,960},{240,240}}</string>
@@ -130,7 +130,7 @@
                 <key>sourceSize</key>
                 <string>{240,240}</string>
             </dict>
-            <key>SoundOFF-hd.png</key>
+            <key>SoundOFF.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1728,960},{92,88}}</string>
@@ -139,7 +139,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>SoundOFF-selected-hd.png</key>
+            <key>SoundOFF-selected.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1820,960},{92,88}}</string>
@@ -148,7 +148,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>SoundON-hd.png</key>
+            <key>SoundON.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1912,960},{92,88}}</string>
@@ -157,7 +157,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>SoundON-selected-hd.png</key>
+            <key>SoundON-selected.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{0,1920},{92,88}}</string>
@@ -166,7 +166,7 @@
                 <key>sourceSize</key>
                 <string>{92,88}</string>
             </dict>
-            <key>emblems-hd.png</key>
+            <key>emblems.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{92,1920},{96,28}}</string>
