@@ -24,10 +24,6 @@
 		5F05015714036AB100C7385B /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F05015614036AAF00C7385B /* GameOverLayer.m */; };
 		5F13D6A114424E7600F0B9B4 /* spritesheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D69D14424E7600F0B9B4 /* spritesheet.plist */; };
 		5F13D6A214424E7600F0B9B4 /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D69E14424E7600F0B9B4 /* spritesheet.png */; };
-		5F13D6A8144256FA00F0B9B4 /* spritesheet-1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D6A4144256FA00F0B9B4 /* spritesheet-1.plist */; };
-		5F13D6A9144256FA00F0B9B4 /* spritesheet-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D6A5144256FA00F0B9B4 /* spritesheet-1.png */; };
-		5F13D6AA144256FA00F0B9B4 /* spritesheet-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D6A6144256FA00F0B9B4 /* spritesheet-2.plist */; };
-		5F13D6AB144256FA00F0B9B4 /* spritesheet-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F13D6A7144256FA00F0B9B4 /* spritesheet-2.png */; };
 		5F16F0E913FA0E1A00A3EA80 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16F0E813FA0E1A00A3EA80 /* Game.m */; };
 		5F1B0789143BB92C00CAD984 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B0727143BB92C00CAD984 /* fps_images.png */; };
 		5F1B07A0143BB92C00CAD984 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B073E143BB92C00CAD984 /* Icon-72.png */; };
@@ -160,6 +156,8 @@
 		5F896078144137A5004499C2 /* Varela Round-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F896076144137A4004499C2 /* Varela Round-hd.png */; };
 		5F93852314B3D9AF00E43924 /* emblems-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F93852114B3D9AE00E43924 /* emblems-hd.png */; };
 		5F93852414B3D9AF00E43924 /* emblems.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F93852214B3D9AE00E43924 /* emblems.png */; };
+		5F93853114B3ED7E00E43924 /* spritesheet-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F93852F14B3ED7E00E43924 /* spritesheet-hd.plist */; };
+		5F93853214B3ED7E00E43924 /* spritesheet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F93853014B3ED7E00E43924 /* spritesheet-hd.png */; };
 		5F97213514155BFC009EC8F1 /* GridObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97213414155BFC009EC8F1 /* GridObject.m */; };
 		5F97213A14155D38009EC8F1 /* SnakeTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97213914155D38009EC8F1 /* SnakeTail.m */; };
 		5F97213D1415604C009EC8F1 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97213C14156047009EC8F1 /* Wall.m */; };
@@ -213,10 +211,6 @@
 		5F05015614036AAF00C7385B /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
 		5F13D69D14424E7600F0B9B4 /* spritesheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = spritesheet.plist; sourceTree = "<group>"; };
 		5F13D69E14424E7600F0B9B4 /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritesheet.png; sourceTree = "<group>"; };
-		5F13D6A4144256FA00F0B9B4 /* spritesheet-1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "spritesheet-1.plist"; sourceTree = "<group>"; };
-		5F13D6A5144256FA00F0B9B4 /* spritesheet-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spritesheet-1.png"; sourceTree = "<group>"; };
-		5F13D6A6144256FA00F0B9B4 /* spritesheet-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "spritesheet-2.plist"; sourceTree = "<group>"; };
-		5F13D6A7144256FA00F0B9B4 /* spritesheet-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spritesheet-2.png"; sourceTree = "<group>"; };
 		5F16F0E713FA0D6D00A3EA80 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		5F16F0E813FA0E1A00A3EA80 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		5F16F26713FA15AD00A3EA80 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
@@ -475,6 +469,8 @@
 		5F896076144137A4004499C2 /* Varela Round-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Varela Round-hd.png"; sourceTree = "<group>"; };
 		5F93852114B3D9AE00E43924 /* emblems-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emblems-hd.png"; sourceTree = "<group>"; };
 		5F93852214B3D9AE00E43924 /* emblems.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emblems.png; sourceTree = "<group>"; };
+		5F93852F14B3ED7E00E43924 /* spritesheet-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "spritesheet-hd.plist"; sourceTree = "<group>"; };
+		5F93853014B3ED7E00E43924 /* spritesheet-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spritesheet-hd.png"; sourceTree = "<group>"; };
 		5F97213314155BFC009EC8F1 /* GridObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridObject.h; sourceTree = "<group>"; };
 		5F97213414155BFC009EC8F1 /* GridObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridObject.m; sourceTree = "<group>"; };
 		5F97213814155D37009EC8F1 /* SnakeTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeTail.h; sourceTree = "<group>"; };
@@ -557,10 +553,8 @@
 				5F93852214B3D9AE00E43924 /* emblems.png */,
 				2EB32B9614B3CAAD00B8A84D /* Default.png */,
 				2EB32B9714B3CAAD00B8A84D /* Default@2x.png */,
-				5F13D6A4144256FA00F0B9B4 /* spritesheet-1.plist */,
-				5F13D6A5144256FA00F0B9B4 /* spritesheet-1.png */,
-				5F13D6A6144256FA00F0B9B4 /* spritesheet-2.plist */,
-				5F13D6A7144256FA00F0B9B4 /* spritesheet-2.png */,
+				5F93852F14B3ED7E00E43924 /* spritesheet-hd.plist */,
+				5F93853014B3ED7E00E43924 /* spritesheet-hd.png */,
 				5F13D69D14424E7600F0B9B4 /* spritesheet.plist */,
 				5F13D69E14424E7600F0B9B4 /* spritesheet.png */,
 				5F1B0727143BB92C00CAD984 /* fps_images.png */,
@@ -1151,14 +1145,12 @@
 				5F896078144137A5004499C2 /* Varela Round-hd.png in Resources */,
 				5F13D6A114424E7600F0B9B4 /* spritesheet.plist in Resources */,
 				5F13D6A214424E7600F0B9B4 /* spritesheet.png in Resources */,
-				5F13D6A8144256FA00F0B9B4 /* spritesheet-1.plist in Resources */,
-				5F13D6A9144256FA00F0B9B4 /* spritesheet-1.png in Resources */,
-				5F13D6AA144256FA00F0B9B4 /* spritesheet-2.plist in Resources */,
-				5F13D6AB144256FA00F0B9B4 /* spritesheet-2.png in Resources */,
 				2EB32B9814B3CAAD00B8A84D /* Default.png in Resources */,
 				2EB32B9914B3CAAD00B8A84D /* Default@2x.png in Resources */,
 				5F93852314B3D9AF00E43924 /* emblems-hd.png in Resources */,
 				5F93852414B3D9AF00E43924 /* emblems.png in Resources */,
+				5F93853114B3ED7E00E43924 /* spritesheet-hd.plist in Resources */,
+				5F93853214B3ED7E00E43924 /* spritesheet-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
