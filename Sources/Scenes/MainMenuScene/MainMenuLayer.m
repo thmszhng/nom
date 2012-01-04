@@ -129,10 +129,7 @@
     
     HelpLayer * hl = [[[HelpLayer alloc] init] autorelease];
     [self.parent addChild: hl z: 10 tag: kHelpLayer];
-    CGPoint pos = hl.position;
-    id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
-    pos.y += 480;
-    hl.position = pos;
+    id animation = [CCFadeIn actionWithDuration: 0.5];
     [hl runAction: animation];
     
     [self onExit];

@@ -11,7 +11,7 @@
 #import "SpriteLoader.h"
 
 @implementation HelpLayer
--(id) init
+-(id) initWithColor:(ccColor4B)color
 {
     self = [super init];
     if (self != nil)
@@ -34,11 +34,9 @@
 
 -(void) goAway
 {
-    CGPoint pos = self.position;
-    pos.y += 480;
     [self runAction:
      [CCSequence actions:
-      [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]],
+      [CCFadeOut actionWithDuration: 0.5],
       [CCCallFunc actionWithTarget: self selector: @selector(finishGoingAway)],
       nil]
      ];
