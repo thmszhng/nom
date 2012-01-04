@@ -162,6 +162,8 @@
 		5F89607214413655004499C2 /* Varela Round.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F89607014413655004499C2 /* Varela Round.png */; };
 		5F896077144137A5004499C2 /* Varela Round-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 5F896075144137A4004499C2 /* Varela Round-hd.fnt */; };
 		5F896078144137A5004499C2 /* Varela Round-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F896076144137A4004499C2 /* Varela Round-hd.png */; };
+		5F93852314B3D9AF00E43924 /* emblems-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F93852114B3D9AE00E43924 /* emblems-hd.png */; };
+		5F93852414B3D9AF00E43924 /* emblems.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F93852214B3D9AE00E43924 /* emblems.png */; };
 		5F97213514155BFC009EC8F1 /* GridObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97213414155BFC009EC8F1 /* GridObject.m */; };
 		5F97213A14155D38009EC8F1 /* SnakeTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97213914155D38009EC8F1 /* SnakeTail.m */; };
 		5F97213D1415604C009EC8F1 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97213C14156047009EC8F1 /* Wall.m */; };
@@ -483,6 +485,8 @@
 		5F89607014413655004499C2 /* Varela Round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Varela Round.png"; sourceTree = "<group>"; };
 		5F896075144137A4004499C2 /* Varela Round-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Varela Round-hd.fnt"; sourceTree = "<group>"; };
 		5F896076144137A4004499C2 /* Varela Round-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Varela Round-hd.png"; sourceTree = "<group>"; };
+		5F93852114B3D9AE00E43924 /* emblems-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emblems-hd.png"; sourceTree = "<group>"; };
+		5F93852214B3D9AE00E43924 /* emblems.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emblems.png; sourceTree = "<group>"; };
 		5F97213314155BFC009EC8F1 /* GridObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridObject.h; sourceTree = "<group>"; };
 		5F97213414155BFC009EC8F1 /* GridObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridObject.m; sourceTree = "<group>"; };
 		5F97213814155D37009EC8F1 /* SnakeTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeTail.h; sourceTree = "<group>"; };
@@ -572,6 +576,8 @@
 		5F1B0718143BB92C00CAD984 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F93852114B3D9AE00E43924 /* emblems-hd.png */,
+				5F93852214B3D9AE00E43924 /* emblems.png */,
 				2EB32B9614B3CAAD00B8A84D /* Default.png */,
 				2EB32B9714B3CAAD00B8A84D /* Default@2x.png */,
 				5F13D6A4144256FA00F0B9B4 /* spritesheet-1.plist */,
@@ -1179,6 +1185,8 @@
 				5F13D6AB144256FA00F0B9B4 /* spritesheet-2.png in Resources */,
 				2EB32B9814B3CAAD00B8A84D /* Default.png in Resources */,
 				2EB32B9914B3CAAD00B8A84D /* Default@2x.png in Resources */,
+				5F93852314B3D9AF00E43924 /* emblems-hd.png in Resources */,
+				5F93852414B3D9AF00E43924 /* emblems.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
