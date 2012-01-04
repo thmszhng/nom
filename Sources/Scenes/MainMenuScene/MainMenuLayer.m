@@ -32,9 +32,9 @@
         
         //Play Regular Mode Button
         CCMenuItem *playRegular =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"regular mode", CGSizeMake(320, 60), 45,
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"regular mode", CGSizeMake(320, 60), 30,
                                                              NO, ccBLACK)
-                                selectedSprite: createButton(@"regular mode", CGSizeMake(320, 60), 45,
+                                selectedSprite: createButton(@"regular mode", CGSizeMake(320, 60), 30,
                                                              YES, ccBLACK)
                                         target: self 
                                       selector: @selector(playRegular)];
@@ -42,9 +42,9 @@
         
         //Play Classic Mode Button
         CCMenuItem *playClassic =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"classic mode", CGSizeMake(320, 60), 45,
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"classic mode", CGSizeMake(320, 60), 30,
                                                              NO, ccc3(61, 187, 56))
-                                selectedSprite: createButton(@"classic mode", CGSizeMake(320, 60), 45,
+                                selectedSprite: createButton(@"classic mode", CGSizeMake(320, 60), 30,
                                                              YES, ccc3(61, 187, 56))    
                                         target: self 
                                       selector: @selector(playClassic)];
@@ -52,9 +52,9 @@
         
         //Play Burst Mode Button
         CCMenuItem *playBurst =
-        [CCMenuItemSprite itemFromNormalSprite: createButton(@"burst mode", CGSizeMake(320, 60), 45,
+        [CCMenuItemSprite itemFromNormalSprite: createButton(@"burst mode", CGSizeMake(320, 60), 30,
                                                              NO, ccc3(61, 187, 56))
-                                selectedSprite: createButton(@"burst mode", CGSizeMake(320, 60), 45,
+                                selectedSprite: createButton(@"burst mode", CGSizeMake(320, 60), 30,
                                                              YES, ccc3(61, 187, 56))    
                                         target: self 
                                       selector: @selector(playBurst)];

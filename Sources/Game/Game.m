@@ -62,7 +62,7 @@ int randomNear(int what, int min, int num)
     if (self)
     {
         // initialize game
-        speed = [[GameManager sharedGameManager] getInt: @"speed" withDefault: 350] / 1000.;
+        speed = 0.200; //[[GameManager sharedGameManager] getInt: @"speed" withDefault: 350] / 1000.;
         timestamp = 0;
         steps = 0;
         
