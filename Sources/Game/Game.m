@@ -148,8 +148,8 @@ int randomNear(int what, int min, int num)
         return NO;
     }
     head.forward = newHead;
-    head = newHead;
-    [self addObject: head];
+    self.head = newHead;
+    [self addObject: newHead];
     [newHead release];
     
     if (deltaLength > 0)
