@@ -9,7 +9,6 @@
 #import "MainMenuScene.h"
 
 #import "MainMenuLayer.h"
-#import "AnimationLayer.h"
 
 @implementation MainMenuScene
 -(id) init
@@ -18,10 +17,9 @@
     
     if (self != nil)
     {
-        // animation layer
-        animationLayer = [AnimationLayer node];
-        [self addChild: animationLayer z:0 tag: kAnimationLayer];
- 
+        //white background
+        [self addChild: [CCLayerColor layerWithColor:ccc4(255, 255, 255, 255)]];
+        
         //main menu layer
         mainMenuLayer = [MainMenuLayer node];
         [self addChild: mainMenuLayer z:5 tag: kMainMenuLayer];
@@ -33,12 +31,6 @@
 -(void) transitionedIn
 {
     [CCDirector sharedDirector].animationInterval = 1.f/30.f;
-}
-
--(void) transitioningOut
-{
-    [CCDirector sharedDirector].animationInterval = 1.f/60.f;
-    [animationLayer unscheduleUpdate];
 }
 
 @end

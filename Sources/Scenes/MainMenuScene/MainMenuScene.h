@@ -10,12 +10,10 @@
 #import "cocos2d.h"
 
 @class MainMenuLayer;
-@class AnimationLayer;
 
 @interface MainMenuScene : CCScene 
 {
     MainMenuLayer *mainMenuLayer;
-    AnimationLayer *animationLayer;
 }
 
 @end
