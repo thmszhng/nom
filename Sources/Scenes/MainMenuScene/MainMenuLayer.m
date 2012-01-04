@@ -73,6 +73,45 @@
             id animation = [CCFadeIn actionWithDuration: 0.5];
             [mainMenu runAction: animation];
         }
+        
+        //Display Regular Mode High Scores
+        CCLabelTTF *regularScore =
+        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"regularScore" withDefault: 0]]
+                    dimensions: CGSizeMake(90, 50) 
+                    alignment: CCTextAlignmentRight
+                    fontName:@"Varela Round" 
+                    fontSize: 15];
+        
+        regularScore.color = ccc3(61, 187, 56);
+        regularScore.anchorPoint = CGPointMake(1, 0);
+        [regularScore setPosition: ccp(300, 165)];
+        [self addChild: regularScore z: 100];
+        
+        //Display Classic Mode High Scores
+        CCLabelTTF *classicScore =
+        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"classicScore" withDefault: 0]]
+                         dimensions: CGSizeMake(90, 50) 
+                          alignment: CCTextAlignmentRight
+                           fontName:@"Varela Round" 
+                           fontSize: 15];
+        
+        classicScore.color = ccc3(61, 187, 56);
+        classicScore.anchorPoint = CGPointMake(1, 0);
+        [classicScore setPosition: ccp(300, 95)];
+        [self addChild: classicScore z: 100];
+        
+        //Display Burst Mode High Scores
+        CCLabelTTF *burstScore =
+        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"burstScore" withDefault: 0]]
+                         dimensions: CGSizeMake(90, 50) 
+                          alignment: CCTextAlignmentRight
+                           fontName:@"Varela Round" 
+                           fontSize: 15];
+        
+        burstScore.color = ccc3(61, 187, 56);
+        burstScore.anchorPoint = CGPointMake(1, 0);
+        [burstScore setPosition: ccp(300, 25)];
+        [self addChild: burstScore z: 100];
     }
     
     return self;

@@ -30,7 +30,7 @@
 
 -(void) transitionedIn
 {
-    [CCDirector sharedDirector].animationInterval = 1.f/4.f;
+    [[GameManager sharedGameManager] slowFPS];
 }
 
 -(void) transitioningOut
