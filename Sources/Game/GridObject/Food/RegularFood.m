@@ -15,7 +15,7 @@
 
 +(void) load
 {
-    [FoodRandomizer addFood: [self class] weight: 3];
+    [FoodRandomizer addFood: [self class] weight: 4];
 }
 
 -(BOOL) eat: (Game *) game
