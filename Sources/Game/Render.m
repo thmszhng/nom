@@ -119,7 +119,7 @@ void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright)
     [sprite visit];
 }
 
-CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color)
+CCSprite *createMultiButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color, NSString *string2, CGFloat fontsize2)
 {
     CCRenderTexture *texture = [[CCRenderTexture alloc]
                                 initWithWidth: size.width
@@ -133,17 +133,34 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
     {
         [texture beginWithClear:1.f g:1.f b:1.f a:0.3f];
     }
-    CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
-                                                dimensions: size
-                                                 alignment: CCTextAlignmentLeft
-                                                  fontName: @"Varela Round"
-                                                  fontSize: fontsize];
-    label.anchorPoint = CGPointMake(0.0f, 0.0f);
-    label.position = CGPointMake(20 + (selected ? 2.0f : 0.0f),
-                                 (selected ? -2.0f : 0.0f));
-    label.color = color;
-    [label visit];
-    [label release];
+    if (string != nil)
+    {
+        CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
+                                                    dimensions: size
+                                                     alignment: CCTextAlignmentLeft
+                                                      fontName: @"Varela Round"
+                                                      fontSize: fontsize];
+        label.anchorPoint = CGPointMake(0.0f, 0.0f);
+        label.position = CGPointMake(20 + (selected ? 2.0f : 0.0f),
+                                     (selected ? -2.0f : 0.0f));
+        label.color = color;
+        [label visit];
+        [label release];
+    }
+    if (string2 != nil)
+    {
+        CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string2
+                                                    dimensions: size
+                                                     alignment: CCTextAlignmentRight
+                                                      fontName: @"Varela Round"
+                                                      fontSize: fontsize2];
+        label.anchorPoint = CGPointMake(1.0f, 0.0f);
+        label.position = CGPointMake(size.width - 20 + (selected ? 2.0f : 0.0f),
+                                     (selected ? -2.0f : 0.0f));
+        label.color = color;
+        [label visit];
+        [label release];
+    }
     [texture end];
     CCSprite *ret = [[texture.sprite retain] autorelease];
     ret.scaleY = 1;
@@ -151,4 +168,9 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
     ret.blendFunc = (ccBlendFunc){GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA};
     [texture release];
     return ret;
+}
+
+CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color)
+{
+    return createMultiButton(string, size, fontsize, selected, color, nil, 0);
 }

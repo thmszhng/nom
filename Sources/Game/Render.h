@@ -17,6 +17,7 @@ CCRenderTexture *getTexture(int entry);
 void drawSnake(int x, int y, BOOL ctop, BOOL cleft, BOOL cbottom, BOOL cright);
 
 // returns a retain'd sprite
+CCSprite *createMultiButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color, NSString *string2, CGFloat fontsize2);
 CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL selected, ccColor3B color);
 
 #define CLAMP(x, a, b) (((x)<(a))?(a):((x)>(b))?(b):(x))
