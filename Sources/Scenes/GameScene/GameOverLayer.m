@@ -28,18 +28,18 @@
         //Menu items
         CCMenuItem *newGameButton =
         [CCMenuItemSprite itemFromNormalSprite: createButton(@"new game", CGSizeMake(320, 60),
-                                                             45, NO, ccc3(64, 64, 64))
+                                                             30, NO, ccc3(64, 64, 64))
                                 selectedSprite: createButton(@"new game", CGSizeMake(320, 60),
-                                                             45, YES, ccc3(64, 64, 64))
+                                                             30, YES, ccc3(64, 64, 64))
                                         target: self 
                                       selector: @selector(newGame)];
         [newGameButton setPosition: ccp(screenSize.width/2, 200)];
 
         CCMenuItem *mainMenuButton =
         [CCMenuItemSprite itemFromNormalSprite: createButton(@"main menu", CGSizeMake(320, 60),
-                                                             45, NO, ccc3(64, 64, 64))
+                                                             30, NO, ccc3(64, 64, 64))
                                 selectedSprite: createButton(@"main menu", CGSizeMake(320, 60),
-                                                             45, YES, ccc3(64, 64, 64))
+                                                             30, YES, ccc3(64, 64, 64))
                                         target: self 
                                       selector: @selector(goToMainMenu)];
         [mainMenuButton setPosition: ccp(screenSize.width/2, 100)];
