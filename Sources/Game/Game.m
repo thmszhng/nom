@@ -263,6 +263,7 @@ int randomNear(int what, int min, int num)
     new.pos = where;
     [food addObject: new];
     [self addObject: new];
+    [new release];
 }
 
 -(void) rampSpeedBy: (float) amt
