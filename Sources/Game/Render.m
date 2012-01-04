@@ -131,7 +131,7 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
     }
     else
     {
-        [texture beginWithClear:1.f g:1.f b:1.f a:0.f];
+        [texture beginWithClear:1.f g:1.f b:1.f a:0.3f];
     }
     CCLabelTTF *label = [[CCLabelTTF alloc] initWithString: string
                                                 dimensions: size
@@ -148,6 +148,7 @@ CCSprite *createButton(NSString *string, CGSize size, CGFloat fontsize, BOOL sel
     CCSprite *ret = [[texture.sprite retain] autorelease];
     ret.scaleY = 1;
     ret.flipY = YES;
+    ret.blendFunc = (ccBlendFunc){GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA};
     [texture release];
     return ret;
 }
