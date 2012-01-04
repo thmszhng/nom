@@ -12,10 +12,12 @@
 
 @interface PauseLayer : CCLayer {
     CCMenu *pauseMenu;
+    CCSprite *background;
 }
 
 -(void) resumeGame;
 -(void) finishResume;
 -(void) goToMainMenu;
+-(void) setOpacity: (GLubyte) opacity;
 
 @end

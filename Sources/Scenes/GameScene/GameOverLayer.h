@@ -12,10 +12,12 @@
 
 @interface GameOverLayer : CCLayer {
     CCMenu *menu;
+    CCSprite *background;
 }
 
 -(void) newGame;
 -(void) finishRestart;
 -(void) goToMainMenu;
+-(void) setOpacity: (GLubyte) opacity;
 
 @end

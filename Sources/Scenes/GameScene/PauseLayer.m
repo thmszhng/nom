@@ -21,9 +21,9 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         self.isTouchEnabled = YES;
         
-        CCSprite *paused = loadSprite(@"PauseMenuBackground.png");
-        [paused setPosition: ccp(screenSize.width/2, screenSize.height/2)];
-        [self addChild: paused];
+        background = loadSprite(@"PauseMenuBackground.png");
+        [background setPosition: ccp(screenSize.width/2, screenSize.height/2)];
+        [self addChild: background];
         
         //Menu items
         CCMenuItem *resumeButton =
@@ -54,11 +54,9 @@
 
 -(void) resumeGame
 {
-    CGPoint pos = self.position;
-    pos.y += 480;
     [self runAction:
      [CCSequence actions:
-      [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]],
+      [CCFadeOut actionWithDuration: 0.2],
       [CCCallFunc actionWithTarget: self selector: @selector(finishResume)],
       nil]
      ];
@@ -76,6 +74,12 @@
 -(void) goToMainMenu
 {
     [[GameManager sharedGameManager] runSceneWithID: kMainMenuScene];
+}
+
+-(void) setOpacity: (GLubyte) opacity
+{
+    [pauseMenu setOpacity: opacity];
+    [background setOpacity: opacity];
 }
 
 @end

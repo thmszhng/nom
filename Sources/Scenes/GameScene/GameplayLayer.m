@@ -75,10 +75,7 @@
     // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     PauseLayer * p = [[[PauseLayer alloc] init] autorelease];
     [self.parent addChild: p z: 10 tag: kPauseLayer];
-    CGPoint pos = p.position;
-    id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
-    pos.y += 480;
-    p.position = pos;
+    id animation = [CCFadeIn actionWithDuration: 0.2];
 
     animation = [CCSequence actions: animation,
                  [CCCallFunc actionWithTarget: [GameManager sharedGameManager]
@@ -113,10 +110,7 @@
             // creates a new GameOverLayer, adds it to GameScene, places on top of GameplayLayer
             GameOverLayer * p = [[[GameOverLayer alloc] init] autorelease];
             [self.parent addChild: p z: 10 tag: kPauseLayer];
-            CGPoint pos = p.position;
-            id animation = [CCEaseBackOut actionWithAction: [CCMoveTo actionWithDuration: 0.5 position: pos]];
-            pos.y += 480;
-            p.position = pos;
+            id animation = [CCFadeIn actionWithDuration: 0.5];
             animation = [CCSequence actions: animation,
                          [CCCallFunc actionWithTarget: [GameManager sharedGameManager]
                                              selector: @selector(slowFPS)], nil];
