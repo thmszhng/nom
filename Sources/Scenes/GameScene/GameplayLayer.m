@@ -74,6 +74,7 @@
     
     // creates a new PauseLayer, adds it to GameScene, places on top of GameplayLayer
     PauseLayer * p = [[[PauseLayer alloc] init] autorelease];
+    [p setOpacity: 0];
     [self.parent addChild: p z: 10 tag: kPauseLayer];
     id animation = [CCFadeIn actionWithDuration: 0.2];
 
@@ -109,6 +110,7 @@
         {
             // creates a new GameOverLayer, adds it to GameScene, places on top of GameplayLayer
             GameOverLayer * p = [[[GameOverLayer alloc] init] autorelease];
+            [p setOpacity: 0];
             [self.parent addChild: p z: 10 tag: kPauseLayer];
             id animation = [CCFadeIn actionWithDuration: 0.5];
             animation = [CCSequence actions: animation,
