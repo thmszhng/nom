@@ -13,4 +13,6 @@
 }
 @property (readwrite, retain) SnakeTail *forward;
 
+-(void) dealloc;
+
 @end

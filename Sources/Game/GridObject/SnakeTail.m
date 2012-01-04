@@ -11,4 +11,10 @@
 @implementation SnakeTail
 @synthesize forward;
 
+-(void) dealloc
+{
+    self.forward = nil;
+    [super dealloc];
+}
+
 @end
