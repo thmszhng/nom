@@ -150,7 +150,6 @@
 		5F2C339513E8DC4800D4B5F7 /* AnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */; };
 		5F3F2CCD1440EBBB009E9BEE /* Varela Round.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3F2CCC1440EBBB009E9BEE /* Varela Round.ttf */; };
 		5F4593F71405E2E90053CC7F /* BurstFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4593F61405E2E90053CC7F /* BurstFood.m */; };
-		5F4E4ADA140DC26200EAB633 /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E4AD9140DC26200EAB633 /* ScrollView.m */; };
 		5F58846D140C1D6500B632E8 /* BurstMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58846C140C1D6400B632E8 /* BurstMode.m */; };
 		5F5C58F3140DD40B000A02DB /* Subclasser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C58F2140DD40A000A02DB /* Subclasser.m */; };
 		5F7A9CB41411BF6F00491896 /* LevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A9CB31411BF6F00491896 /* LevelLayer.m */; };
@@ -462,8 +461,6 @@
 		5F2C339413E8DC4600D4B5F7 /* AnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationLayer.m; sourceTree = "<group>"; };
 		5F3F2CCC1440EBBB009E9BEE /* Varela Round.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Varela Round.ttf"; sourceTree = "<group>"; };
 		5F4593F61405E2E90053CC7F /* BurstFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstFood.m; sourceTree = "<group>"; };
-		5F4E4AD8140DC26200EAB633 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
-		5F4E4AD9140DC26200EAB633 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
 		5F58846C140C1D6400B632E8 /* BurstMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurstMode.m; sourceTree = "<group>"; };
 		5F58846E140C1E3700B632E8 /* BurstMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurstMode.h; sourceTree = "<group>"; };
 		5F5C58F1140DD40A000A02DB /* Subclasser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subclasser.h; sourceTree = "<group>"; };
@@ -933,8 +930,6 @@
 			children = (
 				5F1B092C143D2D6800CAD984 /* GameCenter.h */,
 				5F1B092D143D2D6800CAD984 /* GameCenter.m */,
-				5F4E4AD8140DC26200EAB633 /* ScrollView.h */,
-				5F4E4AD9140DC26200EAB633 /* ScrollView.m */,
 				5F5C58F1140DD40A000A02DB /* Subclasser.h */,
 				5F5C58F2140DD40A000A02DB /* Subclasser.m */,
 				54F0622C140C82B200240AE5 /* Swizzle.h */,
@@ -1197,7 +1192,6 @@
 				54CF2CCE1409B1340004E671 /* ShieldFood.m in Sources */,
 				5F58846D140C1D6500B632E8 /* BurstMode.m in Sources */,
 				54F0622D140C82B200240AE5 /* Swizzle.m in Sources */,
-				5F4E4ADA140DC26200EAB633 /* ScrollView.m in Sources */,
 				5F5C58F3140DD40B000A02DB /* Subclasser.m in Sources */,
 				2E690C521411530A0042214C /* Level.m in Sources */,
 				5F7A9CB41411BF6F00491896 /* LevelLayer.m in Sources */,
