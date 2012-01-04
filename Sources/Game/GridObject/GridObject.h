@@ -16,7 +16,7 @@
     GridObject *next;
 }
 @property (readwrite, retain) Vector *pos;
-@property (readwrite, retain) GridObject *next;
+@property (readwrite, assign) GridObject *next;
 
 -(id) initAt: (Vector *) where;
 -(void) dealloc;

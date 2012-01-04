@@ -65,7 +65,7 @@ int randomNear(int what, int min, int num)
         speed = 0.200; //[[GameManager sharedGameManager] getInt: @"speed" withDefault: 350] / 1000.;
         timestamp = 0;
         steps = 0;
-        
+
         // initialize snake
         SnakeTail *piece = [[SnakeTail alloc] initAt: [self beginSpace]];
         self.head = self.tail = piece;
@@ -96,12 +96,15 @@ int randomNear(int what, int min, int num)
 
 -(void) dealloc
 {
-    self.head = nil;
-    self.tail = nil;
     self.food = nil;
     for (int y = 0; y < 30; ++y) for (int x = 0; x < 30; ++x)
     {
-        [grid[x][y] release];
+        for (GridObject *obj = grid[x][y]; obj; )
+        {
+            GridObject *next = obj.next;
+            [obj release];
+            obj = next;
+        }
     }
     [super dealloc];
 }
@@ -132,16 +135,18 @@ int randomNear(int what, int min, int num)
     ++steps;
     timestamp += speed;
 
+    SnakeTail *oldTail = tail;
     BOOL removed = NO;
     if (deltaLength == 0)
     {
         // don't allow hitting the tail
-        [self removeObject: tail];
+        tail = oldTail.forward;
+        [self removeObject: [[oldTail retain] autorelease]];
         removed = YES;
     }
-    
+
     // advance head
-    SnakeTail *newHead = [[SnakeTail alloc] initAt: head.pos];
+    SnakeTail *newHead = [[[SnakeTail alloc] initAt: head.pos] autorelease];
     newHead.pos.x += dirX[currentDirection];
     newHead.pos.y += dirY[currentDirection];
     wrap(newHead.pos);
@@ -149,20 +154,19 @@ int randomNear(int what, int min, int num)
     BOOL survived = [self headChecks: newHead.pos];
     if (!survived)
     {
-        [newHead release];
         return NO;
     }
     head.forward = newHead;
-    self.head = newHead;
+    head = newHead;
     [self addObject: newHead];
-    [newHead release];
-    
+
     if (deltaLength > 0)
     {
         // keep the tail
         if (removed)
         {
-            [self addObject: tail];
+            [self addObject: oldTail];
+            tail = oldTail;
         }
         --deltaLength;
         ++snakeLength;
@@ -172,9 +176,9 @@ int randomNear(int what, int min, int num)
         // remove the last piece
         if (!removed)
         {
-            [self removeObject: tail];
+            tail = oldTail.forward;
+            [self removeObject: oldTail];
         }
-        self.tail = tail.forward;
     }
     return survived;
 }
@@ -216,16 +220,9 @@ int randomNear(int what, int min, int num)
 -(void) addObject: (GridObject *) object
 {
     Vector *pos = object.pos;
-    GridObject *current = grid[pos.x][pos.y];
-    if (current == nil)
-    {
-        grid[pos.x][pos.y] = [object retain];
-    }
-    else
-    {
-        for (; current.next != nil; current = current.next);
-        current.next = object;
-    }
+    GridObject *next = grid[pos.x][pos.y];
+    object.next = next;
+    grid[pos.x][pos.y] = [object retain];
 }
 
 -(void) removeObject: (GridObject *) object
@@ -235,7 +232,6 @@ int randomNear(int what, int min, int num)
     if (prev == object)
     {
         grid[pos.x][pos.y] = object.next;
-        [object release];
     }
     else
     {
@@ -245,6 +241,7 @@ int randomNear(int what, int min, int num)
         }
         prev.next = object.next;
     }
+    [object release];
 }
 
 -(void) onEat: (Food *) food;

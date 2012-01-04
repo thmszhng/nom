@@ -11,8 +11,6 @@
 @interface SnakeTail: Wall {
     SnakeTail *forward; // the next segment toward the head
 }
-@property (readwrite, retain) SnakeTail *forward;
-
--(void) dealloc;
+@property (readwrite, assign) SnakeTail *forward;
 
 @end

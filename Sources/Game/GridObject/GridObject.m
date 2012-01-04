@@ -25,8 +25,7 @@
 
 -(void) dealloc
 {
-    self.pos = nil;
-    self.next = nil;
+    [pos release];
     [super dealloc];
 }
 

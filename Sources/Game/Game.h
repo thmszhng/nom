@@ -40,8 +40,8 @@ enum Direction {NoDirection = -1, up = 0, down, left, right};
 @property (readonly, assign) ccTime timestamp;
 
 @property (readwrite, assign) enum Direction currentDirection;
-@property (readwrite, retain) SnakeTail *head;
-@property (readwrite, retain) SnakeTail *tail;
+@property (readwrite, assign) SnakeTail *head;
+@property (readwrite, assign) SnakeTail *tail;
 @property (readwrite, assign) ccTime speed;
 @property (readwrite, assign) int deltaLength;
 @property (readwrite, assign) BOOL isProtected, wasInWall, isRaged;
