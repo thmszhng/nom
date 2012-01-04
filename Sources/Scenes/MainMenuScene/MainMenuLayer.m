@@ -76,7 +76,7 @@
         
         //Display Regular Mode High Scores
         CCLabelTTF *regularScore =
-        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"regularScore" withDefault: 0]]
+        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"RegularModeScore" withDefault: 0]]
                     dimensions: CGSizeMake(90, 50) 
                     alignment: CCTextAlignmentRight
                     fontName:@"Varela Round" 
@@ -89,7 +89,7 @@
         
         //Display Classic Mode High Scores
         CCLabelTTF *classicScore =
-        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"classicScore" withDefault: 0]]
+        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"ClassicModeScore" withDefault: 0]]
                          dimensions: CGSizeMake(90, 50) 
                           alignment: CCTextAlignmentRight
                            fontName:@"Varela Round" 
@@ -102,7 +102,7 @@
         
         //Display Burst Mode High Scores
         CCLabelTTF *burstScore =
-        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"burstScore" withDefault: 0]]
+        [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%i", [[GameManager sharedGameManager] getInt: @"BurstModeScore" withDefault: 0]]
                          dimensions: CGSizeMake(90, 50) 
                           alignment: CCTextAlignmentRight
                            fontName:@"Varela Round" 

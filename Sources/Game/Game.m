@@ -118,6 +118,11 @@ int randomNear(int what, int min, int num)
         int deltaScore = newScore - score;
         if (deltaScore > 0 && self.isRaged) deltaScore *= 2;
         score += deltaScore;
+
+        NSString *name = [NSString stringWithFormat: @"%@Score", NSStringFromClass([self class])];
+        if (score > [[GameManager sharedGameManager] getInt: name withDefault: 0]) {
+            [[GameManager sharedGameManager] setValue: name newInt: score];
+        }
     }
 }
 
