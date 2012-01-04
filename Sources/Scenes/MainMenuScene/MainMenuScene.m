@@ -33,7 +33,7 @@
     [CCDirector sharedDirector].animationInterval = 1.f/30.f;
 }
 
--(void) transitionedOut
+-(void) transitioningOut
 {
     [CCDirector sharedDirector].animationInterval = 1.f/60.f;
 }
