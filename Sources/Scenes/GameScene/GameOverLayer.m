@@ -67,7 +67,9 @@
 
 -(void) finishRestart
 {
+    GameplayLayer *gl = (GameplayLayer *) [self.parent getChildByTag: kGameplayLayer];
     [self.parent removeChild: self cleanup: YES];
+    [gl onEnter];
 }
 
 // unpauses game when screen is tapped

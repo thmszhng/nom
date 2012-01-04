@@ -34,6 +34,7 @@
         emblems.position = CGPointMake(256, 457);
         [self addChild: emblems];
         [self newGame];
+        [self scheduleUpdate];
     }
     
     return self;
@@ -61,7 +62,6 @@
     game = [[NSClassFromString(mode) alloc] init];
         
     [scoreText setString: @"0"];
-    [self scheduleUpdate];
 }
 
 //pauses the game
@@ -119,7 +119,7 @@
             [p runAction: animation];
             [[CCDirector sharedDirector] setAnimationInterval: 1/60.f];
             // we're done here
-            [self unscheduleUpdate];
+            [self onExit];
         }
         return;
     }
