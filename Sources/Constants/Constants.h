@@ -20,7 +20,6 @@ typedef enum
 {
     kAnimationLayer = 200,
     kMainMenuLayer,
-    kHelpLayer,
 } MainMenuSceneLayers;
 
 typedef enum
