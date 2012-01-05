@@ -18,6 +18,14 @@
 -(void) onEnter
 {
     sprite = [[[GameManager sharedGameManager].level drawWithSize: 10] retain];
+    [super onEnter];
+}
+
+-(void) onExit
+{
+    [sprite release];
+    sprite = nil;
+    [super onExit];
 }
 
 #define sgn(x) (((x)>0)-((x)<0))

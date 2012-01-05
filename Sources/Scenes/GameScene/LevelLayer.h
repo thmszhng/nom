@@ -16,5 +16,8 @@
 }
 
 @property (readwrite, assign) GameplayLayer *theGameplayLayer;
+-(void) onEnter;
+-(void) onExit;
+
 -(void) draw;
 @end
