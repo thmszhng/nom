@@ -90,6 +90,7 @@
 -(void) onExit
 {
     isGamePaused = YES;
+    [[GameManager sharedGameManager] save]; // make sure high scores are saved
     [super onExit];
 }
 
