@@ -1,0 +1,5 @@
+Nom.xcodeproj/project.xcworkspace/xcuserdata/*
+Nom.xcodeproj/xcuserdata/*
+.DS_Store
+*/.DS_Store
+*.directory
